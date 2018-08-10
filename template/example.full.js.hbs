@@ -6,13 +6,13 @@ import {{ upperCase serverName }} from './api/{{ serverName }}/api';
  * {{ description }}    {{ url }}
  *
  {{#list params}}
- * @params      { {{ addSpace type }} }      {{ name }}          {{ description }}
+ * @params      { {{ addSpaceUpperCase type 8 }} }      {{ addSpace name 20 }}          {{ description }}
  {{/list}}
  {{#list data}}
- * @params      { {{ addSpace type }} }      {{ name }}          {{ description }}
+ * @params      { {{ addSpaceUpperCase type 8 }} }      {{ addSpace name 20 }}          {{ description }}
  {{/list}}
  {{#list headers}}
- * @params      { {{ addSpace type }} }      {{ name }}          {{ description }}
+ * @params      { {{ addSpaceUpperCase type 8 }} }      {{ addSpace name 20 }}          {{ description }}
  {{/list}}
  */
 {{ upperCase ../serverName }}.{{ apiName }}({

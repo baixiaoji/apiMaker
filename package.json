@@ -1,15 +1,27 @@
 {
-  "name": "apimaker",
-  "version": "1.0.0",
-  "description": "api 自动生成工具",
-  "main": "index.js",
+  "name": "@u51/apimaker",
+  "version": "1.0.4",
+  "description": "api自动生成工具",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm test"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git@git.51.nb:liaobolin/apiMaker.git"
+  },
+  "bin": {
+    "apimaker": "./bin/index.js"
+  },
+  "keywords": [
+    "api",
+    "apimaker"
+  ],
+  "author": "liaobolin",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
+    "cmdu": "^2.0.12",
     "handlebars": "^4.0.11",
     "mkdirp": "^0.5.1"
   }

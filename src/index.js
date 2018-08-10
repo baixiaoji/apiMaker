@@ -8,7 +8,6 @@ const handlebars = require('../utils/handlebars');
 class ApiMaker {
     constructor(config) {
         this.config = config || {};
-        this.init();
     }
 
     init() {

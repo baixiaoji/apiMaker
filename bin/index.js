@@ -6,7 +6,6 @@ const app = require('cmdu');
 const ApiMaker = require('../src/index');
 
 app
-    .language('zh-CN')
     .version = require('../package.json').version;
 
 app
@@ -16,14 +15,14 @@ app
 
 app
     .command('create', '根据swagger文档自动生成axios请求相关代码.')
-    .option('-c, --config <string>', 'swagger文档配置文件')
+    .option('-c, --config [string]', 'swagger文档配置文件')
     .action(async function(options) {
         let opts = {};
-        let configPath = path.resolve(process.pwd(), './.api.config.js');
+        let configPath = path.resolve(process.cwd(), './.api.config.js');
 
         try {
             if (options.config) {
-                opts = require(path.resolve(process.pwd(), options.config));
+                opts = require(path.resolve(process.cwd(), options.config));
             } else {
                 opts = require(configPath);
             }
@@ -32,5 +31,8 @@ app
             throw new Error(err);
         }
 
-        new ApiMaker(opts);
+        const apiIns = new ApiMaker(opts);
+        await apiIns.init();
     });
+
+app.listen();

@@ -23,9 +23,14 @@ handlebars.registerHelper('upperCase', function(str='object') {
     });
 });
 
-handlebars.registerHelper('addSpace', function(str='object') {
+handlebars.registerHelper('addSpace', function(str='object', count) {
 
-    return utils.upperCase(str) + ('        '.slice(0, 8-str.length));
+    return utils.filledBlank(str, count);
+});
+
+handlebars.registerHelper('addSpaceUpperCase', function(str='object', count) {
+
+    return utils.filledBlank(utils.upperCase(str), count);
 });
 
 

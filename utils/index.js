@@ -146,6 +146,10 @@ const utils = {
         });
 
         return result;
+    },
+
+    filledBlank(str, count) {
+        return str + new Array(count).join(' ').slice(0, count-str.length);
     }
 };
 
