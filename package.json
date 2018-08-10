@@ -1,0 +1,16 @@
+{
+  "name": "apimaker",
+  "version": "1.0.0",
+  "description": "api 自动生成工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "handlebars": "^4.0.11",
+    "mkdirp": "^0.5.1"
+  }
+}

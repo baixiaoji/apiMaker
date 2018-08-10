@@ -1,0 +1,9 @@
+const config = require('./config');
+
+function sendRequest() {}
+
+module.exports = {
+{{#list apis }}
+    {{ apiName }}: param => sendRequest(config.{{ apiName }}, param),
+{{/list}}
+};

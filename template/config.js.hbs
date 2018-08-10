@@ -1,0 +1,16 @@
+// {{ serverName }} config
+
+module.exports = {
+{{#list apis }}
+    {{ apiName }}: {
+        url: '{{ url }}',
+        method: '{{ method }}',
+        baseURL: '{{ baseURL }}',
+    {{#if extra}}
+        {{#each extra}}
+        {{name}}: {{value}},
+        {{/each}}
+    {{/if}}
+    },
+{{/list}}
+};

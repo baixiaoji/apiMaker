@@ -1,0 +1,36 @@
+import {{ upperCase serverName }} from './api/{{ serverName }}/api';
+
+{{#list apis }}
+
+/**
+* {{ description }}    {{ url }}
+*
+*/
+{{ upperCase ../serverName }}.{{ apiName }}({
+{{#if params}}
+    params: {
+    {{#list params}}
+        {{{ formatStr name }}}: '{{ default }}', //{{ description }}
+    {{/list}}
+    },
+{{/if}}
+{{#if data}}
+    data: {
+    {{#list data}}
+        {{{ formatStr name }}}: '{{ default }}', //{{ description }}
+    {{/list}}
+    },
+{{/if}}
+{{#if headers}}
+    headers: {
+    {{#list headers}}
+        {{{ formatStr name }}}: '{{ default }}', //{{ description }}
+    {{/list}}
+    },
+{{/if}}
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+{{/list}}
