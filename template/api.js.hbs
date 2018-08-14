@@ -1,9 +1,16 @@
+{{#if importTpl }}
+{{{ importTpl }}}
+{{else}}
+const axios = require('../axios');
+{{/if}}
 const config = require('./config');
-
-function sendRequest() {}
 
 module.exports = {
 {{#list apis }}
-    {{ apiName }}: param => sendRequest(config.{{ apiName }}, param),
+    {{#if ../apiTpl}}
+    {{{ apiTplFormat ../apiTpl apiName }}}
+    {{else}}
+    {{ apiName }}: param => axios(Object.assign(config.{{ apiName }}, param)),
+    {{/if}}
 {{/list}}
 };

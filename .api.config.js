@@ -1,5 +1,7 @@
 module.exports = {
     output: './demo/api',
+    // importTpl: "import axios from '../axios'",
+    // apiTpl: '{apiName}: params => axios(config.{apiName}, params),',
     ignore: {
         headers: ['userId', 'Authorization']
     },

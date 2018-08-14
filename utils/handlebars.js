@@ -38,4 +38,8 @@ handlebars.registerHelper('formatStr', function(str) {
     return /[-|\s]/.test(str) ? `'${str}'` : str;
 });
 
+handlebars.registerHelper('apiTplFormat', function(tpl, apiName) {
+    return tpl.replace(/\{apiName}/g, apiName);
+});
+
 module.exports = handlebars;

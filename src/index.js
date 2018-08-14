@@ -105,7 +105,9 @@ class ApiMaker {
             const template = handlebars.compile(data);
             const content = template({
                 apis: apiData,
-                serverName
+                serverName,
+                importTpl: this.config.importTpl,
+                apiTpl: this.config.apiTpl
             });
 
             fs.writeFile(outputPath, content, 'utf8', (err) => {
