@@ -42,4 +42,10 @@ handlebars.registerHelper('apiTplFormat', function(tpl, apiName) {
     return tpl.replace(/\{apiName}/g, apiName);
 });
 
+handlebars.registerHelper('genBaseURL', function(url) {
+    if (url.indexOf('api.u51.com') === -1) {
+        return `/api.u51.com${url}`;
+    }
+});
+
 module.exports = handlebars;

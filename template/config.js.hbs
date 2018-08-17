@@ -5,7 +5,7 @@ module.exports = {
     {{ apiName }}: {
         url: '{{ url }}',
         method: '{{ method }}',
-        baseURL: '{{ baseURL }}',
+        baseURL: '{{ genBaseURL baseURL }}',
     {{#if extra}}
         {{#each extra}}
         {{name}}: {{value}},
