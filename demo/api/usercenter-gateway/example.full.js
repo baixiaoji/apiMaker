@@ -40,39 +40,39 @@ import UsercenterGateway from './api/usercenter-gateway/api';
  */
 UsercenterGateway.postSnsWeixinBindV2({
     params: {
-        squence: '', //活跃统计追踪序号
-        device_key: '', //设备尽量唯一号
-        original_channel: '', //App初始安装渠道
-        model: '', //设备名称
-        gap: '', //壳属性(暂时不用)
-        dgf: '', //设备指纹信息
-        ssid: '', //当前连接wifi的ssid
-        bssid: '', //当前连接wifi的mac
-        antiFraudJson: '', //反欺诈公共参数JSON串
-        device_name: '', //自定义设备名称
-        idfa: '', //ios唯一识别码
-        udid: '', //ios UDID
-        mac: '', //手机mac地址
-        imei: '', //国际移动设备识别码
-        imsi: '', //国际移动用户识别码
-        big_app_id: '', //产品ID(web下是必输项)
-        app_id: '', //子产品ID(web下是必输项)
-        plat: '', //平台(web下是必输项)
-        channel: '', //App渠道(web下是必输项)
-        network_type: '', //网络类型
-        version: '', //版本
-        system_version: '', //系统版本
-        lng: '', //经度
-        lat: '', //纬度
-        province: '', //省份
-        city: '', //城市
-        nonce: '', //当前请求唯一随机串(暂时不用)
-        width: '', //设备屏幕的宽度
-        height: '', //设备屏幕的高度
-        userId: '', //UserId
+        squence: '',
+        device_key: '',
+        original_channel: '',
+        model: '',
+        gap: '',
+        dgf: '',
+        ssid: '',
+        bssid: '',
+        antiFraudJson: '',
+        device_name: '',
+        idfa: '',
+        udid: '',
+        mac: '',
+        imei: '',
+        imsi: '',
+        big_app_id: '',
+        app_id: '',
+        plat: '',
+        channel: '',
+        network_type: '',
+        version: '',
+        system_version: '',
+        lng: '',
+        lat: '',
+        province: '',
+        city: '',
+        nonce: '',
+        width: '',
+        height: '',
+        userId: '',
     },
     data: {
-        bindRequest: '', //bindRequest
+        bindRequest: '',
     },
     headers: {
         Authorization: 'encrypt 4ZHZDMGjMD5RFKyAeDiXZpPtIXS8y7TXPPvWCmN9YNs9CxZfbRQ0ruj8sH2LKM+FmKBHc+i3rZ1hp2YfV5HBsQ&#x3D;&#x3D;', //user token
@@ -83,6 +83,12 @@ UsercenterGateway.postSnsWeixinBindV2({
 }).catch(error => {
     console.log(error);
 });
+/*
+* 返回结果
+
+*/
+
+
 
 /**
  * 登陆    /v2/sns/weixin/login/verify
@@ -121,38 +127,38 @@ UsercenterGateway.postSnsWeixinBindV2({
  */
 UsercenterGateway.postSnsWeixinLoginVerifyV2({
     params: {
-        squence: '', //活跃统计追踪序号
-        device_key: '', //设备尽量唯一号
-        original_channel: '', //App初始安装渠道
-        model: '', //设备名称
-        gap: '', //壳属性(暂时不用)
-        dgf: '', //设备指纹信息
-        ssid: '', //当前连接wifi的ssid
-        bssid: '', //当前连接wifi的mac
-        antiFraudJson: '', //反欺诈公共参数JSON串
-        device_name: '', //自定义设备名称
-        idfa: '', //ios唯一识别码
-        udid: '', //ios UDID
-        mac: '', //手机mac地址
-        imei: '', //国际移动设备识别码
-        imsi: '', //国际移动用户识别码
-        big_app_id: '', //产品ID(web下是必输项)
-        app_id: '', //子产品ID(web下是必输项)
-        plat: '', //平台(web下是必输项)
-        channel: '', //App渠道(web下是必输项)
-        network_type: '', //网络类型
-        version: '', //版本
-        system_version: '', //系统版本
-        lng: '', //经度
-        lat: '', //纬度
-        province: '', //省份
-        city: '', //城市
-        nonce: '', //当前请求唯一随机串(暂时不用)
-        width: '', //设备屏幕的宽度
-        height: '', //设备屏幕的高度
+        squence: '',
+        device_key: '',
+        original_channel: '',
+        model: '',
+        gap: '',
+        dgf: '',
+        ssid: '',
+        bssid: '',
+        antiFraudJson: '',
+        device_name: '',
+        idfa: '',
+        udid: '',
+        mac: '',
+        imei: '',
+        imsi: '',
+        big_app_id: '',
+        app_id: '',
+        plat: '',
+        channel: '',
+        network_type: '',
+        version: '',
+        system_version: '',
+        lng: '',
+        lat: '',
+        province: '',
+        city: '',
+        nonce: '',
+        width: '',
+        height: '',
     },
     data: {
-        loginRequest: '', //loginRequest
+        loginRequest: '',
     },
     headers: {
         'X-Enniu-Sign': '', //签名内容
@@ -162,6 +168,30 @@ UsercenterGateway.postSnsWeixinLoginVerifyV2({
 }).catch(error => {
     console.log(error);
 });
+/*
+* 返回结果
+{
+    "autoPwd": "(integer,optional) 密码是否由系统自动生成(0不是，1是)",
+    "avatarUrl": "(string,optional) 头像地址",
+    "birthday": "(string,optional) 用户生日",
+    "cookieValue": "(string,optional) cookieValue",
+    "from": "(string,optional) 登录方式",
+    "loginTime": "(string,optional) 登录时间",
+    "mobile": "(string,optional) 手机号",
+    "nickName": "(string,optional) 用户昵称",
+    "outId": "(string,optional) 第三方账号登录的openId",
+    "redirectTo": "(string,optional) 重定向地址",
+    "regTime": "(string,optional) 注册时间",
+    "register": "(boolean,optional) 标示当前登陆操作是否自动注册了新账户",
+    "sex": "(integer,optional) 性别(0保密，1男，2女)",
+    "token": "(string,optional) 用户token",
+    "tokenExpiredTime": "(integer,optional) Token有效时长(秒)",
+    "userId": "(integer,optional) 兼容老的用户id",
+    "userName": "(string,optional) 用户名"
+}
+*/
+
+
 
 /**
  * 解绑    /v2/sns/weixin/unbind
@@ -201,36 +231,36 @@ UsercenterGateway.postSnsWeixinLoginVerifyV2({
  */
 UsercenterGateway.postSnsWeixinUnbindV2({
     params: {
-        squence: '', //活跃统计追踪序号
-        device_key: '', //设备尽量唯一号
-        original_channel: '', //App初始安装渠道
-        model: '', //设备名称
-        gap: '', //壳属性(暂时不用)
-        dgf: '', //设备指纹信息
-        ssid: '', //当前连接wifi的ssid
-        bssid: '', //当前连接wifi的mac
-        antiFraudJson: '', //反欺诈公共参数JSON串
-        device_name: '', //自定义设备名称
-        idfa: '', //ios唯一识别码
-        udid: '', //ios UDID
-        mac: '', //手机mac地址
-        imei: '', //国际移动设备识别码
-        imsi: '', //国际移动用户识别码
-        big_app_id: '', //产品ID(web下是必输项)
-        app_id: '', //子产品ID(web下是必输项)
-        plat: '', //平台(web下是必输项)
-        channel: '', //App渠道(web下是必输项)
-        network_type: '', //网络类型
-        version: '', //版本
-        system_version: '', //系统版本
-        lng: '', //经度
-        lat: '', //纬度
-        province: '', //省份
-        city: '', //城市
-        nonce: '', //当前请求唯一随机串(暂时不用)
-        width: '', //设备屏幕的宽度
-        height: '', //设备屏幕的高度
-        userId: '', //UserId
+        squence: '',
+        device_key: '',
+        original_channel: '',
+        model: '',
+        gap: '',
+        dgf: '',
+        ssid: '',
+        bssid: '',
+        antiFraudJson: '',
+        device_name: '',
+        idfa: '',
+        udid: '',
+        mac: '',
+        imei: '',
+        imsi: '',
+        big_app_id: '',
+        app_id: '',
+        plat: '',
+        channel: '',
+        network_type: '',
+        version: '',
+        system_version: '',
+        lng: '',
+        lat: '',
+        province: '',
+        city: '',
+        nonce: '',
+        width: '',
+        height: '',
+        userId: '',
     },
     headers: {
         Authorization: 'encrypt 4ZHZDMGjMD5RFKyAeDiXZpPtIXS8y7TXPPvWCmN9YNs9CxZfbRQ0ruj8sH2LKM+FmKBHc+i3rZ1hp2YfV5HBsQ&#x3D;&#x3D;', //user token
@@ -241,4 +271,10 @@ UsercenterGateway.postSnsWeixinUnbindV2({
 }).catch(error => {
     console.log(error);
 });
+/*
+* 返回结果
+
+*/
+
+
 

@@ -19,14 +19,14 @@ import {{ upperCase serverName }} from './api/{{ serverName }}/api';
 {{#if params}}
     params: {
     {{#list params}}
-        {{{ formatStr name }}}: '{{ default }}', //{{ description }}
+        {{{ formatStr name }}}: '{{ default }}',
     {{/list}}
     },
 {{/if}}
 {{#if data}}
     data: {
     {{#list data}}
-        {{{ formatStr name }}}: '{{ default }}', //{{ description }}
+        {{{ formatStr name }}}: '{{ default }}',
     {{/list}}
     },
 {{/if}}
@@ -42,5 +42,11 @@ import {{ upperCase serverName }} from './api/{{ serverName }}/api';
 }).catch(error => {
     console.log(error);
 });
+/*
+* 返回结果
+{{{ response }}}
+*/
+
+
 {{/list}}
 

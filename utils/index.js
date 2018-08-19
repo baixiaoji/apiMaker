@@ -56,6 +56,7 @@ const utils = {
         return false;
     },
 
+
     getParameter(data) {
         const parameters = data.parameters || [];
         const result = {

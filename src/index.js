@@ -3,6 +3,7 @@ const utils = require('../utils/index');
 const fs = require('fs');
 const path = require('path');
 const mkdirp = require('mkdirp');
+const qs = require('qs-url').default;
 const handlebars = require('../utils/handlebars');
 
 class ApiMaker {
@@ -31,16 +32,17 @@ class ApiMaker {
                 versionsData.push(data.data || {});
             }
 
-            const apiData = this.formatData(versionsData, urlInfo.server, item);
+            const apiData = await this.formatData(versionsData, urlInfo.server, item, urlInfo.tag);
 
             this.genApis(apiData, urlInfo.server);
         });
     }
 
-    formatData(data, serverName, apiConfig) {
+    async formatData(data, serverName, apiConfig, tagName) {
         const apis = [];
 
-        data.forEach(item => {
+        for (let j = 0; j < data.length; j++) {
+            const item = data[j];
             const basePath = item.basePath;
             const paths = item.paths;
             const pathKeys = Object.keys(paths);
@@ -51,16 +53,45 @@ class ApiMaker {
                 const apiData = apiItem[method];
 
                 if (utils.inNeedController(apiData.tags, apiConfig.controllers)) {
+                    const params = {
+                        apiName: `/${serverName}/api${utils.formatApiPath(pathKeys[i], basePath, serverName)}`,
+                        type: method,
+                        controllerName: apiData.tags[0],
+                        serviceName: serverName,
+                        tag: tagName,
+                        group: serverName,
+                    };
+                    const url = qs.addQuery(params, 'http://ares.51.nb/ares-swagger/api/v1/apiTest/seviceApiInfo');
+                    const response = await axios({
+                        url: url,
+                        method: 'get',
+                        headers: {
+                            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+                            Cookie: this.config.cookie || '',
+                            Accept: 'application/json, text/plain, */*'
+                        }
+                    }).catch(err => {
+                        console.log('应该是cookie过期了，请更换cookie\n' + (err || {}).message);
+                    });
+                    let responseStr = '';
+
+                    try {
+                        responseStr = JSON.stringify(response.data.data.response.model, null, 4);
+                    } catch (err) {
+                        console.log(err);
+                    }
+
                     apis.push({
                         apiName: utils.formatApiName(pathKeys[i], basePath, serverName, method),
                         url: utils.formatApiPath(pathKeys[i], basePath, serverName),
                         baseURL: utils.getBaseURL(pathKeys[i], basePath, serverName),
                         method,
-                        ...utils.getParameter(apiData)
+                        ...utils.getParameter(apiData),
+                        response: responseStr
                     });
                 }
             }
-        });
+        }
 
         return apis;
     }
@@ -69,11 +100,11 @@ class ApiMaker {
         const output = path.resolve(process.cwd(), this.config.output, `./${serverName}`);
         const outputConfig = `${output}/config.js`;
         const outputApi = `${output}/api.js`;
-        const outputExample = `${output}/example.js`;
+        const outputRequiredExample = `${output}/example.required.js`;
         const outputFullExample = `${output}/example.full.js`;
         const configTplPath = path.resolve(__dirname, `../template/config.js.hbs`);
         const apiTplPath = path.resolve(__dirname, `../template/api.js.hbs`);
-        const exampleTplPath = path.resolve(__dirname, `../template/example.js.hbs`);
+        const exampleRequiredTplPath = path.resolve(__dirname, `../template/example.required.js.hbs`);
         const exampleFullTplPath = path.resolve(__dirname, `../template/example.full.js.hbs`);
 
         fs.access(output, err => {
@@ -85,7 +116,7 @@ class ApiMaker {
                     this.genFile(configTplPath, outputConfig, apiData, serverName);
                     this.genFile(apiTplPath, outputApi, apiData, serverName);
                     this.genFile(exampleFullTplPath, outputFullExample, apiData, serverName);
-                    this.genFile(exampleTplPath, outputExample, requiredData, serverName);
+                    this.genFile(exampleRequiredTplPath, outputRequiredExample, requiredData, serverName);
                 });
             } else {
                 this.updateFile(configTplPath, outputConfig, apiTplPath, outputApi, apiData, serverName);
@@ -93,7 +124,7 @@ class ApiMaker {
                 const requiredData = utils.getRequired(apiData, this.config.ignore);
 
                 this.genFile(exampleFullTplPath, outputFullExample, apiData, serverName);
-                this.genFile(exampleTplPath, outputExample, requiredData, serverName);
+                this.genFile(exampleRequiredTplPath, outputRequiredExample, requiredData, serverName);
             }
         })
     }

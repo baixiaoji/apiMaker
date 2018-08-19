@@ -1,79 +1,243 @@
-### Weex 工程模板
+## Api自动生成工具
 
+`apimaker` 是根据swagger链接配置，自动获取swagger链接对应服务及`tag`下所有接口配置，并按照约定格式生成前端调用接口的代码到工程目录下直接使用，从而减少写接口调用代码的时间
 
+## 安装
+```
+nbm install @u51/apimaker -g
+```
+注意：需要nodejs版本 9.0及以上，如果出现`apimaker`命令不存在时，请切换node版本重新安装
+## 使用步骤
+1、在工程中添加配置文件`.api.config.js`
 
-##### 一、入口地址
-
-**Weex** : `http://YOUR.IP.ADDR:8800/js/index.weex.js`
-
-**Web** : `http://YOUR.IP.ADDR:8800/index.html`
-
-
-
-##### 二、命令
-
-**1. 开发，将同时开启监听和热加载：**
-
-```bash
-$ nbm run dev
+```
+// 文件内容
+module.exports = {
+    output: './src/api',
+    apis: [
+        {
+            swagger: 'http://immall.installment-mall-gateway.51.env/swagger-ui.html'
+        },
+        {
+            swagger: 'http://weiwenyi2.insurance-gateway.51.env/swagger-ui.html',
+            controllers: ['提供前端相关api']
+        },
+    ]
+};
 ```
 
-更换端口，可使用：
+2、在工程根目录中运行命令
 
-``` bash
-$ PORT=8800 nbm run dev
+```
+apimaker create
 ```
 
-**2. 打包：**
+3、在 `output: './src/api'`配置的输出目录下生成如下文件
 
-```bash
-$ nbm run build
+```
+├── installment-mall-gateway
+│   ├── api.js
+│   ├── config.js
+│   ├── example.full.js
+│   └── example.required.js
+└── insurance-gateway
+    ├── api.js
+    ├── config.js
+    ├── example.full.js
+    └── example.required.js
+
 ```
 
+4、每个服务下的全部或指定`Controller`下的接口都会输出到`api.js`中，引用该文件并调用对应接口，`example.full.js`中有使用样例，可以直接复制
 
+```
+import InstallmentMallGateway from './api/installment-mall-gateway/api';
 
-##### 三、配置
-
-**1. 代理**
-
-修改 `compile/proxy.config.js` 文件。
-
-**2. 关闭或开启 Web 降级使用 flexible**
-
-修改 `compile/webpack.sendRequest.js` 中的 `IS_FLEXIBLE` 变量。
-
-**3. 指定 Web 打包的对外路径**
-
-修改 `compile/webpack.sendRequest.js` 中的 `BUILD_PUBLIC_PATH` 变量。
-
-
-
-##### 四、注意事项
-
-**1. Vue 版本与依赖**
-
-请确保项目的 Vue 版本和对应的 vue-template-compiler 保持一致的版本号。
-
-**2. Vue 引用**
-
-在 Web 环境，已经通过 `vendor.js` 文件注册了全局的 Vue 变量；在 Weex 环境则自带 Vue。因此，业务代码中，请直接使用 Vue 变量，而无需如下引用：
-
-```javascript
-// DO NOT IMPORT VUE
-import Vue from 'vue';
+InstallmentMallGateway.postOrderPreSubmitV1({
+    params: {
+        status: '-1',
+    },
+    data: {
+        orderPreSubmitDTO: '',
+    },
+    headers: {
+        userId: '150001810', //用户的U51用户Id
+        'X-FROM-TYPE': '10', //投放来源
+    },
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
 ```
 
-这是因为，在一些 Vue 版本中（如 2.5.16），使用上述语句将在 Weex 环境中产生对 `window` 变量的使用，从而导致运行失败。
+## 高级功能&详细介绍
+1、`config.js` `insurance-gateway`服务下的所有接口基本配置,
 
-**3. CSS 尺寸单位**
+```
+// insurance-gateway config
 
-基本地：
+module.exports = {
+    getProductDetailV1: {
+        url: '/v1/product/detail',
+        method: 'get',
+        baseURL: '/api.u51.com/insurance-gateway/api',
+    },
+    getProductListOrderV1: {
+        url: '/v1/product/listOrder',
+        method: 'get',
+        baseURL: '/api.u51.com/insurance-gateway/api',
+    },
+    .......
+};
 
-- 所有 ` px` 单位都会转为 `rem` 单位（浏览器）或者保留为 `px`（Weex Native）
-- 所有 `pt` 单位会保留为 `px`（浏览器）或者 `wx` （Weex Native）
+```
+如果某个接口的配置需要加自定义字段，重新生成也是会保留自定义字段的（除以上3个字段外都是自定义字段）
 
-在 Web Flexible 模式中，以下行为对浏览器环境造成额外影响：
+2、`api.js`  `insurance-gateway`服务各个接口的调用方法
 
-- 使用 `/*!px*/` 将转成 `[data-dpr]` 式的响应式像素尺寸
-- `font-size` 始终保持响应式的 `px` 尺寸
-- 不要使用 `/*!no*/`，请使用 `pt` 单位
+```
+const axios = require('../axios');
+const config = require('./config');
+
+module.exports = {
+    getProductDetailV1: param => axios(Object.assign(config.getProductDetailV1, param)),
+    getProductListOrderV1: param => axios(Object.assign(config.getProductListOrderV1, param)),
+	........
+};
+```
+
+可以我们在调用接口时使用的不是`axios`库或者是调用方法不一样，所以支持部分模版自定义。
+
+* 如 `const axios = require('../axios');`，由`.api.config.js`文件中的`importTpl`控制
+* 调用的方法也可以自定义, 如 `getProductDetailV1: param => axios(Object.assign(config.getProductDetailV1, param)),`由`.api.config.js`文件中的`apiTpl`控制
+
+如果我想用 `http`异步库，那么就可以如下配置`.api.config.js`文件
+
+```
+module.exports = {
+    output: './demo/api',
+    importTpl: "const http = require('http');",
+    apiTpl: '{apiName}: params => http.sendRequest(config.{apiName}, params),',
+	........
+};
+```
+
+最终生成的`api.js`内容为
+
+```
+const http = require('http');
+const config = require('./config');
+
+module.exports = {
+    getProductDetailV1: param => http.sendRequest(config.getProductDetailV1, param),
+    getProductListOrderV1: param => http.sendRequest(config.getProductListOrderV1, param),
+	........
+};
+```
+
+注意：
+
+ * `importTpl`字段中必须以`require`的方式引入文件
+ * `apiTpl`字段中的{apiName}会被替换成对应的接口名称
+
+3、`example.full.js` 完整版接口调用样例文件
+
+```
+import InstallmentMallGateway from './api/installment-mall-gateway/api';
+
+
+/**
+ * 推荐商品列表    /v1/activity/recommend
+ *
+ * @params      { String   }      latitude                      纬度
+ * @params      { String   }      longitude                     经度
+ * @params      { String   }      areaCode                      地区代码
+ * @params      { String   }      X-FROM-TYPE                   X-FROM-TYPE
+ * @params      { String   }      Authorization                 用户的U51Token
+ * @params      { String   }      userId                        用户的U51用户Id
+ */
+InstallmentMallGateway.getActivityRecommendV1({
+    params: {
+        latitude: '30',
+        longitude: '120',
+        areaCode: '1_0_0_0',
+    },
+    headers: {
+        'X-FROM-TYPE': '', //X-FROM-TYPE
+        Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
+        userId: '150001810', //用户的U51用户Id
+    },
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+/*
+* 返回结果
+[
+    {
+        "allStockCount": "(integer,optional) 全部库存",
+        "alreadyBuy": "(integer,optional) 已抢人数-目前已弃用",
+        "imageUrl": "(string,optional) 商品图片",
+        "installmentPrice": "(number,optional) 最低分期价格",
+        "marketPrice": "(number,optional) 市场价",
+        "price": "(number,optional) 商品价格",
+        "process": "(number,optional) 进度",
+        "productNo": "(string,optional) 商品编号",
+        "stockCount": "(integer,optional) 剩余库存",
+        "subTitle": "(string,optional) 副标题（商品描述）",
+        "tag": "(string,optional) 标签",
+        "title": "(string,optional) 主标题（商品名称）"
+    }
+]
+*/
+```
+
+该文件包含所有接口的完整调用方式，每个参数的注释等等，使用时可以直接复制到使用的地方。除此之外，该接口返回字段的注释也会输出在接口下方，一目了然，基本上使用接口时可以告别ares了。
+
+但是为了获取返回结果，需要提前登陆ares，获取ares的`cookie`值配置到`.api.config.js`文件中即可。 
+
+```
+module.exports = {
+    output: './demo/api',
+    cookie: 'JSESSIONID=D57D1A206******2A4CABA336617A; a628e5a8-ee4a-4968-8ef4-e394*****36ad1ae-b840-4b8e-b279-b811a******',
+	........
+};
+```
+
+## 其他
+1、当某些接口需要做特殊处理时，建议通过配置自定义字段，然后在axios的拦截器中做处理，比如对`restful`参数做替换
+
+```
+// restful 参数替换
+instance.interceptors.request.use(config => {
+    const reg = /\{(.*?)}/gi;
+    const params = config.params || {};
+    const restArgs = [];
+
+    config.url = config.url.replace(reg, ($0, $1) => {
+        if (params[$1]) {
+            restArgs.push($1);
+
+            return params[$1];
+        }
+
+        return $0;
+    });
+
+    // path 参数替换后是否保留
+    if (!config.retain) {
+        for (let i = 0; i < restArgs.length; i++) {
+            delete params[restArgs[i]];
+        }
+    }
+
+    return config;
+});
+```
+
+2、在ares中配置的参数类型，`query`与`path`都放到了 `params`中，`body`放到了 `data`中
+
+## 结束
+如果有特殊的需求或者使用方式，以及使用过程中遇到的问题，都可以随时找我
