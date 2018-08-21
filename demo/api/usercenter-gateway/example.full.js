@@ -170,25 +170,7 @@ UsercenterGateway.postSnsWeixinLoginVerifyV2({
 });
 /*
 * 返回结果
-{
-    "autoPwd": "(integer,optional) 密码是否由系统自动生成(0不是，1是)",
-    "avatarUrl": "(string,optional) 头像地址",
-    "birthday": "(string,optional) 用户生日",
-    "cookieValue": "(string,optional) cookieValue",
-    "from": "(string,optional) 登录方式",
-    "loginTime": "(string,optional) 登录时间",
-    "mobile": "(string,optional) 手机号",
-    "nickName": "(string,optional) 用户昵称",
-    "outId": "(string,optional) 第三方账号登录的openId",
-    "redirectTo": "(string,optional) 重定向地址",
-    "regTime": "(string,optional) 注册时间",
-    "register": "(boolean,optional) 标示当前登陆操作是否自动注册了新账户",
-    "sex": "(integer,optional) 性别(0保密，1男，2女)",
-    "token": "(string,optional) 用户token",
-    "tokenExpiredTime": "(integer,optional) Token有效时长(秒)",
-    "userId": "(integer,optional) 兼容老的用户id",
-    "userName": "(string,optional) 用户名"
-}
+
 */
 
 

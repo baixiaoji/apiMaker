@@ -32,13 +32,13 @@ class ApiMaker {
                 versionsData.push(data.data || {});
             }
 
-            const apiData = await this.formatData(versionsData, urlInfo.server, item, urlInfo.tag);
+            const apiData = await this.formatData(versionsData, urlInfo.server, item);
 
             this.genApis(apiData, urlInfo.server);
         });
     }
 
-    async formatData(data, serverName, apiConfig, tagName) {
+    async formatData(data, serverName, apiConfig) {
         const apis = [];
 
         for (let j = 0; j < data.length; j++) {
@@ -46,6 +46,7 @@ class ApiMaker {
             const basePath = item.basePath;
             const paths = item.paths;
             const pathKeys = Object.keys(paths);
+            const definitions = item.definitions;
 
             for (let i = 0; i < pathKeys.length; i++) {
                 const apiItem = paths[pathKeys[i]];
@@ -53,42 +54,16 @@ class ApiMaker {
                 const apiData = apiItem[method];
 
                 if (utils.inNeedController(apiData.tags, apiConfig.controllers)) {
-                    const params = {
-                        apiName: `/${serverName}/api${utils.formatApiPath(pathKeys[i], basePath, serverName)}`,
-                        type: method,
-                        controllerName: apiData.tags[0],
-                        serviceName: serverName,
-                        tag: tagName,
-                        group: serverName,
-                    };
-                    const url = qs.addQuery(params, 'http://ares.51.nb/ares-swagger/api/v1/apiTest/seviceApiInfo');
-                    const response = await axios({
-                        url: url,
-                        method: 'get',
-                        headers: {
-                            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
-                            Cookie: this.config.cookie || '',
-                            Accept: 'application/json, text/plain, */*'
-                        }
-                    }).catch(err => {
-                        console.log('应该是cookie过期了，请更换cookie\n' + (err || {}).message);
-                    });
-                    let responseStr = '';
-
-                    try {
-                        responseStr = JSON.stringify(response.data.data.response.model, null, 4);
-                    } catch (err) {
-                        console.log(err);
+                    if (utils.formatApiPath(pathKeys[i], basePath, serverName) === '/v1/product/recommend') {
+                        apis.push({
+                            apiName: utils.formatApiName(pathKeys[i], basePath, serverName, method),
+                            url: utils.formatApiPath(pathKeys[i], basePath, serverName),
+                            baseURL: utils.getBaseURL(pathKeys[i], basePath, serverName),
+                            method,
+                            ...utils.getParameter(apiData),
+                            response: utils.parseResponse(apiData.responses[200], definitions)
+                        });
                     }
-
-                    apis.push({
-                        apiName: utils.formatApiName(pathKeys[i], basePath, serverName, method),
-                        url: utils.formatApiPath(pathKeys[i], basePath, serverName),
-                        baseURL: utils.getBaseURL(pathKeys[i], basePath, serverName),
-                        method,
-                        ...utils.getParameter(apiData),
-                        response: responseStr
-                    });
                 }
             }
         }

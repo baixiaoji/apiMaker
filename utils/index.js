@@ -151,6 +151,52 @@ const utils = {
 
     filledBlank(str, count) {
         return str + new Array(count).join(' ').slice(0, count-str.length);
+    },
+
+    parseResponse(config = {}, definitions) {
+        const schema = config.schema || {};
+        let result = utils.getResponseCurry(schema, definitions);
+
+        return JSON.stringify(result, undefined, 4);
+    },
+
+    getResponseCurry(config, definitions) {
+        let result;
+
+        if (config.type === 'array') {
+            result = [];
+
+            const ref = config.items.$ref;
+
+            if (ref) {
+                const model = definitions[ref.replace('#/definitions/', '')].properties || {};
+
+                result.push(utils.getResponseByRef(model, definitions));
+            }
+        } else if (config.$ref) {
+            const model = definitions[config.$ref.replace('#/definitions/', '')].properties || {};
+
+            result = utils.getResponseByRef(model, definitions);
+        } else if(config.type === 'object'){
+            result = utils.getResponseByRef(config.properties || {}, definitions);
+        } else {
+            result = `(${config.type}) ${config.description}`;
+        }
+
+        return result;
+    },
+
+    getResponseByRef(model, definitions) {
+        const result = {};
+        const keys = Object.keys(model);
+
+        for (let i = 0; i < keys.length; i++) {
+            let item = model[keys[i]];
+
+            result[keys[i]] = this.getResponseCurry(item, definitions);
+        }
+
+        return result;
     }
 };
 

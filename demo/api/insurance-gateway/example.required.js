@@ -2,32 +2,6 @@ import InsuranceGateway from './api/insurance-gateway/api';
 
 
 /**
-* 产品详情    /v1/product/detail
-*
-*/
-InsuranceGateway.getProductDetailV1({
-}).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
-
-/**
-* 推荐产品    /v1/product/listOrder
-*
-*/
-InsuranceGateway.getProductListOrderV1({
-    params: {
-        userId: '', //userId
-        orderType: '', //orderType
-    },
-}).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
-
-/**
 * 查询价格    /v1/product/queryPrice
 *
 */
@@ -39,7 +13,62 @@ InsuranceGateway.getProductQueryPriceV1({
 });
 
 /**
-* 推荐产品    /v1/product/recommend
+*     /v1/product/render
+*
+*/
+InsuranceGateway.getProductRenderV1({
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+
+/**
+*     /v1/product/queryOrder
+*
+*/
+InsuranceGateway.getProductQueryOrderV1({
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+
+/**
+*     /v1/insurance/insure
+*
+*/
+InsuranceGateway.postInsuranceInsureV1({
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+
+/**
+*     /v1/product/detail
+*
+*/
+InsuranceGateway.getProductDetailV1({
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+
+/**
+*     /v1/product/listOrder
+*
+*/
+InsuranceGateway.getProductListOrderV1({
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+
+/**
+*     /v1/product/recommend
 *
 */
 InsuranceGateway.getProductRecommendV1({
@@ -50,13 +79,10 @@ InsuranceGateway.getProductRecommendV1({
 });
 
 /**
-* 产品列表渲染    /v1/product/render/{userId}
+*     /v1/product/render/{userId}
 *
 */
 InsuranceGateway.getProductRenderUserIdV1({
-    params: {
-        userId: '', //userId
-    },
 }).then(result => {
     console.log(result);
 }).catch(error => {
