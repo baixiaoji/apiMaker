@@ -67,6 +67,7 @@ const utils = {
         };
         const resultMap = {
             'body': result.data,
+            'formData': result.data,
             'query': result.params,
             'path': result.params,
             'header': result.headers
@@ -155,12 +156,13 @@ const utils = {
 
     parseResponse(config = {}, definitions) {
         const schema = config.schema || {};
-        let result = utils.getResponseCurry(schema, definitions);
+        const curryStepCountMap = {};
+        let result = utils.getResponseCurry(schema, definitions, curryStepCountMap);
 
         return JSON.stringify(result, undefined, 4);
     },
 
-    getResponseCurry(config, definitions) {
+    getResponseCurry(config, definitions, curryStepCountMap) {
         let result;
 
         if (config.type === 'array') {
@@ -169,16 +171,36 @@ const utils = {
             const ref = config.items.$ref;
 
             if (ref) {
+                if (curryStepCountMap[ref]) {
+                    curryStepCountMap[ref]++;
+                } else {
+                    curryStepCountMap[ref] = 1;
+                }
+                // 递归循环不超过10层
+                if (curryStepCountMap[ref] > 10) {
+                    return ref;
+                }
+
                 const model = definitions[ref.replace('#/definitions/', '')].properties || {};
 
-                result.push(utils.getResponseByRef(model, definitions));
+                result.push(utils.getResponseByRef(model, definitions, curryStepCountMap));
             }
         } else if (config.$ref) {
+            if (curryStepCountMap[config.$ref]) {
+                curryStepCountMap[config.$ref]++;
+            } else {
+                curryStepCountMap[config.$ref] = 1;
+            }
+
+            if (curryStepCountMap[config.$ref] > 10) {
+                return config.$ref;
+            }
+
             const model = definitions[config.$ref.replace('#/definitions/', '')].properties || {};
 
-            result = utils.getResponseByRef(model, definitions);
+            result = utils.getResponseByRef(model, definitions, curryStepCountMap);
         } else if(config.type === 'object'){
-            result = utils.getResponseByRef(config.properties || {}, definitions);
+            result = utils.getResponseByRef(config.properties || {}, definitions, curryStepCountMap);
         } else {
             result = `(${config.type}) ${config.description}`;
         }
@@ -186,14 +208,14 @@ const utils = {
         return result;
     },
 
-    getResponseByRef(model, definitions) {
+    getResponseByRef(model, definitions, curryStepCountMap) {
         const result = {};
         const keys = Object.keys(model);
 
         for (let i = 0; i < keys.length; i++) {
             let item = model[keys[i]];
 
-            result[keys[i]] = this.getResponseCurry(item, definitions);
+            result[keys[i]] = this.getResponseCurry(item, definitions, curryStepCountMap);
         }
 
         return result;

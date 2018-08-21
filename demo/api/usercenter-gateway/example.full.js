@@ -85,7 +85,7 @@ UsercenterGateway.postSnsWeixinBindV2({
 });
 /*
 * 返回结果
-
+"(undefined) undefined"
 */
 
 
@@ -170,7 +170,25 @@ UsercenterGateway.postSnsWeixinLoginVerifyV2({
 });
 /*
 * 返回结果
-
+{
+    "autoPwd": "(integer) 密码是否由系统自动生成(0不是，1是)",
+    "avatarUrl": "(string) 头像地址",
+    "birthday": "(string) 用户生日",
+    "cookieValue": "(string) cookieValue",
+    "from": "(string) 登录方式",
+    "loginTime": "(string) 登录时间",
+    "mobile": "(string) 手机号",
+    "nickName": "(string) 用户昵称",
+    "outId": "(string) 第三方账号登录的openId",
+    "redirectTo": "(string) 重定向地址",
+    "regTime": "(string) 注册时间",
+    "register": "(boolean) 标示当前登陆操作是否自动注册了新账户",
+    "sex": "(integer) 性别(0保密，1男，2女)",
+    "token": "(string) 用户token",
+    "tokenExpiredTime": "(integer) Token有效时长(秒)",
+    "userId": "(integer) 兼容老的用户id",
+    "userName": "(string) 用户名"
+}
 */
 
 
@@ -255,7 +273,7 @@ UsercenterGateway.postSnsWeixinUnbindV2({
 });
 /*
 * 返回结果
-
+"(undefined) undefined"
 */
 
 

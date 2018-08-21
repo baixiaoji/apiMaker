@@ -6,7 +6,8 @@
 ```
 nbm install @u51/apimaker -g
 ```
-注意：需要nodejs版本 9.0及以上，如果出现`apimaker`命令不存在时，请切换node版本重新安装
+注意：需要nodejs版本 8.0及以上，如果出现`apimaker`命令不存在时，请切换node版本重新安装
+
 ## 使用步骤
 1、在工程中添加配置文件`.api.config.js`
 
@@ -19,7 +20,7 @@ module.exports = {
             swagger: 'http://immall.installment-mall-gateway.51.env/swagger-ui.html'
         },
         {
-            swagger: 'http://weiwenyi2.insurance-gateway.51.env/swagger-ui.html',
+            swagger: 'http://weiwenyi2.insurance-gateway.51.env/swagger-ui.html', // 在http://ares.51.nb/中复制
             controllers: ['提供前端相关api']
         },
     ]
@@ -196,15 +197,9 @@ InstallmentMallGateway.getActivityRecommendV1({
 
 该文件包含所有接口的完整调用方式，每个参数的注释等等，使用时可以直接复制到使用的地方。除此之外，该接口返回字段的注释也会输出在接口下方，一目了然，基本上使用接口时可以告别ares了。
 
-但是为了获取返回结果，需要提前登陆ares，获取ares的`cookie`值配置到`.api.config.js`文件中即可。 
 
-```
-module.exports = {
-    output: './demo/api',
-    cookie: 'JSESSIONID=D57D1A206******2A4CABA336617A; a628e5a8-ee4a-4968-8ef4-e394*****36ad1ae-b840-4b8e-b279-b811a******',
-	........
-};
-```
+4、`example.full.js` 只有required接口调用样例文件
+
 
 ## 其他
 1、当某些接口需要做特殊处理时，建议通过配置自定义字段，然后在axios的拦截器中做处理，比如对`restful`参数做替换
@@ -237,7 +232,9 @@ instance.interceptors.request.use(config => {
 });
 ```
 
-2、在ares中配置的参数类型，`query`与`path`都放到了 `params`中，`body`放到了 `data`中
+2、在ares中配置的参数类型，`query`与`path`都放到了 `params`中，`body`与`formData`放到了 `data`中
+
+3、在多个tag下切换开发时，运行该工具创建出的接口配置为一个并集，并不会删掉接口，如果是在ares上已经删掉的接口，需要手动去api.js与config.js中删掉
 
 ## 结束
 如果有特殊的需求或者使用方式，以及使用过程中遇到的问题，都可以随时找我

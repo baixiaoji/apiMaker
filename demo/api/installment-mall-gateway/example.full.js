@@ -29,7 +29,22 @@ InstallmentMallGateway.getActivityRecommendV1({
 });
 /*
 * 返回结果
-
+[
+    {
+        "allStockCount": "(integer) 全部库存",
+        "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+        "imageUrl": "(string) 商品图片",
+        "installmentPrice": "(number) 最低分期价格",
+        "marketPrice": "(number) 市场价",
+        "price": "(number) 商品价格",
+        "process": "(number) 进度",
+        "productNo": "(string) 商品编号",
+        "stockCount": "(integer) 剩余库存",
+        "subTitle": "(string) 副标题（商品描述）",
+        "tag": "(string) 标签",
+        "title": "(string) 主标题（商品名称）"
+    }
+]
 */
 
 
@@ -60,7 +75,72 @@ InstallmentMallGateway.getAfterSaleApplyPageV1({
 });
 /*
 * 返回结果
-
+{
+    "afterSaleApplyAvailableDTO": {
+        "supportAfterSaleTypes": [],
+        "supportPickTypes": []
+    },
+    "order": {
+        "cityCode": "(string) 城市编码",
+        "countyCode": "(string) 区县编码",
+        "couponId": "(integer) 优惠券ID",
+        "couponName": "(string) 优惠券名称",
+        "couponPrice": "(number) 优惠券抵扣",
+        "couponType": "(integer) 优惠券类型（0:无优惠券,1:新人专享(废除),2:票券系统优惠券）",
+        "deliverySupplierType": "(integer) 物流提供方类型",
+        "detailAddress": "(string) 详细地址",
+        "freight": "(number) 运费",
+        "fromType": "(integer) 投放来源",
+        "fullAddress": "(string) 完整地址",
+        "invoiceApplySerialNo": "(string) 发票申请流水号",
+        "invoiceCompanyName": "(string) 单位名称",
+        "invoiceCompanyTaxCode": "(string) 单位税号",
+        "invoiceStatus": "(integer) 发票状态",
+        "invoiceTitleCode": "(integer) 发票抬头（1:个人,2:企业）",
+        "invoiceType": "(integer) 发票类型（1:电子普通发票）",
+        "invoiceUrl": "(string) 电子发票链接",
+        "orderNo": "(string) 订单编号",
+        "orderPrice": "(number) 订单价格( = 商品价格 - 优惠券抵扣 — 运费)",
+        "orderStatus": "(integer) 订单状态",
+        "orderTime": "(string) 下单时间",
+        "payId": "(integer) 收银台支付流水号",
+        "payStatus": "(integer) 支付状态",
+        "payType": "(integer) 支付方式",
+        "productPrice": "(number) 商品价格( = sku1单价 * sku1数量 + sku2单价 * sku2数量 + ...)",
+        "productSupplierType": "(integer) 商品提供方类型",
+        "promotionType": "(integer) 促销类型(0:普通,1:秒杀)",
+        "provinceCode": "(string) 省份编码",
+        "receiverName": "(string) 收货人姓名",
+        "receiverPhone": "(string) 收货人手机号",
+        "refundStatus": "(integer) 退款状态",
+        "regionCodeProviderType": "(integer) 地区编码提供方",
+        "subOrderList": [
+            {
+                "afterSaleStatus": "(integer) 售后状态",
+                "afterSaleType": "(integer) 售后类型",
+                "couponPrice": "(number) 优惠券抵扣",
+                "couponType": "(integer) 优惠券类型",
+                "freight": "(number) 运费",
+                "orderDetailNo": "(string) 订单详情编号",
+                "orderPrice": "(number) 订单价格",
+                "productAfterSaleRemark": "(string) 商品售后描述",
+                "productName": "(string) 商品名称",
+                "productNo": "(string) 商品运营编号",
+                "productPicUrl": "(string) 商品图片URL",
+                "productPrice": "(number) 商品价格",
+                "refundStatus": "(integer) 退款状态",
+                "skuAttributes": "(string) 所选SKU属性集合",
+                "skuCount": "(integer) SKU数量",
+                "skuNo": "(string) SKU编号",
+                "skuPrice": "(number) SKU单价",
+                "thirdPartySkuNo": "(string) 第三方SKU编号"
+            }
+        ],
+        "thirdPartyOrderNo": "(string) 第三方订单编号",
+        "townCode": "(string) 乡镇编码",
+        "userId": "(integer) 用户ID"
+    }
+}
 */
 
 
@@ -87,7 +167,7 @@ InstallmentMallGateway.getAfterSaleCancelAfterSaleNoV1({
 });
 /*
 * 返回结果
-
+"(boolean) undefined"
 */
 
 
@@ -114,7 +194,7 @@ InstallmentMallGateway.postAfterSaleCreateV1({
 });
 /*
 * 返回结果
-
+"(boolean) undefined"
 */
 
 
@@ -145,7 +225,37 @@ InstallmentMallGateway.getAfterSaleDetailV1({
 });
 /*
 * 返回结果
-
+{
+    "afterSaleNo": "(string) 售后单编号",
+    "afterSaleSupport": "(boolean) 是否支持申请售后",
+    "amount": "(number) 退款金额",
+    "canCancel": "(boolean) 是否可以取消",
+    "contactName": "(string) 联系人姓名",
+    "contactPhone": "(string) 联系人电话",
+    "deliverySupplierType": "(integer) 物流提供方类型（10:京东,默认）",
+    "orderDetailNo": "(string) 订单详细编号",
+    "orderNo": "(string) 订单编号",
+    "pickFullAddress": "(string) 取件地址全名",
+    "pictureUrl": "(string) 图片1链接",
+    "productSupplierType": "(integer) 商品提供方类型（10:京东,默认）",
+    "receiveFullAddress": "(string) 收货地址全名",
+    "refundStatus": "(integer) 退款状态",
+    "refundType": "(integer) 退款方式（1:原路返回,默认）",
+    "requestCount": "(integer) 申请数量",
+    "requestReason": "(string) 问题描述",
+    "requestTime": "(string) 申请时间",
+    "returnType": "(integer) 商品取回方式（1:上门取件,默认,2:客户送货）",
+    "serviceStatus": "(integer) 售后状态",
+    "serviceType": "(integer) 服务类型（1:退货,2:换货,3:维修,4:拒收退款）",
+    "trackInfos": [
+        {
+            "createDate": "(string) 创建时间",
+            "description": "(string) 售后描述",
+            "status": "(integer) 售后状态"
+        }
+    ],
+    "userId": "(integer) 51用户ID"
+}
 */
 
 
@@ -172,7 +282,7 @@ InstallmentMallGateway.postAfterSaleUploadImageV1({
 });
 /*
 * 返回结果
-
+{}
 */
 
 
@@ -201,7 +311,7 @@ InstallmentMallGateway.getOrderCalculatePriceV1({
 });
 /*
 * 返回结果
-
+"(number) undefined"
 */
 
 
@@ -230,7 +340,54 @@ InstallmentMallGateway.getOrderGetV1({
 });
 /*
 * 返回结果
-
+{
+    "canShare": "(boolean) 能否分享",
+    "cashierPay": "(boolean) 是否为即刻有收银台支付",
+    "couponName": "(string) 优惠券名称",
+    "couponPrice": "(number) 优惠券抵扣",
+    "couponType": "(integer) 优惠券类型（0:无优惠券,1:新人专享(废除),2:票券系统优惠券）",
+    "currentMillis": "(integer) 当前时间戳(未支付/支付失败时有效)",
+    "deliverySupplierType": "(integer) 物流提供方类型（10:京东）",
+    "freight": "(number) 运费",
+    "fromType": "(integer) 投放来源",
+    "fullAddress": "(string) 完整地址",
+    "invoiceTitleCode": "(integer) 发票抬头（1:个人,2:企业）",
+    "invoiceType": "(integer) 发票类型（1:电子普通发票）",
+    "invoiceUrl": "(string) 电子发票链接",
+    "orderNo": "(string) 订单编号",
+    "orderPrice": "(number) 订单价格( = 商品价格 - 优惠券抵扣 + 运费)",
+    "orderStatus": "(integer) 订单状态",
+    "orderTime": "(string) 下单时间",
+    "payExpireDateMillis": "(integer) 支付过期时间戳(即下单时间+过期时间，未支付/支付失败时有效)",
+    "paymentStatus": "(integer) 支付状态",
+    "paymentTime": "(string) 支付时间",
+    "paymentType": "(string) 支付方式",
+    "periods": "(integer) 分期期数",
+    "productPrice": "(number) 商品价格( = sku1单价 * sku1数量 + sku2单价 * sku2数量 + ...)",
+    "productSupplierType": "(integer) 商品提供方类型（10:京东）",
+    "promotionType": "(integer) 促销类型(0:普通,1:秒杀)",
+    "receiverName": "(string) 收货人姓名",
+    "receiverPhone": "(string) 收货人手机号",
+    "refundStatus": "(integer) 退款状态",
+    "showInvoiceEntry": "(boolean) 是否展示电子发票入口",
+    "subOrderList": [
+        {
+            "afterSale": "(boolean) 是否有售后服务记录",
+            "afterSaleSupport": "(boolean) 是否支持售后服务",
+            "orderDetailNo": "(string) 订单详情编号",
+            "productAfterSaleRemark": "(string) 商品售后描述",
+            "productName": "(string) 商品名称",
+            "productPicUrl": "(string) 商品图片URL",
+            "productPrice": "(number) 商品价格",
+            "skuAttributes": "(string) 所选SKU属性集合",
+            "skuCount": "(integer) SKU数量",
+            "skuNo": "(string) SKU编号",
+            "skuPrice": "(number) SKU单价"
+        }
+    ],
+    "thirdPartyOrderNo": "(string) 第三方订单编号",
+    "userId": "(integer) 51用户ID"
+}
 */
 
 
@@ -257,7 +414,30 @@ InstallmentMallGateway.getOrderGetPreOrderV1({
 });
 /*
 * 返回结果
-
+{
+    "couponPrice": "(number) 优惠券抵扣",
+    "couponType": "(integer) 优惠券类型（0:无可用优惠券,1:新人专享）",
+    "deliverySupplierType": "(integer) 物流提供方类型（10:京东）",
+    "freight": "(number) 运费",
+    "invoiceType": "(integer) 发票类型（1:电子普通发票）",
+    "orderNo": "(string) 订单编号",
+    "orderPrice": "(number) 订单价格(= 商品价格 - 优惠券抵扣 + 运费)",
+    "productPrice": "(number) 商品价格(= sku单价 * sku数量)",
+    "receiverAddressId": "(integer) 收货地址ID",
+    "skuList": [
+        {
+            "productAfterSaleRemark": "(string) 商品售后描述",
+            "productName": "(string) 商品名称",
+            "productPicUrl": "(string) 商品图片URL",
+            "productPrice": "(number) 商品价格",
+            "skuAttributes": "(string) 所选SKU属性集合",
+            "skuCount": "(integer) SKU数量",
+            "skuNo": "(string) SKU编号",
+            "skuPrice": "(number) SKU单价"
+        }
+    ],
+    "userId": "(integer) 51用户ID"
+}
 */
 
 
@@ -280,7 +460,10 @@ InstallmentMallGateway.getOrderInvoiceTitleV1({
 });
 /*
 * 返回结果
-
+{
+    "invoiceCompanyName": "(string) 单位名称",
+    "invoiceCompanyTaxCode": "(string) 单位税号"
+}
 */
 
 
@@ -307,7 +490,7 @@ InstallmentMallGateway.postOrderInvoiceTitleSubmitV1({
 });
 /*
 * 返回结果
-
+"(integer) undefined"
 */
 
 
@@ -340,7 +523,39 @@ InstallmentMallGateway.getOrderListV1({
 });
 /*
 * 返回结果
-
+{
+    "pageIndex": "(integer) undefined",
+    "pageSize": "(integer) undefined",
+    "rowCount": "(integer) undefined",
+    "rows": [
+        {
+            "cashierPay": "(boolean) 是否为即刻有收银台支付",
+            "invoiceUrl": "(string) 电子发票链接",
+            "orderNo": "(string) 订单编号",
+            "orderPrice": "(number) 订单金额",
+            "orderStatus": "(integer) 订单状态",
+            "orderStatusDescribe": "(string) 订单状态描述",
+            "orderTime": "(string) 下单时间",
+            "payId": "(integer) 订单支付流水ID",
+            "paymentStatus": "(integer) 支付状态(0:初始化,1:成功,2:失败,3:处理中)",
+            "productPrice": "(number) 商品金额",
+            "productSupplierType": "(integer) 商品提供方类型（10:京东）",
+            "showInvoiceEntry": "(boolean) 是否展示电子发票入口",
+            "subOrderDTOList": [
+                {
+                    "detailLinkUrl": "(string) 商品详情链接URL：目前只针对oto订单",
+                    "productName": "(string) 商品名称",
+                    "productPicUrl": "(string) 商品图片URL",
+                    "productPrice": "(number) 商品金额( = sku价格 * sku数量)",
+                    "skuAttributes": "(string) 商品属性",
+                    "skuCount": "(integer) 商品数量",
+                    "skuNo": "(string) sku编号",
+                    "skuPrice": "(number) SKU单价"
+                }
+            ]
+        }
+    ]
+}
 */
 
 
@@ -367,7 +582,7 @@ InstallmentMallGateway.postOrderOtosaasPayInfoV1({
 });
 /*
 * 返回结果
-
+"(string) undefined"
 */
 
 
@@ -400,7 +615,7 @@ InstallmentMallGateway.postOrderPreSubmitV1({
 });
 /*
 * 返回结果
-
+"(string) undefined"
 */
 
 
@@ -427,7 +642,7 @@ InstallmentMallGateway.postOrderSaveExitPayReasonV1({
 });
 /*
 * 返回结果
-
+"(integer) undefined"
 */
 
 
@@ -456,7 +671,15 @@ InstallmentMallGateway.postOrderSubmitV1({
 });
 /*
 * 返回结果
-
+{
+    "extInfo": "(string) 支付消息",
+    "isSuccess": "(boolean) 是否成功",
+    "message": "(string) 错误消息",
+    "orderNo": "(string) 订单号(为空时说明下单失败)",
+    "payId": "(integer) 支付流水号",
+    "payNo": "(string) 真正支付流水号",
+    "retry": "(boolean) 是否可重试"
+}
 */
 
 
@@ -485,7 +708,17 @@ InstallmentMallGateway.getOrderTrackV1({
 });
 /*
 * 返回结果
-
+{
+    "deliverySupplierType": "(integer) 物流提供方类型(10:京东)",
+    "orderNo": "(string) 订单号",
+    "orderTrackList": [
+        {
+            "event": "(string) 事件描述",
+            "operator": "(string) 操作者",
+            "time": "(string) 时间(yyyy-MM-dd HH:mm:ss)"
+        }
+    ]
+}
 */
 
 
@@ -508,7 +741,17 @@ InstallmentMallGateway.getOtosaasOrderInfoV1({
 });
 /*
 * 返回结果
-
+{
+    "code": "(integer) undefined",
+    "data": {
+        "amount": "(integer) 订单支付金额",
+        "orderId": "(string) oto saas 订单号",
+        "payOrderId": "(string) TO SaaS支付订单号",
+        "payStatus": "(integer) 订单支付状态",
+        "payStatusDescribe": "(string) 订单支付状态信息描述"
+    },
+    "message": "(string) undefined"
+}
 */
 
 
@@ -529,7 +772,11 @@ InstallmentMallGateway.postOtosaasOrderRefundV1({
 });
 /*
 * 返回结果
-
+{
+    "code": "(integer) undefined",
+    "data": {},
+    "message": "(string) undefined"
+}
 */
 
 
@@ -550,7 +797,11 @@ InstallmentMallGateway.postOtosaasOrderStatusV1({
 });
 /*
 * 返回结果
-
+{
+    "code": "(integer) undefined",
+    "data": {},
+    "message": "(string) undefined"
+}
 */
 
 
@@ -577,7 +828,18 @@ InstallmentMallGateway.getPaymentBankListAllV1({
 });
 /*
 * 返回结果
-
+[
+    {
+        "bankId": "(integer) 银行Id",
+        "bankName": "(string) 银行名称",
+        "cardNoLastFour": "(string) 信用卡4位尾号",
+        "cardNoMd5": "(string) 全卡号MD5",
+        "doubleMonthPrice": "(number) undefined",
+        "monthPrice": "(number) 最小的每期支付额度-即月供",
+        "pictureUrl": "(string) 银行logo链接",
+        "seqIdx": "(integer) undefined"
+    }
+]
 */
 
 
@@ -604,7 +866,18 @@ InstallmentMallGateway.getPaymentBankListBindV1({
 });
 /*
 * 返回结果
-
+[
+    {
+        "bankId": "(integer) 银行Id",
+        "bankName": "(string) 银行名称",
+        "cardNoLastFour": "(string) 信用卡4位尾号",
+        "cardNoMd5": "(string) 全卡号MD5",
+        "doubleMonthPrice": "(number) undefined",
+        "monthPrice": "(number) 最小的每期支付额度-即月供",
+        "pictureUrl": "(string) 银行logo链接",
+        "seqIdx": "(integer) undefined"
+    }
+]
 */
 
 
@@ -631,7 +904,19 @@ InstallmentMallGateway.getPaymentBeforePrePayNoticeV1({
 });
 /*
 * 返回结果
-
+[
+    {
+        "details": [
+            {
+                "bankName": "(string) 银行名称",
+                "bankPictureUrl": "(string) 银行logo链接",
+                "monthPrice": "(number) 月供",
+                "receiveMoneyType": "(integer) 收款类型,1-分期收取,2-一次性收取"
+            }
+        ],
+        "period": "(integer) 第几期"
+    }
+]
 */
 
 
@@ -660,7 +945,11 @@ InstallmentMallGateway.postPaymentBindCardPaymentV1({
 });
 /*
 * 返回结果
-
+{
+    "code": "(integer) undefined",
+    "data": {},
+    "msg": "(string) undefined"
+}
 */
 
 
@@ -687,7 +976,21 @@ InstallmentMallGateway.getPaymentCardPreBindCardV1({
 });
 /*
 * 返回结果
-
+{
+    "bankName": "(string) 银行名称",
+    "bankPictureUrl": "(string) 银行logo链接",
+    "cardNos": [
+        {
+            "cardNo": "(string) undefined",
+            "trueName": "(string) undefined"
+        }
+    ],
+    "idNo": "(string) 身份证号",
+    "phone": "(string) 手机号",
+    "preventNotice": "(string) 支付环节预阻止用户的提示",
+    "realNameStatus": "(integer) 实名状态值-1实名已认证,0实名未认证",
+    "trueName": "(string) 真实姓名"
+}
 */
 
 
@@ -714,7 +1017,23 @@ InstallmentMallGateway.postPaymentCardPreBindCardV2V1({
 });
 /*
 * 返回结果
-
+{
+    "bankName": "(string) 银行名称",
+    "bankPictureUrl": "(string) 银行logo链接",
+    "cardNo": "(string) undefined",
+    "cardNoMd5": "(string) undefined",
+    "cardNos": [
+        {
+            "cardNo": "(string) undefined",
+            "trueName": "(string) undefined"
+        }
+    ],
+    "idNo": "(string) 身份证号",
+    "phone": "(string) 手机号",
+    "preventNotice": "(string) 支付环节预阻止用户的提示",
+    "realNameStatus": "(integer) 实名状态值-1实名已认证,0实名未认证",
+    "trueName": "(string) 真实姓名"
+}
 */
 
 
@@ -743,7 +1062,7 @@ InstallmentMallGateway.getPaymentCheckOrderV1({
 });
 /*
 * 返回结果
-
+"(boolean) undefined"
 */
 
 
@@ -772,7 +1091,11 @@ InstallmentMallGateway.postPaymentPaymentV1({
 });
 /*
 * 返回结果
-
+{
+    "code": "(integer) undefined",
+    "data": {},
+    "msg": "(string) undefined"
+}
 */
 
 
@@ -805,7 +1128,39 @@ InstallmentMallGateway.getPaymentPrePayV1({
 });
 /*
 * 返回结果
-
+{
+    "bankId": "(integer) 银行Id,如果首次支付则置0,否则显示最近一个信用卡",
+    "bankName": "(string) 银行名称,如果首次支付则置空字符串",
+    "bankPictureUrl": "(string) 银行logo链接,如果首次支付则置空字符串",
+    "cardNoLastFour": "(string) 信用卡4位尾号",
+    "cardNoMd5": "(string) 卡号Md5",
+    "exitPayNoticeType": "(integer) 退出弹框类型，1-默认；2-搜集理由",
+    "orderPrice": "(number) 订单价格-按产品原型来决定是否显示",
+    "preventNotice": "(string) 支付环节预阻止用户的提示",
+    "receiveMoneyType": "(integer) 收款类型,1-分期收取,2-一次性收取",
+    "supportPeriods": [
+        {
+            "details": [
+                {
+                    "monthPrice": "(number) 月供",
+                    "periodNo": "(integer) 第几期",
+                    "price": "(number) 本金",
+                    "serviceAmount": "(number) 每月服务费"
+                }
+            ],
+            "monthPrice": "(number) 月供",
+            "monthServiceAmount": "(number) 月服务费",
+            "notice": "(string) 左上角提示",
+            "oldMonthPrice": "(number) 优惠前最小的每期支付额度-即月供",
+            "oldServiceAmount": "(number) 优惠前服务费,当收款类型=分期收取时这个是每月服务费;当收款类型=一次性收取时这个是合计收取服务费",
+            "oldTotalAmount": "(number) 优惠前合计需还",
+            "payPrice": "(number) 分期金额",
+            "period": "(integer) 第几期",
+            "serviceAmount": "(number) 总服务费",
+            "totalAmount": "(number) 合计需还"
+        }
+    ]
+}
 */
 
 
@@ -832,7 +1187,11 @@ InstallmentMallGateway.postPaymentResendSmsCodeV1({
 });
 /*
 * 返回结果
-
+{
+    "code": "(integer) undefined",
+    "data": {},
+    "msg": "(string) undefined"
+}
 */
 
 
@@ -859,7 +1218,11 @@ InstallmentMallGateway.getPaymentSimplePaymentV1({
 });
 /*
 * 返回结果
-
+{
+    "orderNo": "(string) undefined",
+    "payNo": "(string) undefined",
+    "status": "(integer) undefined"
+}
 */
 
 
@@ -886,7 +1249,11 @@ InstallmentMallGateway.postPaymentVerifyPayCodeV1({
 });
 /*
 * 返回结果
-
+{
+    "code": "(integer) undefined",
+    "data": {},
+    "msg": "(string) undefined"
+}
 */
 
 
@@ -923,7 +1290,42 @@ InstallmentMallGateway.getPromotionProductRecommendV1({
 });
 /*
 * 返回结果
-
+{
+    "backgroundCss": "(string) 背景css",
+    "backgroundImageUrl": "(string) 背景图片链接",
+    "bannerImageUrl": "(string) 顶部活动图",
+    "bottomBanner": {
+        "entranceId": "(integer) entranceId，前端埋点使用",
+        "imageUrl": "(string) 图片链接",
+        "linkType": "(integer) 跳转链接类型，1壳内跳转链接，2壳外跳转链接",
+        "linkUlr": "(string) 跳转链接，可能为空"
+    },
+    "productGroups": [
+        {
+            "backgroundCss": "(string) 背景颜色",
+            "products": [
+                {
+                    "allStockCount": "(integer) 全部库存",
+                    "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+                    "imageUrl": "(string) 商品图片",
+                    "installmentPrice": "(number) 最低分期价格",
+                    "marketPrice": "(number) 市场价",
+                    "price": "(number) 商品价格",
+                    "process": "(number) 进度",
+                    "productNo": "(string) 商品编号",
+                    "stockCount": "(integer) 剩余库存",
+                    "subTitle": "(string) 副标题（商品描述）",
+                    "tag": "(string) 标签",
+                    "title": "(string) 主标题（商品名称）"
+                }
+            ],
+            "title": "(string) 商品分组标题",
+            "titleImageUrl": "(string) 标题的图片"
+        }
+    ],
+    "tag": "(string) 活动标签",
+    "title": "(string) 标题"
+}
 */
 
 
@@ -956,7 +1358,27 @@ InstallmentMallGateway.getSalesProductHotProductsV1({
 });
 /*
 * 返回结果
-
+{
+    "pageIndex": "(integer) undefined",
+    "pageSize": "(integer) undefined",
+    "rowCount": "(integer) undefined",
+    "rows": [
+        {
+            "allStockCount": "(integer) 全部库存",
+            "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+            "imageUrl": "(string) 商品图片",
+            "installmentPrice": "(number) 最低分期价格",
+            "marketPrice": "(number) 市场价",
+            "price": "(number) 商品价格",
+            "process": "(number) 进度",
+            "productNo": "(string) 商品编号",
+            "stockCount": "(integer) 剩余库存",
+            "subTitle": "(string) 副标题（商品描述）",
+            "tag": "(string) 标签",
+            "title": "(string) 主标题（商品名称）"
+        }
+    ]
+}
 */
 
 
@@ -985,7 +1407,37 @@ InstallmentMallGateway.getSalesProductIndexInfoV1({
 });
 /*
 * 返回结果
-
+{
+    "banners": [
+        {
+            "extraLink": "(string) 跳转链接，可能为空",
+            "imagePath": "(string) 图片链接"
+        }
+    ],
+    "secKillProducts": [
+        {
+            "activeTime": "(integer) 开始时间",
+            "expireTime": "(integer) 结束时间",
+            "products": [
+                {
+                    "allStockCount": "(integer) 全部库存",
+                    "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+                    "imageUrl": "(string) 商品图片",
+                    "installmentPrice": "(number) 最低分期价格",
+                    "marketPrice": "(number) 市场价",
+                    "price": "(number) 商品价格",
+                    "process": "(number) 进度",
+                    "productNo": "(string) 商品编号",
+                    "stockCount": "(integer) 剩余库存",
+                    "subTitle": "(string) 副标题（商品描述）",
+                    "tag": "(string) 标签",
+                    "title": "(string) 主标题（商品名称）"
+                }
+            ],
+            "systemTime": "(integer) 系统时间"
+        }
+    ]
+}
 */
 
 
@@ -1016,7 +1468,16 @@ InstallmentMallGateway.getSalesProductOtosaasEnterListV1({
 });
 /*
 * 返回结果
-
+[
+    {
+        "entranceId": "(string) undefined",
+        "iconUrl": "(string) undefined",
+        "name": "(string) undefined",
+        "open": "(boolean) undefined",
+        "orderType": "(string) undefined",
+        "routePath": "(string) undefined"
+    }
+]
 */
 
 
@@ -1053,7 +1514,39 @@ InstallmentMallGateway.getSalesProductProductDetailV1({
 });
 /*
 * 返回结果
-
+{
+    "activeTime": "(integer) 开始时间",
+    "bannerImages": [],
+    "content": "(string) 商品详情",
+    "description": "(string) 商品描述",
+    "expireTime": "(integer) 结束时间",
+    "installmentPrice": "(number) 分期价格，根据最低价格的单品进行分期计算结果",
+    "name": "(string) 商品名称",
+    "price": "(number) 单品价格，拥有多个单品的情况下，选取单价最低的",
+    "promotionType": "(integer) 商品的推广类型",
+    "receiverAddrCode": "(string) 用户地址四级编码",
+    "receiverAddrId": "(integer) 用户地址信息id，若用户未选地址信息，则为-1",
+    "receiverAddrStr": "(string) 用户地址信息详情，若是根据四级编码返回的，则是地址描述",
+    "skuInfos": [
+        {
+            "afterSaleRemark": "(string) 单品售后描述",
+            "imagePath": "(string) 单品大图",
+            "installmentPrice": "(number) 单品分期价格",
+            "price": "(number) 单品价格",
+            "productNo": "(string) 单品对应的产品编号",
+            "skuNo": "(string) 单品编号",
+            "skuProps": {},
+            "stockCount": "(integer) 库存数量",
+            "subImagePath": "(string) 单品小图",
+            "subTitle": "(string) 单品描述",
+            "title": "(string) 单品名称"
+        }
+    ],
+    "supportCoupon": "(boolean) 是否支持优惠券",
+    "systemTime": "(integer) 系统当前时间",
+    "typeCode": "(integer) 商品供应商",
+    "unavailable": "(boolean) 目前是否不可购买"
+}
 */
 
 
@@ -1084,7 +1577,32 @@ InstallmentMallGateway.getSalesProductSecKillProductsV1({
 });
 /*
 * 返回结果
-
+{
+    "sckillList": [
+        {
+            "activeTime": "(integer) 开始时间",
+            "expireTime": "(integer) 结束时间",
+            "products": [
+                {
+                    "allStockCount": "(integer) 全部库存",
+                    "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+                    "imageUrl": "(string) 商品图片",
+                    "installmentPrice": "(number) 最低分期价格",
+                    "marketPrice": "(number) 市场价",
+                    "price": "(number) 商品价格",
+                    "process": "(number) 进度",
+                    "productNo": "(string) 商品编号",
+                    "stockCount": "(integer) 剩余库存",
+                    "subTitle": "(string) 副标题（商品描述）",
+                    "tag": "(string) 标签",
+                    "title": "(string) 主标题（商品名称）"
+                }
+            ],
+            "systemTime": "(integer) 系统时间"
+        }
+    ],
+    "systemTime": "(string) 系统当前时间"
+}
 */
 
 
@@ -1113,7 +1631,14 @@ InstallmentMallGateway.getShareCouponConfigV1({
 });
 /*
 * 返回结果
-
+{
+    "autoId": "(integer) 配置Id",
+    "fromType": "(integer) 分享链接来源",
+    "orderNo": "(string) 订单编号",
+    "shareSn": "(string) 分享标识",
+    "shareUserId": "(integer) 分享者Id",
+    "status": "(integer) 状态"
+}
 */
 
 
@@ -1142,7 +1667,21 @@ InstallmentMallGateway.getShareCouponReceivedListV1({
 });
 /*
 * 返回结果
-
+{
+    "couponReceivedList": [
+        {
+            "couponValue": "(number) 领取金额",
+            "createTime": "(integer) 领取时间",
+            "imageUrl": "(string) 用户头像",
+            "name": "(string) 用户昵称",
+            "userId": "(integer) 用户51Id"
+        }
+    ],
+    "imageUrl": "(string) 分享者头像",
+    "name": "(string) 分享者昵称",
+    "shareSn": "(string) 分享标识",
+    "userId": "(integer) undefined"
+}
 */
 
 
@@ -1175,7 +1714,22 @@ InstallmentMallGateway.getShareFavoriteProductsV1({
 });
 /*
 * 返回结果
-
+[
+    {
+        "allStockCount": "(integer) 全部库存",
+        "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+        "imageUrl": "(string) 商品图片",
+        "installmentPrice": "(number) 最低分期价格",
+        "marketPrice": "(number) 市场价",
+        "price": "(number) 商品价格",
+        "process": "(number) 进度",
+        "productNo": "(string) 商品编号",
+        "stockCount": "(integer) 剩余库存",
+        "subTitle": "(string) 副标题（商品描述）",
+        "tag": "(string) 标签",
+        "title": "(string) 主标题（商品名称）"
+    }
+]
 */
 
 
@@ -1208,7 +1762,22 @@ InstallmentMallGateway.getShareNewUserProductsV1({
 });
 /*
 * 返回结果
-
+[
+    {
+        "allStockCount": "(integer) 全部库存",
+        "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+        "imageUrl": "(string) 商品图片",
+        "installmentPrice": "(number) 最低分期价格",
+        "marketPrice": "(number) 市场价",
+        "price": "(number) 商品价格",
+        "process": "(number) 进度",
+        "productNo": "(string) 商品编号",
+        "stockCount": "(integer) 剩余库存",
+        "subTitle": "(string) 副标题（商品描述）",
+        "tag": "(string) 标签",
+        "title": "(string) 主标题（商品名称）"
+    }
+]
 */
 
 
@@ -1237,7 +1806,11 @@ InstallmentMallGateway.putShareReceiveV1({
 });
 /*
 * 返回结果
-
+{
+    "code": "(integer) undefined",
+    "data": "(string) undefined",
+    "msg": "(string) undefined"
+}
 */
 
 
@@ -1270,7 +1843,29 @@ InstallmentMallGateway.getShareSecKillProductsV1({
 });
 /*
 * 返回结果
-
+[
+    {
+        "activeTime": "(integer) 开始时间",
+        "expireTime": "(integer) 结束时间",
+        "products": [
+            {
+                "allStockCount": "(integer) 全部库存",
+                "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+                "imageUrl": "(string) 商品图片",
+                "installmentPrice": "(number) 最低分期价格",
+                "marketPrice": "(number) 市场价",
+                "price": "(number) 商品价格",
+                "process": "(number) 进度",
+                "productNo": "(string) 商品编号",
+                "stockCount": "(integer) 剩余库存",
+                "subTitle": "(string) 副标题（商品描述）",
+                "tag": "(string) 标签",
+                "title": "(string) 主标题（商品名称）"
+            }
+        ],
+        "systemTime": "(integer) 系统时间"
+    }
+]
 */
 
 
@@ -1303,7 +1898,63 @@ InstallmentMallGateway.getShareShareProductsV1({
 });
 /*
 * 返回结果
-
+{
+    "favoriteProducts": [
+        {
+            "allStockCount": "(integer) 全部库存",
+            "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+            "imageUrl": "(string) 商品图片",
+            "installmentPrice": "(number) 最低分期价格",
+            "marketPrice": "(number) 市场价",
+            "price": "(number) 商品价格",
+            "process": "(number) 进度",
+            "productNo": "(string) 商品编号",
+            "stockCount": "(integer) 剩余库存",
+            "subTitle": "(string) 副标题（商品描述）",
+            "tag": "(string) 标签",
+            "title": "(string) 主标题（商品名称）"
+        }
+    ],
+    "newUserProducts": [
+        {
+            "allStockCount": "(integer) 全部库存",
+            "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+            "imageUrl": "(string) 商品图片",
+            "installmentPrice": "(number) 最低分期价格",
+            "marketPrice": "(number) 市场价",
+            "price": "(number) 商品价格",
+            "process": "(number) 进度",
+            "productNo": "(string) 商品编号",
+            "stockCount": "(integer) 剩余库存",
+            "subTitle": "(string) 副标题（商品描述）",
+            "tag": "(string) 标签",
+            "title": "(string) 主标题（商品名称）"
+        }
+    ],
+    "secKillProducts": [
+        {
+            "activeTime": "(integer) 开始时间",
+            "expireTime": "(integer) 结束时间",
+            "products": [
+                {
+                    "allStockCount": "(integer) 全部库存",
+                    "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+                    "imageUrl": "(string) 商品图片",
+                    "installmentPrice": "(number) 最低分期价格",
+                    "marketPrice": "(number) 市场价",
+                    "price": "(number) 商品价格",
+                    "process": "(number) 进度",
+                    "productNo": "(string) 商品编号",
+                    "stockCount": "(integer) 剩余库存",
+                    "subTitle": "(string) 副标题（商品描述）",
+                    "tag": "(string) 标签",
+                    "title": "(string) 主标题（商品名称）"
+                }
+            ],
+            "systemTime": "(integer) 系统时间"
+        }
+    ]
+}
 */
 
 
@@ -1332,7 +1983,17 @@ InstallmentMallGateway.getShareUserCouponV1({
 });
 /*
 * 返回结果
-
+{
+    "amount": "(number) 默认券金额|随机金额下限",
+    "batchCode": "(string) 批次号",
+    "couponName": "(string) 优惠券名称",
+    "couponSectionConfigId": "(integer) 优惠券版块配置ID",
+    "couponStatus": "(integer) 优惠券状态(0:未领取,1:已领取)",
+    "couponType": "(integer) 优惠券类型:CouponTypeEnum",
+    "couponTypeName": "(string) 优惠券类型:CouponTypeEnum",
+    "orderRequiredAmount": "(number) 订单使用限制金额(分期商城满减券使用)",
+    "validTimePeriodText": "(string) 有效时间范围文案"
+}
 */
 
 
@@ -1359,7 +2020,11 @@ InstallmentMallGateway.getToolTimeoutV1({
 });
 /*
 * 返回结果
-
+{
+    "code": "(integer) undefined",
+    "data": "(string) undefined",
+    "msg": "(string) undefined"
+}
 */
 
 
@@ -1386,7 +2051,7 @@ InstallmentMallGateway.postUserReceiverAddressAddV1({
 });
 /*
 * 返回结果
-
+"(integer) undefined"
 */
 
 
@@ -1409,7 +2074,12 @@ InstallmentMallGateway.getUserReceiverAddressAllProvinceV1({
 });
 /*
 * 返回结果
-
+[
+    {
+        "name": "(string) undefined",
+        "value": "(integer) undefined"
+    }
+]
 */
 
 
@@ -1436,7 +2106,12 @@ InstallmentMallGateway.getUserReceiverAddressCitiesByProvinceIdProvinceIdV1({
 });
 /*
 * 返回结果
-
+[
+    {
+        "name": "(string) undefined",
+        "value": "(integer) undefined"
+    }
+]
 */
 
 
@@ -1463,7 +2138,12 @@ InstallmentMallGateway.getUserReceiverAddressCountiesByCityIdCityIdV1({
 });
 /*
 * 返回结果
-
+[
+    {
+        "name": "(string) undefined",
+        "value": "(integer) undefined"
+    }
+]
 */
 
 
@@ -1490,7 +2170,7 @@ InstallmentMallGateway.deleteUserReceiverAddressDeleteV1({
 });
 /*
 * 返回结果
-
+"(integer) undefined"
 */
 
 
@@ -1517,7 +2197,24 @@ InstallmentMallGateway.getUserReceiverAddressGetV1({
 });
 /*
 * 返回结果
-
+{
+    "autoId": "(integer) 自增主键",
+    "cityCode": "(string) 城市编码",
+    "cityName": "(string) 城市名称",
+    "countyCode": "(string) 区县编码",
+    "countyName": "(string) 区县名称",
+    "detailAddress": "(string) 详细地址",
+    "isDefault": "(boolean) 是否为默认地址",
+    "phone": "(string) 收货人手机号",
+    "provinceCode": "(string) 省份编码",
+    "provinceName": "(string) 省份名称",
+    "receiver": "(string) 收货人姓名",
+    "status": "(integer) 状态",
+    "townCode": "(string) 乡镇编码",
+    "townName": "(string) 乡镇名称",
+    "typeCode": "(integer) 地区编码提供方类型(10:京东)",
+    "userId": "(integer) 51用户ID"
+}
 */
 
 
@@ -1540,7 +2237,26 @@ InstallmentMallGateway.getUserReceiverAddressListV1({
 });
 /*
 * 返回结果
-
+[
+    {
+        "autoId": "(integer) 自增主键",
+        "cityCode": "(string) 城市编码",
+        "cityName": "(string) 城市名称",
+        "countyCode": "(string) 区县编码",
+        "countyName": "(string) 区县名称",
+        "detailAddress": "(string) 详细地址",
+        "isDefault": "(boolean) 是否为默认地址",
+        "phone": "(string) 收货人手机号",
+        "provinceCode": "(string) 省份编码",
+        "provinceName": "(string) 省份名称",
+        "receiver": "(string) 收货人姓名",
+        "status": "(integer) 状态",
+        "townCode": "(string) 乡镇编码",
+        "townName": "(string) 乡镇名称",
+        "typeCode": "(integer) 地区编码提供方类型(10:京东)",
+        "userId": "(integer) 51用户ID"
+    }
+]
 */
 
 
@@ -1567,7 +2283,7 @@ InstallmentMallGateway.putUserReceiverAddressSetDefaultV1({
 });
 /*
 * 返回结果
-
+"(integer) undefined"
 */
 
 
@@ -1594,7 +2310,12 @@ InstallmentMallGateway.getUserReceiverAddressTownsByCountyIdCountyIdV1({
 });
 /*
 * 返回结果
-
+[
+    {
+        "name": "(string) undefined",
+        "value": "(integer) undefined"
+    }
+]
 */
 
 
@@ -1621,7 +2342,7 @@ InstallmentMallGateway.putUserReceiverAddressUpdateV1({
 });
 /*
 * 返回结果
-
+"(integer) undefined"
 */
 
 
@@ -1650,7 +2371,54 @@ InstallmentMallGateway.getOrderGetV2({
 });
 /*
 * 返回结果
-
+{
+    "canShare": "(boolean) 能否分享",
+    "cashierPay": "(boolean) 是否为即刻有收银台支付",
+    "couponName": "(string) 优惠券名称",
+    "couponPrice": "(number) 优惠券抵扣",
+    "couponType": "(integer) 优惠券类型（0:无优惠券,1:新人专享(废除),2:票券系统优惠券）",
+    "currentMillis": "(integer) 当前时间戳(未支付/支付失败时有效)",
+    "deliverySupplierType": "(integer) 物流提供方类型（10:京东）",
+    "freight": "(number) 运费",
+    "fromType": "(integer) 投放来源",
+    "fullAddress": "(string) 完整地址",
+    "invoiceTitleCode": "(integer) 发票抬头（1:个人,2:企业）",
+    "invoiceType": "(integer) 发票类型（1:电子普通发票）",
+    "invoiceUrl": "(string) 电子发票链接",
+    "orderNo": "(string) 订单编号",
+    "orderPrice": "(number) 订单价格( = 商品价格 - 优惠券抵扣 + 运费)",
+    "orderStatus": "(integer) 订单状态",
+    "orderTime": "(string) 下单时间",
+    "payExpireDateMillis": "(integer) 支付过期时间戳(即下单时间+过期时间，未支付/支付失败时有效)",
+    "paymentStatus": "(integer) 支付状态",
+    "paymentTime": "(string) 支付时间",
+    "paymentType": "(string) 支付方式",
+    "periods": "(integer) 分期期数",
+    "productPrice": "(number) 商品价格( = sku1单价 * sku1数量 + sku2单价 * sku2数量 + ...)",
+    "productSupplierType": "(integer) 商品提供方类型（10:京东）",
+    "promotionType": "(integer) 促销类型(0:普通,1:秒杀)",
+    "receiverName": "(string) 收货人姓名",
+    "receiverPhone": "(string) 收货人手机号",
+    "refundStatus": "(integer) 退款状态",
+    "showInvoiceEntry": "(boolean) 是否展示电子发票入口",
+    "subOrderList": [
+        {
+            "afterSale": "(boolean) 是否有售后服务记录",
+            "afterSaleSupport": "(boolean) 是否支持售后服务",
+            "orderDetailNo": "(string) 订单详情编号",
+            "productAfterSaleRemark": "(string) 商品售后描述",
+            "productName": "(string) 商品名称",
+            "productPicUrl": "(string) 商品图片URL",
+            "productPrice": "(number) 商品价格",
+            "skuAttributes": "(string) 所选SKU属性集合",
+            "skuCount": "(integer) SKU数量",
+            "skuNo": "(string) SKU编号",
+            "skuPrice": "(number) SKU单价"
+        }
+    ],
+    "thirdPartyOrderNo": "(string) 第三方订单编号",
+    "userId": "(integer) 51用户ID"
+}
 */
 
 
@@ -1679,7 +2447,7 @@ InstallmentMallGateway.getOrderShowRepayfundNoticeV2({
 });
 /*
 * 返回结果
-
+"(boolean) undefined"
 */
 
 
@@ -1712,7 +2480,15 @@ InstallmentMallGateway.postOrderSubmitV2({
 });
 /*
 * 返回结果
-
+{
+    "extInfo": "(string) 支付消息",
+    "isSuccess": "(boolean) 是否成功",
+    "message": "(string) 错误消息",
+    "orderNo": "(string) 订单号(为空时说明下单失败)",
+    "payId": "(integer) 支付流水号",
+    "payNo": "(string) 真正支付流水号",
+    "retry": "(boolean) 是否可重试"
+}
 */
 
 
@@ -1741,7 +2517,10 @@ InstallmentMallGateway.getPaymentCheckOrderV2({
 });
 /*
 * 返回结果
-
+{
+    "isSuccess": "(boolean) 是否满足支付条件",
+    "payId": "(integer) 收银台支付流水号"
+}
 */
 
 
@@ -1770,7 +2549,49 @@ InstallmentMallGateway.getSalesProductIndexInfoV2({
 });
 /*
 * 返回结果
-
+{
+    "banners": [
+        {
+            "entranceId": "(integer) entranceId，前端埋点使用",
+            "imageUrl": "(string) 图片链接",
+            "linkType": "(integer) 跳转链接类型，1壳内跳转链接，2壳外跳转链接",
+            "linkUlr": "(string) 跳转链接，可能为空"
+        }
+    ],
+    "newUser": "(boolean) newUser",
+    "promotions": [
+        {
+            "imageUrl": "(string) 图标图片链接",
+            "promotionNo": "(string) 专题编号",
+            "subTitle": "(string) 副标题",
+            "tag": "(string) 标签",
+            "title": "(string) 主标题"
+        }
+    ],
+    "secKillProducts": [
+        {
+            "activeTime": "(integer) 开始时间",
+            "expireTime": "(integer) 结束时间",
+            "products": [
+                {
+                    "allStockCount": "(integer) 全部库存",
+                    "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+                    "imageUrl": "(string) 商品图片",
+                    "installmentPrice": "(number) 最低分期价格",
+                    "marketPrice": "(number) 市场价",
+                    "price": "(number) 商品价格",
+                    "process": "(number) 进度",
+                    "productNo": "(string) 商品编号",
+                    "stockCount": "(integer) 剩余库存",
+                    "subTitle": "(string) 副标题（商品描述）",
+                    "tag": "(string) 标签",
+                    "title": "(string) 主标题（商品名称）"
+                }
+            ],
+            "systemTime": "(integer) 系统时间"
+        }
+    ]
+}
 */
 
 
@@ -1807,7 +2628,39 @@ InstallmentMallGateway.getSalesProductProductDetailV2({
 });
 /*
 * 返回结果
-
+{
+    "activeTime": "(integer) 开始时间",
+    "bannerImages": [],
+    "content": "(string) 商品详情",
+    "description": "(string) 商品描述",
+    "expireTime": "(integer) 结束时间",
+    "installmentPrice": "(number) 分期价格，根据最低价格的单品进行分期计算结果",
+    "name": "(string) 商品名称",
+    "price": "(number) 单品价格，拥有多个单品的情况下，选取单价最低的",
+    "promotionType": "(integer) 商品的推广类型",
+    "receiverAddrCode": "(string) 用户地址四级编码",
+    "receiverAddrId": "(integer) 用户地址信息id，若用户未选地址信息，则为-1",
+    "receiverAddrStr": "(string) 用户地址信息详情，若是根据四级编码返回的，则是地址描述",
+    "skuInfos": [
+        {
+            "afterSaleRemark": "(string) 单品售后描述",
+            "imagePath": "(string) 单品大图",
+            "installmentPrice": "(number) 单品分期价格",
+            "price": "(number) 单品价格",
+            "productNo": "(string) 单品对应的产品编号",
+            "skuNo": "(string) 单品编号",
+            "skuProps": {},
+            "stockCount": "(integer) 库存数量",
+            "subImagePath": "(string) 单品小图",
+            "subTitle": "(string) 单品描述",
+            "title": "(string) 单品名称"
+        }
+    ],
+    "supportCoupon": "(boolean) 是否支持优惠券",
+    "systemTime": "(integer) 系统当前时间",
+    "typeCode": "(integer) 商品供应商",
+    "unavailable": "(boolean) 目前是否不可购买"
+}
 */
 
 
@@ -1836,7 +2689,46 @@ InstallmentMallGateway.getSalesProductPromotionPromotionNoV2({
 });
 /*
 * 返回结果
-
+{
+    "backgroundCss": "(string) 背景css",
+    "backgroundCssEnd": "(string) 背景css-背景渐变色结束颜色",
+    "backgroundImageUrl": "(string) 背景图片链接",
+    "bannerImageUrl": "(string) 顶部活动图",
+    "bottomBanner": {
+        "entranceId": "(integer) entranceId，前端埋点使用",
+        "imageUrl": "(string) 图片链接",
+        "linkType": "(integer) 跳转链接类型，1壳内跳转链接，2壳外跳转链接",
+        "linkUlr": "(string) 跳转链接，可能为空"
+    },
+    "couponBackgroundCss": "(string) 优惠券颜色",
+    "couponBackgroundImageUrl": "(string) 优惠券背景图片",
+    "couponTitle": "(string) 优惠券标题",
+    "productGroups": [
+        {
+            "backgroundCss": "(string) 背景颜色",
+            "products": [
+                {
+                    "allStockCount": "(integer) 全部库存",
+                    "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+                    "imageUrl": "(string) 商品图片",
+                    "installmentPrice": "(number) 最低分期价格",
+                    "marketPrice": "(number) 市场价",
+                    "price": "(number) 商品价格",
+                    "process": "(number) 进度",
+                    "productNo": "(string) 商品编号",
+                    "stockCount": "(integer) 剩余库存",
+                    "subTitle": "(string) 副标题（商品描述）",
+                    "tag": "(string) 标签",
+                    "title": "(string) 主标题（商品名称）"
+                }
+            ],
+            "title": "(string) 商品分组标题",
+            "titleImageUrl": "(string) 标题的图片"
+        }
+    ],
+    "tag": "(string) 活动标签",
+    "title": "(string) 标题"
+}
 */
 
 
@@ -1865,7 +2757,32 @@ InstallmentMallGateway.getSalesProductSecKillProductsV2({
 });
 /*
 * 返回结果
-
+{
+    "sckillList": [
+        {
+            "activeTime": "(integer) 开始时间",
+            "expireTime": "(integer) 结束时间",
+            "products": [
+                {
+                    "allStockCount": "(integer) 全部库存",
+                    "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+                    "imageUrl": "(string) 商品图片",
+                    "installmentPrice": "(number) 最低分期价格",
+                    "marketPrice": "(number) 市场价",
+                    "price": "(number) 商品价格",
+                    "process": "(number) 进度",
+                    "productNo": "(string) 商品编号",
+                    "stockCount": "(integer) 剩余库存",
+                    "subTitle": "(string) 副标题（商品描述）",
+                    "tag": "(string) 标签",
+                    "title": "(string) 主标题（商品名称）"
+                }
+            ],
+            "systemTime": "(integer) 系统时间"
+        }
+    ],
+    "systemTime": "(string) 系统当前时间"
+}
 */
 
 
@@ -1898,7 +2815,19 @@ InstallmentMallGateway.getUserCouponListForReceiveV2({
 });
 /*
 * 返回结果
-
+[
+    {
+        "amount": "(number) 默认券金额|随机金额下限",
+        "batchCode": "(string) 批次号",
+        "couponName": "(string) 优惠券名称",
+        "couponSectionConfigId": "(integer) 优惠券版块配置ID",
+        "couponStatus": "(integer) 优惠券状态(0:未领取,1:已领取)",
+        "couponType": "(integer) 优惠券类型:CouponTypeEnum",
+        "couponTypeName": "(string) 优惠券类型:CouponTypeEnum",
+        "orderRequiredAmount": "(number) 订单使用限制金额(分期商城满减券使用)",
+        "validTimePeriodText": "(string) 有效时间范围文案"
+    }
+]
 */
 
 
@@ -1925,7 +2854,7 @@ InstallmentMallGateway.putUserCouponMultipleReceiveV2({
 });
 /*
 * 返回结果
-
+"(integer) undefined"
 */
 
 
@@ -1952,7 +2881,7 @@ InstallmentMallGateway.putUserCouponReceiveV2({
 });
 /*
 * 返回结果
-
+"(integer) undefined"
 */
 
 
@@ -1985,7 +2914,22 @@ InstallmentMallGateway.getSalesProductFavoriteProductsV3({
 });
 /*
 * 返回结果
-
+[
+    {
+        "allStockCount": "(integer) 全部库存",
+        "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+        "imageUrl": "(string) 商品图片",
+        "installmentPrice": "(number) 最低分期价格",
+        "marketPrice": "(number) 市场价",
+        "price": "(number) 商品价格",
+        "process": "(number) 进度",
+        "productNo": "(string) 商品编号",
+        "stockCount": "(integer) 剩余库存",
+        "subTitle": "(string) 副标题（商品描述）",
+        "tag": "(string) 标签",
+        "title": "(string) 主标题（商品名称）"
+    }
+]
 */
 
 
@@ -2016,7 +2960,100 @@ InstallmentMallGateway.getSalesProductJkyIndexPageV3({
 });
 /*
 * 返回结果
-
+{
+    "bannerL1": [
+        {
+            "entranceId": "(integer) entranceId，前端埋点使用",
+            "imageUrl": "(string) 图片链接",
+            "linkType": "(integer) 跳转链接类型，1壳内跳转链接，2壳外跳转链接",
+            "linkUlr": "(string) 跳转链接，可能为空"
+        }
+    ],
+    "bannerL1Text": [],
+    "bannerL2": [
+        {
+            "entranceId": "(integer) entranceId，前端埋点使用",
+            "imageUrl": "(string) 图片链接",
+            "linkType": "(integer) 跳转链接类型，1壳内跳转链接，2壳外跳转链接",
+            "linkUlr": "(string) 跳转链接，可能为空"
+        }
+    ],
+    "bannerL3": [
+        {
+            "entranceId": "(integer) entranceId，前端埋点使用",
+            "imageUrl": "(string) 图片链接",
+            "linkType": "(integer) 跳转链接类型，1壳内跳转链接，2壳外跳转链接",
+            "linkUlr": "(string) 跳转链接，可能为空"
+        }
+    ],
+    "discountOverSeckill": "(boolean) 折扣专区是否在秒杀专区上方, true是",
+    "discountProducts": [
+        {
+            "allStockCount": "(integer) 全部库存",
+            "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+            "imageUrl": "(string) 商品图片",
+            "installmentPrice": "(number) 最低分期价格",
+            "marketPrice": "(number) 市场价",
+            "price": "(number) 商品价格",
+            "process": "(number) 进度",
+            "productNo": "(string) 商品编号",
+            "stockCount": "(integer) 剩余库存",
+            "subTitle": "(string) 副标题（商品描述）",
+            "tag": "(string) 标签",
+            "title": "(string) 主标题（商品名称）"
+        }
+    ],
+    "guideBanner": [
+        {
+            "entranceId": "(integer) entranceId，前端埋点使用",
+            "imageUrl": "(string) 图片链接",
+            "linkType": "(integer) 跳转链接类型，1壳内跳转链接，2壳外跳转链接",
+            "linkUlr": "(string) 跳转链接，可能为空"
+        }
+    ],
+    "otoSaasBanner": [
+        {
+            "entranceId": "(integer) entranceId，前端埋点使用",
+            "imageUrl": "(string) 图片链接",
+            "linkType": "(integer) 跳转链接类型，1壳内跳转链接，2壳外跳转链接",
+            "linkUlr": "(string) 跳转链接，可能为空",
+            "tag": "(string) 角标，文字",
+            "title": "(string) 标题，文字（显示在图标下方）"
+        }
+    ],
+    "promotions": [
+        {
+            "imageUrl": "(string) 图标图片链接",
+            "promotionNo": "(string) 专题编号",
+            "subTitle": "(string) 副标题",
+            "tag": "(string) 标签",
+            "title": "(string) 主标题"
+        }
+    ],
+    "secKillProducts": [
+        {
+            "activeTime": "(integer) 开始时间",
+            "expireTime": "(integer) 结束时间",
+            "products": [
+                {
+                    "allStockCount": "(integer) 全部库存",
+                    "alreadyBuy": "(integer) 已抢人数-目前已弃用",
+                    "imageUrl": "(string) 商品图片",
+                    "installmentPrice": "(number) 最低分期价格",
+                    "marketPrice": "(number) 市场价",
+                    "price": "(number) 商品价格",
+                    "process": "(number) 进度",
+                    "productNo": "(string) 商品编号",
+                    "stockCount": "(integer) 剩余库存",
+                    "subTitle": "(string) 副标题（商品描述）",
+                    "tag": "(string) 标签",
+                    "title": "(string) 主标题（商品名称）"
+                }
+            ],
+            "systemTime": "(integer) 系统时间"
+        }
+    ]
+}
 */
 
 
@@ -2055,7 +3092,39 @@ InstallmentMallGateway.getSalesProductProductDetailV3({
 });
 /*
 * 返回结果
-
+{
+    "activeTime": "(integer) 开始时间",
+    "bannerImages": [],
+    "content": "(string) 商品详情",
+    "description": "(string) 商品描述",
+    "expireTime": "(integer) 结束时间",
+    "installmentPrice": "(number) 分期价格，根据最低价格的单品进行分期计算结果",
+    "name": "(string) 商品名称",
+    "price": "(number) 单品价格，拥有多个单品的情况下，选取单价最低的",
+    "promotionType": "(integer) 商品的推广类型",
+    "receiverAddrCode": "(string) 用户地址四级编码",
+    "receiverAddrId": "(integer) 用户地址信息id，若用户未选地址信息，则为-1",
+    "receiverAddrStr": "(string) 用户地址信息详情，若是根据四级编码返回的，则是地址描述",
+    "skuInfos": [
+        {
+            "afterSaleRemark": "(string) 单品售后描述",
+            "imagePath": "(string) 单品大图",
+            "installmentPrice": "(number) 单品分期价格",
+            "price": "(number) 单品价格",
+            "productNo": "(string) 单品对应的产品编号",
+            "skuNo": "(string) 单品编号",
+            "skuProps": {},
+            "stockCount": "(integer) 库存数量",
+            "subImagePath": "(string) 单品小图",
+            "subTitle": "(string) 单品描述",
+            "title": "(string) 单品名称"
+        }
+    ],
+    "supportCoupon": "(boolean) 是否支持优惠券",
+    "systemTime": "(integer) 系统当前时间",
+    "typeCode": "(integer) 商品供应商",
+    "unavailable": "(boolean) 目前是否不可购买"
+}
 */
 
 

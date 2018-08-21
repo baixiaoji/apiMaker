@@ -54,16 +54,14 @@ class ApiMaker {
                 const apiData = apiItem[method];
 
                 if (utils.inNeedController(apiData.tags, apiConfig.controllers)) {
-                    if (utils.formatApiPath(pathKeys[i], basePath, serverName) === '/v1/product/recommend') {
-                        apis.push({
-                            apiName: utils.formatApiName(pathKeys[i], basePath, serverName, method),
-                            url: utils.formatApiPath(pathKeys[i], basePath, serverName),
-                            baseURL: utils.getBaseURL(pathKeys[i], basePath, serverName),
-                            method,
-                            ...utils.getParameter(apiData),
-                            response: utils.parseResponse(apiData.responses[200], definitions)
-                        });
-                    }
+                    apis.push({
+                        apiName: utils.formatApiName(pathKeys[i], basePath, serverName, method),
+                        url: utils.formatApiPath(pathKeys[i], basePath, serverName),
+                        baseURL: utils.getBaseURL(pathKeys[i], basePath, serverName),
+                        method,
+                        ...utils.getParameter(apiData),
+                        response: utils.parseResponse(apiData.responses[200], definitions)
+                    });
                 }
             }
         }
