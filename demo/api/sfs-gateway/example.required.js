@@ -7,7 +7,7 @@ import SfsGateway from './api/sfs-gateway/api';
 */
 SfsGateway.getDownloadFidV1({
     params: {
-        fid: '', //fid
+        fid: 'undefined', //fid
     },
 }).then(result => {
     console.log(result);
@@ -21,7 +21,7 @@ SfsGateway.getDownloadFidV1({
 */
 SfsGateway.postServiceUploadV1({
     data: {
-        file: '', //file
+        file: 'undefined', //file
     },
 }).then(result => {
     console.log(result);
@@ -35,7 +35,13 @@ SfsGateway.postServiceUploadV1({
 */
 SfsGateway.postServiceUploadBase64V1({
     data: {
-        base64Request: '', //base64Request
+        base64Request: {
+    "body": "(string) undefined",
+    "filename": "(string) undefined",
+    "height": "(integer) undefined",
+    "thumbnail": "(integer) undefined",
+    "width": "(integer) undefined"
+}, //base64Request
     },
 }).then(result => {
     console.log(result);
@@ -49,8 +55,8 @@ SfsGateway.postServiceUploadBase64V1({
 */
 SfsGateway.getSfsv1DownloadAdaptorGroupFidV1({
     params: {
-        group: '', //必填，业务组名称
-        fid: '', //可选，上传文件时获取的文件标示符
+        group: 'undefined', //必填，业务组名称
+        fid: 'undefined', //可选，上传文件时获取的文件标示符
     },
 }).then(result => {
     console.log(result);
@@ -64,9 +70,9 @@ SfsGateway.getSfsv1DownloadAdaptorGroupFidV1({
 */
 SfsGateway.postSfsv1UploadAdaptorV1({
     data: {
-        files: '', //files
-        file: '', //必填，上传的文件，支持一次上传多个（服务器端会压缩成一个zip文件）
-        group: '', //必填，业务组名称
+        files: 'undefined', //files
+        file: 'undefined', //必填，上传的文件，支持一次上传多个（服务器端会压缩成一个zip文件）
+        group: 'undefined', //必填，业务组名称
     },
 }).then(result => {
     console.log(result);
@@ -80,10 +86,10 @@ SfsGateway.postSfsv1UploadAdaptorV1({
 */
 SfsGateway.postUploadV1({
     params: {
-        token: '', //token
+        token: 'undefined', //token
     },
     data: {
-        multipartRequest: '', //必填，上传的文件，支持一次上传多个（服务器端会压缩成一个zip文件）
+        multipartRequest: 'undefined', //必填，上传的文件，支持一次上传多个（服务器端会压缩成一个zip文件）
     },
 }).then(result => {
     console.log(result);
@@ -97,7 +103,7 @@ SfsGateway.postUploadV1({
 */
 SfsGateway.postUploadBase64V1({
     params: {
-        token: '', //token
+        token: 'undefined', //token
     },
 }).then(result => {
     console.log(result);
@@ -111,7 +117,7 @@ SfsGateway.postUploadBase64V1({
 */
 SfsGateway.getCommonDownloadFidV2({
     params: {
-        fid: '', //必填，上传文件时获取的文件标示符
+        fid: 'undefined', //必填，上传文件时获取的文件标示符
     },
 }).then(result => {
     console.log(result);
@@ -125,7 +131,7 @@ SfsGateway.getCommonDownloadFidV2({
 */
 SfsGateway.getDownloadFidV2({
     params: {
-        fid: '', //fid
+        fid: 'undefined', //fid
     },
 }).then(result => {
     console.log(result);
@@ -139,7 +145,7 @@ SfsGateway.getDownloadFidV2({
 */
 SfsGateway.postUploadV2({
     data: {
-        multipartRequest: '', //必填，上传的文件，支持一次上传多个（服务器端会压缩成一个zip文件）
+        multipartRequest: 'undefined', //必填，上传的文件，支持一次上传多个（服务器端会压缩成一个zip文件）
     },
 }).then(result => {
     console.log(result);

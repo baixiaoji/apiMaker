@@ -90,8 +90,8 @@ BkCobrandedcardManager.getBillSheetV1({
 */
 BkCobrandedcardManager.getBlacklistV1({
     params: {
-        pageIndex: '', //当前页码，从1开始
-        pageSize: '', //页面大小，5~500
+        pageIndex: 'undefined', //当前页码，从1开始
+        pageSize: 'undefined', //页面大小，5~500
     },
 }).then(result => {
     console.log(result);
@@ -105,7 +105,18 @@ BkCobrandedcardManager.getBlacklistV1({
 */
 BkCobrandedcardManager.postBlacklistAddV1({
     data: {
-        param: '', //param
+        param: {
+    "bankId": "(integer) 黑名单用户已申请|意向申请的联名卡银行Id (选填)",
+    "idCardNo": "(string) 黑名单用户身份证号码 (选填)",
+    "mobile": "(string) 黑名单用户手机号码 (选填)",
+    "name": "(string) 黑名单用户姓名 (选填)",
+    "note": "(string) 备注(选填)",
+    "reason": "(string) 原因(选填)",
+    "recordTime": "(string) 手工记录时间",
+    "type": "(integer) 进入黑名单原因：（0：其他 1 客户习惯性投诉抱怨 2：欺诈 3：机器人）-默认1",
+    "typeDesc": "(string) 类型详细描述(选填)",
+    "userId": "(integer) 黑名单用户管家userId(必填)"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -119,7 +130,22 @@ BkCobrandedcardManager.postBlacklistAddV1({
 */
 BkCobrandedcardManager.postBlacklistBatchaddV1({
     data: {
-        param: '', //param
+        param: {
+    "userBlackList": [
+        {
+            "bankId": "(integer) 黑名单用户已申请|意向申请的联名卡银行Id (选填)",
+            "idCardNo": "(string) 黑名单用户身份证号码 (选填)",
+            "mobile": "(string) 黑名单用户手机号码 (选填)",
+            "name": "(string) 黑名单用户姓名 (选填)",
+            "note": "(string) 备注(选填)",
+            "reason": "(string) 原因(选填)",
+            "recordTime": "(string) 手工记录时间",
+            "type": "(integer) 进入黑名单原因：（0：其他 1 客户习惯性投诉抱怨 2：欺诈 3：机器人）-默认1",
+            "typeDesc": "(string) 类型详细描述(选填)",
+            "userId": "(integer) 黑名单用户管家userId(必填)"
+        }
+    ]
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -133,7 +159,7 @@ BkCobrandedcardManager.postBlacklistBatchaddV1({
 */
 BkCobrandedcardManager.postBlacklistExcelimportV1({
     data: {
-        file: '', //待上传黑名单Excel
+        file: 'undefined', //待上传黑名单Excel
     },
 }).then(result => {
     console.log(result);
@@ -147,7 +173,15 @@ BkCobrandedcardManager.postBlacklistExcelimportV1({
 */
 BkCobrandedcardManager.postBootscreenAddOrUpdateV1({
     data: {
-        dto: '', //dto
+        dto: {
+    "activityName": "(string) 活动名称",
+    "autoId": "(integer) 活动ID",
+    "endTime": "(string) 活动结束时间",
+    "imgLinkUrl": "(string) 图片跳转链接url",
+    "imgUrl": "(string) 图片url",
+    "lastOperator": "(string) 最后操作者",
+    "startTime": "(string) 活动开始时间"
+}, //dto
     },
 }).then(result => {
     console.log(result);
@@ -172,7 +206,7 @@ BkCobrandedcardManager.getBootscreenListV1({
 */
 BkCobrandedcardManager.postBootscreenUploadImgV1({
     data: {
-        file: '', //图片文件 
+        file: 'undefined', //图片文件 
     },
 }).then(result => {
     console.log(result);
@@ -186,7 +220,7 @@ BkCobrandedcardManager.postBootscreenUploadImgV1({
 */
 BkCobrandedcardManager.deleteBootscreenIdV1({
     params: {
-        id: '', //id
+        id: 'undefined', //id
     },
 }).then(result => {
     console.log(result);
@@ -236,7 +270,17 @@ BkCobrandedcardManager.getCommonManagerOpencitiesV1({
 */
 BkCobrandedcardManager.postCommonManagerOpencityV1({
     data: {
-        param: '', //param
+        param: {
+    "bankId": "(integer) 银行ID",
+    "cityName": "(string) 城市名称",
+    "configId": "(integer) 配置ID",
+    "pyCityName": "(string) 城市拼音",
+    "regionId": "(integer) 所属大区",
+    "saleBranchCode": "(string) 销售支行代码",
+    "spreadManCode": "(string) 推广人代码",
+    "spreadOrgCode": "(string) 推广机构代码",
+    "standardCityCode": "(string) 标准城市代码"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -250,7 +294,7 @@ BkCobrandedcardManager.postCommonManagerOpencityV1({
 */
 BkCobrandedcardManager.deleteCommonManagerOpencityConfigIdV1({
     params: {
-        configId: '', //configId
+        configId: 'undefined', //configId
     },
 }).then(result => {
     console.log(result);
@@ -297,8 +341,8 @@ BkCobrandedcardManager.getCommonSalesmanV1({
 */
 BkCobrandedcardManager.getCommonSalesmanDetaillistV1({
     params: {
-        pageIndex: '', //当前页码，从1开始
-        pageSize: '', //页面大小，5~500
+        pageIndex: 'undefined', //当前页码，从1开始
+        pageSize: 'undefined', //页面大小，5~500
     },
 }).then(result => {
     console.log(result);
@@ -323,7 +367,7 @@ BkCobrandedcardManager.getCommonSupportbankV1({
 */
 BkCobrandedcardManager.postImageUploadV1({
     data: {
-        file: '', //图片文件 
+        file: 'undefined', //图片文件 
     },
 }).then(result => {
     console.log(result);
@@ -337,8 +381,8 @@ BkCobrandedcardManager.postImageUploadV1({
 */
 BkCobrandedcardManager.getInterviewV1({
     params: {
-        pageIndex: '', //当前页码，从1开始
-        pageSize: '', //页面大小，5~500
+        pageIndex: 'undefined', //当前页码，从1开始
+        pageSize: 'undefined', //页面大小，5~500
     },
 }).then(result => {
     console.log(result);
@@ -352,7 +396,10 @@ BkCobrandedcardManager.getInterviewV1({
 */
 BkCobrandedcardManager.postInterviewAltersalemanV1({
     data: {
-        param: '', //param
+        param: {
+    "salesManAccountId": "(integer) 面签人员账户Id",
+    "status": "(integer) 状态（1：删除 0：正常 2：休息）"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -366,7 +413,16 @@ BkCobrandedcardManager.postInterviewAltersalemanV1({
 */
 BkCobrandedcardManager.postInterviewAreaconfigV1({
     data: {
-        param: '', //param
+        param: {
+    "areas": [
+        {
+            "areaCode": "(string) 区code",
+            "cityCode": "(string) 市code",
+            "provinceCode": "(string) 省code"
+        }
+    ],
+    "salesManAccountId": "(integer) 面签人员账户Id"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -380,7 +436,11 @@ BkCobrandedcardManager.postInterviewAreaconfigV1({
 */
 BkCobrandedcardManager.postInterviewCancelsyncV1({
     data: {
-        param: '', //param
+        param: {
+    "applyId": "(integer) 申请Id",
+    "applyIdMask": "(string) 申请Id mask",
+    "category": "(integer) 真实信息类型（100：客户公司真实地址信息 200：客户公司真实电话）"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -409,7 +469,13 @@ BkCobrandedcardManager.getInterviewImageV1({
 */
 BkCobrandedcardManager.postInterviewImageBase64V1({
     data: {
-        param: '', //param
+        param: {
+    "applyId": "(integer) 卡申请ID",
+    "applyIdMask": "(string) 卡申请ID",
+    "base64Image": "(string) 待上传的面签影像资料Base64编码",
+    "fileName": "(string) 图片文件的文件名",
+    "fileType": "(integer) 文件类型(1:身份证正面、2:身份证反面、3:合影照、4：业务确认书、5：公司门头照、6：客户签字照、7：其他证明、10：工作/财力证明)"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -423,7 +489,10 @@ BkCobrandedcardManager.postInterviewImageBase64V1({
 */
 BkCobrandedcardManager.postInterviewLimitsettingV1({
     data: {
-        param: '', //param
+        param: {
+    "orderLimit": "(integer) 接单上限",
+    "salesManAccountId": "(integer) 面签人员账户Id"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -437,7 +506,10 @@ BkCobrandedcardManager.postInterviewLimitsettingV1({
 */
 BkCobrandedcardManager.postInterviewLogindeviceV1({
     data: {
-        param: '', //param
+        param: {
+    "deviceKey": "(string) 设备key",
+    "salesManAccountId": "(integer) 面签人员账户id"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -451,8 +523,8 @@ BkCobrandedcardManager.postInterviewLogindeviceV1({
 */
 BkCobrandedcardManager.getInterviewLoginlistV1({
     params: {
-        pageIndex: '', //当前页码，从1开始
-        pageSize: '', //页面大小，5~500
+        pageIndex: 'undefined', //当前页码，从1开始
+        pageSize: 'undefined', //页面大小，5~500
     },
 }).then(result => {
     console.log(result);
@@ -488,7 +560,17 @@ BkCobrandedcardManager.getInterviewOpencitiesV1({
 */
 BkCobrandedcardManager.postInterviewRealinfoV1({
     data: {
-        param: '', //param
+        param: {
+    "applyId": "(integer) 申请Id",
+    "applyIdMask": "(string) 申请Id mask",
+    "areaCode": "(string) 真实工作城市：区code",
+    "category": "(integer) 真实信息类型（100：客户公司真实地址信息 200：客户公司真实电话）",
+    "cityCode": "(string) 真实工作城市：市code",
+    "companyContact": "(string) 公司电话|手机号",
+    "companyContactType": "(integer) 公司电话类型：10提报单位电话手机号 11提报单位电话固话",
+    "detailAddress": "(string) 真实工作城市：详细地址",
+    "provinceCode": "(string) 真实工作城市：省code"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -524,7 +606,19 @@ BkCobrandedcardManager.deleteInterviewSalesmanSalesManAccountIdV1({
 */
 BkCobrandedcardManager.postInterviewSalesmanlistV1({
     data: {
-        param: '', //param
+        param: {
+    "addressRelated": "(boolean) 是否关联查询面签业务人员负责区域（true：是 false：否）",
+    "areaCode": "(string) 所属区code",
+    "belongCity": [],
+    "cityCode": "(string) 所属市code",
+    "locationCity": "(string) 定位城市",
+    "nameOrMobile": "(string) 姓名或手机号",
+    "pageIndex": "(integer) 当前页码，从1开始",
+    "pageSize": "(integer) 页面大小，5~500",
+    "provinceCode": "(string) 所属省code",
+    "regionId": "(integer) 地区code",
+    "status": "(integer) 面签人员状态"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -549,7 +643,10 @@ BkCobrandedcardManager.getInterviewSearchoptionsV1({
 */
 BkCobrandedcardManager.postInterviewToauditV1({
     data: {
-        param: '', //param
+        param: {
+    "applyId": "(integer) 申请单号",
+    "applyIdMask": "(string) 申请单号 mask"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -596,7 +693,10 @@ BkCobrandedcardManager.getManagerShortformOptionV1({
 */
 BkCobrandedcardManager.postManagerShortformSalesmanV1({
     data: {
-        param: '', //短表单业务员指派参数
+        param: {
+    "accountId": "(integer) 业务人员Id",
+    "shortFormId": "(integer) 短表单Id"
+}, //短表单业务员指派参数
     },
 }).then(result => {
     console.log(result);
@@ -621,7 +721,7 @@ BkCobrandedcardManager.getOrderV1({
 */
 BkCobrandedcardManager.getOrderApplyIdStrV1({
     params: {
-        applyIdStr: '', //applyIdStr
+        applyIdStr: 'undefined', //applyIdStr
     },
 }).then(result => {
     console.log(result);
@@ -635,7 +735,7 @@ BkCobrandedcardManager.getOrderApplyIdStrV1({
 */
 BkCobrandedcardManager.putOrderApplyIdStrInterviewrecordV1({
     params: {
-        applyIdStr: '', //applyIdStr
+        applyIdStr: 'undefined', //applyIdStr
     },
 }).then(result => {
     console.log(result);
@@ -649,7 +749,7 @@ BkCobrandedcardManager.putOrderApplyIdStrInterviewrecordV1({
 */
 BkCobrandedcardManager.postOrderApplyIdStrRevokecancelV1({
     params: {
-        applyIdStr: '', //applyIdStr
+        applyIdStr: 'undefined', //applyIdStr
     },
 }).then(result => {
     console.log(result);
@@ -663,7 +763,7 @@ BkCobrandedcardManager.postOrderApplyIdStrRevokecancelV1({
 */
 BkCobrandedcardManager.postOrderApplyIdStrUnlockactiveV1({
     params: {
-        applyIdStr: '', //applyIdStr
+        applyIdStr: 'undefined', //applyIdStr
     },
 }).then(result => {
     console.log(result);
@@ -677,7 +777,9 @@ BkCobrandedcardManager.postOrderApplyIdStrUnlockactiveV1({
 */
 BkCobrandedcardManager.postPermissionManageUnitAddV1({
     data: {
-        unitParam: '', //unitParam
+        unitParam: {
+    "unitName": "(string) 区域名称"
+}, //unitParam
     },
 }).then(result => {
     console.log(result);
@@ -691,7 +793,10 @@ BkCobrandedcardManager.postPermissionManageUnitAddV1({
 */
 BkCobrandedcardManager.postPermissionManageUnitAddregionV1({
     data: {
-        param: '', //param
+        param: {
+    "regionCode": "(string) 城市编码",
+    "unitId": "(integer) 区域Id"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -705,7 +810,10 @@ BkCobrandedcardManager.postPermissionManageUnitAddregionV1({
 */
 BkCobrandedcardManager.postPermissionManageUnitAdduserV1({
     data: {
-        param: '', //param
+        param: {
+    "targetAccount": "(string) 用户account",
+    "unitId": "(integer) 区域id"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -760,7 +868,10 @@ BkCobrandedcardManager.getPermissionManageUnitQueryV1({
 */
 BkCobrandedcardManager.postPermissionManageUserAddregionV1({
     data: {
-        param: '', //param
+        param: {
+    "regionCode": "(string) 城市编码",
+    "targetAccount": "(string) 用户account"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -811,7 +922,20 @@ BkCobrandedcardManager.getRiskV1({
 */
 BkCobrandedcardManager.postRiskAuditresultV1({
     data: {
-        param: '', //param
+        param: {
+    "auditComment": "(string) 审核意见",
+    "auditResult": [
+        {
+            "applyId": "(integer) 用户申卡id",
+            "applyIdMask": "(string) 用户申卡id",
+            "riskResult": "(integer) 风险判定结果 1不予面签 2银行止付 3无风险"
+        }
+    ],
+    "riskId": "(integer) 风险件id",
+    "riskIdMask": "(string) 风险件id",
+    "riskType": "(integer) 风险提报类型 1涉及中介代办、挂靠 2申请信息虚假或不一致 3无工作证明或离职 4贷款投资类公司 5禁止客群、行业 6无办公场所 10其它",
+    "visitedDepartment": "(integer) 是否亲访单位"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -850,10 +974,14 @@ BkCobrandedcardManager.getRiskOptionV1({
 */
 BkCobrandedcardManager.postSensitivewordsAddV1({
     params: {
-        token: '', //任务授权访问码
+        token: 'undefined', //任务授权访问码
     },
     data: {
-        param: '', //param
+        param: {
+    "category": "(integer) 关键字校验类别[0：公司职务 1：公司名称...]",
+    "keyword": "(string) 敏感字(必填)",
+    "keywordType": "(integer) 关键字类型[0：敏感字 1：非敏感字白名单]"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -867,10 +995,16 @@ BkCobrandedcardManager.postSensitivewordsAddV1({
 */
 BkCobrandedcardManager.postSensitivewordsBatchaddV1({
     params: {
-        token: '', //任务授权访问码
+        token: 'undefined', //任务授权访问码
     },
     data: {
-        param: '', //param
+        param: [
+    {
+        "category": "(integer) 关键字校验类别[0：公司职务 1：公司名称...]",
+        "keyword": "(string) 敏感字(必填)",
+        "keywordType": "(integer) 关键字类型[0：敏感字 1：非敏感字白名单]"
+    }
+], //param
     },
 }).then(result => {
     console.log(result);
@@ -917,8 +1051,8 @@ BkCobrandedcardManager.getStatusCardstatusV1({
 */
 BkCobrandedcardManager.getSupplementV1({
     params: {
-        pageIndex: '', //当前页码，从1开始
-        pageSize: '', //页面大小，5~500
+        pageIndex: 'undefined', //当前页码，从1开始
+        pageSize: 'undefined', //页面大小，5~500
     },
 }).then(result => {
     console.log(result);
@@ -932,7 +1066,14 @@ BkCobrandedcardManager.getSupplementV1({
 */
 BkCobrandedcardManager.postSupplementAuditV1({
     data: {
-        param: '', //param
+        param: {
+    "applyId": "(integer) 申请Id",
+    "applyIdMask": "(string) 申请Id mask",
+    "auditNote": "(string) 审核备注",
+    "auditStatus": "(integer) 审核结果(1审核通过 2：审核不通过)",
+    "reasonDesc": "(string) 补件未通过原因",
+    "supplementFileTypeList": []
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -957,7 +1098,10 @@ BkCobrandedcardManager.getSupplementOptionV1({
 */
 BkCobrandedcardManager.postSupplementToauditV1({
     data: {
-        param: '', //param
+        param: {
+    "applyId": "(integer) 申请单号",
+    "applyIdMask": "(string) 申请单号 mask"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -982,7 +1126,11 @@ BkCobrandedcardManager.getSwitchV1({
 */
 BkCobrandedcardManager.postSwitchValueV1({
     data: {
-        param: '', //param
+        param: {
+    "autoId": "(integer) 修改的指定项",
+    "bankId": "(integer) 修改的归属银行，做双层校验",
+    "isOpened": "(boolean) 是否是打开状态"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -1007,7 +1155,73 @@ BkCobrandedcardManager.getTransferorderV1({
 */
 BkCobrandedcardManager.postInterviewAuditV2({
     data: {
-        param: '', //param
+        param: {
+    "applyIdMask": "(string) 申请Id mask",
+    "auditNote": "(string) 审核备注",
+    "auditStatus": "(integer) 审核结果（1审核通过 2：审核不通过）",
+    "auditSuggestion": "(string) 审核意见",
+    "rejectReasons": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [
+                                                                        {
+                                                                            "children": [
+                                                                                {
+                                                                                    "children": "#/definitions/RejectReasonBean",
+                                                                                    "id": "(integer) 拒绝原因Id",
+                                                                                    "key": "(string) 拒绝原因key"
+                                                                                }
+                                                                            ],
+                                                                            "id": "(integer) 拒绝原因Id",
+                                                                            "key": "(string) 拒绝原因key"
+                                                                        }
+                                                                    ],
+                                                                    "id": "(integer) 拒绝原因Id",
+                                                                    "key": "(string) 拒绝原因key"
+                                                                }
+                                                            ],
+                                                            "id": "(integer) 拒绝原因Id",
+                                                            "key": "(string) 拒绝原因key"
+                                                        }
+                                                    ],
+                                                    "id": "(integer) 拒绝原因Id",
+                                                    "key": "(string) 拒绝原因key"
+                                                }
+                                            ],
+                                            "id": "(integer) 拒绝原因Id",
+                                            "key": "(string) 拒绝原因key"
+                                        }
+                                    ],
+                                    "id": "(integer) 拒绝原因Id",
+                                    "key": "(string) 拒绝原因key"
+                                }
+                            ],
+                            "id": "(integer) 拒绝原因Id",
+                            "key": "(string) 拒绝原因key"
+                        }
+                    ],
+                    "id": "(integer) 拒绝原因Id",
+                    "key": "(string) 拒绝原因key"
+                }
+            ],
+            "id": "(integer) 拒绝原因Id",
+            "key": "(string) 拒绝原因key"
+        }
+    ]
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -1032,7 +1246,10 @@ BkCobrandedcardManager.getInterviewAudithistoryV2({
 */
 BkCobrandedcardManager.postInterviewBatchassignV2({
     data: {
-        param: '', //面签批量改派参数
+        param: {
+    "maskApplyIds": [],
+    "salesManAccountIdMask": "(string) 面签人员账户Id"
+}, //面签批量改派参数
     },
 }).then(result => {
     console.log(result);
@@ -1125,7 +1342,10 @@ BkCobrandedcardManager.getInterviewSearchoptionsV2({
 */
 BkCobrandedcardManager.postInterviewToassignV2({
     data: {
-        param: '', //面签改派参数
+        param: {
+    "applyIdMask": "(string) 申请记录Id",
+    "salesManAccountIdMask": "(string) 面签人员账户Id"
+}, //面签改派参数
     },
 }).then(result => {
     console.log(result);
@@ -1139,7 +1359,10 @@ BkCobrandedcardManager.postInterviewToassignV2({
 */
 BkCobrandedcardManager.postManagerShortformBatchassignV2({
     data: {
-        param: '', //短表单批量改派参数
+        param: {
+    "accountIdMask": "(string) 业务人员Id mask",
+    "shortFormMaskIds": []
+}, //短表单批量改派参数
     },
 }).then(result => {
     console.log(result);
@@ -1153,7 +1376,10 @@ BkCobrandedcardManager.postManagerShortformBatchassignV2({
 */
 BkCobrandedcardManager.postManagerShortformSalesmanV2({
     data: {
-        param: '', //短表单业务员指派参数
+        param: {
+    "salesManAccountIdMask": "(string) 面签人员账户Id",
+    "shortFormIdMask": "(string) 短表单Id"
+}, //短表单业务员指派参数
     },
 }).then(result => {
     console.log(result);
@@ -1167,7 +1393,20 @@ BkCobrandedcardManager.postManagerShortformSalesmanV2({
 */
 BkCobrandedcardManager.postRiskAuditresultV2({
     data: {
-        param: '', //param
+        param: {
+    "auditComment": "(string) 审核意见",
+    "auditResult": [
+        {
+            "applyId": "(integer) 用户申卡id",
+            "applyIdMask": "(string) 用户申卡id",
+            "riskResult": "(integer) 风险判定结果 1不予面签 2银行止付 3无风险"
+        }
+    ],
+    "riskId": "(integer) 风险件id",
+    "riskIdMask": "(string) 风险件id",
+    "riskType": "(integer) 风险提报类型 1涉及中介代办、挂靠 2申请信息虚假或不一致 3无工作证明或离职 4贷款投资类公司 5禁止客群、行业 6无办公场所 10其它",
+    "visitedDepartment": "(integer) 是否亲访单位"
+}, //param
     },
 }).then(result => {
     console.log(result);
@@ -1195,7 +1434,10 @@ BkCobrandedcardManager.getRiskDetailRiskIdV2({
 */
 BkCobrandedcardManager.postSupplementBatchassignV2({
     data: {
-        param: '', //补件面签人员批量改派参数
+        param: {
+    "maskApplyIds": [],
+    "salesManAccountIdMask": "(string) 面签人员账户Id"
+}, //补件面签人员批量改派参数
     },
 }).then(result => {
     console.log(result);
@@ -1209,7 +1451,7 @@ BkCobrandedcardManager.postSupplementBatchassignV2({
 */
 BkCobrandedcardManager.getSupplementDetailApplyIdV2({
     params: {
-        applyId: '', //卡申请ID
+        applyId: 'undefined', //卡申请ID
     },
 }).then(result => {
     console.log(result);
@@ -1223,7 +1465,10 @@ BkCobrandedcardManager.getSupplementDetailApplyIdV2({
 */
 BkCobrandedcardManager.postSupplementToassignV2({
     data: {
-        param: '', //补件面签人员改派参数
+        param: {
+    "applyIdMask": "(string) 申请记录Id",
+    "salesManAccountIdMask": "(string) 面签人员账户Id"
+}, //补件面签人员改派参数
     },
 }).then(result => {
     console.log(result);

@@ -10,21 +10,21 @@ import {{ upperCase serverName }} from './api/{{ serverName }}/api';
 {{#if params}}
     params: {
     {{#list params}}
-        {{{ formatStr name }}}: '{{ default }}', //{{ description }}
+        {{{ formatStr name }}}: {{{ formatRequest default }}}, //{{ description }}
     {{/list}}
     },
 {{/if}}
 {{#if data}}
     data: {
     {{#list data}}
-        {{{ formatStr name }}}: '{{ default }}', //{{ description }}
+        {{{ formatStr name }}}: {{{ formatRequest default }}}, //{{ description }}
     {{/list}}
     },
 {{/if}}
 {{#if headers}}
     headers: {
     {{#list headers}}
-        {{{ formatStr name }}}: '{{ default }}', //{{ description }}
+        {{{ formatStr name }}}: {{{ formatRequest default }}}, //{{ description }}
     {{/list}}
     },
 {{/if}}

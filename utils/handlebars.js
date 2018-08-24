@@ -48,4 +48,12 @@ handlebars.registerHelper('genBaseURL', function(url) {
     }
 });
 
+handlebars.registerHelper('formatRequest', function(req) {
+    if (typeof req === 'object') {
+        return JSON.stringify(req, null, 4);
+    } else {
+        return `'${req}'`;
+    }
+});
+
 module.exports = handlebars;

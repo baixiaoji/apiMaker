@@ -9,10 +9,10 @@ import SfsGateway from './api/sfs-gateway/api';
  */
 SfsGateway.getDownloadFidV1({
     params: {
-        fid: '',
+        fid: 'undefined',
     },
     headers: {
-        userId: '', //userId
+        userId: 'undefined', //userId
     },
 }).then(result => {
     console.log(result);
@@ -42,7 +42,7 @@ SfsGateway.postServiceUploadV1({
         height: '80',
     },
     data: {
-        file: '',
+        file: 'undefined',
     },
     headers: {
         Authorization: 'personas 123', //service static token
@@ -72,7 +72,13 @@ SfsGateway.postServiceUploadV1({
  */
 SfsGateway.postServiceUploadBase64V1({
     data: {
-        base64Request: '',
+        base64Request: {
+    "body": "(string) undefined",
+    "filename": "(string) undefined",
+    "height": "(integer) undefined",
+    "thumbnail": "(integer) undefined",
+    "width": "(integer) undefined"
+},
     },
     headers: {
         Authorization: 'personas 123', //imageService token
@@ -105,13 +111,13 @@ SfsGateway.postServiceUploadBase64V1({
  */
 SfsGateway.getSfsv1DownloadAdaptorGroupFidV1({
     params: {
-        group: '',
-        fid: '',
+        group: 'undefined',
+        fid: 'undefined',
     },
     headers: {
-        Authorization: 'encrypt 4ZHZDMGjMD5RFKyAeDiXZpPtIXS8y7TXPPvWCmN9YNs9CxZfbRQ0ruj8sH2LKM+FmKBHc+i3rZ1hp2YfV5HBsQ&#x3D;&#x3D;', //必填，管家APP对应的user token
+        Authorization: 'encrypt 4ZHZDMGjMD5RFKyAeDiXZpPtIXS8y7TXPPvWCmN9YNs9CxZfbRQ0ruj8sH2LKM+FmKBHc+i3rZ1hp2YfV5HBsQ==', //必填，管家APP对应的user token
         userId: '150000132', //必填，管家APP对应的user id
-        'X-Tracking-ID': '', //可选，用于追踪请求的唯一id
+        'X-Tracking-ID': 'undefined', //可选，用于追踪请求的唯一id
     },
 }).then(result => {
     console.log(result);
@@ -156,19 +162,19 @@ SfsGateway.getSfsv1DownloadAdaptorGroupFidV1({
  */
 SfsGateway.postSfsv1UploadAdaptorV1({
     data: {
-        files: '',
-        file: '',
-        group: '',
-        fid: '',
-        codec: '',
-        desc: '',
-        dataCenter: '',
-        ttl: '',
+        files: 'undefined',
+        file: 'undefined',
+        group: 'undefined',
+        fid: 'undefined',
+        codec: 'undefined',
+        desc: 'undefined',
+        dataCenter: 'undefined',
+        ttl: 'undefined',
     },
     headers: {
         userId: '150000132', //必填，管家APP对应的user id
-        'X-Tracking-ID': '', //可选，用于追踪请求的唯一id
-        Authorization: 'encrypt 4ZHZDMGjMD5RFKyAeDiXZpPtIXS8y7TXPPvWCmN9YNs9CxZfbRQ0ruj8sH2LKM+FmKBHc+i3rZ1hp2YfV5HBsQ&#x3D;&#x3D;', //必填，管家APP对应的user token
+        'X-Tracking-ID': 'undefined', //可选，用于追踪请求的唯一id
+        Authorization: 'encrypt 4ZHZDMGjMD5RFKyAeDiXZpPtIXS8y7TXPPvWCmN9YNs9CxZfbRQ0ruj8sH2LKM+FmKBHc+i3rZ1hp2YfV5HBsQ==', //必填，管家APP对应的user token
     },
 }).then(result => {
     console.log(result);
@@ -207,14 +213,14 @@ SfsGateway.postSfsv1UploadAdaptorV1({
  */
 SfsGateway.postUploadV1({
     params: {
-        token: '',
+        token: 'undefined',
     },
     data: {
-        multipartRequest: '',
+        multipartRequest: 'undefined',
     },
     headers: {
-        'X-Tracking-ID': '', //用于追踪请求的唯一id
-        Authorization: 'encrypt 7zYyPCmZ/61IcLFhH/bSpdTib8qek5pOJ4vrij9D5exjBrdkU7H21g&#x3D;&#x3D;', //user token
+        'X-Tracking-ID': 'undefined', //用于追踪请求的唯一id
+        Authorization: 'encrypt 7zYyPCmZ/61IcLFhH/bSpdTib8qek5pOJ4vrij9D5exjBrdkU7H21g==', //user token
         userId: '7166048', //user id
     },
 }).then(result => {
@@ -250,13 +256,13 @@ SfsGateway.postUploadV1({
  */
 SfsGateway.postUploadBase64V1({
     params: {
-        token: '',
+        token: 'undefined',
         swidth: '80',
         sheight: '80',
     },
     headers: {
-        'X-Tracking-ID': '', //用于追踪请求的唯一id
-        Authorization: 'encrypt 7zYyPCmZ/61IcLFhH/bSpdTib8qek5pOJ4vrij9D5exjBrdkU7H21g&#x3D;&#x3D;', //user token
+        'X-Tracking-ID': 'undefined', //用于追踪请求的唯一id
+        Authorization: 'encrypt 7zYyPCmZ/61IcLFhH/bSpdTib8qek5pOJ4vrij9D5exjBrdkU7H21g==', //user token
         userId: '7166048', //user id
     },
 }).then(result => {
@@ -288,10 +294,10 @@ SfsGateway.postUploadBase64V1({
  */
 SfsGateway.getCommonDownloadFidV2({
     params: {
-        fid: '',
+        fid: 'undefined',
     },
     headers: {
-        'X-Tracking-ID': '', //用于追踪请求的唯一id
+        'X-Tracking-ID': 'undefined', //用于追踪请求的唯一id
     },
 }).then(result => {
     console.log(result);
@@ -317,11 +323,11 @@ SfsGateway.getCommonDownloadFidV2({
  */
 SfsGateway.getDownloadFidV2({
     params: {
-        fid: '',
+        fid: 'undefined',
     },
     headers: {
-        Authorization: 'encrypt 7zYyPCmZ/61IcLFhH/bSpdTib8qek5pOJ4vrij9D5exjBrdkU7H21g&#x3D;&#x3D;', //user token
-        'X-Tracking-ID': '', //用于追踪请求的唯一id
+        Authorization: 'encrypt 7zYyPCmZ/61IcLFhH/bSpdTib8qek5pOJ4vrij9D5exjBrdkU7H21g==', //user token
+        'X-Tracking-ID': 'undefined', //用于追踪请求的唯一id
         userId: '7166048', //user id
     },
 }).then(result => {
@@ -347,13 +353,13 @@ SfsGateway.getDownloadFidV2({
  */
 SfsGateway.postUploadV2({
     data: {
-        multipartRequest: '',
-        privateAccess: '',
+        multipartRequest: 'undefined',
+        privateAccess: 'undefined',
     },
     headers: {
-        Authorization: 'encrypt 7zYyPCmZ/61IcLFhH/bSpdTib8qek5pOJ4vrij9D5exjBrdkU7H21g&#x3D;&#x3D;', //user token
+        Authorization: 'encrypt 7zYyPCmZ/61IcLFhH/bSpdTib8qek5pOJ4vrij9D5exjBrdkU7H21g==', //user token
         userId: '7166048', //user id
-        'X-Tracking-ID': '', //用于追踪请求的唯一id
+        'X-Tracking-ID': 'undefined', //用于追踪请求的唯一id
     },
 }).then(result => {
     console.log(result);

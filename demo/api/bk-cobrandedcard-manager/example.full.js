@@ -16,27 +16,26 @@ BkCobrandedcardManager.getAddressV1({
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "cities": [
-            {
-                "areas": [
-                    {
-                        "areaCode": "(string) 区code",
-                        "areaName": "(string) 区名称"
-                    }
-                ],
-                "cityCode": "(string) 市code",
-                "cityName": "(string) 市名称"
-            }
-        ],
-        "provinceCode": "(string) 省code",
-        "provinceName": "(string) 省名称"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "cities": [
+ {
+ "areas": [
+ {
+ "areaCode": "(string) 区code",
+ "areaName": "(string) 区名称"
+ }
+ ],
+ "cityCode": "(string) 市code",
+ "cityName": "(string) 市名称"
+ }
+ ],
+ "provinceCode": "(string) 省code",
+ "provinceName": "(string) 省名称"
+ }
+ ]
+ */
 
 
 /**
@@ -47,8 +46,8 @@ BkCobrandedcardManager.getAddressV1({
  */
 BkCobrandedcardManager.getAddressAreaV1({
     params: {
-        bankId: '',
-        cityCode: '',
+        bankId: 'undefined',
+        cityCode: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -56,15 +55,14 @@ BkCobrandedcardManager.getAddressAreaV1({
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "areaCode": "(string) 区code",
-        "areaName": "(string) 区名称"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "areaCode": "(string) 区code",
+ "areaName": "(string) 区名称"
+ }
+ ]
+ */
 
 
 /**
@@ -75,8 +73,8 @@ BkCobrandedcardManager.getAddressAreaV1({
  */
 BkCobrandedcardManager.getAddressCityV1({
     params: {
-        bankId: '',
-        provinceCode: '',
+        bankId: 'undefined',
+        provinceCode: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -84,21 +82,20 @@ BkCobrandedcardManager.getAddressCityV1({
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "areas": [
-            {
-                "areaCode": "(string) 区code",
-                "areaName": "(string) 区名称"
-            }
-        ],
-        "cityCode": "(string) 市code",
-        "cityName": "(string) 市名称"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "areas": [
+ {
+ "areaCode": "(string) 区code",
+ "areaName": "(string) 区名称"
+ }
+ ],
+ "cityCode": "(string) 市code",
+ "cityName": "(string) 市名称"
+ }
+ ]
+ */
 
 
 /**
@@ -116,66 +113,63 @@ BkCobrandedcardManager.getAddressProvinceV1({
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "cities": [
-            {
-                "areas": [
-                    {
-                        "areaCode": "(string) 区code",
-                        "areaName": "(string) 区名称"
-                    }
-                ],
-                "cityCode": "(string) 市code",
-                "cityName": "(string) 市名称"
-            }
-        ],
-        "provinceCode": "(string) 省code",
-        "provinceName": "(string) 省名称"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "cities": [
+ {
+ "areas": [
+ {
+ "areaCode": "(string) 区code",
+ "areaName": "(string) 区名称"
+ }
+ ],
+ "cityCode": "(string) 市code",
+ "cityName": "(string) 市名称"
+ }
+ ],
+ "provinceCode": "(string) 省code",
+ "provinceName": "(string) 省名称"
+ }
+ ]
+ */
 
 
 /**
  * menus    /v1/auth/menus
  *
  */
-BkCobrandedcardManager.getAuthMenusV1({
-}).then(result => {
+BkCobrandedcardManager.getAuthMenusV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "message": "(string) undefined",
-    "resourceInfos": [
-        {
-            "app_id": "(string) undefined",
-            "code": "(string) undefined",
-            "create_time": "(string) undefined",
-            "describe": "(string) undefined",
-            "icon": "(string) undefined",
-            "is_annotation": "(boolean) undefined",
-            "last_modify_time": "(string) undefined",
-            "method": "(string) undefined",
-            "parent_code": "(string) undefined",
-            "res_id": "(string) undefined",
-            "res_type": "(string) undefined",
-            "sort": "(integer) undefined",
-            "status": "(integer) undefined",
-            "target": "(string) undefined",
-            "uri": "(string) undefined"
-        }
-    ],
-    "resultCode": "(integer) undefined"
-}
-*/
-
+ * 返回结果
+ {
+ "message": "(string) undefined",
+ "resourceInfos": [
+ {
+ "app_id": "(string) undefined",
+ "code": "(string) undefined",
+ "create_time": "(string) undefined",
+ "describe": "(string) undefined",
+ "icon": "(string) undefined",
+ "is_annotation": "(boolean) undefined",
+ "last_modify_time": "(string) undefined",
+ "method": "(string) undefined",
+ "parent_code": "(string) undefined",
+ "res_id": "(string) undefined",
+ "res_type": "(string) undefined",
+ "sort": "(integer) undefined",
+ "status": "(integer) undefined",
+ "target": "(string) undefined",
+ "uri": "(string) undefined"
+ }
+ ],
+ "resultCode": "(integer) undefined"
+ }
+ */
 
 
 /**
@@ -188,10 +182,10 @@ BkCobrandedcardManager.getAuthMenusV1({
  */
 BkCobrandedcardManager.getBillV1({
     params: {
-        userId: '',
-        mobile: '',
-        pageIndex: '',
-        pageSize: '',
+        userId: 'undefined',
+        mobile: 'undefined',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -199,31 +193,30 @@ BkCobrandedcardManager.getBillV1({
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "billDate": "(string) 账单日",
-        "billMonth": "(integer) 当前账期yyyyMM",
-        "billShoppingSheetLogBeanList": [
-            {
-                "amountMoney": "(number) 交易金额",
-                "amountMoneyFlag": "(string) 交易金额符号",
-                "description": "(string) 交易摘要",
-                "transDate": "(string) 交易时间",
-                "transType": "(string) 交易类型",
-                "updateTime": "(string) 更新时间"
-            }
-        ],
-        "currentBalance": "(number) 本期账单剩余应还",
-        "currentMinPayment": "(number) 本期账单最低应还",
-        "lastUpdateBillTime": "(string) 最后更新时间",
-        "minPayment": "(number) 最低还款额",
-        "newBalance": "(number) 本期账单金额",
-        "repaymentDate": "(string) 还款日"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "billDate": "(string) 账单日",
+ "billMonth": "(integer) 当前账期yyyyMM",
+ "billShoppingSheetLogBeanList": [
+ {
+ "amountMoney": "(number) 交易金额",
+ "amountMoneyFlag": "(string) 交易金额符号",
+ "description": "(string) 交易摘要",
+ "transDate": "(string) 交易时间",
+ "transType": "(string) 交易类型",
+ "updateTime": "(string) 更新时间"
+ }
+ ],
+ "currentBalance": "(number) 本期账单剩余应还",
+ "currentMinPayment": "(number) 本期账单最低应还",
+ "lastUpdateBillTime": "(string) 最后更新时间",
+ "minPayment": "(number) 最低还款额",
+ "newBalance": "(number) 本期账单金额",
+ "repaymentDate": "(string) 还款日"
+ }
+ ]
+ */
 
 
 /**
@@ -236,10 +229,10 @@ BkCobrandedcardManager.getBillV1({
  */
 BkCobrandedcardManager.getBillSheetV1({
     params: {
-        userId: '',
-        mobile: '',
-        pageIndex: '',
-        pageSize: '',
+        userId: 'undefined',
+        mobile: 'undefined',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -247,19 +240,18 @@ BkCobrandedcardManager.getBillSheetV1({
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "amountMoney": "(number) 交易金额",
-        "amountMoneyFlag": "(string) 交易金额符号",
-        "description": "(string) 交易摘要",
-        "transDate": "(string) 交易时间",
-        "transType": "(string) 交易类型",
-        "updateTime": "(string) 更新时间"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "amountMoney": "(number) 交易金额",
+ "amountMoneyFlag": "(string) 交易金额符号",
+ "description": "(string) 交易摘要",
+ "transDate": "(string) 交易时间",
+ "transType": "(string) 交易类型",
+ "updateTime": "(string) 更新时间"
+ }
+ ]
+ */
 
 
 /**
@@ -273,11 +265,11 @@ BkCobrandedcardManager.getBillSheetV1({
  */
 BkCobrandedcardManager.getBlacklistV1({
     params: {
-        userId: '',
-        userMobile: '',
-        userName: '',
-        pageIndex: '',
-        pageSize: '',
+        userId: 'undefined',
+        userMobile: 'undefined',
+        userName: 'undefined',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -285,29 +277,28 @@ BkCobrandedcardManager.getBlacklistV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "currentPage": "(integer) 当前页码，从1开始",
-    "data": [
-        {
-            "autoId": "(integer) autoId",
-            "bankId": "(integer) 黑名单用户已申请|意向申请的联名卡银行Id",
-            "idCardNo": "(string) 黑名单用户身份证号码",
-            "mobile": "(string) 黑名单用户手机号码",
-            "name": "(string) 黑名单用户姓名",
-            "note": "(string) 备注",
-            "reason": "(string) 原因",
-            "type": "(string) 进入黑名单原因：（0：其他 1 客户习惯性投诉抱怨 2：欺诈 3：机器人）-默认1",
-            "typeDesc": "(string) 类型详细描述",
-            "userId": "(integer) 黑名单用户管家userId"
-        }
-    ],
-    "pageSize": "(integer) 页面容量",
-    "totalPages": "(integer) 总页数",
-    "totalRecord": "(integer) 总记录数"
-}
-*/
-
+ * 返回结果
+ {
+ "currentPage": "(integer) 当前页码，从1开始",
+ "data": [
+ {
+ "autoId": "(integer) autoId",
+ "bankId": "(integer) 黑名单用户已申请|意向申请的联名卡银行Id",
+ "idCardNo": "(string) 黑名单用户身份证号码",
+ "mobile": "(string) 黑名单用户手机号码",
+ "name": "(string) 黑名单用户姓名",
+ "note": "(string) 备注",
+ "reason": "(string) 原因",
+ "type": "(string) 进入黑名单原因：（0：其他 1 客户习惯性投诉抱怨 2：欺诈 3：机器人）-默认1",
+ "typeDesc": "(string) 类型详细描述",
+ "userId": "(integer) 黑名单用户管家userId"
+ }
+ ],
+ "pageSize": "(integer) 页面容量",
+ "totalPages": "(integer) 总页数",
+ "totalRecord": "(integer) 总记录数"
+ }
+ */
 
 
 /**
@@ -317,7 +308,18 @@ BkCobrandedcardManager.getBlacklistV1({
  */
 BkCobrandedcardManager.postBlacklistAddV1({
     data: {
-        param: '',
+        param: {
+            "bankId": "(integer) 黑名单用户已申请|意向申请的联名卡银行Id (选填)",
+            "idCardNo": "(string) 黑名单用户身份证号码 (选填)",
+            "mobile": "(string) 黑名单用户手机号码 (选填)",
+            "name": "(string) 黑名单用户姓名 (选填)",
+            "note": "(string) 备注(选填)",
+            "reason": "(string) 原因(选填)",
+            "recordTime": "(string) 手工记录时间",
+            "type": "(integer) 进入黑名单原因：（0：其他 1 客户习惯性投诉抱怨 2：欺诈 3：机器人）-默认1",
+            "typeDesc": "(string) 类型详细描述(选填)",
+            "userId": "(integer) 黑名单用户管家userId(必填)"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -325,10 +327,9 @@ BkCobrandedcardManager.postBlacklistAddV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -338,7 +339,22 @@ BkCobrandedcardManager.postBlacklistAddV1({
  */
 BkCobrandedcardManager.postBlacklistBatchaddV1({
     data: {
-        param: '',
+        param: {
+            "userBlackList": [
+                {
+                    "bankId": "(integer) 黑名单用户已申请|意向申请的联名卡银行Id (选填)",
+                    "idCardNo": "(string) 黑名单用户身份证号码 (选填)",
+                    "mobile": "(string) 黑名单用户手机号码 (选填)",
+                    "name": "(string) 黑名单用户姓名 (选填)",
+                    "note": "(string) 备注(选填)",
+                    "reason": "(string) 原因(选填)",
+                    "recordTime": "(string) 手工记录时间",
+                    "type": "(integer) 进入黑名单原因：（0：其他 1 客户习惯性投诉抱怨 2：欺诈 3：机器人）-默认1",
+                    "typeDesc": "(string) 类型详细描述(选填)",
+                    "userId": "(integer) 黑名单用户管家userId(必填)"
+                }
+            ]
+        },
     },
 }).then(result => {
     console.log(result);
@@ -346,10 +362,9 @@ BkCobrandedcardManager.postBlacklistBatchaddV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -359,7 +374,7 @@ BkCobrandedcardManager.postBlacklistBatchaddV1({
  */
 BkCobrandedcardManager.postBlacklistExcelimportV1({
     data: {
-        file: '',
+        file: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -367,14 +382,13 @@ BkCobrandedcardManager.postBlacklistExcelimportV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "failNum": "(integer) 导入失败记录数",
-    "showTips": "(string) 导入完成后响应提示",
-    "succNum": "(integer) 导入成功记录数"
-}
-*/
-
+ * 返回结果
+ {
+ "failNum": "(integer) 导入失败记录数",
+ "showTips": "(string) 导入完成后响应提示",
+ "succNum": "(integer) 导入成功记录数"
+ }
+ */
 
 
 /**
@@ -384,7 +398,15 @@ BkCobrandedcardManager.postBlacklistExcelimportV1({
  */
 BkCobrandedcardManager.postBootscreenAddOrUpdateV1({
     data: {
-        dto: '',
+        dto: {
+            "activityName": "(string) 活动名称",
+            "autoId": "(integer) 活动ID",
+            "endTime": "(string) 活动结束时间",
+            "imgLinkUrl": "(string) 图片跳转链接url",
+            "imgUrl": "(string) 图片url",
+            "lastOperator": "(string) 最后操作者",
+            "startTime": "(string) 活动开始时间"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -392,10 +414,9 @@ BkCobrandedcardManager.postBootscreenAddOrUpdateV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -409,11 +430,11 @@ BkCobrandedcardManager.postBootscreenAddOrUpdateV1({
  */
 BkCobrandedcardManager.getBootscreenListV1({
     params: {
-        fromTime: '',
-        toTime: '',
-        activityStatus: '',
-        pageIndex: '',
-        pageSize: '',
+        fromTime: 'undefined',
+        toTime: 'undefined',
+        activityStatus: 'undefined',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -421,37 +442,36 @@ BkCobrandedcardManager.getBootscreenListV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "currentPage": "(integer) 当前页码，从1开始",
-    "data": [
-        {
-            "activityName": "(string) 活动名称",
-            "activityStatus": "(string) 活动状态",
-            "createTime": "(string) 创建时间",
-            "endTime": "(string) 活动结束时间",
-            "id": "(integer) undefined",
-            "imgLinkUrl": "(string) 图片跳转链接url",
-            "imgUrl": "(string) 图片url",
-            "startTime": "(string) 活动开始时间"
-        }
-    ],
-    "pageSize": "(integer) 页面容量",
-    "totalPages": "(integer) 总页数",
-    "totalRecord": "(integer) 总记录数"
-}
-*/
-
+ * 返回结果
+ {
+ "currentPage": "(integer) 当前页码，从1开始",
+ "data": [
+ {
+ "activityName": "(string) 活动名称",
+ "activityStatus": "(string) 活动状态",
+ "autoId": "(integer) 活动ID",
+ "createTime": "(string) 创建时间",
+ "endTime": "(string) 活动结束时间",
+ "imgLinkUrl": "(string) 图片跳转链接url",
+ "imgUrl": "(string) 图片url",
+ "startTime": "(string) 活动开始时间"
+ }
+ ],
+ "pageSize": "(integer) 页面容量",
+ "totalPages": "(integer) 总页数",
+ "totalRecord": "(integer) 总记录数"
+ }
+ */
 
 
 /**
  * 上传图片    /v1/bootscreen/uploadImg
  *
- * @params      { File     }      file                          图片文件 
+ * @params      { File     }      file                          图片文件
  */
 BkCobrandedcardManager.postBootscreenUploadImgV1({
     data: {
-        file: '',
+        file: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -459,10 +479,9 @@ BkCobrandedcardManager.postBootscreenUploadImgV1({
     console.log(error);
 });
 /*
-* 返回结果
-{}
-*/
-
+ * 返回结果
+ {}
+ */
 
 
 /**
@@ -472,7 +491,7 @@ BkCobrandedcardManager.postBootscreenUploadImgV1({
  */
 BkCobrandedcardManager.deleteBootscreenIdV1({
     params: {
-        id: '',
+        id: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -480,82 +499,79 @@ BkCobrandedcardManager.deleteBootscreenIdV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
  * 查看卡片推荐配置    /v1/cardrecommend/
  *
  */
-BkCobrandedcardManager.getCardrecommendV1({
-}).then(result => {
+BkCobrandedcardManager.getCardrecommendV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "applyId": "(integer) 订单ID",
-        "applyIdStr": "(string) 用于详情页面传入使用的订单ID",
-        "applyMobile": "(string) 申卡手机号",
-        "applyStatus": "(integer) 申卡状态",
-        "applyStatusDesc": "(string) 申卡状态描述",
-        "bankName": "(string) 银行名称",
-        "barCode": "(string) 进件条码",
-        "cardTypeId": "(integer) 卡类型Id",
-        "cardTypeName": "(string) 卡类型名称",
-        "channelName": "(string) 订单来源",
-        "companyProvinceCity": "(string) 公司省市",
-        "confirmTime": "(string) 订单提交时间",
-        "coreStreamList": [
-            {
-                "extendMsg": {},
-                "nodeMsg": "(string) 节点信息",
-                "nodeTime": "(string) 节点的时间显示",
-                "nodeType": "(integer) 节点类型。0普通节点；10补件节点；20快递节点；30面签节点；40解锁激活节点"
-            }
-        ],
-        "createTime": "(string) 创建时间",
-        "deliverTo": "(string) 快递方式",
-        "eventStreamList": [
-            {
-                "createTime": "(string) 创建时间",
-                "eventId": "(integer) 事件类型",
-                "eventMsg": "(string) 事件内容",
-                "eventTime": "(string) 事件时间",
-                "isShow": "(boolean) 是否向用户显示",
-                "updateTime": "(string) 更新时间"
-            }
-        ],
-        "idCardNo": "(string) 身份证号",
-        "interviewRecordId": "(integer) 面签记录的ID",
-        "location": "(string) 申请时的定位信息",
-        "realIp": "(string) 申请时的IP",
-        "registerMobile": "(string) 注册手机号",
-        "residentialProvinceCity": "(string) 住宅省市",
-        "riskAuditResult": "(string) 风险件审核状态",
-        "riskReportRecordId": "(integer) 风险件提报ID",
-        "riskReportRecordIdStr": "(string) 风险件提报ID",
-        "riskReportTime": "(string) 风险件提报时间",
-        "riskReporter": "(string) 风险件提报人",
-        "riskTypeDesc": "(string) 风险件类型",
-        "saleBranchCode": "(string) 销售支行代码",
-        "showCreateInterview": "(boolean) 是否显示创建面签记录按钮",
-        "showRevokeCancelStatus": "(boolean) 撤销卡片注销状态 当卡片是已注销时，允许取消注销到审核通过状态",
-        "showUnlockActive": "(boolean) 是否显示解锁激活按钮",
-        "supplementDocumentRecordId": "(integer) 补件记录ID",
-        "updateTime": "(string) 更新时间",
-        "userId": "(integer) 用户ID",
-        "userName": "(string) 用户姓名"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "applyId": "(integer) 订单ID",
+ "applyIdStr": "(string) 用于详情页面传入使用的订单ID",
+ "applyMobile": "(string) 申卡手机号",
+ "applyStatus": "(integer) 申卡状态",
+ "applyStatusDesc": "(string) 申卡状态描述",
+ "bankName": "(string) 银行名称",
+ "barCode": "(string) 进件条码",
+ "cardTypeId": "(integer) 卡类型Id",
+ "cardTypeName": "(string) 卡类型名称",
+ "channelName": "(string) 订单来源",
+ "companyProvinceCity": "(string) 公司省市",
+ "confirmTime": "(string) 订单提交时间",
+ "coreStreamList": [
+ {
+ "extendMsg": {},
+ "nodeMsg": "(string) 节点信息",
+ "nodeTime": "(string) 节点的时间显示",
+ "nodeType": "(integer) 节点类型。0普通节点；10补件节点；20快递节点；30面签节点；40解锁激活节点"
+ }
+ ],
+ "createTime": "(string) 创建时间",
+ "deliverTo": "(string) 快递方式",
+ "eventStreamList": [
+ {
+ "createTime": "(string) 创建时间",
+ "eventId": "(integer) 事件类型",
+ "eventMsg": "(string) 事件内容",
+ "eventTime": "(string) 事件时间",
+ "isShow": "(boolean) 是否向用户显示",
+ "updateTime": "(string) 更新时间"
+ }
+ ],
+ "idCardNo": "(string) 身份证号",
+ "interviewRecordId": "(integer) 面签记录的ID",
+ "location": "(string) 申请时的定位信息",
+ "realIp": "(string) 申请时的IP",
+ "registerMobile": "(string) 注册手机号",
+ "residentialProvinceCity": "(string) 住宅省市",
+ "riskAuditResult": "(string) 风险件审核状态",
+ "riskReportRecordId": "(integer) 风险件提报ID",
+ "riskReportRecordIdStr": "(string) 风险件提报ID",
+ "riskReportTime": "(string) 风险件提报时间",
+ "riskReporter": "(string) 风险件提报人",
+ "riskTypeDesc": "(string) 风险件类型",
+ "saleBranchCode": "(string) 销售支行代码",
+ "showCreateInterview": "(boolean) 是否显示创建面签记录按钮",
+ "showRevokeCancelStatus": "(boolean) 撤销卡片注销状态 当卡片是已注销时，允许取消注销到审核通过状态",
+ "showUnlockActive": "(boolean) 是否显示解锁激活按钮",
+ "supplementDocumentRecordId": "(integer) 补件记录ID",
+ "updateTime": "(string) 更新时间",
+ "userId": "(integer) 用户ID",
+ "userName": "(string) 用户姓名"
+ }
+ ]
+ */
 
 
 /**
@@ -573,13 +589,12 @@ BkCobrandedcardManager.getCardrecommendCggroupV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "groupId": "(integer) 分群id",
-    "groupName": "(string) 分群名称"
-}
-*/
-
+ * 返回结果
+ {
+ "groupId": "(integer) 分群id",
+ "groupName": "(string) 分群名称"
+ }
+ */
 
 
 /**
@@ -592,10 +607,10 @@ BkCobrandedcardManager.getCardrecommendCggroupV1({
  */
 BkCobrandedcardManager.getCommonManagerOpencitiesV1({
     params: {
-        bankId: '',
-        cityName: '',
-        pageIndex: '',
-        pageSize: '',
+        bankId: 'undefined',
+        cityName: 'undefined',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -603,32 +618,31 @@ BkCobrandedcardManager.getCommonManagerOpencitiesV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "currentPage": "(integer) 当前页码，从1开始",
-    "data": [
-        {
-            "bankId": "(integer) 银行ID",
-            "bankName": "(string) 银行名称",
-            "cityName": "(string) 城市中文名称",
-            "configId": "(integer) 配置ID",
-            "createTime": "(string) 创建时间",
-            "pyCityName": "(string) 城市拼音名称",
-            "regionId": "(integer) 所属大区ID",
-            "regionName": "(string) 所属大区名称",
-            "saleBranchCode": "(string) 销售支行代码",
-            "spreadManCode": "(string) 推广人员代码",
-            "spreadOrgCode": "(string) 推广机构代码",
-            "standardCityCode": "(string) 标准城市代码",
-            "standardCityName": "(string) 标准城市名称"
-        }
-    ],
-    "pageSize": "(integer) 页面容量",
-    "totalPages": "(integer) 总页数",
-    "totalRecord": "(integer) 总记录数"
-}
-*/
-
+ * 返回结果
+ {
+ "currentPage": "(integer) 当前页码，从1开始",
+ "data": [
+ {
+ "bankId": "(integer) 银行ID",
+ "bankName": "(string) 银行名称",
+ "cityName": "(string) 城市中文名称",
+ "configId": "(integer) 配置ID",
+ "createTime": "(string) 创建时间",
+ "pyCityName": "(string) 城市拼音名称",
+ "regionId": "(integer) 所属大区ID",
+ "regionName": "(string) 所属大区名称",
+ "saleBranchCode": "(string) 销售支行代码",
+ "spreadManCode": "(string) 推广人员代码",
+ "spreadOrgCode": "(string) 推广机构代码",
+ "standardCityCode": "(string) 标准城市代码",
+ "standardCityName": "(string) 标准城市名称"
+ }
+ ],
+ "pageSize": "(integer) 页面容量",
+ "totalPages": "(integer) 总页数",
+ "totalRecord": "(integer) 总记录数"
+ }
+ */
 
 
 /**
@@ -638,7 +652,17 @@ BkCobrandedcardManager.getCommonManagerOpencitiesV1({
  */
 BkCobrandedcardManager.postCommonManagerOpencityV1({
     data: {
-        param: '',
+        param: {
+            "bankId": "(integer) 银行ID",
+            "cityName": "(string) 城市名称",
+            "configId": "(integer) 配置ID",
+            "pyCityName": "(string) 城市拼音",
+            "regionId": "(integer) 所属大区",
+            "saleBranchCode": "(string) 销售支行代码",
+            "spreadManCode": "(string) 推广人代码",
+            "spreadOrgCode": "(string) 推广机构代码",
+            "standardCityCode": "(string) 标准城市代码"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -646,24 +670,23 @@ BkCobrandedcardManager.postCommonManagerOpencityV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "bankId": "(integer) 银行ID",
-    "bankName": "(string) 银行名称",
-    "cityName": "(string) 城市中文名称",
-    "configId": "(integer) 配置ID",
-    "createTime": "(string) 创建时间",
-    "pyCityName": "(string) 城市拼音名称",
-    "regionId": "(integer) 所属大区ID",
-    "regionName": "(string) 所属大区名称",
-    "saleBranchCode": "(string) 销售支行代码",
-    "spreadManCode": "(string) 推广人员代码",
-    "spreadOrgCode": "(string) 推广机构代码",
-    "standardCityCode": "(string) 标准城市代码",
-    "standardCityName": "(string) 标准城市名称"
-}
-*/
-
+ * 返回结果
+ {
+ "bankId": "(integer) 银行ID",
+ "bankName": "(string) 银行名称",
+ "cityName": "(string) 城市中文名称",
+ "configId": "(integer) 配置ID",
+ "createTime": "(string) 创建时间",
+ "pyCityName": "(string) 城市拼音名称",
+ "regionId": "(integer) 所属大区ID",
+ "regionName": "(string) 所属大区名称",
+ "saleBranchCode": "(string) 销售支行代码",
+ "spreadManCode": "(string) 推广人员代码",
+ "spreadOrgCode": "(string) 推广机构代码",
+ "standardCityCode": "(string) 标准城市代码",
+ "standardCityName": "(string) 标准城市名称"
+ }
+ */
 
 
 /**
@@ -673,7 +696,7 @@ BkCobrandedcardManager.postCommonManagerOpencityV1({
  */
 BkCobrandedcardManager.deleteCommonManagerOpencityConfigIdV1({
     params: {
-        configId: '',
+        configId: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -681,91 +704,84 @@ BkCobrandedcardManager.deleteCommonManagerOpencityConfigIdV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
  * 获取面签开放城市    /v1/common/opencities/
  *
  */
-BkCobrandedcardManager.getCommonOpencitiesV1({
-}).then(result => {
+BkCobrandedcardManager.getCommonOpencitiesV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "cities": [
-            {
-                "areas": [
-                    {
-                        "areaCode": "(string) 区code",
-                        "areaName": "(string) 区名称",
-                        "totalCount": "(integer) 待处理订单数量"
-                    }
-                ],
-                "cityCode": "(string) 市code",
-                "cityName": "(string) 市名称",
-                "totalCount": "(integer) 待处理订单数量"
-            }
-        ],
-        "provinceCode": "(string) 省code",
-        "provinceName": "(string) 省名称"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "cities": [
+ {
+ "areas": [
+ {
+ "areaCode": "(string) 区code",
+ "areaName": "(string) 区名称",
+ "totalCount": "(integer) 待处理订单数量"
+ }
+ ],
+ "cityCode": "(string) 市code",
+ "cityName": "(string) 市名称",
+ "totalCount": "(integer) 待处理订单数量"
+ }
+ ],
+ "provinceCode": "(string) 省code",
+ "provinceName": "(string) 省名称"
+ }
+ ]
+ */
 
 
 /**
  * 获取面签大区    /v1/common/region/
  *
  */
-BkCobrandedcardManager.getCommonRegionV1({
-}).then(result => {
+BkCobrandedcardManager.getCommonRegionV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "key": {},
-        "value": {}
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "key": {},
+ "value": {}
+ }
+ ]
+ */
 
 
 /**
  * 获取面签人员列表    /v1/common/salesman/
  *
  */
-BkCobrandedcardManager.getCommonSalesmanV1({
-}).then(result => {
+BkCobrandedcardManager.getCommonSalesmanV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "id": "(string) 客户经理Id",
-        "mobile": "(string) 客户经理手机号",
-        "name": "(string) 客户经理姓名"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "id": "(string) 客户经理Id",
+ "mobile": "(string) 客户经理手机号",
+ "name": "(string) 客户经理姓名"
+ }
+ ]
+ */
 
 
 /**
@@ -785,17 +801,17 @@ BkCobrandedcardManager.getCommonSalesmanV1({
  */
 BkCobrandedcardManager.getCommonSalesmanDetaillistV1({
     params: {
-        nameOrMobile: '',
-        provinceCode: '',
-        cityCode: '',
-        areaCode: '',
-        locationCity: '',
-        belongCity: '',
-        regionId: '',
-        status: '',
-        addressRelated: '',
-        pageIndex: '',
-        pageSize: '',
+        nameOrMobile: 'undefined',
+        provinceCode: 'undefined',
+        cityCode: 'undefined',
+        areaCode: 'undefined',
+        locationCity: 'undefined',
+        belongCity: 'undefined',
+        regionId: 'undefined',
+        status: 'undefined',
+        addressRelated: 'undefined',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -803,70 +819,67 @@ BkCobrandedcardManager.getCommonSalesmanDetaillistV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "currentPage": "(integer) 当前页码，从1开始",
-    "data": [
-        {
-            "areas": [
-                {
-                    "areaCode": "(string) 区code",
-                    "areaName": "(string) 区名称",
-                    "cityCode": "(string) 市code",
-                    "cityName": "(string) 市名称",
-                    "provinceCode": "(string) 省code",
-                    "provinceName": "(string) 省名称"
-                }
-            ],
-            "city": "(string) 所属城市",
-            "deviceKey": "(string) 业务员登录设备key",
-            "mobile": "(string) 面签业务员电话",
-            "name": "(string) 面签业务员姓名",
-            "salesManAccountId": "(integer) 面签人员账户Id",
-            "salesManAccountIdMask": "(string) 面签人员账户Id",
-            "shortFormLimit": "(integer) 短表单派单上限",
-            "status": "(integer) 状态(0:正常 1:删除 2：休息)",
-            "statusDesc": "(string) 状态描述"
-        }
-    ],
-    "pageSize": "(integer) 页面容量",
-    "totalPages": "(integer) 总页数",
-    "totalRecord": "(integer) 总记录数"
-}
-*/
-
+ * 返回结果
+ {
+ "currentPage": "(integer) 当前页码，从1开始",
+ "data": [
+ {
+ "areas": [
+ {
+ "areaCode": "(string) 区code",
+ "areaName": "(string) 区名称",
+ "cityCode": "(string) 市code",
+ "cityName": "(string) 市名称",
+ "provinceCode": "(string) 省code",
+ "provinceName": "(string) 省名称"
+ }
+ ],
+ "city": "(string) 所属城市",
+ "deviceKey": "(string) 业务员登录设备key",
+ "mobile": "(string) 面签业务员电话",
+ "name": "(string) 面签业务员姓名",
+ "salesManAccountId": "(integer) 面签人员账户Id",
+ "salesManAccountIdMask": "(string) 面签人员账户Id",
+ "shortFormLimit": "(integer) 短表单派单上限",
+ "status": "(integer) 状态(0:正常 1:删除 2：休息)",
+ "statusDesc": "(string) 状态描述"
+ }
+ ],
+ "pageSize": "(integer) 页面容量",
+ "totalPages": "(integer) 总页数",
+ "totalRecord": "(integer) 总记录数"
+ }
+ */
 
 
 /**
  * 获取联名卡支持的银行列表    /v1/common/supportbank/
  *
  */
-BkCobrandedcardManager.getCommonSupportbankV1({
-}).then(result => {
+BkCobrandedcardManager.getCommonSupportbankV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "bankId": "(integer) 银行ID",
-        "bankName": "(string) 银行名称"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "bankId": "(integer) 银行ID",
+ "bankName": "(string) 银行名称"
+ }
+ ]
+ */
 
 
 /**
  * 图片文件上传    /v1/image/upload
  *
- * @params      { File     }      file                          图片文件 
+ * @params      { File     }      file                          图片文件
  */
 BkCobrandedcardManager.postImageUploadV1({
     data: {
-        file: '',
+        file: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -874,10 +887,9 @@ BkCobrandedcardManager.postImageUploadV1({
     console.log(error);
 });
 /*
-* 返回结果
-{}
-*/
-
+ * 返回结果
+ {}
+ */
 
 
 /**
@@ -887,7 +899,7 @@ BkCobrandedcardManager.postImageUploadV1({
  * @params      { String   }      nameOrMobile                  查询条件 持卡人姓名或手机号码或者用户userId
  * @params      { String   }      salesManId                    客户经理id
  * @params      { Integer  }      regionId                      面签人员所属大区
- * @params      { String   }      belongCityList                所属城市列表 belongCityList,格式为 &#x27;city1,city2,city3,...&#x27; 
+ * @params      { String   }      belongCityList                所属城市列表 belongCityList,格式为 &#x27;city1,city2,city3,...&#x27;
  * @params      { String   }      provinceCode                  工作城市 省code
  * @params      { String   }      cityCode                      工作城市 市code
  * @params      { String   }      areaCode                      工作城市 区code
@@ -903,23 +915,23 @@ BkCobrandedcardManager.postImageUploadV1({
  */
 BkCobrandedcardManager.getInterviewV1({
     params: {
-        searchType: '',
-        nameOrMobile: '',
-        salesManId: '',
-        regionId: '',
-        belongCityList: '',
-        provinceCode: '',
-        cityCode: '',
-        areaCode: '',
-        channelId: '',
-        interviewType: '',
-        interviewStatus: '',
-        applyTimeFrom: '',
-        applyTimeTo: '',
-        activeTimeFrom: '',
-        activeTimeTo: '',
-        pageIndex: '',
-        pageSize: '',
+        searchType: 'undefined',
+        nameOrMobile: 'undefined',
+        salesManId: 'undefined',
+        regionId: 'undefined',
+        belongCityList: 'undefined',
+        provinceCode: 'undefined',
+        cityCode: 'undefined',
+        areaCode: 'undefined',
+        channelId: 'undefined',
+        interviewType: 'undefined',
+        interviewStatus: 'undefined',
+        applyTimeFrom: 'undefined',
+        applyTimeTo: 'undefined',
+        activeTimeFrom: 'undefined',
+        activeTimeTo: 'undefined',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -927,66 +939,65 @@ BkCobrandedcardManager.getInterviewV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "currentPage": "(integer) 当前页码，从1开始",
-    "data": [
-        {
-            "address": "(string) 地址",
-            "applyId": "(integer) 申请Id",
-            "applyIdMask": "(string) 申请Id mask",
-            "applyNode": "(integer) 申请节点（0：待上传 1：待审 2：审核通过 3：审核不通过 4：异常订单 5:已激活）",
-            "applyTime": "(string) 申请时间",
-            "areaName": "(string) 所属区",
-            "auditMan": "(string) 审核员姓名",
-            "auditTime": "(string) 审核时间",
-            "barCode": "(string) 进件条码",
-            "channel": "(string) 渠道（管家、人品、给你花、外部投放...）",
-            "cityCode": "(string) 市code",
-            "cityName": "(string) 所属市",
-            "companyName": "(string) 公司名称",
-            "companyPhone": "(string) 单位电话",
-            "creditLimitLevel": "(string) 客户额度 档位",
-            "department": "(string) 部门",
-            "detailNote": "(string) 客户经理备注（风险提示备注）",
-            "faceVerifySimiliarity": "(string) 人脸相似度",
-            "idCardNo": "(string) 身份证号",
-            "interviewMan": "(string) 面签员姓名",
-            "interviewManMobile": "(string) 面签员电话",
-            "interviewStatus": "(integer) 面签状态（0初始状态 2快递问题订单 5无需处理订单 10待面签 20待审核 25风险用户不予面签 30审核通过 40审核不通过 50用户柜面面签通过）",
-            "interviewStatusDesc": "(string) 面签状态描述",
-            "key": "(integer) key(列表item排序用)",
-            "lastSavedRealAddress": "(string) 最新入（真实信息）库客户公司地址",
-            "mobile": "(string) 联系方式（持卡人手机号码）",
-            "note": "(string) 客户经理备注（深挖备注）",
-            "position": "(string) 职位",
-            "provinceName": "(string) 所属省",
-            "realAddressEditable": "(boolean) 客户经理补全地址是否可编辑",
-            "realCompanyAddress": "(string) 客户经理补全 详细地址(编辑用)",
-            "realCompanyAddressDisplay": "(string) 客户经理补全 详细地址(显示用)",
-            "realCompanyArea": "(string) 客户经理补全 区代码(编辑用)",
-            "realCompanyCity": "(string) 客户经理补全 市代码(编辑用)",
-            "realCompanyProvince": "(string) 客户经理补全 省代码(编辑用)",
-            "realName": "(string) 申请人（持卡人姓名）",
-            "reasonDesc": "(string) 拒绝原因",
-            "recordType": "(integer) 面签记录类别（0：面签记录 1：深挖用户 2补件订单 3深挖补件订单）",
-            "recordTypeDesc": "(string) 面签记录类别",
-            "reserveTime": "(string) 面签预约时间",
-            "riskId": "(string) 风险件Id",
-            "riskLabel": "(string) 当前订单的风险状态对应显示的标签（风险待审核、风险件银行止付、风险件不予面签、申卡黑名单...）",
-            "riskLevel": "(string) 风险程度",
-            "riskStatus": "(integer) 当前订单的风险状态（1：风险件 2：黑名单）",
-            "updateTime": "(string) 更新时间",
-            "uploadTime": "(string) 上传时间",
-            "userId": "(integer) undefined"
-        }
-    ],
-    "pageSize": "(integer) 页面容量",
-    "totalPages": "(integer) 总页数",
-    "totalRecord": "(integer) 总记录数"
-}
-*/
-
+ * 返回结果
+ {
+ "currentPage": "(integer) 当前页码，从1开始",
+ "data": [
+ {
+ "address": "(string) 地址",
+ "applyId": "(integer) 申请Id",
+ "applyIdMask": "(string) 申请Id mask",
+ "applyNode": "(integer) 申请节点（0：待上传 1：待审 2：审核通过 3：审核不通过 4：异常订单 5:已激活）",
+ "applyTime": "(string) 申请时间",
+ "areaName": "(string) 所属区",
+ "auditMan": "(string) 审核员姓名",
+ "auditTime": "(string) 审核时间",
+ "barCode": "(string) 进件条码",
+ "channel": "(string) 渠道（管家、人品、给你花、外部投放...）",
+ "cityCode": "(string) 市code",
+ "cityName": "(string) 所属市",
+ "companyName": "(string) 公司名称",
+ "companyPhone": "(string) 单位电话",
+ "creditLimitLevel": "(string) 客户额度 档位",
+ "department": "(string) 部门",
+ "detailNote": "(string) 客户经理备注（风险提示备注）",
+ "faceVerifySimiliarity": "(string) 人脸相似度",
+ "idCardNo": "(string) 身份证号",
+ "interviewMan": "(string) 面签员姓名",
+ "interviewManMobile": "(string) 面签员电话",
+ "interviewStatus": "(integer) 面签状态（0初始状态 2快递问题订单 5无需处理订单 10待面签 20待审核 25风险用户不予面签 30审核通过 40审核不通过 50用户柜面面签通过）",
+ "interviewStatusDesc": "(string) 面签状态描述",
+ "key": "(integer) key(列表item排序用)",
+ "lastSavedRealAddress": "(string) 最新入（真实信息）库客户公司地址",
+ "mobile": "(string) 联系方式（持卡人手机号码）",
+ "note": "(string) 客户经理备注（深挖备注）",
+ "position": "(string) 职位",
+ "provinceName": "(string) 所属省",
+ "realAddressEditable": "(boolean) 客户经理补全地址是否可编辑",
+ "realCompanyAddress": "(string) 客户经理补全 详细地址(编辑用)",
+ "realCompanyAddressDisplay": "(string) 客户经理补全 详细地址(显示用)",
+ "realCompanyArea": "(string) 客户经理补全 区代码(编辑用)",
+ "realCompanyCity": "(string) 客户经理补全 市代码(编辑用)",
+ "realCompanyProvince": "(string) 客户经理补全 省代码(编辑用)",
+ "realName": "(string) 申请人（持卡人姓名）",
+ "reasonDesc": "(string) 拒绝原因",
+ "recordType": "(integer) 面签记录类别（0：面签记录 1：深挖用户 2补件订单 3深挖补件订单）",
+ "recordTypeDesc": "(string) 面签记录类别",
+ "reserveTime": "(string) 面签预约时间",
+ "riskId": "(string) 风险件Id",
+ "riskLabel": "(string) 当前订单的风险状态对应显示的标签（风险待审核、风险件银行止付、风险件不予面签、申卡黑名单...）",
+ "riskLevel": "(string) 风险程度",
+ "riskStatus": "(integer) 当前订单的风险状态（1：风险件 2：黑名单）",
+ "updateTime": "(string) 更新时间",
+ "uploadTime": "(string) 上传时间",
+ "userId": "(integer) undefined"
+ }
+ ],
+ "pageSize": "(integer) 页面容量",
+ "totalPages": "(integer) 总页数",
+ "totalRecord": "(integer) 总记录数"
+ }
+ */
 
 
 /**
@@ -996,7 +1007,10 @@ BkCobrandedcardManager.getInterviewV1({
  */
 BkCobrandedcardManager.postInterviewAltersalemanV1({
     data: {
-        param: '',
+        param: {
+            "salesManAccountId": "(integer) 面签人员账户Id",
+            "status": "(integer) 状态（1：删除 0：正常 2：休息）"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -1004,10 +1018,9 @@ BkCobrandedcardManager.postInterviewAltersalemanV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1017,7 +1030,16 @@ BkCobrandedcardManager.postInterviewAltersalemanV1({
  */
 BkCobrandedcardManager.postInterviewAreaconfigV1({
     data: {
-        param: '',
+        param: {
+            "areas": [
+                {
+                    "areaCode": "(string) 区code",
+                    "cityCode": "(string) 市code",
+                    "provinceCode": "(string) 省code"
+                }
+            ],
+            "salesManAccountId": "(integer) 面签人员账户Id"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -1025,10 +1047,9 @@ BkCobrandedcardManager.postInterviewAreaconfigV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1038,7 +1059,11 @@ BkCobrandedcardManager.postInterviewAreaconfigV1({
  */
 BkCobrandedcardManager.postInterviewCancelsyncV1({
     data: {
-        param: '',
+        param: {
+            "applyId": "(integer) 申请Id",
+            "applyIdMask": "(string) 申请Id mask",
+            "category": "(integer) 真实信息类型（100：客户公司真实地址信息 200：客户公司真实电话）"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -1046,10 +1071,9 @@ BkCobrandedcardManager.postInterviewCancelsyncV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1069,49 +1093,48 @@ BkCobrandedcardManager.getInterviewImageV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "description": "(string) undefined",
-    "file": "(file) undefined",
-    "filename": "(string) undefined",
-    "inputStream": {},
-    "open": "(boolean) undefined",
-    "readable": "(boolean) undefined",
-    "uri": {
-        "absolute": "(boolean) undefined",
-        "authority": "(string) undefined",
-        "fragment": "(string) undefined",
-        "host": "(string) undefined",
-        "opaque": "(boolean) undefined",
-        "path": "(string) undefined",
-        "port": "(integer) undefined",
-        "query": "(string) undefined",
-        "rawAuthority": "(string) undefined",
-        "rawFragment": "(string) undefined",
-        "rawPath": "(string) undefined",
-        "rawQuery": "(string) undefined",
-        "rawSchemeSpecificPart": "(string) undefined",
-        "rawUserInfo": "(string) undefined",
-        "scheme": "(string) undefined",
-        "schemeSpecificPart": "(string) undefined",
-        "userInfo": "(string) undefined"
-    },
-    "url": {
-        "authority": "(string) undefined",
-        "content": {},
-        "defaultPort": "(integer) undefined",
-        "file": "(string) undefined",
-        "host": "(string) undefined",
-        "path": "(string) undefined",
-        "port": "(integer) undefined",
-        "protocol": "(string) undefined",
-        "query": "(string) undefined",
-        "ref": "(string) undefined",
-        "userInfo": "(string) undefined"
-    }
-}
-*/
-
+ * 返回结果
+ {
+ "description": "(string) undefined",
+ "file": "(file) undefined",
+ "filename": "(string) undefined",
+ "inputStream": {},
+ "open": "(boolean) undefined",
+ "readable": "(boolean) undefined",
+ "uri": {
+ "absolute": "(boolean) undefined",
+ "authority": "(string) undefined",
+ "fragment": "(string) undefined",
+ "host": "(string) undefined",
+ "opaque": "(boolean) undefined",
+ "path": "(string) undefined",
+ "port": "(integer) undefined",
+ "query": "(string) undefined",
+ "rawAuthority": "(string) undefined",
+ "rawFragment": "(string) undefined",
+ "rawPath": "(string) undefined",
+ "rawQuery": "(string) undefined",
+ "rawSchemeSpecificPart": "(string) undefined",
+ "rawUserInfo": "(string) undefined",
+ "scheme": "(string) undefined",
+ "schemeSpecificPart": "(string) undefined",
+ "userInfo": "(string) undefined"
+ },
+ "url": {
+ "authority": "(string) undefined",
+ "content": {},
+ "defaultPort": "(integer) undefined",
+ "file": "(string) undefined",
+ "host": "(string) undefined",
+ "path": "(string) undefined",
+ "port": "(integer) undefined",
+ "protocol": "(string) undefined",
+ "query": "(string) undefined",
+ "ref": "(string) undefined",
+ "userInfo": "(string) undefined"
+ }
+ }
+ */
 
 
 /**
@@ -1121,7 +1144,13 @@ BkCobrandedcardManager.getInterviewImageV1({
  */
 BkCobrandedcardManager.postInterviewImageBase64V1({
     data: {
-        param: '',
+        param: {
+            "applyId": "(integer) 卡申请ID",
+            "applyIdMask": "(string) 卡申请ID",
+            "base64Image": "(string) 待上传的面签影像资料Base64编码",
+            "fileName": "(string) 图片文件的文件名",
+            "fileType": "(integer) 文件类型(1:身份证正面、2:身份证反面、3:合影照、4：业务确认书、5：公司门头照、6：客户签字照、7：其他证明、10：工作/财力证明)"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -1129,18 +1158,17 @@ BkCobrandedcardManager.postInterviewImageBase64V1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "applyId": "(integer) 申卡Id",
-    "applyIdMask": "(string) 申卡Id mask",
-    "fileId": "(integer) 文件Id",
-    "fileIdMask": "(string) 文件Id mask",
-    "fileType": "(integer) 文件类型（1:身份证正面、2:身份证反面、3:合影照、4：业务确认书、5公司门头照、6客户签字照、 7其它、10工作/财力证明 12补件资料）",
-    "fileTypeDesc": "(string) 文件类型字符（1:身份证正面、2:身份证反面、3:合影照、4：业务确认书、5公司门头照、6客户签字照、 7其它、10工作/财力证明 12补件资料）",
-    "imageUrl": "(string) 图片下载地址"
-}
-*/
-
+ * 返回结果
+ {
+ "applyId": "(integer) 申卡Id",
+ "applyIdMask": "(string) 申卡Id mask",
+ "fileId": "(integer) 文件Id",
+ "fileIdMask": "(string) 文件Id mask",
+ "fileType": "(integer) 文件类型（1:身份证正面、2:身份证反面、3:合影照、4：业务确认书、5公司门头照、6客户签字照、 7其它、10工作/财力证明 12补件资料）",
+ "fileTypeDesc": "(string) 文件类型字符（1:身份证正面、2:身份证反面、3:合影照、4：业务确认书、5公司门头照、6客户签字照、 7其它、10工作/财力证明 12补件资料）",
+ "imageUrl": "(string) 图片下载地址"
+ }
+ */
 
 
 /**
@@ -1150,7 +1178,10 @@ BkCobrandedcardManager.postInterviewImageBase64V1({
  */
 BkCobrandedcardManager.postInterviewLimitsettingV1({
     data: {
-        param: '',
+        param: {
+            "orderLimit": "(integer) 接单上限",
+            "salesManAccountId": "(integer) 面签人员账户Id"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -1158,10 +1189,9 @@ BkCobrandedcardManager.postInterviewLimitsettingV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1171,7 +1201,10 @@ BkCobrandedcardManager.postInterviewLimitsettingV1({
  */
 BkCobrandedcardManager.postInterviewLogindeviceV1({
     data: {
-        param: '',
+        param: {
+            "deviceKey": "(string) 设备key",
+            "salesManAccountId": "(integer) 面签人员账户id"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -1179,10 +1212,9 @@ BkCobrandedcardManager.postInterviewLogindeviceV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1194,9 +1226,9 @@ BkCobrandedcardManager.postInterviewLogindeviceV1({
  */
 BkCobrandedcardManager.getInterviewLoginlistV1({
     params: {
-        pageIndex: '',
-        pageSize: '',
-        salesManAccountId: '',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
+        salesManAccountId: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -1204,80 +1236,75 @@ BkCobrandedcardManager.getInterviewLoginlistV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "currentPage": "(integer) 当前页码，从1开始",
-    "data": [
-        {
-            "deviceKey": "(string) 登录设备",
-            "ipAddress": "(string) 登录ip地址",
-            "loginTime": "(string) 登录时间",
-            "salesManId": "(string) 业务员id",
-            "status": "(integer) 登录状态"
-        }
-    ],
-    "pageSize": "(integer) 页面容量",
-    "totalPages": "(integer) 总页数",
-    "totalRecord": "(integer) 总记录数"
-}
-*/
-
+ * 返回结果
+ {
+ "currentPage": "(integer) 当前页码，从1开始",
+ "data": [
+ {
+ "deviceKey": "(string) 登录设备",
+ "ipAddress": "(string) 登录ip地址",
+ "loginTime": "(string) 登录时间",
+ "salesManId": "(string) 业务员id",
+ "status": "(integer) 登录状态"
+ }
+ ],
+ "pageSize": "(integer) 页面容量",
+ "totalPages": "(integer) 总页数",
+ "totalRecord": "(integer) 总记录数"
+ }
+ */
 
 
 /**
  * 后台管理系统登出    /v1/interview/loginout
  *
  */
-BkCobrandedcardManager.getInterviewLoginoutV1({
-}).then(result => {
+BkCobrandedcardManager.getInterviewLoginoutV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "message": "(string) undefined",
-    "resultCode": "(integer) undefined"
-}
-*/
-
+ * 返回结果
+ {
+ "message": "(string) undefined",
+ "resultCode": "(integer) undefined"
+ }
+ */
 
 
 /**
  * 查询开放城市（市、区）列表    /v1/interview/opencities
  *
  */
-BkCobrandedcardManager.getInterviewOpencitiesV1({
-}).then(result => {
+BkCobrandedcardManager.getInterviewOpencitiesV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "cities": [
-            {
-                "areas": [
-                    {
-                        "areaCode": "(string) 区code",
-                        "areaName": "(string) 区名称",
-                        "totalCount": "(integer) 待处理订单数量"
-                    }
-                ],
-                "cityCode": "(string) 市code",
-                "cityName": "(string) 市名称",
-                "totalCount": "(integer) 待处理订单数量"
-            }
-        ],
-        "provinceCode": "(string) 省code",
-        "provinceName": "(string) 省名称"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "cities": [
+ {
+ "areas": [
+ {
+ "areaCode": "(string) 区code",
+ "areaName": "(string) 区名称",
+ "totalCount": "(integer) 待处理订单数量"
+ }
+ ],
+ "cityCode": "(string) 市code",
+ "cityName": "(string) 市名称",
+ "totalCount": "(integer) 待处理订单数量"
+ }
+ ],
+ "provinceCode": "(string) 省code",
+ "provinceName": "(string) 省名称"
+ }
+ ]
+ */
 
 
 /**
@@ -1287,7 +1314,17 @@ BkCobrandedcardManager.getInterviewOpencitiesV1({
  */
 BkCobrandedcardManager.postInterviewRealinfoV1({
     data: {
-        param: '',
+        param: {
+            "applyId": "(integer) 申请Id",
+            "applyIdMask": "(string) 申请Id mask",
+            "areaCode": "(string) 真实工作城市：区code",
+            "category": "(integer) 真实信息类型（100：客户公司真实地址信息 200：客户公司真实电话）",
+            "cityCode": "(string) 真实工作城市：市code",
+            "companyContact": "(string) 公司电话|手机号",
+            "companyContactType": "(integer) 公司电话类型：10提报单位电话手机号 11提报单位电话固话",
+            "detailAddress": "(string) 真实工作城市：详细地址",
+            "provinceCode": "(string) 真实工作城市：省code"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -1295,32 +1332,29 @@ BkCobrandedcardManager.postInterviewRealinfoV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
  * 获取拒绝原因选择项列表    /v1/interview/rejectreasons
  *
  */
-BkCobrandedcardManager.getInterviewRejectreasonsV1({
-}).then(result => {
+BkCobrandedcardManager.getInterviewRejectreasonsV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "reasonDesc": "(string) 审核失败原因描述",
-        "reasonId": "(integer) 审核失败原因Id"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "reasonDesc": "(string) 审核失败原因描述",
+ "reasonId": "(integer) 审核失败原因Id"
+ }
+ ]
+ */
 
 
 /**
@@ -1338,10 +1372,9 @@ BkCobrandedcardManager.deleteInterviewSalesmanSalesManAccountIdV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1351,7 +1384,19 @@ BkCobrandedcardManager.deleteInterviewSalesmanSalesManAccountIdV1({
  */
 BkCobrandedcardManager.postInterviewSalesmanlistV1({
     data: {
-        param: '',
+        param: {
+            "addressRelated": "(boolean) 是否关联查询面签业务人员负责区域（true：是 false：否）",
+            "areaCode": "(string) 所属区code",
+            "belongCity": [],
+            "cityCode": "(string) 所属市code",
+            "locationCity": "(string) 定位城市",
+            "nameOrMobile": "(string) 姓名或手机号",
+            "pageIndex": "(integer) 当前页码，从1开始",
+            "pageSize": "(integer) 页面大小，5~500",
+            "provinceCode": "(string) 所属省code",
+            "regionId": "(integer) 地区code",
+            "status": "(integer) 面签人员状态"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -1359,112 +1404,109 @@ BkCobrandedcardManager.postInterviewSalesmanlistV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "currentPage": "(integer) 当前页码，从1开始",
-    "data": [
-        {
-            "areas": [
-                {
-                    "areaCode": "(string) 区code",
-                    "areaName": "(string) 区名称",
-                    "cityCode": "(string) 市code",
-                    "cityName": "(string) 市名称",
-                    "provinceCode": "(string) 省code",
-                    "provinceName": "(string) 省名称"
-                }
-            ],
-            "city": "(string) 所属城市",
-            "deviceKey": "(string) 业务员登录设备key",
-            "mobile": "(string) 面签业务员电话",
-            "name": "(string) 面签业务员姓名",
-            "salesManAccountId": "(integer) 面签人员账户Id",
-            "salesManAccountIdMask": "(string) 面签人员账户Id",
-            "shortFormLimit": "(integer) 短表单派单上限",
-            "status": "(integer) 状态(0:正常 1:删除 2：休息)",
-            "statusDesc": "(string) 状态描述"
-        }
-    ],
-    "pageSize": "(integer) 页面容量",
-    "totalPages": "(integer) 总页数",
-    "totalRecord": "(integer) 总记录数"
-}
-*/
-
+ * 返回结果
+ {
+ "currentPage": "(integer) 当前页码，从1开始",
+ "data": [
+ {
+ "areas": [
+ {
+ "areaCode": "(string) 区code",
+ "areaName": "(string) 区名称",
+ "cityCode": "(string) 市code",
+ "cityName": "(string) 市名称",
+ "provinceCode": "(string) 省code",
+ "provinceName": "(string) 省名称"
+ }
+ ],
+ "city": "(string) 所属城市",
+ "deviceKey": "(string) 业务员登录设备key",
+ "mobile": "(string) 面签业务员电话",
+ "name": "(string) 面签业务员姓名",
+ "salesManAccountId": "(integer) 面签人员账户Id",
+ "salesManAccountIdMask": "(string) 面签人员账户Id",
+ "shortFormLimit": "(integer) 短表单派单上限",
+ "status": "(integer) 状态(0:正常 1:删除 2：休息)",
+ "statusDesc": "(string) 状态描述"
+ }
+ ],
+ "pageSize": "(integer) 页面容量",
+ "totalPages": "(integer) 总页数",
+ "totalRecord": "(integer) 总记录数"
+ }
+ */
 
 
 /**
  * 获取列表查询panel    /v1/interview/searchoptions
  *
  */
-BkCobrandedcardManager.getInterviewSearchoptionsV1({
-}).then(result => {
+BkCobrandedcardManager.getInterviewSearchoptionsV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "applyChannels": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ],
-    "interviewStatus": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ],
-    "interviewTypes": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ],
-    "openCities": [
-        {
-            "cities": [
-                {
-                    "areas": [
-                        {
-                            "areaCode": "(string) 区code",
-                            "areaName": "(string) 区名称",
-                            "totalCount": "(integer) 待处理订单数量"
-                        }
-                    ],
-                    "cityCode": "(string) 市code",
-                    "cityName": "(string) 市名称",
-                    "totalCount": "(integer) 待处理订单数量"
-                }
-            ],
-            "provinceCode": "(string) 省code",
-            "provinceName": "(string) 省名称"
-        }
-    ],
-    "regions": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ],
-    "salesManList": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ],
-    "salesManStatus": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ]
-}
-*/
-
+ * 返回结果
+ {
+ "applyChannels": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ],
+ "interviewStatus": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ],
+ "interviewTypes": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ],
+ "openCities": [
+ {
+ "cities": [
+ {
+ "areas": [
+ {
+ "areaCode": "(string) 区code",
+ "areaName": "(string) 区名称",
+ "totalCount": "(integer) 待处理订单数量"
+ }
+ ],
+ "cityCode": "(string) 市code",
+ "cityName": "(string) 市名称",
+ "totalCount": "(integer) 待处理订单数量"
+ }
+ ],
+ "provinceCode": "(string) 省code",
+ "provinceName": "(string) 省名称"
+ }
+ ],
+ "regions": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ],
+ "salesManList": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ],
+ "salesManStatus": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ]
+ }
+ */
 
 
 /**
@@ -1474,7 +1516,10 @@ BkCobrandedcardManager.getInterviewSearchoptionsV1({
  */
 BkCobrandedcardManager.postInterviewToauditV1({
     data: {
-        param: '',
+        param: {
+            "applyId": "(integer) 申请单号",
+            "applyIdMask": "(string) 申请单号 mask"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -1482,43 +1527,40 @@ BkCobrandedcardManager.postInterviewToauditV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
  * 获取登录用户信息    /v1/interview/userinfo
  *
  */
-BkCobrandedcardManager.getInterviewUserinfoV1({
-}).then(result => {
+BkCobrandedcardManager.getInterviewUserinfoV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "account": "(string) undefined",
-    "create_time": "(string) undefined",
-    "departmentName": "(string) undefined",
-    "department_id": "(string) undefined",
-    "email": "(string) undefined",
-    "last_modify_time": "(string) undefined",
-    "mobile": "(string) undefined",
-    "name": "(string) undefined",
-    "new_department_chain": "(string) undefined",
-    "old_department_chain": "(string) undefined",
-    "regional_authority": "(string) undefined",
-    "status": "(integer) undefined",
-    "superior": "(string) undefined",
-    "user_id": "(string) undefined",
-    "work_no": "(string) undefined"
-}
-*/
-
+ * 返回结果
+ {
+ "account": "(string) undefined",
+ "create_time": "(string) undefined",
+ "departmentName": "(string) undefined",
+ "department_id": "(string) undefined",
+ "email": "(string) undefined",
+ "last_modify_time": "(string) undefined",
+ "mobile": "(string) undefined",
+ "name": "(string) undefined",
+ "new_department_chain": "(string) undefined",
+ "old_department_chain": "(string) undefined",
+ "regional_authority": "(string) undefined",
+ "status": "(integer) undefined",
+ "superior": "(string) undefined",
+ "user_id": "(string) undefined",
+ "work_no": "(string) undefined"
+ }
+ */
 
 
 /**
@@ -1538,17 +1580,17 @@ BkCobrandedcardManager.getInterviewUserinfoV1({
  */
 BkCobrandedcardManager.getManagerShortformV1({
     params: {
-        queryValue: '',
-        queryType: '',
-        salesManNameOrMobile: '',
-        provinceCode: '',
-        cityCode: '',
-        areaCode: '',
-        countTimeFrom: '',
-        countTimeTo: '',
-        applyStatus: '',
-        pageIndex: '',
-        pageSize: '',
+        queryValue: 'undefined',
+        queryType: 'undefined',
+        salesManNameOrMobile: 'undefined',
+        provinceCode: 'undefined',
+        cityCode: 'undefined',
+        areaCode: 'undefined',
+        countTimeFrom: 'undefined',
+        countTimeTo: 'undefined',
+        applyStatus: 'undefined',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -1556,69 +1598,66 @@ BkCobrandedcardManager.getManagerShortformV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "currentPage": "(integer) 当前页码，从1开始",
-    "data": [
-        {
-            "applyId": "(integer) 申请Id",
-            "applyIdStr": "(string) 申请Id",
-            "applyStatus": "(integer) 申请状态 0：未申请 1： 已申请 2：已激活 3授信成功 4授信失败",
-            "applyStatusDesc": "(string) 申请状态描述",
-            "applyTime": "(string) 申请时间",
-            "areaCode": "(string) 区code",
-            "cityCode": "(string) 市code",
-            "cnRealName": "(string) 用户名",
-            "companyAddress": "(string) 公司地址",
-            "companyCity": "(string) 工作城市",
-            "companyName": "(string) 公司名称",
-            "confirmDays": "(integer) 距离确认回填已过天数",
-            "countTime": "(string) 申请时间",
-            "dealStatus": "(integer) 处理状态 0.待处理,1.联系不上,2,待联系,3.确认回填,4.已拒绝",
-            "dealStatusDesc": "(string) 处理状态 待处理,联系不上,待联系,确认回填,已拒绝",
-            "mobile": "(string) 手机号码",
-            "node": "(string) 截止填写页面节点",
-            "note": "(string) 备注信息",
-            "provinceCode": "(string) 省code",
-            "residentialAddress": "(string) 家庭住址",
-            "respectfulName": "(string) 用户名(尊称)",
-            "salesMan": "(string) 业务员",
-            "salesManMobile": "(string) 业务员手机号码",
-            "shortFormId": "(integer) 短表单ID",
-            "shortFormIdStr": "(string) 短表单ID",
-            "userId": "(integer) 用户ID"
-        }
-    ],
-    "pageSize": "(integer) 页面容量",
-    "totalPages": "(integer) 总页数",
-    "totalRecord": "(integer) 总记录数"
-}
-*/
-
+ * 返回结果
+ {
+ "currentPage": "(integer) 当前页码，从1开始",
+ "data": [
+ {
+ "applyId": "(integer) 申请Id",
+ "applyIdStr": "(string) 申请Id",
+ "applyStatus": "(integer) 申请状态 0：未申请 1： 已申请 2：已激活 3授信成功 4授信失败",
+ "applyStatusDesc": "(string) 申请状态描述",
+ "applyTime": "(string) 申请时间",
+ "areaCode": "(string) 区code",
+ "cityCode": "(string) 市code",
+ "cnRealName": "(string) 用户名",
+ "companyAddress": "(string) 公司地址",
+ "companyCity": "(string) 工作城市",
+ "companyName": "(string) 公司名称",
+ "confirmDays": "(integer) 距离确认回填已过天数",
+ "countTime": "(string) 申请时间",
+ "dealStatus": "(integer) 处理状态 0.待处理,1.联系不上,2,待联系,3.确认回填,4.已拒绝",
+ "dealStatusDesc": "(string) 处理状态 待处理,联系不上,待联系,确认回填,已拒绝",
+ "mobile": "(string) 手机号码",
+ "node": "(string) 截止填写页面节点",
+ "note": "(string) 备注信息",
+ "provinceCode": "(string) 省code",
+ "residentialAddress": "(string) 家庭住址",
+ "respectfulName": "(string) 用户名(尊称)",
+ "salesMan": "(string) 业务员",
+ "salesManMobile": "(string) 业务员手机号码",
+ "shortFormId": "(integer) 短表单ID",
+ "shortFormIdStr": "(string) 短表单ID",
+ "userId": "(integer) 用户ID"
+ }
+ ],
+ "pageSize": "(integer) 页面容量",
+ "totalPages": "(integer) 总页数",
+ "totalRecord": "(integer) 总记录数"
+ }
+ */
 
 
 /**
  * 获取短表单相关的列表项    /v1/manager/shortform/option
  *
  */
-BkCobrandedcardManager.getManagerShortformOptionV1({
-}).then(result => {
+BkCobrandedcardManager.getManagerShortformOptionV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "applyStatusList": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ]
-}
-*/
-
+ * 返回结果
+ {
+ "applyStatusList": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ]
+ }
+ */
 
 
 /**
@@ -1628,7 +1667,10 @@ BkCobrandedcardManager.getManagerShortformOptionV1({
  */
 BkCobrandedcardManager.postManagerShortformSalesmanV1({
     data: {
-        param: '',
+        param: {
+            "accountId": "(integer) 业务人员Id",
+            "shortFormId": "(integer) 短表单Id"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -1636,10 +1678,9 @@ BkCobrandedcardManager.postManagerShortformSalesmanV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1651,9 +1692,9 @@ BkCobrandedcardManager.postManagerShortformSalesmanV1({
  */
 BkCobrandedcardManager.getOrderV1({
     params: {
-        queryParamType: '',
-        queryParamValue: '',
-        bankId: '',
+        queryParamType: 'undefined',
+        queryParamValue: 'undefined',
+        bankId: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -1661,28 +1702,27 @@ BkCobrandedcardManager.getOrderV1({
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "applyId": "(integer) 订单ID",
-        "applyIdStr": "(string) 用于详情页面传入使用的订单ID",
-        "applyMobile": "(string) 申卡手机号",
-        "applyStatus": "(integer) 申卡状态",
-        "applyStatusDesc": "(string) 申卡状态描述",
-        "bankName": "(string) 银行名称",
-        "cardTypeId": "(integer) 卡类型Id",
-        "cardTypeName": "(string) 卡类型名称",
-        "channelName": "(string) 订单来源",
-        "confirmTime": "(string) 订单提交时间",
-        "createTime": "(string) 创建时间",
-        "registerMobile": "(string) 注册手机号",
-        "updateTime": "(string) 更新时间",
-        "userId": "(integer) 用户ID",
-        "userName": "(string) 用户姓名"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "applyId": "(integer) 订单ID",
+ "applyIdStr": "(string) 用于详情页面传入使用的订单ID",
+ "applyMobile": "(string) 申卡手机号",
+ "applyStatus": "(integer) 申卡状态",
+ "applyStatusDesc": "(string) 申卡状态描述",
+ "bankName": "(string) 银行名称",
+ "cardTypeId": "(integer) 卡类型Id",
+ "cardTypeName": "(string) 卡类型名称",
+ "channelName": "(string) 订单来源",
+ "confirmTime": "(string) 订单提交时间",
+ "createTime": "(string) 创建时间",
+ "registerMobile": "(string) 注册手机号",
+ "updateTime": "(string) 更新时间",
+ "userId": "(integer) 用户ID",
+ "userName": "(string) 用户姓名"
+ }
+ ]
+ */
 
 
 /**
@@ -1692,7 +1732,7 @@ BkCobrandedcardManager.getOrderV1({
  */
 BkCobrandedcardManager.getOrderApplyIdStrV1({
     params: {
-        applyIdStr: '',
+        applyIdStr: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -1700,63 +1740,62 @@ BkCobrandedcardManager.getOrderApplyIdStrV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "applyId": "(integer) 订单ID",
-    "applyIdStr": "(string) 用于详情页面传入使用的订单ID",
-    "applyMobile": "(string) 申卡手机号",
-    "applyStatus": "(integer) 申卡状态",
-    "applyStatusDesc": "(string) 申卡状态描述",
-    "bankName": "(string) 银行名称",
-    "barCode": "(string) 进件条码",
-    "cardTypeId": "(integer) 卡类型Id",
-    "cardTypeName": "(string) 卡类型名称",
-    "channelName": "(string) 订单来源",
-    "companyProvinceCity": "(string) 公司省市",
-    "confirmTime": "(string) 订单提交时间",
-    "coreStreamList": [
-        {
-            "extendMsg": {},
-            "nodeMsg": "(string) 节点信息",
-            "nodeTime": "(string) 节点的时间显示",
-            "nodeType": "(integer) 节点类型。0普通节点；10补件节点；20快递节点；30面签节点；40解锁激活节点"
-        }
-    ],
-    "createTime": "(string) 创建时间",
-    "deliverTo": "(string) 快递方式",
-    "eventStreamList": [
-        {
-            "createTime": "(string) 创建时间",
-            "eventId": "(integer) 事件类型",
-            "eventMsg": "(string) 事件内容",
-            "eventTime": "(string) 事件时间",
-            "isShow": "(boolean) 是否向用户显示",
-            "updateTime": "(string) 更新时间"
-        }
-    ],
-    "idCardNo": "(string) 身份证号",
-    "interviewRecordId": "(integer) 面签记录的ID",
-    "location": "(string) 申请时的定位信息",
-    "realIp": "(string) 申请时的IP",
-    "registerMobile": "(string) 注册手机号",
-    "residentialProvinceCity": "(string) 住宅省市",
-    "riskAuditResult": "(string) 风险件审核状态",
-    "riskReportRecordId": "(integer) 风险件提报ID",
-    "riskReportRecordIdStr": "(string) 风险件提报ID",
-    "riskReportTime": "(string) 风险件提报时间",
-    "riskReporter": "(string) 风险件提报人",
-    "riskTypeDesc": "(string) 风险件类型",
-    "saleBranchCode": "(string) 销售支行代码",
-    "showCreateInterview": "(boolean) 是否显示创建面签记录按钮",
-    "showRevokeCancelStatus": "(boolean) 撤销卡片注销状态 当卡片是已注销时，允许取消注销到审核通过状态",
-    "showUnlockActive": "(boolean) 是否显示解锁激活按钮",
-    "supplementDocumentRecordId": "(integer) 补件记录ID",
-    "updateTime": "(string) 更新时间",
-    "userId": "(integer) 用户ID",
-    "userName": "(string) 用户姓名"
-}
-*/
-
+ * 返回结果
+ {
+ "applyId": "(integer) 订单ID",
+ "applyIdStr": "(string) 用于详情页面传入使用的订单ID",
+ "applyMobile": "(string) 申卡手机号",
+ "applyStatus": "(integer) 申卡状态",
+ "applyStatusDesc": "(string) 申卡状态描述",
+ "bankName": "(string) 银行名称",
+ "barCode": "(string) 进件条码",
+ "cardTypeId": "(integer) 卡类型Id",
+ "cardTypeName": "(string) 卡类型名称",
+ "channelName": "(string) 订单来源",
+ "companyProvinceCity": "(string) 公司省市",
+ "confirmTime": "(string) 订单提交时间",
+ "coreStreamList": [
+ {
+ "extendMsg": {},
+ "nodeMsg": "(string) 节点信息",
+ "nodeTime": "(string) 节点的时间显示",
+ "nodeType": "(integer) 节点类型。0普通节点；10补件节点；20快递节点；30面签节点；40解锁激活节点"
+ }
+ ],
+ "createTime": "(string) 创建时间",
+ "deliverTo": "(string) 快递方式",
+ "eventStreamList": [
+ {
+ "createTime": "(string) 创建时间",
+ "eventId": "(integer) 事件类型",
+ "eventMsg": "(string) 事件内容",
+ "eventTime": "(string) 事件时间",
+ "isShow": "(boolean) 是否向用户显示",
+ "updateTime": "(string) 更新时间"
+ }
+ ],
+ "idCardNo": "(string) 身份证号",
+ "interviewRecordId": "(integer) 面签记录的ID",
+ "location": "(string) 申请时的定位信息",
+ "realIp": "(string) 申请时的IP",
+ "registerMobile": "(string) 注册手机号",
+ "residentialProvinceCity": "(string) 住宅省市",
+ "riskAuditResult": "(string) 风险件审核状态",
+ "riskReportRecordId": "(integer) 风险件提报ID",
+ "riskReportRecordIdStr": "(string) 风险件提报ID",
+ "riskReportTime": "(string) 风险件提报时间",
+ "riskReporter": "(string) 风险件提报人",
+ "riskTypeDesc": "(string) 风险件类型",
+ "saleBranchCode": "(string) 销售支行代码",
+ "showCreateInterview": "(boolean) 是否显示创建面签记录按钮",
+ "showRevokeCancelStatus": "(boolean) 撤销卡片注销状态 当卡片是已注销时，允许取消注销到审核通过状态",
+ "showUnlockActive": "(boolean) 是否显示解锁激活按钮",
+ "supplementDocumentRecordId": "(integer) 补件记录ID",
+ "updateTime": "(string) 更新时间",
+ "userId": "(integer) 用户ID",
+ "userName": "(string) 用户姓名"
+ }
+ */
 
 
 /**
@@ -1766,7 +1805,7 @@ BkCobrandedcardManager.getOrderApplyIdStrV1({
  */
 BkCobrandedcardManager.putOrderApplyIdStrInterviewrecordV1({
     params: {
-        applyIdStr: '',
+        applyIdStr: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -1774,10 +1813,9 @@ BkCobrandedcardManager.putOrderApplyIdStrInterviewrecordV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1787,7 +1825,7 @@ BkCobrandedcardManager.putOrderApplyIdStrInterviewrecordV1({
  */
 BkCobrandedcardManager.postOrderApplyIdStrRevokecancelV1({
     params: {
-        applyIdStr: '',
+        applyIdStr: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -1795,10 +1833,9 @@ BkCobrandedcardManager.postOrderApplyIdStrRevokecancelV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1808,7 +1845,7 @@ BkCobrandedcardManager.postOrderApplyIdStrRevokecancelV1({
  */
 BkCobrandedcardManager.postOrderApplyIdStrUnlockactiveV1({
     params: {
-        applyIdStr: '',
+        applyIdStr: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -1816,10 +1853,9 @@ BkCobrandedcardManager.postOrderApplyIdStrUnlockactiveV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1829,7 +1865,9 @@ BkCobrandedcardManager.postOrderApplyIdStrUnlockactiveV1({
  */
 BkCobrandedcardManager.postPermissionManageUnitAddV1({
     data: {
-        unitParam: '',
+        unitParam: {
+            "unitName": "(string) 区域名称"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -1837,10 +1875,9 @@ BkCobrandedcardManager.postPermissionManageUnitAddV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1850,7 +1887,10 @@ BkCobrandedcardManager.postPermissionManageUnitAddV1({
  */
 BkCobrandedcardManager.postPermissionManageUnitAddregionV1({
     data: {
-        param: '',
+        param: {
+            "regionCode": "(string) 城市编码",
+            "unitId": "(integer) 区域Id"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -1858,10 +1898,9 @@ BkCobrandedcardManager.postPermissionManageUnitAddregionV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1871,7 +1910,10 @@ BkCobrandedcardManager.postPermissionManageUnitAddregionV1({
  */
 BkCobrandedcardManager.postPermissionManageUnitAdduserV1({
     data: {
-        param: '',
+        param: {
+            "targetAccount": "(string) 用户account",
+            "unitId": "(integer) 区域id"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -1879,10 +1921,9 @@ BkCobrandedcardManager.postPermissionManageUnitAdduserV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1902,10 +1943,9 @@ BkCobrandedcardManager.deletePermissionManageUnitDeleteregionV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1925,10 +1965,9 @@ BkCobrandedcardManager.deletePermissionManageUnitDeleteuserV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -1948,250 +1987,249 @@ BkCobrandedcardManager.getPermissionManageUnitQueryV1({
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "regionList": [
-            {
-                "regionCode": "(string) 区域编码",
-                "regionName": "(string) 区域名称",
-                "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-            }
-        ],
-        "unitId": "(integer) 单元id",
-        "unitName": "(string) 单元名称",
-        "userList": [
-            {
-                "account": "(string) 登录账户唯一标识",
-                "departmentName": "(string) 所属部门",
-                "email": "(string) 邮箱",
-                "mobile": "(string) 手机号",
-                "name": "(string) 登录账户姓名",
-                "regionList": [
-                    {
-                        "regionCode": "(string) 区域编码",
-                        "regionName": "(string) 区域名称",
-                        "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                    }
-                ],
-                "unitList": [
-                    {
-                        "regionList": [
-                            {
-                                "regionCode": "(string) 区域编码",
-                                "regionName": "(string) 区域名称",
-                                "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                            }
-                        ],
-                        "unitId": "(integer) 单元id",
-                        "unitName": "(string) 单元名称",
-                        "userList": [
-                            {
-                                "account": "(string) 登录账户唯一标识",
-                                "departmentName": "(string) 所属部门",
-                                "email": "(string) 邮箱",
-                                "mobile": "(string) 手机号",
-                                "name": "(string) 登录账户姓名",
-                                "regionList": [
-                                    {
-                                        "regionCode": "(string) 区域编码",
-                                        "regionName": "(string) 区域名称",
-                                        "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                                    }
-                                ],
-                                "unitList": [
-                                    {
-                                        "regionList": [
-                                            {
-                                                "regionCode": "(string) 区域编码",
-                                                "regionName": "(string) 区域名称",
-                                                "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                                            }
-                                        ],
-                                        "unitId": "(integer) 单元id",
-                                        "unitName": "(string) 单元名称",
-                                        "userList": [
-                                            {
-                                                "account": "(string) 登录账户唯一标识",
-                                                "departmentName": "(string) 所属部门",
-                                                "email": "(string) 邮箱",
-                                                "mobile": "(string) 手机号",
-                                                "name": "(string) 登录账户姓名",
-                                                "regionList": [
-                                                    {
-                                                        "regionCode": "(string) 区域编码",
-                                                        "regionName": "(string) 区域名称",
-                                                        "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                                                    }
-                                                ],
-                                                "unitList": [
-                                                    {
-                                                        "regionList": [
-                                                            {
-                                                                "regionCode": "(string) 区域编码",
-                                                                "regionName": "(string) 区域名称",
-                                                                "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                                                            }
-                                                        ],
-                                                        "unitId": "(integer) 单元id",
-                                                        "unitName": "(string) 单元名称",
-                                                        "userList": [
-                                                            {
-                                                                "account": "(string) 登录账户唯一标识",
-                                                                "departmentName": "(string) 所属部门",
-                                                                "email": "(string) 邮箱",
-                                                                "mobile": "(string) 手机号",
-                                                                "name": "(string) 登录账户姓名",
-                                                                "regionList": [
-                                                                    {
-                                                                        "regionCode": "(string) 区域编码",
-                                                                        "regionName": "(string) 区域名称",
-                                                                        "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                                                                    }
-                                                                ],
-                                                                "unitList": [
-                                                                    {
-                                                                        "regionList": [
-                                                                            {
-                                                                                "regionCode": "(string) 区域编码",
-                                                                                "regionName": "(string) 区域名称",
-                                                                                "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                                                                            }
-                                                                        ],
-                                                                        "unitId": "(integer) 单元id",
-                                                                        "unitName": "(string) 单元名称",
-                                                                        "userList": [
-                                                                            {
-                                                                                "account": "(string) 登录账户唯一标识",
-                                                                                "departmentName": "(string) 所属部门",
-                                                                                "email": "(string) 邮箱",
-                                                                                "mobile": "(string) 手机号",
-                                                                                "name": "(string) 登录账户姓名",
-                                                                                "regionList": [
-                                                                                    {
-                                                                                        "regionCode": "(string) 区域编码",
-                                                                                        "regionName": "(string) 区域名称",
-                                                                                        "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                                                                                    }
-                                                                                ],
-                                                                                "unitList": [
-                                                                                    {
-                                                                                        "regionList": "#/definitions/区域信息",
-                                                                                        "unitId": "(integer) 单元id",
-                                                                                        "unitName": "(string) 单元名称",
-                                                                                        "userList": [
-                                                                                            {
-                                                                                                "account": "(string) 登录账户唯一标识",
-                                                                                                "departmentName": "(string) 所属部门",
-                                                                                                "email": "(string) 邮箱",
-                                                                                                "mobile": "(string) 手机号",
-                                                                                                "name": "(string) 登录账户姓名",
-                                                                                                "regionList": "#/definitions/区域信息",
-                                                                                                "unitList": [
-                                                                                                    {
-                                                                                                        "regionList": "#/definitions/区域信息",
-                                                                                                        "unitId": "(integer) 单元id",
-                                                                                                        "unitName": "(string) 单元名称",
-                                                                                                        "userList": [
-                                                                                                            {
-                                                                                                                "account": "(string) 登录账户唯一标识",
-                                                                                                                "departmentName": "(string) 所属部门",
-                                                                                                                "email": "(string) 邮箱",
-                                                                                                                "mobile": "(string) 手机号",
-                                                                                                                "name": "(string) 登录账户姓名",
-                                                                                                                "regionList": "#/definitions/区域信息",
-                                                                                                                "unitList": [
-                                                                                                                    {
-                                                                                                                        "regionList": "#/definitions/区域信息",
-                                                                                                                        "unitId": "(integer) 单元id",
-                                                                                                                        "unitName": "(string) 单元名称",
-                                                                                                                        "userList": [
-                                                                                                                            {
-                                                                                                                                "account": "(string) 登录账户唯一标识",
-                                                                                                                                "departmentName": "(string) 所属部门",
-                                                                                                                                "email": "(string) 邮箱",
-                                                                                                                                "mobile": "(string) 手机号",
-                                                                                                                                "name": "(string) 登录账户姓名",
-                                                                                                                                "regionList": "#/definitions/区域信息",
-                                                                                                                                "unitList": [
-                                                                                                                                    {
-                                                                                                                                        "regionList": "#/definitions/区域信息",
-                                                                                                                                        "unitId": "(integer) 单元id",
-                                                                                                                                        "unitName": "(string) 单元名称",
-                                                                                                                                        "userList": [
-                                                                                                                                            {
-                                                                                                                                                "account": "(string) 登录账户唯一标识",
-                                                                                                                                                "departmentName": "(string) 所属部门",
-                                                                                                                                                "email": "(string) 邮箱",
-                                                                                                                                                "mobile": "(string) 手机号",
-                                                                                                                                                "name": "(string) 登录账户姓名",
-                                                                                                                                                "regionList": "#/definitions/区域信息",
-                                                                                                                                                "unitList": [
-                                                                                                                                                    {
-                                                                                                                                                        "regionList": "#/definitions/区域信息",
-                                                                                                                                                        "unitId": "(integer) 单元id",
-                                                                                                                                                        "unitName": "(string) 单元名称",
-                                                                                                                                                        "userList": [
-                                                                                                                                                            {
-                                                                                                                                                                "account": "(string) 登录账户唯一标识",
-                                                                                                                                                                "departmentName": "(string) 所属部门",
-                                                                                                                                                                "email": "(string) 邮箱",
-                                                                                                                                                                "mobile": "(string) 手机号",
-                                                                                                                                                                "name": "(string) 登录账户姓名",
-                                                                                                                                                                "regionList": "#/definitions/区域信息",
-                                                                                                                                                                "unitList": "#/definitions/权限单元",
-                                                                                                                                                                "work_no": "(string) 工号"
-                                                                                                                                                            }
-                                                                                                                                                        ]
-                                                                                                                                                    }
-                                                                                                                                                ],
-                                                                                                                                                "work_no": "(string) 工号"
-                                                                                                                                            }
-                                                                                                                                        ]
-                                                                                                                                    }
-                                                                                                                                ],
-                                                                                                                                "work_no": "(string) 工号"
-                                                                                                                            }
-                                                                                                                        ]
-                                                                                                                    }
-                                                                                                                ],
-                                                                                                                "work_no": "(string) 工号"
-                                                                                                            }
-                                                                                                        ]
-                                                                                                    }
-                                                                                                ],
-                                                                                                "work_no": "(string) 工号"
-                                                                                            }
-                                                                                        ]
-                                                                                    }
-                                                                                ],
-                                                                                "work_no": "(string) 工号"
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                ],
-                                                                "work_no": "(string) 工号"
-                                                            }
-                                                        ]
-                                                    }
-                                                ],
-                                                "work_no": "(string) 工号"
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "work_no": "(string) 工号"
-                            }
-                        ]
-                    }
-                ],
-                "work_no": "(string) 工号"
-            }
-        ]
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitList": [
+ {
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitList": [
+ {
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitList": [
+ {
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitList": [
+ {
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitList": [
+ {
+ "regionList": "#/definitions/区域信息",
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": "#/definitions/区域信息",
+ "unitList": [
+ {
+ "regionList": "#/definitions/区域信息",
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": "#/definitions/区域信息",
+ "unitList": [
+ {
+ "regionList": "#/definitions/区域信息",
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": "#/definitions/区域信息",
+ "unitList": [
+ {
+ "regionList": "#/definitions/区域信息",
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": "#/definitions/区域信息",
+ "unitList": [
+ {
+ "regionList": "#/definitions/区域信息",
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": "#/definitions/区域信息",
+ "unitList": "#/definitions/权限单元",
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ]
+ */
 
 
 /**
@@ -2201,7 +2239,10 @@ BkCobrandedcardManager.getPermissionManageUnitQueryV1({
  */
 BkCobrandedcardManager.postPermissionManageUserAddregionV1({
     data: {
-        param: '',
+        param: {
+            "regionCode": "(string) 城市编码",
+            "targetAccount": "(string) 用户account"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -2209,10 +2250,9 @@ BkCobrandedcardManager.postPermissionManageUserAddregionV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -2232,10 +2272,9 @@ BkCobrandedcardManager.deletePermissionManageUserDeleteregionV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -2255,250 +2294,249 @@ BkCobrandedcardManager.getPermissionManageUserQueryV1({
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "account": "(string) 登录账户唯一标识",
-        "departmentName": "(string) 所属部门",
-        "email": "(string) 邮箱",
-        "mobile": "(string) 手机号",
-        "name": "(string) 登录账户姓名",
-        "regionList": [
-            {
-                "regionCode": "(string) 区域编码",
-                "regionName": "(string) 区域名称",
-                "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-            }
-        ],
-        "unitList": [
-            {
-                "regionList": [
-                    {
-                        "regionCode": "(string) 区域编码",
-                        "regionName": "(string) 区域名称",
-                        "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                    }
-                ],
-                "unitId": "(integer) 单元id",
-                "unitName": "(string) 单元名称",
-                "userList": [
-                    {
-                        "account": "(string) 登录账户唯一标识",
-                        "departmentName": "(string) 所属部门",
-                        "email": "(string) 邮箱",
-                        "mobile": "(string) 手机号",
-                        "name": "(string) 登录账户姓名",
-                        "regionList": [
-                            {
-                                "regionCode": "(string) 区域编码",
-                                "regionName": "(string) 区域名称",
-                                "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                            }
-                        ],
-                        "unitList": [
-                            {
-                                "regionList": [
-                                    {
-                                        "regionCode": "(string) 区域编码",
-                                        "regionName": "(string) 区域名称",
-                                        "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                                    }
-                                ],
-                                "unitId": "(integer) 单元id",
-                                "unitName": "(string) 单元名称",
-                                "userList": [
-                                    {
-                                        "account": "(string) 登录账户唯一标识",
-                                        "departmentName": "(string) 所属部门",
-                                        "email": "(string) 邮箱",
-                                        "mobile": "(string) 手机号",
-                                        "name": "(string) 登录账户姓名",
-                                        "regionList": [
-                                            {
-                                                "regionCode": "(string) 区域编码",
-                                                "regionName": "(string) 区域名称",
-                                                "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                                            }
-                                        ],
-                                        "unitList": [
-                                            {
-                                                "regionList": [
-                                                    {
-                                                        "regionCode": "(string) 区域编码",
-                                                        "regionName": "(string) 区域名称",
-                                                        "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                                                    }
-                                                ],
-                                                "unitId": "(integer) 单元id",
-                                                "unitName": "(string) 单元名称",
-                                                "userList": [
-                                                    {
-                                                        "account": "(string) 登录账户唯一标识",
-                                                        "departmentName": "(string) 所属部门",
-                                                        "email": "(string) 邮箱",
-                                                        "mobile": "(string) 手机号",
-                                                        "name": "(string) 登录账户姓名",
-                                                        "regionList": [
-                                                            {
-                                                                "regionCode": "(string) 区域编码",
-                                                                "regionName": "(string) 区域名称",
-                                                                "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                                                            }
-                                                        ],
-                                                        "unitList": [
-                                                            {
-                                                                "regionList": [
-                                                                    {
-                                                                        "regionCode": "(string) 区域编码",
-                                                                        "regionName": "(string) 区域名称",
-                                                                        "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                                                                    }
-                                                                ],
-                                                                "unitId": "(integer) 单元id",
-                                                                "unitName": "(string) 单元名称",
-                                                                "userList": [
-                                                                    {
-                                                                        "account": "(string) 登录账户唯一标识",
-                                                                        "departmentName": "(string) 所属部门",
-                                                                        "email": "(string) 邮箱",
-                                                                        "mobile": "(string) 手机号",
-                                                                        "name": "(string) 登录账户姓名",
-                                                                        "regionList": [
-                                                                            {
-                                                                                "regionCode": "(string) 区域编码",
-                                                                                "regionName": "(string) 区域名称",
-                                                                                "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                                                                            }
-                                                                        ],
-                                                                        "unitList": [
-                                                                            {
-                                                                                "regionList": [
-                                                                                    {
-                                                                                        "regionCode": "(string) 区域编码",
-                                                                                        "regionName": "(string) 区域名称",
-                                                                                        "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
-                                                                                    }
-                                                                                ],
-                                                                                "unitId": "(integer) 单元id",
-                                                                                "unitName": "(string) 单元名称",
-                                                                                "userList": [
-                                                                                    {
-                                                                                        "account": "(string) 登录账户唯一标识",
-                                                                                        "departmentName": "(string) 所属部门",
-                                                                                        "email": "(string) 邮箱",
-                                                                                        "mobile": "(string) 手机号",
-                                                                                        "name": "(string) 登录账户姓名",
-                                                                                        "regionList": "#/definitions/区域信息",
-                                                                                        "unitList": [
-                                                                                            {
-                                                                                                "regionList": "#/definitions/区域信息",
-                                                                                                "unitId": "(integer) 单元id",
-                                                                                                "unitName": "(string) 单元名称",
-                                                                                                "userList": [
-                                                                                                    {
-                                                                                                        "account": "(string) 登录账户唯一标识",
-                                                                                                        "departmentName": "(string) 所属部门",
-                                                                                                        "email": "(string) 邮箱",
-                                                                                                        "mobile": "(string) 手机号",
-                                                                                                        "name": "(string) 登录账户姓名",
-                                                                                                        "regionList": "#/definitions/区域信息",
-                                                                                                        "unitList": [
-                                                                                                            {
-                                                                                                                "regionList": "#/definitions/区域信息",
-                                                                                                                "unitId": "(integer) 单元id",
-                                                                                                                "unitName": "(string) 单元名称",
-                                                                                                                "userList": [
-                                                                                                                    {
-                                                                                                                        "account": "(string) 登录账户唯一标识",
-                                                                                                                        "departmentName": "(string) 所属部门",
-                                                                                                                        "email": "(string) 邮箱",
-                                                                                                                        "mobile": "(string) 手机号",
-                                                                                                                        "name": "(string) 登录账户姓名",
-                                                                                                                        "regionList": "#/definitions/区域信息",
-                                                                                                                        "unitList": [
-                                                                                                                            {
-                                                                                                                                "regionList": "#/definitions/区域信息",
-                                                                                                                                "unitId": "(integer) 单元id",
-                                                                                                                                "unitName": "(string) 单元名称",
-                                                                                                                                "userList": [
-                                                                                                                                    {
-                                                                                                                                        "account": "(string) 登录账户唯一标识",
-                                                                                                                                        "departmentName": "(string) 所属部门",
-                                                                                                                                        "email": "(string) 邮箱",
-                                                                                                                                        "mobile": "(string) 手机号",
-                                                                                                                                        "name": "(string) 登录账户姓名",
-                                                                                                                                        "regionList": "#/definitions/区域信息",
-                                                                                                                                        "unitList": [
-                                                                                                                                            {
-                                                                                                                                                "regionList": "#/definitions/区域信息",
-                                                                                                                                                "unitId": "(integer) 单元id",
-                                                                                                                                                "unitName": "(string) 单元名称",
-                                                                                                                                                "userList": [
-                                                                                                                                                    {
-                                                                                                                                                        "account": "(string) 登录账户唯一标识",
-                                                                                                                                                        "departmentName": "(string) 所属部门",
-                                                                                                                                                        "email": "(string) 邮箱",
-                                                                                                                                                        "mobile": "(string) 手机号",
-                                                                                                                                                        "name": "(string) 登录账户姓名",
-                                                                                                                                                        "regionList": "#/definitions/区域信息",
-                                                                                                                                                        "unitList": [
-                                                                                                                                                            {
-                                                                                                                                                                "regionList": "#/definitions/区域信息",
-                                                                                                                                                                "unitId": "(integer) 单元id",
-                                                                                                                                                                "unitName": "(string) 单元名称",
-                                                                                                                                                                "userList": "#/definitions/iam 用户信息"
-                                                                                                                                                            }
-                                                                                                                                                        ],
-                                                                                                                                                        "work_no": "(string) 工号"
-                                                                                                                                                    }
-                                                                                                                                                ]
-                                                                                                                                            }
-                                                                                                                                        ],
-                                                                                                                                        "work_no": "(string) 工号"
-                                                                                                                                    }
-                                                                                                                                ]
-                                                                                                                            }
-                                                                                                                        ],
-                                                                                                                        "work_no": "(string) 工号"
-                                                                                                                    }
-                                                                                                                ]
-                                                                                                            }
-                                                                                                        ],
-                                                                                                        "work_no": "(string) 工号"
-                                                                                                    }
-                                                                                                ]
-                                                                                            }
-                                                                                        ],
-                                                                                        "work_no": "(string) 工号"
-                                                                                    }
-                                                                                ]
-                                                                            }
-                                                                        ],
-                                                                        "work_no": "(string) 工号"
-                                                                    }
-                                                                ]
-                                                            }
-                                                        ],
-                                                        "work_no": "(string) 工号"
-                                                    }
-                                                ]
-                                            }
-                                        ],
-                                        "work_no": "(string) 工号"
-                                    }
-                                ]
-                            }
-                        ],
-                        "work_no": "(string) 工号"
-                    }
-                ]
-            }
-        ],
-        "work_no": "(string) 工号"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitList": [
+ {
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitList": [
+ {
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitList": [
+ {
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitList": [
+ {
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitList": [
+ {
+ "regionList": [
+ {
+ "regionCode": "(string) 区域编码",
+ "regionName": "(string) 区域名称",
+ "regionType": "(integer) 区域类型，1：省份，2：城市，3：区"
+ }
+ ],
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": "#/definitions/区域信息",
+ "unitList": [
+ {
+ "regionList": "#/definitions/区域信息",
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": "#/definitions/区域信息",
+ "unitList": [
+ {
+ "regionList": "#/definitions/区域信息",
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": "#/definitions/区域信息",
+ "unitList": [
+ {
+ "regionList": "#/definitions/区域信息",
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": "#/definitions/区域信息",
+ "unitList": [
+ {
+ "regionList": "#/definitions/区域信息",
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": [
+ {
+ "account": "(string) 登录账户唯一标识",
+ "departmentName": "(string) 所属部门",
+ "email": "(string) 邮箱",
+ "mobile": "(string) 手机号",
+ "name": "(string) 登录账户姓名",
+ "regionList": "#/definitions/区域信息",
+ "unitList": [
+ {
+ "regionList": "#/definitions/区域信息",
+ "unitId": "(integer) 单元id",
+ "unitName": "(string) 单元名称",
+ "userList": "#/definitions/iam 用户信息"
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ }
+ ],
+ "work_no": "(string) 工号"
+ }
+ ]
+ */
 
 
 /**
@@ -2515,14 +2553,14 @@ BkCobrandedcardManager.getPermissionManageUserQueryV1({
  */
 BkCobrandedcardManager.getRiskV1({
     params: {
-        queryValue: '',
-        queryType: '',
-        reportStatus: '',
-        riskProperty: '',
-        salesManId: '',
-        regionId: '',
-        pageIndex: '',
-        pageSize: '',
+        queryValue: 'undefined',
+        queryType: 'undefined',
+        reportStatus: 'undefined',
+        riskProperty: 'undefined',
+        salesManId: 'undefined',
+        regionId: 'undefined',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -2530,54 +2568,53 @@ BkCobrandedcardManager.getRiskV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "currentPage": "(integer) 当前页码，从1开始",
-    "data": [
-        {
-            "auditTime": "(string) 审核时间",
-            "reportStatus": "(integer) 提报状态 1待提报 2待审核 3已审核",
-            "reportStatusDesc": "(string) 提报状态 1待提报 2待审核 3已审核",
-            "reportTime": "(string) 提报时间",
-            "riskId": "(integer) 风险件id",
-            "riskIdMask": "(string) 风险件id",
-            "riskProperty": "(integer) 风险性质 1个人风险 2团体风险",
-            "riskPropertyDesc": "(string) 风险性质 1个人风险 2团体风险",
-            "riskUserList": [
-                {
-                    "applyId": "(integer) 申卡记录id",
-                    "applyIdMask": "(string) 申卡记录id",
-                    "applyStatusDesc": "(string) 用户状态",
-                    "applyTypeDesc": "(string) 订单类型",
-                    "auditResult": "(integer) 风险判定结果 1不予面签 2银行止付 3无风险",
-                    "auditResultDesc": "(string) 风险判定结果描述 1不予面签 2银行止付 3无风险",
-                    "companyAddress": "(string) 工作单位地址",
-                    "companyName": "(string) 工作单位",
-                    "detailInfo": [
-                        {
-                            "applyIdMask": "(string) applyId mask",
-                            "detailType": "(integer) 详情类型 1面签详情 2补件详情",
-                            "detailTypeDesc": "(string) 详情类型描述 1面签详情 2补件详情",
-                            "paramId": "(integer) 查看详情所需的参数"
-                        }
-                    ],
-                    "idCardNo": "(string) 用户身份证号",
-                    "userId": "(integer) 用户id",
-                    "userMobile": "(string) 用户手机号",
-                    "userName": "(string) 用户姓名"
-                }
-            ],
-            "saleManMobile": "(string) 业务员手机号",
-            "saleManName": "(string) 业务员姓名",
-            "saleManRegion": "(string) 业务员区域"
-        }
-    ],
-    "pageSize": "(integer) 页面容量",
-    "totalPages": "(integer) 总页数",
-    "totalRecord": "(integer) 总记录数"
-}
-*/
-
+ * 返回结果
+ {
+ "currentPage": "(integer) 当前页码，从1开始",
+ "data": [
+ {
+ "auditTime": "(string) 审核时间",
+ "reportStatus": "(integer) 提报状态 1待提报 2待审核 3已审核",
+ "reportStatusDesc": "(string) 提报状态 1待提报 2待审核 3已审核",
+ "reportTime": "(string) 提报时间",
+ "riskId": "(integer) 风险件id",
+ "riskIdMask": "(string) 风险件id",
+ "riskProperty": "(integer) 风险性质 1个人风险 2团体风险",
+ "riskPropertyDesc": "(string) 风险性质 1个人风险 2团体风险",
+ "riskUserList": [
+ {
+ "applyId": "(integer) 申卡记录id",
+ "applyIdMask": "(string) 申卡记录id",
+ "applyStatusDesc": "(string) 用户状态",
+ "applyTypeDesc": "(string) 订单类型",
+ "auditResult": "(integer) 风险判定结果 1不予面签 2银行止付 3无风险",
+ "auditResultDesc": "(string) 风险判定结果描述 1不予面签 2银行止付 3无风险",
+ "companyAddress": "(string) 工作单位地址",
+ "companyName": "(string) 工作单位",
+ "detailInfo": [
+ {
+ "applyIdMask": "(string) applyId mask",
+ "detailType": "(integer) 详情类型 1面签详情 2补件详情",
+ "detailTypeDesc": "(string) 详情类型描述 1面签详情 2补件详情",
+ "paramId": "(integer) 查看详情所需的参数"
+ }
+ ],
+ "idCardNo": "(string) 用户身份证号",
+ "userId": "(integer) 用户id",
+ "userMobile": "(string) 用户手机号",
+ "userName": "(string) 用户姓名"
+ }
+ ],
+ "saleManMobile": "(string) 业务员手机号",
+ "saleManName": "(string) 业务员姓名",
+ "saleManRegion": "(string) 业务员区域"
+ }
+ ],
+ "pageSize": "(integer) 页面容量",
+ "totalPages": "(integer) 总页数",
+ "totalRecord": "(integer) 总记录数"
+ }
+ */
 
 
 /**
@@ -2587,7 +2624,20 @@ BkCobrandedcardManager.getRiskV1({
  */
 BkCobrandedcardManager.postRiskAuditresultV1({
     data: {
-        param: '',
+        param: {
+            "auditComment": "(string) 审核意见",
+            "auditResult": [
+                {
+                    "applyId": "(integer) 用户申卡id",
+                    "applyIdMask": "(string) 用户申卡id",
+                    "riskResult": "(integer) 风险判定结果 1不予面签 2银行止付 3无风险"
+                }
+            ],
+            "riskId": "(integer) 风险件id",
+            "riskIdMask": "(string) 风险件id",
+            "riskType": "(integer) 风险提报类型 1涉及中介代办、挂靠 2申请信息虚假或不一致 3无工作证明或离职 4贷款投资类公司 5禁止客群、行业 6无办公场所 10其它",
+            "visitedDepartment": "(integer) 是否亲访单位"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -2595,10 +2645,9 @@ BkCobrandedcardManager.postRiskAuditresultV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -2616,99 +2665,96 @@ BkCobrandedcardManager.getRiskDetailV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "auditComment": "(string) 审核意见",
-    "auditMan": "(string) 审核人员",
-    "auditStatus": "(integer) 订单状态 2待审核 3已审核",
-    "auditStatusDesc": "(string) 订单状态描述 2待审核 3已审核",
-    "auditTime": "(string) 审核时间",
-    "reportNote": "(string) 业务员提报说明",
-    "reportTime": "(string) 提报时间",
-    "riskId": "(integer) 风险件id",
-    "riskImageList": [
-        {
-            "fileId": "(integer) 文件Id",
-            "fileType": "(integer) 文件类型 1风险证明  10其它",
-            "fileTypeDesc": "(string) 文件类型文件类型 1风险证明  10其它",
-            "imageBase64": "(string) 图片内容（base64编码）,已压缩",
-            "mediaType": "(string) 图片类型"
-        }
-    ],
-    "riskProperty": "(integer) 风险性质 1个人风险 2团体风险",
-    "riskPropertyDesc": "(string) 风险性质 1个人风险 2团体风险",
-    "riskType": "(integer) 风险类型 1涉及中介代办、挂靠 2申请信息虚假或不一致 3无工作证明或离职 4贷款投资类公司 5禁止客群、行业 6无办公场所 10其它",
-    "riskTypeDesc": "(string) 风险类型 1涉及中介代办、挂靠 2申请信息虚假或不一致 3无工作证明或离职 4贷款投资类公司 5禁止客群、行业 6无办公场所 10其它",
-    "riskUserList": [
-        {
-            "applyId": "(integer) 申卡记录id",
-            "applyIdMask": "(string) 申卡记录id",
-            "applyStatusDesc": "(string) 用户状态",
-            "applyTypeDesc": "(string) 订单类型",
-            "auditResult": "(integer) 风险判定结果 1不予面签 2银行止付 3无风险",
-            "auditResultDesc": "(string) 风险判定结果描述 1不予面签 2银行止付 3无风险",
-            "companyAddress": "(string) 工作单位地址",
-            "companyName": "(string) 工作单位",
-            "detailInfo": [
-                {
-                    "applyIdMask": "(string) applyId mask",
-                    "detailType": "(integer) 详情类型 1面签详情 2补件详情",
-                    "detailTypeDesc": "(string) 详情类型描述 1面签详情 2补件详情",
-                    "paramId": "(integer) 查看详情所需的参数"
-                }
-            ],
-            "idCardNo": "(string) 用户身份证号",
-            "userId": "(integer) 用户id",
-            "userMobile": "(string) 用户手机号",
-            "userName": "(string) 用户姓名"
-        }
-    ],
-    "visitedDepartment": "(integer) 是否亲访单位 1是 2否"
-}
-*/
-
+ * 返回结果
+ {
+ "auditComment": "(string) 审核意见",
+ "auditMan": "(string) 审核人员",
+ "auditStatus": "(integer) 订单状态 2待审核 3已审核",
+ "auditStatusDesc": "(string) 订单状态描述 2待审核 3已审核",
+ "auditTime": "(string) 审核时间",
+ "reportNote": "(string) 业务员提报说明",
+ "reportTime": "(string) 提报时间",
+ "riskId": "(integer) 风险件id",
+ "riskImageList": [
+ {
+ "fileId": "(integer) 文件Id",
+ "fileType": "(integer) 文件类型 1风险证明  10其它",
+ "fileTypeDesc": "(string) 文件类型文件类型 1风险证明  10其它",
+ "imageBase64": "(string) 图片内容（base64编码）,已压缩",
+ "mediaType": "(string) 图片类型"
+ }
+ ],
+ "riskProperty": "(integer) 风险性质 1个人风险 2团体风险",
+ "riskPropertyDesc": "(string) 风险性质 1个人风险 2团体风险",
+ "riskType": "(integer) 风险类型 1涉及中介代办、挂靠 2申请信息虚假或不一致 3无工作证明或离职 4贷款投资类公司 5禁止客群、行业 6无办公场所 10其它",
+ "riskTypeDesc": "(string) 风险类型 1涉及中介代办、挂靠 2申请信息虚假或不一致 3无工作证明或离职 4贷款投资类公司 5禁止客群、行业 6无办公场所 10其它",
+ "riskUserList": [
+ {
+ "applyId": "(integer) 申卡记录id",
+ "applyIdMask": "(string) 申卡记录id",
+ "applyStatusDesc": "(string) 用户状态",
+ "applyTypeDesc": "(string) 订单类型",
+ "auditResult": "(integer) 风险判定结果 1不予面签 2银行止付 3无风险",
+ "auditResultDesc": "(string) 风险判定结果描述 1不予面签 2银行止付 3无风险",
+ "companyAddress": "(string) 工作单位地址",
+ "companyName": "(string) 工作单位",
+ "detailInfo": [
+ {
+ "applyIdMask": "(string) applyId mask",
+ "detailType": "(integer) 详情类型 1面签详情 2补件详情",
+ "detailTypeDesc": "(string) 详情类型描述 1面签详情 2补件详情",
+ "paramId": "(integer) 查看详情所需的参数"
+ }
+ ],
+ "idCardNo": "(string) 用户身份证号",
+ "userId": "(integer) 用户id",
+ "userMobile": "(string) 用户手机号",
+ "userName": "(string) 用户姓名"
+ }
+ ],
+ "visitedDepartment": "(integer) 是否亲访单位 1是 2否"
+ }
+ */
 
 
 /**
  * 获取风险件审核相关的列表项    /v1/risk/option
  *
  */
-BkCobrandedcardManager.getRiskOptionV1({
-}).then(result => {
+BkCobrandedcardManager.getRiskOptionV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "reportStatus": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ],
-    "riskAuditResult": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ],
-    "riskProperty": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ],
-    "riskType": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ]
-}
-*/
-
+ * 返回结果
+ {
+ "reportStatus": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ],
+ "riskAuditResult": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ],
+ "riskProperty": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ],
+ "riskType": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ]
+ }
+ */
 
 
 /**
@@ -2719,10 +2765,14 @@ BkCobrandedcardManager.getRiskOptionV1({
  */
 BkCobrandedcardManager.postSensitivewordsAddV1({
     params: {
-        token: '',
+        token: 'undefined',
     },
     data: {
-        param: '',
+        param: {
+            "category": "(integer) 关键字校验类别[0：公司职务 1：公司名称...]",
+            "keyword": "(string) 敏感字(必填)",
+            "keywordType": "(integer) 关键字类型[0：敏感字 1：非敏感字白名单]"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -2730,10 +2780,9 @@ BkCobrandedcardManager.postSensitivewordsAddV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -2744,10 +2793,16 @@ BkCobrandedcardManager.postSensitivewordsAddV1({
  */
 BkCobrandedcardManager.postSensitivewordsBatchaddV1({
     params: {
-        token: '',
+        token: 'undefined',
     },
     data: {
-        param: '',
+        param: [
+            {
+                "category": "(integer) 关键字校验类别[0：公司职务 1：公司名称...]",
+                "keyword": "(string) 敏感字(必填)",
+                "keywordType": "(integer) 关键字类型[0：敏感字 1：非敏感字白名单]"
+            }
+        ],
     },
 }).then(result => {
     console.log(result);
@@ -2755,10 +2810,9 @@ BkCobrandedcardManager.postSensitivewordsBatchaddV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -2771,10 +2825,10 @@ BkCobrandedcardManager.postSensitivewordsBatchaddV1({
  */
 BkCobrandedcardManager.getStatusCardcreditV1({
     params: {
-        userId: '',
-        mobile: '',
-        pageIndex: '',
-        pageSize: '',
+        userId: 'undefined',
+        mobile: 'undefined',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -2782,25 +2836,24 @@ BkCobrandedcardManager.getStatusCardcreditV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "currentPage": "(integer) 当前页码，从1开始",
-    "data": [
-        {
-            "accountRemainAmt": "(number) 账面余额",
-            "availableCashLimit": "(number) 取现可用额度",
-            "cardCreditLogCreateTime": "(string) 创建时间",
-            "cashLimit": "(number) 取现额度",
-            "creditLimit": "(number) 信用额度",
-            "currentAvailableCredit": "(number) 可用额度"
-        }
-    ],
-    "pageSize": "(integer) 页面容量",
-    "totalPages": "(integer) 总页数",
-    "totalRecord": "(integer) 总记录数"
-}
-*/
-
+ * 返回结果
+ {
+ "currentPage": "(integer) 当前页码，从1开始",
+ "data": [
+ {
+ "accountRemainAmt": "(number) 账面余额",
+ "availableCashLimit": "(number) 取现可用额度",
+ "cardCreditLogCreateTime": "(string) 创建时间",
+ "cashLimit": "(number) 取现额度",
+ "creditLimit": "(number) 信用额度",
+ "currentAvailableCredit": "(number) 可用额度"
+ }
+ ],
+ "pageSize": "(integer) 页面容量",
+ "totalPages": "(integer) 总页数",
+ "totalRecord": "(integer) 总记录数"
+ }
+ */
 
 
 /**
@@ -2813,10 +2866,10 @@ BkCobrandedcardManager.getStatusCardcreditV1({
  */
 BkCobrandedcardManager.getStatusCardplancreditV1({
     params: {
-        userId: '',
-        mobile: '',
-        pageIndex: '',
-        pageSize: '',
+        userId: 'undefined',
+        mobile: 'undefined',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -2824,22 +2877,21 @@ BkCobrandedcardManager.getStatusCardplancreditV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "currentPage": "(integer) 当前页码，从1开始",
-    "data": [
-        {
-            "availableCashPlanLimit": "(number) 现金分期可用额度",
-            "cardPlanCreditLogCreateTime": "(string) 创建时间",
-            "cashPlanLimit": "(number) 现金分期额度"
-        }
-    ],
-    "pageSize": "(integer) 页面容量",
-    "totalPages": "(integer) 总页数",
-    "totalRecord": "(integer) 总记录数"
-}
-*/
-
+ * 返回结果
+ {
+ "currentPage": "(integer) 当前页码，从1开始",
+ "data": [
+ {
+ "availableCashPlanLimit": "(number) 现金分期可用额度",
+ "cardPlanCreditLogCreateTime": "(string) 创建时间",
+ "cashPlanLimit": "(number) 现金分期额度"
+ }
+ ],
+ "pageSize": "(integer) 页面容量",
+ "totalPages": "(integer) 总页数",
+ "totalRecord": "(integer) 总记录数"
+ }
+ */
 
 
 /**
@@ -2852,10 +2904,10 @@ BkCobrandedcardManager.getStatusCardplancreditV1({
  */
 BkCobrandedcardManager.getStatusCardstatusV1({
     params: {
-        userId: '',
-        mobile: '',
-        pageIndex: '',
-        pageSize: '',
+        userId: 'undefined',
+        mobile: 'undefined',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -2863,18 +2915,17 @@ BkCobrandedcardManager.getStatusCardstatusV1({
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "cardStatusDesc": "(string) 卡片状态描述",
-        "cardStatusLogCreateTime": "(string) 创建时间",
-        "consumeStatusDesc": "(string) 卡片消费功能描述",
-        "remitStatusDesc": "(string) 卡片转账功能描述",
-        "withdrawStatusDesc": "(string) 卡片取现功能描述"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "cardStatusDesc": "(string) 卡片状态描述",
+ "cardStatusLogCreateTime": "(string) 创建时间",
+ "consumeStatusDesc": "(string) 卡片消费功能描述",
+ "remitStatusDesc": "(string) 卡片转账功能描述",
+ "withdrawStatusDesc": "(string) 卡片取现功能描述"
+ }
+ ]
+ */
 
 
 /**
@@ -2882,7 +2933,7 @@ BkCobrandedcardManager.getStatusCardstatusV1({
  *
  * @params      { Integer  }      searchType                    关键字检索类型 1:手机号码或者姓名 2:userId
  * @params      { String   }      searchValue                   查询条件 持卡人姓名或手机号码或者用户userId
- * @params      { String   }      belongCityList                所属城市列表 belongCityList,格式为 &#x27;city1,city2,city3,...&#x27; 
+ * @params      { String   }      belongCityList                所属城市列表 belongCityList,格式为 &#x27;city1,city2,city3,...&#x27;
  * @params      { String   }      provinceCode                  省code
  * @params      { String   }      cityCode                      市code
  * @params      { String   }      areaCode                      区code
@@ -2894,17 +2945,17 @@ BkCobrandedcardManager.getStatusCardstatusV1({
  */
 BkCobrandedcardManager.getSupplementV1({
     params: {
-        searchType: '',
-        searchValue: '',
-        belongCityList: '',
-        provinceCode: '',
-        cityCode: '',
-        areaCode: '',
-        salesManId: '',
-        regionId: '',
-        supplementStatus: '',
-        pageIndex: '',
-        pageSize: '',
+        searchType: 'undefined',
+        searchValue: 'undefined',
+        belongCityList: 'undefined',
+        provinceCode: 'undefined',
+        cityCode: 'undefined',
+        areaCode: 'undefined',
+        salesManId: 'undefined',
+        regionId: 'undefined',
+        supplementStatus: 'undefined',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -2912,36 +2963,35 @@ BkCobrandedcardManager.getSupplementV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "currentPage": "(integer) 当前页码，从1开始",
-    "data": [
-        {
-            "address": "(string) 公司所在省市区",
-            "applyId": "(integer) 申请Id",
-            "applyIdMask": "(string) 申请Id Mask",
-            "applyTime": "(string) 卡申请时间",
-            "cityCode": "(string) 客户工作所在的市code",
-            "interviewMan": "(string) 业务员姓名",
-            "interviewManMobile": "(string) 业务员电话",
-            "interviewManRegion": "(string) 业务员区域",
-            "mobile": "(string) 联系方式（持卡人手机号码）",
-            "realName": "(string) 申请人（持卡人姓名）",
-            "riskId": "(string) 风险件Id",
-            "riskLabel": "(string) 当前订单的风险状态对应显示的标签（风险待审核、风险件银行止付、风险件不予面签、申卡黑名单...）",
-            "riskStatus": "(integer) 最新入（真实信息）库客户公司地址",
-            "supplementStatus": "(integer) 补件状态（1:待上传 2:待审核 3:审核通过 4:审核失败）",
-            "supplementStatusDesc": "(string) 补件状态描述（1:待上传 2:待审核 3:审核通过 4:审核失败）",
-            "updateTime": "(string) 更新时间",
-            "userId": "(integer) undefined"
-        }
-    ],
-    "pageSize": "(integer) 页面容量",
-    "totalPages": "(integer) 总页数",
-    "totalRecord": "(integer) 总记录数"
-}
-*/
-
+ * 返回结果
+ {
+ "currentPage": "(integer) 当前页码，从1开始",
+ "data": [
+ {
+ "address": "(string) 公司所在省市区",
+ "applyId": "(integer) 申请Id",
+ "applyIdMask": "(string) 申请Id Mask",
+ "applyTime": "(string) 卡申请时间",
+ "cityCode": "(string) 客户工作所在的市code",
+ "interviewMan": "(string) 业务员姓名",
+ "interviewManMobile": "(string) 业务员电话",
+ "interviewManRegion": "(string) 业务员区域",
+ "mobile": "(string) 联系方式（持卡人手机号码）",
+ "realName": "(string) 申请人（持卡人姓名）",
+ "riskId": "(string) 风险件Id",
+ "riskLabel": "(string) 当前订单的风险状态对应显示的标签（风险待审核、风险件银行止付、风险件不予面签、申卡黑名单...）",
+ "riskStatus": "(integer) 最新入（真实信息）库客户公司地址",
+ "supplementStatus": "(integer) 补件状态（1:待上传 2:待审核 3:审核通过 4:审核失败）",
+ "supplementStatusDesc": "(string) 补件状态描述（1:待上传 2:待审核 3:审核通过 4:审核失败）",
+ "updateTime": "(string) 更新时间",
+ "userId": "(integer) undefined"
+ }
+ ],
+ "pageSize": "(integer) 页面容量",
+ "totalPages": "(integer) 总页数",
+ "totalRecord": "(integer) 总记录数"
+ }
+ */
 
 
 /**
@@ -2951,7 +3001,14 @@ BkCobrandedcardManager.getSupplementV1({
  */
 BkCobrandedcardManager.postSupplementAuditV1({
     data: {
-        param: '',
+        param: {
+            "applyId": "(integer) 申请Id",
+            "applyIdMask": "(string) 申请Id mask",
+            "auditNote": "(string) 审核备注",
+            "auditStatus": "(integer) 审核结果(1审核通过 2：审核不通过)",
+            "reasonDesc": "(string) 补件未通过原因",
+            "supplementFileTypeList": []
+        },
     },
 }).then(result => {
     console.log(result);
@@ -2959,40 +3016,37 @@ BkCobrandedcardManager.postSupplementAuditV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
  * 获取补件相关的列表项    /v1/supplement/option
  *
  */
-BkCobrandedcardManager.getSupplementOptionV1({
-}).then(result => {
+BkCobrandedcardManager.getSupplementOptionV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "supplementFileType": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ],
-    "supplementStatus": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ]
-}
-*/
-
+ * 返回结果
+ {
+ "supplementFileType": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ],
+ "supplementStatus": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ]
+ }
+ */
 
 
 /**
@@ -3002,7 +3056,10 @@ BkCobrandedcardManager.getSupplementOptionV1({
  */
 BkCobrandedcardManager.postSupplementToauditV1({
     data: {
-        param: '',
+        param: {
+            "applyId": "(integer) 申请单号",
+            "applyIdMask": "(string) 申请单号 mask"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -3010,35 +3067,32 @@ BkCobrandedcardManager.postSupplementToauditV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
  * 获取开关列表    /v1/switch/
  *
  */
-BkCobrandedcardManager.getSwitchV1({
-}).then(result => {
+BkCobrandedcardManager.getSwitchV1({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "autoId": "(integer) 开关配置值",
-        "bankId": "(integer) 银行ID",
-        "bankName": "(string) 银行名称",
-        "switchIsOpen": "(boolean) 开关值是否是打开状态",
-        "switchName": "(string) 开关名称"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "autoId": "(integer) 开关配置值",
+ "bankId": "(integer) 银行ID",
+ "bankName": "(string) 银行名称",
+ "switchIsOpen": "(boolean) 开关值是否是打开状态",
+ "switchName": "(string) 开关名称"
+ }
+ ]
+ */
 
 
 /**
@@ -3048,7 +3102,11 @@ BkCobrandedcardManager.getSwitchV1({
  */
 BkCobrandedcardManager.postSwitchValueV1({
     data: {
-        param: '',
+        param: {
+            "autoId": "(integer) 修改的指定项",
+            "bankId": "(integer) 修改的归属银行，做双层校验",
+            "isOpened": "(boolean) 是否是打开状态"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -3056,10 +3114,9 @@ BkCobrandedcardManager.postSwitchValueV1({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -3074,12 +3131,12 @@ BkCobrandedcardManager.postSwitchValueV1({
  */
 BkCobrandedcardManager.getTransferorderV1({
     params: {
-        userId: '',
-        mobile: '',
-        startTime: '',
-        endTime: '',
-        pageIndex: '',
-        pageSize: '',
+        userId: 'undefined',
+        mobile: 'undefined',
+        startTime: 'undefined',
+        endTime: 'undefined',
+        pageIndex: 'undefined',
+        pageSize: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -3087,31 +3144,30 @@ BkCobrandedcardManager.getTransferorderV1({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "currentPage": "(integer) 当前页码，从1开始",
-    "data": [
-        {
-            "bankAcceptTime": "(string) 银行受理时间",
-            "payAcctNo": "(string) 付款账号",
-            "rcvAcctNo": "(string) 收款账号",
-            "rcvBankName": "(string) 收款银行名称",
-            "termsPlan": "(integer) 分期期数",
-            "transAmount": "(number) 转账金额",
-            "transApplyTime": "(string) 申请转账时间",
-            "transFailedReason": "(string) 交易失败原因",
-            "transFinishTime": "(string) 交易完成时间",
-            "transNo": "(string) 流水号",
-            "transStatus": "(string) 转账状态",
-            "updateTime": "(string) 更新时间"
-        }
-    ],
-    "pageSize": "(integer) 页面容量",
-    "totalPages": "(integer) 总页数",
-    "totalRecord": "(integer) 总记录数"
-}
-*/
-
+ * 返回结果
+ {
+ "currentPage": "(integer) 当前页码，从1开始",
+ "data": [
+ {
+ "bankAcceptTime": "(string) 银行受理时间",
+ "payAcctNo": "(string) 付款账号",
+ "rcvAcctNo": "(string) 收款账号",
+ "rcvBankName": "(string) 收款银行名称",
+ "termsPlan": "(integer) 分期期数",
+ "transAmount": "(number) 转账金额",
+ "transApplyTime": "(string) 申请转账时间",
+ "transFailedReason": "(string) 交易失败原因",
+ "transFinishTime": "(string) 交易完成时间",
+ "transNo": "(string) 流水号",
+ "transStatus": "(string) 转账状态",
+ "updateTime": "(string) 更新时间"
+ }
+ ],
+ "pageSize": "(integer) 页面容量",
+ "totalPages": "(integer) 总页数",
+ "totalRecord": "(integer) 总记录数"
+ }
+ */
 
 
 /**
@@ -3121,7 +3177,73 @@ BkCobrandedcardManager.getTransferorderV1({
  */
 BkCobrandedcardManager.postInterviewAuditV2({
     data: {
-        param: '',
+        param: {
+            "applyIdMask": "(string) 申请Id mask",
+            "auditNote": "(string) 审核备注",
+            "auditStatus": "(integer) 审核结果（1审核通过 2：审核不通过）",
+            "auditSuggestion": "(string) 审核意见",
+            "rejectReasons": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [
+                                                                {
+                                                                    "children": [
+                                                                        {
+                                                                            "children": [
+                                                                                {
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "children": "#/definitions/RejectReasonBean",
+                                                                                            "id": "(integer) 拒绝原因Id",
+                                                                                            "key": "(string) 拒绝原因key"
+                                                                                        }
+                                                                                    ],
+                                                                                    "id": "(integer) 拒绝原因Id",
+                                                                                    "key": "(string) 拒绝原因key"
+                                                                                }
+                                                                            ],
+                                                                            "id": "(integer) 拒绝原因Id",
+                                                                            "key": "(string) 拒绝原因key"
+                                                                        }
+                                                                    ],
+                                                                    "id": "(integer) 拒绝原因Id",
+                                                                    "key": "(string) 拒绝原因key"
+                                                                }
+                                                            ],
+                                                            "id": "(integer) 拒绝原因Id",
+                                                            "key": "(string) 拒绝原因key"
+                                                        }
+                                                    ],
+                                                    "id": "(integer) 拒绝原因Id",
+                                                    "key": "(string) 拒绝原因key"
+                                                }
+                                            ],
+                                            "id": "(integer) 拒绝原因Id",
+                                            "key": "(string) 拒绝原因key"
+                                        }
+                                    ],
+                                    "id": "(integer) 拒绝原因Id",
+                                    "key": "(string) 拒绝原因key"
+                                }
+                            ],
+                            "id": "(integer) 拒绝原因Id",
+                            "key": "(string) 拒绝原因key"
+                        }
+                    ],
+                    "id": "(integer) 拒绝原因Id",
+                    "key": "(string) 拒绝原因key"
+                }
+            ]
+        },
     },
 }).then(result => {
     console.log(result);
@@ -3129,10 +3251,9 @@ BkCobrandedcardManager.postInterviewAuditV2({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -3143,8 +3264,8 @@ BkCobrandedcardManager.postInterviewAuditV2({
  */
 BkCobrandedcardManager.getInterviewAudithistoryV2({
     params: {
-        applyIdMask: '',
-        recordType: '',
+        applyIdMask: 'undefined',
+        recordType: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -3152,19 +3273,18 @@ BkCobrandedcardManager.getInterviewAudithistoryV2({
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "auditNote": "(string) 审核备注",
-        "auditResult": "(string) 审核结果描述",
-        "auditSuggestion": "(string) 审核意见",
-        "auditTime": "(string) 审核时间",
-        "operator": "(string) 操作人",
-        "rejectReason": "(string) 拒绝理由"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "auditNote": "(string) 审核备注",
+ "auditResult": "(string) 审核结果描述",
+ "auditSuggestion": "(string) 审核意见",
+ "auditTime": "(string) 审核时间",
+ "operator": "(string) 操作人",
+ "rejectReason": "(string) 拒绝理由"
+ }
+ ]
+ */
 
 
 /**
@@ -3174,7 +3294,10 @@ BkCobrandedcardManager.getInterviewAudithistoryV2({
  */
 BkCobrandedcardManager.postInterviewBatchassignV2({
     data: {
-        param: '',
+        param: {
+            "maskApplyIds": [],
+            "salesManAccountIdMask": "(string) 面签人员账户Id"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -3182,10 +3305,9 @@ BkCobrandedcardManager.postInterviewBatchassignV2({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -3203,88 +3325,87 @@ BkCobrandedcardManager.getInterviewDetailApplyIdV2({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "address": "(string) 地址",
-    "applyId": "(integer) 申请Id",
-    "applyIdMask": "(string) 申请Id mask",
-    "applyNode": "(integer) 申请节点（0：待上传 1：待审 2：审核通过 3：审核不通过 4：异常订单 5:已激活）",
-    "applyTime": "(string) 申请时间",
-    "areaName": "(string) 所属区",
-    "auditMan": "(string) 审核员姓名",
-    "auditTime": "(string) 审核时间",
-    "barCode": "(string) 进件条码",
-    "channel": "(string) 渠道（管家、人品、给你花、外部投放...）",
-    "cityCode": "(string) 市code",
-    "cityName": "(string) 所属市",
-    "companyName": "(string) 公司名称",
-    "companyPhone": "(string) 单位电话",
-    "creditLimitLevel": "(string) 客户额度 档位",
-    "department": "(string) 部门",
-    "detailNote": "(string) 客户经理备注（风险提示备注）",
-    "faceVerifySimiliarity": "(string) 人脸相似度",
-    "idCardNo": "(string) 身份证号",
-    "imageList": [
-        {
-            "applyId": "(integer) 申卡Id",
-            "applyIdMask": "(string) 申卡Id mask",
-            "fileId": "(integer) 文件Id",
-            "fileIdMask": "(string) 文件Id mask",
-            "fileType": "(integer) 文件类型（1:身份证正面、2:身份证反面、3:合影照、4：业务确认书、5公司门头照、6客户签字照、 7其它、10工作/财力证明 12补件资料）",
-            "fileTypeDesc": "(string) 文件类型字符（1:身份证正面、2:身份证反面、3:合影照、4：业务确认书、5公司门头照、6客户签字照、 7其它、10工作/财力证明 12补件资料）",
-            "imageUrl": "(string) 图片下载地址"
-        }
-    ],
-    "interviewMan": "(string) 面签员姓名",
-    "interviewManMobile": "(string) 面签员电话",
-    "interviewStatus": "(integer) 面签状态（0初始状态 2快递问题订单 5无需处理订单 10待面签 20待审核 25风险用户不予面签 30审核通过 40审核不通过 50用户柜面面签通过）",
-    "interviewStatusDesc": "(string) 面签状态描述",
-    "key": "(integer) key(列表item排序用)",
-    "lastSavedRealAddress": "(string) 最新入（真实信息）库客户公司地址",
-    "mobile": "(string) 联系方式（持卡人手机号码）",
-    "note": "(string) 客户经理备注（深挖备注）",
-    "position": "(string) 职位",
-    "provinceName": "(string) 所属省",
-    "realAddressEditable": "(boolean) 客户经理补全地址是否可编辑",
-    "realCompanyAddress": "(string) 客户经理补全 详细地址(编辑用)",
-    "realCompanyAddressDisplay": "(string) 客户经理补全 详细地址(显示用)",
-    "realCompanyArea": "(string) 客户经理补全 区代码(编辑用)",
-    "realCompanyCity": "(string) 客户经理补全 市代码(编辑用)",
-    "realCompanyProvince": "(string) 客户经理补全 省代码(编辑用)",
-    "realName": "(string) 申请人（持卡人姓名）",
-    "reasonDesc": "(string) 拒绝原因",
-    "recordType": "(integer) 面签记录类别（0：面签记录 1：深挖用户 2补件订单 3深挖补件订单）",
-    "recordTypeDesc": "(string) 面签记录类别",
-    "reserveTime": "(string) 面签预约时间",
-    "riskId": "(string) 风险件Id",
-    "riskLabel": "(string) 当前订单的风险状态对应显示的标签（风险待审核、风险件银行止付、风险件不予面签、申卡黑名单...）",
-    "riskLevel": "(string) 风险程度",
-    "riskStatus": "(integer) 当前订单的风险状态（1：风险件 2：黑名单）",
-    "riskTips": [
-        {
-            "confirmTel": "(string) 客户经理补全电话",
-            "editable": "(boolean) 是否支持编辑",
-            "extraInfo": [
-                {
-                    "extraDesc": "(string) 补充信息值",
-                    "extraType": "(integer) 补充信息类型",
-                    "extraTypeDesc": "(string) 补充信息类型描述",
-                    "riskTipName": "(string) 风险单位名称",
-                    "riskTipType": "(integer) 风险提示类型 1确认单位信息 2确认单位电话"
-                }
-            ],
-            "riskTipName": "(string) 风险单位名称",
-            "riskTipType": "(integer) 风险提示类型 0风控电话核实 1确认单位信息 2确认单位电话",
-            "riskTips": [],
-            "telResult": "(integer) 客户经理补全手机是否是固话(10提报单位电话手机号 11提报单位电话固话)"
-        }
-    ],
-    "updateTime": "(string) 更新时间",
-    "uploadTime": "(string) 上传时间",
-    "userId": "(integer) undefined"
-}
-*/
-
+ * 返回结果
+ {
+ "address": "(string) 地址",
+ "applyId": "(integer) 申请Id",
+ "applyIdMask": "(string) 申请Id mask",
+ "applyNode": "(integer) 申请节点（0：待上传 1：待审 2：审核通过 3：审核不通过 4：异常订单 5:已激活）",
+ "applyTime": "(string) 申请时间",
+ "areaName": "(string) 所属区",
+ "auditMan": "(string) 审核员姓名",
+ "auditTime": "(string) 审核时间",
+ "barCode": "(string) 进件条码",
+ "channel": "(string) 渠道（管家、人品、给你花、外部投放...）",
+ "cityCode": "(string) 市code",
+ "cityName": "(string) 所属市",
+ "companyName": "(string) 公司名称",
+ "companyPhone": "(string) 单位电话",
+ "creditLimitLevel": "(string) 客户额度 档位",
+ "department": "(string) 部门",
+ "detailNote": "(string) 客户经理备注（风险提示备注）",
+ "faceVerifySimiliarity": "(string) 人脸相似度",
+ "idCardNo": "(string) 身份证号",
+ "imageList": [
+ {
+ "applyId": "(integer) 申卡Id",
+ "applyIdMask": "(string) 申卡Id mask",
+ "fileId": "(integer) 文件Id",
+ "fileIdMask": "(string) 文件Id mask",
+ "fileType": "(integer) 文件类型（1:身份证正面、2:身份证反面、3:合影照、4：业务确认书、5公司门头照、6客户签字照、 7其它、10工作/财力证明 12补件资料）",
+ "fileTypeDesc": "(string) 文件类型字符（1:身份证正面、2:身份证反面、3:合影照、4：业务确认书、5公司门头照、6客户签字照、 7其它、10工作/财力证明 12补件资料）",
+ "imageUrl": "(string) 图片下载地址"
+ }
+ ],
+ "interviewMan": "(string) 面签员姓名",
+ "interviewManMobile": "(string) 面签员电话",
+ "interviewStatus": "(integer) 面签状态（0初始状态 2快递问题订单 5无需处理订单 10待面签 20待审核 25风险用户不予面签 30审核通过 40审核不通过 50用户柜面面签通过）",
+ "interviewStatusDesc": "(string) 面签状态描述",
+ "key": "(integer) key(列表item排序用)",
+ "lastSavedRealAddress": "(string) 最新入（真实信息）库客户公司地址",
+ "mobile": "(string) 联系方式（持卡人手机号码）",
+ "note": "(string) 客户经理备注（深挖备注）",
+ "position": "(string) 职位",
+ "provinceName": "(string) 所属省",
+ "realAddressEditable": "(boolean) 客户经理补全地址是否可编辑",
+ "realCompanyAddress": "(string) 客户经理补全 详细地址(编辑用)",
+ "realCompanyAddressDisplay": "(string) 客户经理补全 详细地址(显示用)",
+ "realCompanyArea": "(string) 客户经理补全 区代码(编辑用)",
+ "realCompanyCity": "(string) 客户经理补全 市代码(编辑用)",
+ "realCompanyProvince": "(string) 客户经理补全 省代码(编辑用)",
+ "realName": "(string) 申请人（持卡人姓名）",
+ "reasonDesc": "(string) 拒绝原因",
+ "recordType": "(integer) 面签记录类别（0：面签记录 1：深挖用户 2补件订单 3深挖补件订单）",
+ "recordTypeDesc": "(string) 面签记录类别",
+ "reserveTime": "(string) 面签预约时间",
+ "riskId": "(string) 风险件Id",
+ "riskLabel": "(string) 当前订单的风险状态对应显示的标签（风险待审核、风险件银行止付、风险件不予面签、申卡黑名单...）",
+ "riskLevel": "(string) 风险程度",
+ "riskStatus": "(integer) 当前订单的风险状态（1：风险件 2：黑名单）",
+ "riskTips": [
+ {
+ "confirmTel": "(string) 客户经理补全电话",
+ "editable": "(boolean) 是否支持编辑",
+ "extraInfo": [
+ {
+ "extraDesc": "(string) 补充信息值",
+ "extraType": "(integer) 补充信息类型",
+ "extraTypeDesc": "(string) 补充信息类型描述",
+ "riskTipName": "(string) 风险单位名称",
+ "riskTipType": "(integer) 风险提示类型 1确认单位信息 2确认单位电话"
+ }
+ ],
+ "riskTipName": "(string) 风险单位名称",
+ "riskTipType": "(integer) 风险提示类型 0风控电话核实 1确认单位信息 2确认单位电话",
+ "riskTips": [],
+ "telResult": "(integer) 客户经理补全手机是否是固话(10提报单位电话手机号 11提报单位电话固话)"
+ }
+ ],
+ "updateTime": "(string) 更新时间",
+ "uploadTime": "(string) 上传时间",
+ "userId": "(integer) undefined"
+ }
+ */
 
 
 /**
@@ -3302,17 +3423,16 @@ BkCobrandedcardManager.getInterviewFollowlistApplyIdV2({
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "followTime": "(string) 跟进记录时间",
-        "note": "(string) 备注",
-        "situationCode": "(integer) 跟进记录标签code",
-        "situationDesc": "(string) 跟进记录标签描述"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "followTime": "(string) 跟进记录时间",
+ "note": "(string) 备注",
+ "situationCode": "(integer) 跟进记录标签code",
+ "situationDesc": "(string) 跟进记录标签描述"
+ }
+ ]
+ */
 
 
 /**
@@ -3332,126 +3452,123 @@ BkCobrandedcardManager.getInterviewImageV2({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "description": "(string) undefined",
-    "file": "(file) undefined",
-    "filename": "(string) undefined",
-    "inputStream": {},
-    "open": "(boolean) undefined",
-    "readable": "(boolean) undefined",
-    "uri": {
-        "absolute": "(boolean) undefined",
-        "authority": "(string) undefined",
-        "fragment": "(string) undefined",
-        "host": "(string) undefined",
-        "opaque": "(boolean) undefined",
-        "path": "(string) undefined",
-        "port": "(integer) undefined",
-        "query": "(string) undefined",
-        "rawAuthority": "(string) undefined",
-        "rawFragment": "(string) undefined",
-        "rawPath": "(string) undefined",
-        "rawQuery": "(string) undefined",
-        "rawSchemeSpecificPart": "(string) undefined",
-        "rawUserInfo": "(string) undefined",
-        "scheme": "(string) undefined",
-        "schemeSpecificPart": "(string) undefined",
-        "userInfo": "(string) undefined"
-    },
-    "url": {
-        "authority": "(string) undefined",
-        "content": {},
-        "defaultPort": "(integer) undefined",
-        "file": "(string) undefined",
-        "host": "(string) undefined",
-        "path": "(string) undefined",
-        "port": "(integer) undefined",
-        "protocol": "(string) undefined",
-        "query": "(string) undefined",
-        "ref": "(string) undefined",
-        "userInfo": "(string) undefined"
-    }
-}
-*/
-
+ * 返回结果
+ {
+ "description": "(string) undefined",
+ "file": "(file) undefined",
+ "filename": "(string) undefined",
+ "inputStream": {},
+ "open": "(boolean) undefined",
+ "readable": "(boolean) undefined",
+ "uri": {
+ "absolute": "(boolean) undefined",
+ "authority": "(string) undefined",
+ "fragment": "(string) undefined",
+ "host": "(string) undefined",
+ "opaque": "(boolean) undefined",
+ "path": "(string) undefined",
+ "port": "(integer) undefined",
+ "query": "(string) undefined",
+ "rawAuthority": "(string) undefined",
+ "rawFragment": "(string) undefined",
+ "rawPath": "(string) undefined",
+ "rawQuery": "(string) undefined",
+ "rawSchemeSpecificPart": "(string) undefined",
+ "rawUserInfo": "(string) undefined",
+ "scheme": "(string) undefined",
+ "schemeSpecificPart": "(string) undefined",
+ "userInfo": "(string) undefined"
+ },
+ "url": {
+ "authority": "(string) undefined",
+ "content": {},
+ "defaultPort": "(integer) undefined",
+ "file": "(string) undefined",
+ "host": "(string) undefined",
+ "path": "(string) undefined",
+ "port": "(integer) undefined",
+ "protocol": "(string) undefined",
+ "query": "(string) undefined",
+ "ref": "(string) undefined",
+ "userInfo": "(string) undefined"
+ }
+ }
+ */
 
 
 /**
  * 面签审核拒绝原因列表    /v2/interview/rejectreasons/
  *
  */
-BkCobrandedcardManager.getInterviewRejectreasonsV2({
-}).then(result => {
+BkCobrandedcardManager.getInterviewRejectreasonsV2({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "children": [
-            {
-                "children": [
-                    {
-                        "children": [
-                            {
-                                "children": [
-                                    {
-                                        "children": [
-                                            {
-                                                "children": [
-                                                    {
-                                                        "children": [
-                                                            {
-                                                                "children": [
-                                                                    {
-                                                                        "children": [
-                                                                            {
-                                                                                "children": "#/definitions/RejectReasonBean",
-                                                                                "id": "(integer) 拒绝原因Id",
-                                                                                "key": "(string) 拒绝原因key"
-                                                                            }
-                                                                        ],
-                                                                        "id": "(integer) 拒绝原因Id",
-                                                                        "key": "(string) 拒绝原因key"
-                                                                    }
-                                                                ],
-                                                                "id": "(integer) 拒绝原因Id",
-                                                                "key": "(string) 拒绝原因key"
-                                                            }
-                                                        ],
-                                                        "id": "(integer) 拒绝原因Id",
-                                                        "key": "(string) 拒绝原因key"
-                                                    }
-                                                ],
-                                                "id": "(integer) 拒绝原因Id",
-                                                "key": "(string) 拒绝原因key"
-                                            }
-                                        ],
-                                        "id": "(integer) 拒绝原因Id",
-                                        "key": "(string) 拒绝原因key"
-                                    }
-                                ],
-                                "id": "(integer) 拒绝原因Id",
-                                "key": "(string) 拒绝原因key"
-                            }
-                        ],
-                        "id": "(integer) 拒绝原因Id",
-                        "key": "(string) 拒绝原因key"
-                    }
-                ],
-                "id": "(integer) 拒绝原因Id",
-                "key": "(string) 拒绝原因key"
-            }
-        ],
-        "id": "(integer) 拒绝原因Id",
-        "key": "(string) 拒绝原因key"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "children": [
+ {
+ "children": [
+ {
+ "children": [
+ {
+ "children": [
+ {
+ "children": [
+ {
+ "children": [
+ {
+ "children": [
+ {
+ "children": [
+ {
+ "children": [
+ {
+ "children": "#/definitions/RejectReasonBean",
+ "id": "(integer) 拒绝原因Id",
+ "key": "(string) 拒绝原因key"
+ }
+ ],
+ "id": "(integer) 拒绝原因Id",
+ "key": "(string) 拒绝原因key"
+ }
+ ],
+ "id": "(integer) 拒绝原因Id",
+ "key": "(string) 拒绝原因key"
+ }
+ ],
+ "id": "(integer) 拒绝原因Id",
+ "key": "(string) 拒绝原因key"
+ }
+ ],
+ "id": "(integer) 拒绝原因Id",
+ "key": "(string) 拒绝原因key"
+ }
+ ],
+ "id": "(integer) 拒绝原因Id",
+ "key": "(string) 拒绝原因key"
+ }
+ ],
+ "id": "(integer) 拒绝原因Id",
+ "key": "(string) 拒绝原因key"
+ }
+ ],
+ "id": "(integer) 拒绝原因Id",
+ "key": "(string) 拒绝原因key"
+ }
+ ],
+ "id": "(integer) 拒绝原因Id",
+ "key": "(string) 拒绝原因key"
+ }
+ ],
+ "id": "(integer) 拒绝原因Id",
+ "key": "(string) 拒绝原因key"
+ }
+ ]
+ */
 
 
 /**
@@ -3469,102 +3586,99 @@ BkCobrandedcardManager.getInterviewRisktipsApplyIdV2({
     console.log(error);
 });
 /*
-* 返回结果
-[
-    {
-        "confirmTel": "(string) 客户经理补全电话",
-        "editable": "(boolean) 是否支持编辑",
-        "extraInfo": [
-            {
-                "extraDesc": "(string) 补充信息值",
-                "extraType": "(integer) 补充信息类型",
-                "extraTypeDesc": "(string) 补充信息类型描述",
-                "riskTipName": "(string) 风险单位名称",
-                "riskTipType": "(integer) 风险提示类型 1确认单位信息 2确认单位电话"
-            }
-        ],
-        "riskTipName": "(string) 风险单位名称",
-        "riskTipType": "(integer) 风险提示类型 0风控电话核实 1确认单位信息 2确认单位电话",
-        "riskTips": [],
-        "telResult": "(integer) 客户经理补全手机是否是固话(10提报单位电话手机号 11提报单位电话固话)"
-    }
-]
-*/
-
+ * 返回结果
+ [
+ {
+ "confirmTel": "(string) 客户经理补全电话",
+ "editable": "(boolean) 是否支持编辑",
+ "extraInfo": [
+ {
+ "extraDesc": "(string) 补充信息值",
+ "extraType": "(integer) 补充信息类型",
+ "extraTypeDesc": "(string) 补充信息类型描述",
+ "riskTipName": "(string) 风险单位名称",
+ "riskTipType": "(integer) 风险提示类型 1确认单位信息 2确认单位电话"
+ }
+ ],
+ "riskTipName": "(string) 风险单位名称",
+ "riskTipType": "(integer) 风险提示类型 0风控电话核实 1确认单位信息 2确认单位电话",
+ "riskTips": [],
+ "telResult": "(integer) 客户经理补全手机是否是固话(10提报单位电话手机号 11提报单位电话固话)"
+ }
+ ]
+ */
 
 
 /**
  * 获取面签订单检索条件项    /v2/interview/searchoptions
  *
  */
-BkCobrandedcardManager.getInterviewSearchoptionsV2({
-}).then(result => {
+BkCobrandedcardManager.getInterviewSearchoptionsV2({}).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "applyChannels": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ],
-    "interviewStatus": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ],
-    "interviewTypes": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ],
-    "openCities": [
-        {
-            "cities": [
-                {
-                    "areas": [
-                        {
-                            "areaCode": "(string) 区code",
-                            "areaName": "(string) 区名称",
-                            "totalCount": "(integer) 待处理订单数量"
-                        }
-                    ],
-                    "cityCode": "(string) 市code",
-                    "cityName": "(string) 市名称",
-                    "totalCount": "(integer) 待处理订单数量"
-                }
-            ],
-            "provinceCode": "(string) 省code",
-            "provinceName": "(string) 省名称"
-        }
-    ],
-    "regions": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ],
-    "salesManList": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ],
-    "salesManStatus": [
-        {
-            "key": {},
-            "value": {}
-        }
-    ]
-}
-*/
-
+ * 返回结果
+ {
+ "applyChannels": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ],
+ "interviewStatus": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ],
+ "interviewTypes": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ],
+ "openCities": [
+ {
+ "cities": [
+ {
+ "areas": [
+ {
+ "areaCode": "(string) 区code",
+ "areaName": "(string) 区名称",
+ "totalCount": "(integer) 待处理订单数量"
+ }
+ ],
+ "cityCode": "(string) 市code",
+ "cityName": "(string) 市名称",
+ "totalCount": "(integer) 待处理订单数量"
+ }
+ ],
+ "provinceCode": "(string) 省code",
+ "provinceName": "(string) 省名称"
+ }
+ ],
+ "regions": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ],
+ "salesManList": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ],
+ "salesManStatus": [
+ {
+ "key": {},
+ "value": {}
+ }
+ ]
+ }
+ */
 
 
 /**
@@ -3574,7 +3688,10 @@ BkCobrandedcardManager.getInterviewSearchoptionsV2({
  */
 BkCobrandedcardManager.postInterviewToassignV2({
     data: {
-        param: '',
+        param: {
+            "applyIdMask": "(string) 申请记录Id",
+            "salesManAccountIdMask": "(string) 面签人员账户Id"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -3582,10 +3699,9 @@ BkCobrandedcardManager.postInterviewToassignV2({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -3595,7 +3711,10 @@ BkCobrandedcardManager.postInterviewToassignV2({
  */
 BkCobrandedcardManager.postManagerShortformBatchassignV2({
     data: {
-        param: '',
+        param: {
+            "accountIdMask": "(string) 业务人员Id mask",
+            "shortFormMaskIds": []
+        },
     },
 }).then(result => {
     console.log(result);
@@ -3603,10 +3722,9 @@ BkCobrandedcardManager.postManagerShortformBatchassignV2({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -3616,7 +3734,10 @@ BkCobrandedcardManager.postManagerShortformBatchassignV2({
  */
 BkCobrandedcardManager.postManagerShortformSalesmanV2({
     data: {
-        param: '',
+        param: {
+            "salesManAccountIdMask": "(string) 面签人员账户Id",
+            "shortFormIdMask": "(string) 短表单Id"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -3624,10 +3745,9 @@ BkCobrandedcardManager.postManagerShortformSalesmanV2({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -3637,7 +3757,20 @@ BkCobrandedcardManager.postManagerShortformSalesmanV2({
  */
 BkCobrandedcardManager.postRiskAuditresultV2({
     data: {
-        param: '',
+        param: {
+            "auditComment": "(string) 审核意见",
+            "auditResult": [
+                {
+                    "applyId": "(integer) 用户申卡id",
+                    "applyIdMask": "(string) 用户申卡id",
+                    "riskResult": "(integer) 风险判定结果 1不予面签 2银行止付 3无风险"
+                }
+            ],
+            "riskId": "(integer) 风险件id",
+            "riskIdMask": "(string) 风险件id",
+            "riskType": "(integer) 风险提报类型 1涉及中介代办、挂靠 2申请信息虚假或不一致 3无工作证明或离职 4贷款投资类公司 5禁止客群、行业 6无办公场所 10其它",
+            "visitedDepartment": "(integer) 是否亲访单位"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -3645,10 +3778,9 @@ BkCobrandedcardManager.postRiskAuditresultV2({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -3666,57 +3798,56 @@ BkCobrandedcardManager.getRiskDetailRiskIdV2({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "auditComment": "(string) 审核意见",
-    "auditMan": "(string) 审核人员",
-    "auditStatus": "(integer) 订单状态 2待审核 3已审核",
-    "auditStatusDesc": "(string) 订单状态描述 2待审核 3已审核",
-    "auditTime": "(string) 审核时间",
-    "reportNote": "(string) 业务员提报说明",
-    "reportTime": "(string) 提报时间",
-    "riskId": "(integer) 风险件id",
-    "riskImageList": [
-        {
-            "fileId": "(integer) 文件Id",
-            "fileType": "(integer) 文件类型 1风险证明  10其它",
-            "fileTypeDesc": "(string) 文件类型文件类型 1风险证明  10其它",
-            "imageBase64": "(string) 图片内容（base64编码）,已压缩",
-            "mediaType": "(string) 图片类型"
-        }
-    ],
-    "riskProperty": "(integer) 风险性质 1个人风险 2团体风险",
-    "riskPropertyDesc": "(string) 风险性质 1个人风险 2团体风险",
-    "riskType": "(integer) 风险类型 1涉及中介代办、挂靠 2申请信息虚假或不一致 3无工作证明或离职 4贷款投资类公司 5禁止客群、行业 6无办公场所 10其它",
-    "riskTypeDesc": "(string) 风险类型 1涉及中介代办、挂靠 2申请信息虚假或不一致 3无工作证明或离职 4贷款投资类公司 5禁止客群、行业 6无办公场所 10其它",
-    "riskUserList": [
-        {
-            "applyId": "(integer) 申卡记录id",
-            "applyIdMask": "(string) 申卡记录id",
-            "applyStatusDesc": "(string) 用户状态",
-            "applyTypeDesc": "(string) 订单类型",
-            "auditResult": "(integer) 风险判定结果 1不予面签 2银行止付 3无风险",
-            "auditResultDesc": "(string) 风险判定结果描述 1不予面签 2银行止付 3无风险",
-            "companyAddress": "(string) 工作单位地址",
-            "companyName": "(string) 工作单位",
-            "detailInfo": [
-                {
-                    "applyIdMask": "(string) applyId mask",
-                    "detailType": "(integer) 详情类型 1面签详情 2补件详情",
-                    "detailTypeDesc": "(string) 详情类型描述 1面签详情 2补件详情",
-                    "paramId": "(integer) 查看详情所需的参数"
-                }
-            ],
-            "idCardNo": "(string) 用户身份证号",
-            "userId": "(integer) 用户id",
-            "userMobile": "(string) 用户手机号",
-            "userName": "(string) 用户姓名"
-        }
-    ],
-    "visitedDepartment": "(integer) 是否亲访单位 1是 2否"
-}
-*/
-
+ * 返回结果
+ {
+ "auditComment": "(string) 审核意见",
+ "auditMan": "(string) 审核人员",
+ "auditStatus": "(integer) 订单状态 2待审核 3已审核",
+ "auditStatusDesc": "(string) 订单状态描述 2待审核 3已审核",
+ "auditTime": "(string) 审核时间",
+ "reportNote": "(string) 业务员提报说明",
+ "reportTime": "(string) 提报时间",
+ "riskId": "(integer) 风险件id",
+ "riskImageList": [
+ {
+ "fileId": "(integer) 文件Id",
+ "fileType": "(integer) 文件类型 1风险证明  10其它",
+ "fileTypeDesc": "(string) 文件类型文件类型 1风险证明  10其它",
+ "imageBase64": "(string) 图片内容（base64编码）,已压缩",
+ "mediaType": "(string) 图片类型"
+ }
+ ],
+ "riskProperty": "(integer) 风险性质 1个人风险 2团体风险",
+ "riskPropertyDesc": "(string) 风险性质 1个人风险 2团体风险",
+ "riskType": "(integer) 风险类型 1涉及中介代办、挂靠 2申请信息虚假或不一致 3无工作证明或离职 4贷款投资类公司 5禁止客群、行业 6无办公场所 10其它",
+ "riskTypeDesc": "(string) 风险类型 1涉及中介代办、挂靠 2申请信息虚假或不一致 3无工作证明或离职 4贷款投资类公司 5禁止客群、行业 6无办公场所 10其它",
+ "riskUserList": [
+ {
+ "applyId": "(integer) 申卡记录id",
+ "applyIdMask": "(string) 申卡记录id",
+ "applyStatusDesc": "(string) 用户状态",
+ "applyTypeDesc": "(string) 订单类型",
+ "auditResult": "(integer) 风险判定结果 1不予面签 2银行止付 3无风险",
+ "auditResultDesc": "(string) 风险判定结果描述 1不予面签 2银行止付 3无风险",
+ "companyAddress": "(string) 工作单位地址",
+ "companyName": "(string) 工作单位",
+ "detailInfo": [
+ {
+ "applyIdMask": "(string) applyId mask",
+ "detailType": "(integer) 详情类型 1面签详情 2补件详情",
+ "detailTypeDesc": "(string) 详情类型描述 1面签详情 2补件详情",
+ "paramId": "(integer) 查看详情所需的参数"
+ }
+ ],
+ "idCardNo": "(string) 用户身份证号",
+ "userId": "(integer) 用户id",
+ "userMobile": "(string) 用户手机号",
+ "userName": "(string) 用户姓名"
+ }
+ ],
+ "visitedDepartment": "(integer) 是否亲访单位 1是 2否"
+ }
+ */
 
 
 /**
@@ -3726,7 +3857,10 @@ BkCobrandedcardManager.getRiskDetailRiskIdV2({
  */
 BkCobrandedcardManager.postSupplementBatchassignV2({
     data: {
-        param: '',
+        param: {
+            "maskApplyIds": [],
+            "salesManAccountIdMask": "(string) 面签人员账户Id"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -3734,10 +3868,9 @@ BkCobrandedcardManager.postSupplementBatchassignV2({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
-
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 /**
@@ -3747,7 +3880,7 @@ BkCobrandedcardManager.postSupplementBatchassignV2({
  */
 BkCobrandedcardManager.getSupplementDetailApplyIdV2({
     params: {
-        applyId: '',
+        applyId: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -3755,36 +3888,35 @@ BkCobrandedcardManager.getSupplementDetailApplyIdV2({
     console.log(error);
 });
 /*
-* 返回结果
-{
-    "address": "(string) 所在城市",
-    "allowUpLoadAndSubmitToAudit": "(boolean) 是否允许再次上传补件资料至审核,true允许、false不允许",
-    "applyId": "(integer) 申请Id",
-    "applyIdMask": "(string) 申请Id",
-    "auditFileList": [],
-    "barCode": "(string) 进件条码",
-    "companyName": "(string) 公司名称",
-    "idCardNo": "(string) 身份证号",
-    "imageList": [
-        {
-            "applyId": "(integer) 申卡Id",
-            "applyIdMask": "(string) 申卡Id mask",
-            "fileId": "(integer) 文件Id",
-            "fileIdMask": "(string) 文件Id mask",
-            "fileType": "(integer) 文件类型（1:身份证正面、2:身份证反面、3:合影照、4：业务确认书、5公司门头照、6客户签字照、 7其它、10工作/财力证明 12补件资料）",
-            "fileTypeDesc": "(string) 文件类型字符（1:身份证正面、2:身份证反面、3:合影照、4：业务确认书、5公司门头照、6客户签字照、 7其它、10工作/财力证明 12补件资料）",
-            "imageUrl": "(string) 图片下载地址"
-        }
-    ],
-    "mobile": "(string) 联系方式（持卡人手机号码）",
-    "realName": "(string) 申请人（持卡人姓名）",
-    "rejectReason": "(string) 补件拒绝原因",
-    "supplementStatus": "(integer) 补件状态（1:待上传 2:待审核 3:审核通过 4:审核失败）",
-    "supplementStatusDesc": "(string) 补件状态描述（1:待上传 2:待审核 3:审核通过 4:审核失败）",
-    "userId": "(integer) 用户Id"
-}
-*/
-
+ * 返回结果
+ {
+ "address": "(string) 所在城市",
+ "allowUpLoadAndSubmitToAudit": "(boolean) 是否允许再次上传补件资料至审核,true允许、false不允许",
+ "applyId": "(integer) 申请Id",
+ "applyIdMask": "(string) 申请Id",
+ "auditFileList": [],
+ "barCode": "(string) 进件条码",
+ "companyName": "(string) 公司名称",
+ "idCardNo": "(string) 身份证号",
+ "imageList": [
+ {
+ "applyId": "(integer) 申卡Id",
+ "applyIdMask": "(string) 申卡Id mask",
+ "fileId": "(integer) 文件Id",
+ "fileIdMask": "(string) 文件Id mask",
+ "fileType": "(integer) 文件类型（1:身份证正面、2:身份证反面、3:合影照、4：业务确认书、5公司门头照、6客户签字照、 7其它、10工作/财力证明 12补件资料）",
+ "fileTypeDesc": "(string) 文件类型字符（1:身份证正面、2:身份证反面、3:合影照、4：业务确认书、5公司门头照、6客户签字照、 7其它、10工作/财力证明 12补件资料）",
+ "imageUrl": "(string) 图片下载地址"
+ }
+ ],
+ "mobile": "(string) 联系方式（持卡人手机号码）",
+ "realName": "(string) 申请人（持卡人姓名）",
+ "rejectReason": "(string) 补件拒绝原因",
+ "supplementStatus": "(integer) 补件状态（1:待上传 2:待审核 3:审核通过 4:审核失败）",
+ "supplementStatusDesc": "(string) 补件状态描述（1:待上传 2:待审核 3:审核通过 4:审核失败）",
+ "userId": "(integer) 用户Id"
+ }
+ */
 
 
 /**
@@ -3794,7 +3926,10 @@ BkCobrandedcardManager.getSupplementDetailApplyIdV2({
  */
 BkCobrandedcardManager.postSupplementToassignV2({
     data: {
-        param: '',
+        param: {
+            "applyIdMask": "(string) 申请记录Id",
+            "salesManAccountIdMask": "(string) 面签人员账户Id"
+        },
     },
 }).then(result => {
     console.log(result);
@@ -3802,9 +3937,9 @@ BkCobrandedcardManager.postSupplementToassignV2({
     console.log(error);
 });
 /*
-* 返回结果
-"(undefined) undefined"
-*/
+ * 返回结果
+ "(undefined) undefined"
+ */
 
 
 

@@ -57,7 +57,7 @@ const utils = {
     },
 
 
-    getParameter(data) {
+    getParameter(data, definitions) {
         const parameters = data.parameters || [];
         const result = {
             params: [],
@@ -74,9 +74,13 @@ const utils = {
         };
 
         for (let i = 0; i < parameters.length; i++) {
-            const obj = parameters[i];
+            let obj = {};
 
-            resultMap[obj.in || 'query'].push(obj);
+            if (parameters[i].schema) {
+                parameters[i].default = utils.getResponseCurry(parameters[i].schema, definitions);
+            }
+
+            resultMap[parameters[i].in || 'query'].push(parameters[i]);
         }
 
         return result;
@@ -162,7 +166,7 @@ const utils = {
         return JSON.stringify(result, undefined, 4);
     },
 
-    getResponseCurry(config, definitions, curryStepCountMap) {
+    getResponseCurry(config, definitions, curryStepCountMap = {}) {
         let result;
 
         if (config.type === 'array') {

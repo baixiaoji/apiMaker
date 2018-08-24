@@ -7,17 +7,8 @@ module.exports = {
     },
     apis: [
         {
-            swagger: 'http://immall.installment-mall-gateway.51.env/swagger-ui.html'
-        },
-        {
-            swagger: 'http://stable.usercenter-gateway.51.env/swagger-ui.html',
-            controllers: ['app-weixin-controller']
-        },
-        {
-            swagger: 'http://k8sdev.sfs-gateway.51.env/swagger-ui.html'
-        },
-        {
-            swagger: 'http://charles.bk-cobrandedcard-manager.51.env/swagger-ui.html'
+            swagger: 'http://weiwenyi2.insurance-gateway.51.env/swagger-ui.html',
+            controllers: ['提供前端相关api', '投保相关api', '提供保单相关api']
         },
     ]
 };

@@ -59,7 +59,7 @@ class ApiMaker {
                         url: utils.formatApiPath(pathKeys[i], basePath, serverName),
                         baseURL: utils.getBaseURL(pathKeys[i], basePath, serverName),
                         method,
-                        ...utils.getParameter(apiData),
+                        ...utils.getParameter(apiData, definitions),
                         response: utils.parseResponse(apiData.responses[200], definitions)
                     });
                 }

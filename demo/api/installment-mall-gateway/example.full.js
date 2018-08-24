@@ -18,7 +18,7 @@ InstallmentMallGateway.getActivityRecommendV1({
         areaCode: '1_0_0_0',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -64,7 +64,7 @@ InstallmentMallGateway.getAfterSaleApplyPageV1({
         orderDetailNo: '111072444619',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -181,7 +181,35 @@ InstallmentMallGateway.getAfterSaleCancelAfterSaleNoV1({
  */
 InstallmentMallGateway.postAfterSaleCreateV1({
     data: {
-        requestAfterSaleDTO: '',
+        requestAfterSaleDTO: {
+    "contactName": "(string) 联系人姓名",
+    "contactPhone": "(string) 联系人电话",
+    "deliverySupplierType": "(integer) 物流提供方类型（10:京东,默认）",
+    "orderDetailNo": "(string) 订单详细编号",
+    "orderNo": "(string) 订单编号",
+    "pickAddress": "(string) 取件地址",
+    "pickCityCode": "(integer) 取件城市编码",
+    "pickCountyCode": "(integer) 取件区县编码",
+    "pickFullAddress": "(string) 取件地址全名",
+    "pickProvinceCode": "(integer) 取件省份编码",
+    "pickVillageCode": "(integer) 取件乡镇编码",
+    "pictureUrl": "(string) 图片1链接",
+    "productSupplierType": "(integer) 商品提供方类型（10:京东,默认）",
+    "receiveAddress": "(string) 收货地址",
+    "receiveCityCode": "(integer) 收货城市编码",
+    "receiveCountyCode": "(integer) 收货区县编码",
+    "receiveFullAddress": "(string) 收货地址全名",
+    "receiveProvinceCode": "(integer) 收货省份编码",
+    "receiveSameAsPick": "(boolean) 收货地址同取件地址,默认true",
+    "receiveVillageCode": "(integer) 收货乡镇编码",
+    "refundType": "(integer) 退款方式（1:原路返回,默认）",
+    "requestCount": "(integer) 申请数量",
+    "requestReason": "(string) 问题描述",
+    "requestTime": "(string) 申请时间",
+    "returnType": "(integer) 商品取回方式（1:上门取件,默认,2:客户送货）",
+    "serviceType": "(integer) 服务类型（1:退货,2:换货,3:维修）",
+    "userId": "(integer) 51用户ID"
+},
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -214,7 +242,7 @@ InstallmentMallGateway.getAfterSaleDetailV1({
         orderDetailNo: '111072487507',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -269,7 +297,7 @@ InstallmentMallGateway.getAfterSaleDetailV1({
  */
 InstallmentMallGateway.postAfterSaleUploadImageV1({
     data: {
-        base64Image: '',
+        base64Image: '(string) undefined',
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -298,7 +326,7 @@ InstallmentMallGateway.postAfterSaleUploadImageV1({
 InstallmentMallGateway.getOrderCalculatePriceV1({
     params: {
         orderNo: '111072446623',
-        couponId: '',
+        couponId: 'undefined',
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -329,7 +357,7 @@ InstallmentMallGateway.getOrderGetV1({
         orderNo: '111072487507',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -477,7 +505,12 @@ InstallmentMallGateway.getOrderInvoiceTitleV1({
  */
 InstallmentMallGateway.postOrderInvoiceTitleSubmitV1({
     data: {
-        invoiceTitleSubmitDTO: '',
+        invoiceTitleSubmitDTO: {
+    "invoiceCompanyName": "(string) 单位名称",
+    "invoiceCompanyTaxCode": "(string) 单位税号",
+    "invoiceTitleCode": "(integer) 发票抬头（1:个人,2:企业）",
+    "userId": "(integer) 51用户ID"
+},
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -569,7 +602,16 @@ InstallmentMallGateway.getOrderListV1({
  */
 InstallmentMallGateway.postOrderOtosaasPayInfoV1({
     data: {
-        otoPayInfoDTO: '',
+        otoPayInfoDTO: {
+    "amount": "(string) 订单金额，单位：分",
+    "expireTime": "(string) 订单失效时间，格式yyyyMMddHHmmss，不传表示无失效时间",
+    "notifyUrl": "(string) 支付结果异步回调地址",
+    "orderId": "(string) OTO SaaS商品订单号",
+    "orderName": "(string) OTO SaaS商品订单号",
+    "payOrderId": "(string) OTO SaaS支付订单号",
+    "payResultUrl": "(string) 支付完成后跳转页面地址，注：若服务场景外进入，需在url中带入联合登录参数",
+    "sign": "(string) 参数签名（OTO SaaS用生成的私钥签名，合作方用OTO SaaS提供的公钥验签）"
+},
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -601,7 +643,18 @@ InstallmentMallGateway.postOrderPreSubmitV1({
         status: '-1',
     },
     data: {
-        orderPreSubmitDTO: '',
+        orderPreSubmitDTO: {
+    "promotionType": "(integer) 促销类型(0:普通,1:秒杀,2:活动专区)",
+    "receiverAddressId": "(integer) 收货地址ID",
+    "skuList": [
+        {
+            "productNo": "(string) 商品运营编号",
+            "skuAttributes": "(string) 所选SKU属性集合",
+            "skuCount": "(integer) SKU数量",
+            "skuNo": "(string) SKU编号"
+        }
+    ]
+},
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -629,7 +682,12 @@ InstallmentMallGateway.postOrderPreSubmitV1({
  */
 InstallmentMallGateway.postOrderSaveExitPayReasonV1({
     data: {
-        exitPayReasonDTO: '',
+        exitPayReasonDTO: {
+    "exitPayReason": "(string) undefined",
+    "exitPayReasonCode": "(integer) undefined",
+    "orderNo": "(string) undefined",
+    "userId": "(integer) undefined"
+},
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -657,10 +715,21 @@ InstallmentMallGateway.postOrderSaveExitPayReasonV1({
  */
 InstallmentMallGateway.postOrderSubmitV1({
     data: {
-        orderSubmitDTO: '',
+        orderSubmitDTO: {
+    "couponId": "(integer) 优惠券号",
+    "couponType": "(integer) 优惠券类型（0:无可用优惠券,1:新人专享(废除),2:票券系统优惠券）",
+    "extInfo": "(string) 支付信息",
+    "fullAddress": "(string) 完整地址",
+    "invoiceCompanyName": "(string) 单位名称",
+    "invoiceCompanyTaxCode": "(string) 单位税号",
+    "invoiceTitleCode": "(integer) 发票抬头（1:个人,2:企业）",
+    "invoiceType": "(integer) 发票类型（1:电子普通发票）",
+    "preOrderNo": "(string) 预订单编号",
+    "receiverAddressId": "(integer) 收货地址ID"
+},
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -697,7 +766,7 @@ InstallmentMallGateway.getOrderTrackV1({
         orderNo: '111072487507',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -731,8 +800,8 @@ InstallmentMallGateway.getOrderTrackV1({
  */
 InstallmentMallGateway.getOtosaasOrderInfoV1({
     params: {
-        orderId: '',
-        sign: '',
+        orderId: 'undefined',
+        sign: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -763,7 +832,14 @@ InstallmentMallGateway.getOtosaasOrderInfoV1({
  */
 InstallmentMallGateway.postOtosaasOrderRefundV1({
     data: {
-        otoRefundInfoDTO: '',
+        otoRefundInfoDTO: {
+    "notifyUrl": "(string) 退款结果异步回调地址，异步回调退款结果才需传入",
+    "orderId": "(string) OTO SaaS商品订单号",
+    "refundAmount": "(integer) 退款金额，单位：分",
+    "refundOrderId": "(string) OTO SaaS退款订单号",
+    "sign": "(string) 参数签名（（OTO SaaS用生成的私钥签名，合作方用OTO SaaS提供的公钥验签）",
+    "timestamp": "(integer) 时间戳，毫秒"
+},
     },
 }).then(result => {
     console.log(result);
@@ -788,7 +864,15 @@ InstallmentMallGateway.postOtosaasOrderRefundV1({
  */
 InstallmentMallGateway.postOtosaasOrderStatusV1({
     data: {
-        otoOrderStatusDTO: '',
+        otoOrderStatusDTO: {
+    "displayStatus": "(string) 订单状态字面值",
+    "orderId": "(string) 订单ID",
+    "price": "(string) 订单支付价格，对于那些先服务后支付的订单，会在后续计费完成后推送支付金额",
+    "sign": "(string) 签名参数",
+    "status": "(integer) 订单状态",
+    "timestamp": "(integer) 签名时间戳",
+    "userId": "(string) 用户ID"
+},
     },
 }).then(result => {
     console.log(result);
@@ -931,10 +1015,15 @@ InstallmentMallGateway.getPaymentBeforePrePayNoticeV1({
  */
 InstallmentMallGateway.postPaymentBindCardPaymentV1({
     data: {
-        bindCardPayParam: '',
+        bindCardPayParam: {
+    "cardNoMd5": "(string) 信用卡号Md5",
+    "orderNo": "(string) 订单号",
+    "payPrice": "(number) 实际支付金额",
+    "period": "(integer) 期数"
+},
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -1004,7 +1093,10 @@ InstallmentMallGateway.getPaymentCardPreBindCardV1({
  */
 InstallmentMallGateway.postPaymentCardPreBindCardV2V1({
     data: {
-        preBindCardRequest: '',
+        preBindCardRequest: {
+    "bankId": "(integer) undefined",
+    "cardNoMd5": "(string) undefined"
+},
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -1051,7 +1143,7 @@ InstallmentMallGateway.getPaymentCheckOrderV1({
         orderNo: '111072487507',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -1077,10 +1169,22 @@ InstallmentMallGateway.getPaymentCheckOrderV1({
  */
 InstallmentMallGateway.postPaymentPaymentV1({
     data: {
-        payInfoRequest: '',
+        payInfoRequest: {
+    "bankId": "(integer) 银行Id",
+    "cardNo": "(string) 信用卡号",
+    "cardNoMd5": "(string) 信用卡号MD5",
+    "idNo": "(string) 身份证号",
+    "orderNo": "(string) 订单号",
+    "payPrice": "(number) 实际支付金额",
+    "period": "(integer) 期数",
+    "phone": "(string) 手机号",
+    "safeNo": "(string) 安全码",
+    "trueName": "(string) 真实姓名",
+    "validDate": "(string) 有效期"
+},
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -1117,7 +1221,7 @@ InstallmentMallGateway.getPaymentPrePayV1({
         cardNoMd5: 'eae4378ec2b6711dd090defa125803d7',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -1174,7 +1278,10 @@ InstallmentMallGateway.getPaymentPrePayV1({
  */
 InstallmentMallGateway.postPaymentResendSmsCodeV1({
     data: {
-        resendSmsCodeRequest: '',
+        resendSmsCodeRequest: {
+    "orderNo": "(string) 订单号",
+    "userId": "(integer) 用户id"
+},
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -1236,7 +1343,11 @@ InstallmentMallGateway.getPaymentSimplePaymentV1({
  */
 InstallmentMallGateway.postPaymentVerifyPayCodeV1({
     data: {
-        verifyPayCodeRequest: '',
+        verifyPayCodeRequest: {
+    "orderNo": "(string) 订单号",
+    "userId": "(integer) 用户id",
+    "validateCode": "(string) 短信验证码"
+},
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -1274,14 +1385,14 @@ InstallmentMallGateway.getPromotionProductRecommendV1({
     params: {
         latitude: '30',
         longitude: '120',
-        promotionNo: '',
+        promotionNo: 'undefined',
         orderIndex: '1',
         pageIndex: '0',
         pageSize: '10',
     },
     headers: {
-        userId: '', //userId
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        userId: 'undefined', //userId
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
     },
 }).then(result => {
     console.log(result);
@@ -1348,8 +1459,8 @@ InstallmentMallGateway.getSalesProductHotProductsV1({
         limit: '20',
     },
     headers: {
-        userId: '', //userId
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        userId: 'undefined', //userId
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
     },
 }).then(result => {
     console.log(result);
@@ -1397,8 +1508,8 @@ InstallmentMallGateway.getSalesProductIndexInfoV1({
         longitude: '120',
     },
     headers: {
-        userId: '', //userId
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        userId: 'undefined', //userId
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
     },
 }).then(result => {
     console.log(result);
@@ -1503,7 +1614,7 @@ InstallmentMallGateway.getSalesProductProductDetailV1({
         productNo: '123456H11',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -1566,7 +1677,7 @@ InstallmentMallGateway.getSalesProductSecKillProductsV1({
         longitude: '120',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -1620,7 +1731,7 @@ InstallmentMallGateway.getShareCouponConfigV1({
         orderNo: '111072548186',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -1653,10 +1764,10 @@ InstallmentMallGateway.getShareCouponConfigV1({
  */
 InstallmentMallGateway.getShareCouponReceivedListV1({
     params: {
-        shareSn: '',
+        shareSn: 'undefined',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -1703,7 +1814,7 @@ InstallmentMallGateway.getShareFavoriteProductsV1({
         areaCode: '1_0_0_0',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -1751,7 +1862,7 @@ InstallmentMallGateway.getShareNewUserProductsV1({
         areaCode: '1_0_0_0',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -1792,10 +1903,10 @@ InstallmentMallGateway.getShareNewUserProductsV1({
  */
 InstallmentMallGateway.putShareReceiveV1({
     params: {
-        shareSn: '',
+        shareSn: 'undefined',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -1832,7 +1943,7 @@ InstallmentMallGateway.getShareSecKillProductsV1({
         areaCode: '1_0_0_0',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -1887,7 +1998,7 @@ InstallmentMallGateway.getShareShareProductsV1({
         areaCode: '1_0_0_0',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -1969,10 +2080,10 @@ InstallmentMallGateway.getShareShareProductsV1({
  */
 InstallmentMallGateway.getShareUserCouponV1({
     params: {
-        shareSn: '',
+        shareSn: 'undefined',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -2007,7 +2118,7 @@ InstallmentMallGateway.getShareUserCouponV1({
  */
 InstallmentMallGateway.getToolTimeoutV1({
     params: {
-        seconds: '',
+        seconds: 'undefined',
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -2038,7 +2149,24 @@ InstallmentMallGateway.getToolTimeoutV1({
  */
 InstallmentMallGateway.postUserReceiverAddressAddV1({
     data: {
-        receiveAddressDTO: '',
+        receiveAddressDTO: {
+    "autoId": "(integer) 自增主键",
+    "cityCode": "(string) 城市编码",
+    "cityName": "(string) 城市名称",
+    "countyCode": "(string) 区县编码",
+    "countyName": "(string) 区县名称",
+    "detailAddress": "(string) 详细地址",
+    "isDefault": "(boolean) 是否为默认地址",
+    "phone": "(string) 收货人手机号",
+    "provinceCode": "(string) 省份编码",
+    "provinceName": "(string) 省份名称",
+    "receiver": "(string) 收货人姓名",
+    "status": "(integer) 状态",
+    "townCode": "(string) 乡镇编码",
+    "townName": "(string) 乡镇名称",
+    "typeCode": "(integer) 地区编码提供方类型(10:京东)",
+    "userId": "(integer) 51用户ID"
+},
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -2329,7 +2457,24 @@ InstallmentMallGateway.getUserReceiverAddressTownsByCountyIdCountyIdV1({
  */
 InstallmentMallGateway.putUserReceiverAddressUpdateV1({
     data: {
-        receiveAddressDTO: '',
+        receiveAddressDTO: {
+    "autoId": "(integer) 自增主键",
+    "cityCode": "(string) 城市编码",
+    "cityName": "(string) 城市名称",
+    "countyCode": "(string) 区县编码",
+    "countyName": "(string) 区县名称",
+    "detailAddress": "(string) 详细地址",
+    "isDefault": "(boolean) 是否为默认地址",
+    "phone": "(string) 收货人手机号",
+    "provinceCode": "(string) 省份编码",
+    "provinceName": "(string) 省份名称",
+    "receiver": "(string) 收货人姓名",
+    "status": "(integer) 状态",
+    "townCode": "(string) 乡镇编码",
+    "townName": "(string) 乡镇名称",
+    "typeCode": "(integer) 地区编码提供方类型(10:京东)",
+    "userId": "(integer) 51用户ID"
+},
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -2360,7 +2505,7 @@ InstallmentMallGateway.getOrderGetV2({
         orderNo: '111072487507',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -2433,10 +2578,10 @@ InstallmentMallGateway.getOrderGetV2({
  */
 InstallmentMallGateway.getOrderShowRepayfundNoticeV2({
     params: {
-        orderNo: '',
+        orderNo: 'undefined',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -2466,10 +2611,21 @@ InstallmentMallGateway.postOrderSubmitV2({
         platform: 'app',
     },
     data: {
-        orderSubmitDTO: '',
+        orderSubmitDTO: {
+    "couponId": "(integer) 优惠券号",
+    "couponType": "(integer) 优惠券类型（0:无可用优惠券,1:新人专享(废除),2:票券系统优惠券）",
+    "extInfo": "(string) 支付信息",
+    "fullAddress": "(string) 完整地址",
+    "invoiceCompanyName": "(string) 单位名称",
+    "invoiceCompanyTaxCode": "(string) 单位税号",
+    "invoiceTitleCode": "(integer) 发票抬头（1:个人,2:企业）",
+    "invoiceType": "(integer) 发票类型（1:电子普通发票）",
+    "preOrderNo": "(string) 预订单编号",
+    "receiverAddressId": "(integer) 收货地址ID"
+},
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -2506,7 +2662,7 @@ InstallmentMallGateway.getPaymentCheckOrderV2({
         orderNo: '111072487507',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -2539,8 +2695,8 @@ InstallmentMallGateway.getSalesProductIndexInfoV2({
         longitude: '120',
     },
     headers: {
-        userId: '', //userId
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        userId: 'undefined', //userId
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
     },
 }).then(result => {
     console.log(result);
@@ -2617,7 +2773,7 @@ InstallmentMallGateway.getSalesProductProductDetailV2({
         productNo: '123456H11',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -2678,7 +2834,7 @@ InstallmentMallGateway.getSalesProductPromotionPromotionNoV2({
         promotionNo: '30',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -2747,8 +2903,8 @@ InstallmentMallGateway.getSalesProductSecKillProductsV2({
         longitude: '120',
     },
     headers: {
-        userId: '', //userId
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        userId: 'undefined', //userId
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
     },
 }).then(result => {
     console.log(result);
@@ -2800,11 +2956,11 @@ InstallmentMallGateway.getSalesProductSecKillProductsV2({
 InstallmentMallGateway.getUserCouponListForReceiveV2({
     params: {
         sectionType: '3',
-        sectionNo: '',
+        sectionNo: 'undefined',
         flag: '0',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -2841,7 +2997,7 @@ InstallmentMallGateway.getUserCouponListForReceiveV2({
  */
 InstallmentMallGateway.putUserCouponMultipleReceiveV2({
     params: {
-        couponSectionConfigId: '',
+        couponSectionConfigId: 'undefined',
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -2868,7 +3024,7 @@ InstallmentMallGateway.putUserCouponMultipleReceiveV2({
  */
 InstallmentMallGateway.putUserCouponReceiveV2({
     params: {
-        couponSectionConfigId: '',
+        couponSectionConfigId: 'undefined',
     },
     headers: {
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
@@ -2903,7 +3059,7 @@ InstallmentMallGateway.getSalesProductFavoriteProductsV3({
         areaCode: '1_0_0_0',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
@@ -2950,8 +3106,8 @@ InstallmentMallGateway.getSalesProductJkyIndexPageV3({
         areaCode: '1_0_0_0',
     },
     headers: {
-        userId: '', //userId
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        userId: 'undefined', //userId
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
     },
 }).then(result => {
     console.log(result);
@@ -3081,7 +3237,7 @@ InstallmentMallGateway.getSalesProductProductDetailV3({
         status: '-1',
     },
     headers: {
-        'X-FROM-TYPE': '', //X-FROM-TYPE
+        'X-FROM-TYPE': 'undefined', //X-FROM-TYPE
         Authorization: 'encrypt MTUwMDAxODEwLXYx.bWZkutQm3LiArAke6DqX5V0y_bf5lNS7KHTLv-3EIuPY7ORv3jXLaRcGZU-tlM-RSJJKuJ07KDBlOxTL35xZVg', //用户的U51Token
         userId: '150001810', //用户的U51用户Id
     },
