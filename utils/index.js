@@ -42,14 +42,20 @@ const utils = {
         return url.replace(baseURL, '');
     },
 
-    inNeedController(ctrl, need) {
+    inNeedController(api, ctrl, need) {
         if (!need || need.length === 0) {
             return true;
         }
 
-        for (let i = 0; i < ctrl.length; i++) {
-            if (need.includes(ctrl[i])) {
-                return true;
+        for (let j = 0; j < need.length; j++) {
+            if (ctrl.includes(need[j])) {
+                return true
+            } else if (typeof need[j] === 'object') {
+                const item = need[j];
+
+                if (ctrl.includes(item.controller) && item.apis.includes(api)) {
+                    return true
+                }
             }
         }
 
@@ -93,10 +99,10 @@ const utils = {
     upperCase(str) {
         const reg = /(\w)(.*)/;
 
-        return str.replace(/[{|}]/g, '').match(reg)[1].toUpperCase() + RegExp.$2;
+        return str.replace(/[{\}\.]/g, '').match(reg)[1].toUpperCase() + RegExp.$2;
     },
 
-    getRequired(apiData, ignore={}) {
+    getRequired(apiData, ignore = {}) {
         const source = JSON.parse(JSON.stringify(apiData));
 
         for (let i = 0; i < source.length; i++) {
@@ -155,7 +161,7 @@ const utils = {
     },
 
     filledBlank(str, count) {
-        return str + new Array(count).join(' ').slice(0, count-str.length);
+        return str + new Array(count).join(' ').slice(0, count - str.length);
     },
 
     parseResponse(config = {}, definitions) {
@@ -203,7 +209,7 @@ const utils = {
             const model = definitions[config.$ref.replace('#/definitions/', '')].properties || {};
 
             result = utils.getResponseByRef(model, definitions, curryStepCountMap);
-        } else if(config.type === 'object'){
+        } else if (config.type === 'object') {
             result = utils.getResponseByRef(config.properties || {}, definitions, curryStepCountMap);
         } else {
             result = `(${config.type}) ${config.description}`;
@@ -223,7 +229,61 @@ const utils = {
         }
 
         return result;
+    },
+
+    typeof(value) {
+        const type = Object.prototype.toString.call(value);
+
+        return type.slice(8, -1).toLowerCase();
+    },
+
+    object2String(obj, deep = 0) {
+        if (typeof obj !== 'object') {
+            return `'${obj.replace(/\r|\n/g, '')}',\n`;
+        }
+
+        let str = '';
+
+        deep++;
+        const tab = new Array(deep - 1).fill('\t').join('');
+
+        for (let attr in obj) {
+            if (Object.prototype.hasOwnProperty.call(obj, attr)) {
+                let value = '';
+
+                if (utils.typeof(obj[attr]) === 'object') {
+                    if (Object.keys(obj[attr]).length > 0) {
+                        value = `{\n${utils.object2String(obj[attr], deep)}\n${tab}}`;
+                    } else {
+                        value = '{}';
+                    }
+                } else if (utils.typeof(obj[attr]) === 'array') {
+                    value = `[{value}]`;
+                    let arrayStr = '';
+
+                    for (let i = 0; i < obj[attr].length; i++) {
+                        if (utils.typeof(obj[attr][i]) === 'object') {
+                            if (Object.keys(obj[attr][i]).length > 0) {
+                                arrayStr += `{\n${utils.object2String(obj[attr][i], deep)},\n${tab}}`;
+                            } else {
+                                arrayStr += '{}';
+                            }
+                        } else {
+                            arrayStr += `'${obj[attr][i]}',\n`;
+                        }
+                    }
+
+                    value = value.replace('{value}', arrayStr).replace('}]', `}]`);
+                } else {
+                    value = `'${obj[attr].replace(/\r|\n/g, '')}'`;
+                }
+                str += `${tab}${/^\w+$/g.test(attr) ? attr : `'${attr}'`}: ${value},\n`.replace(',,', ',');
+            }
+        }
+
+        return str.slice(0, -1);
     }
+
 };
 
 module.exports = utils;

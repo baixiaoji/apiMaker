@@ -4,12 +4,24 @@
 
 ## 安装
 ```
+nbm install @u51/apimaker --save-dev
+或
 nbm install @u51/apimaker -g
 ```
 注意：需要nodejs版本 8.0及以上，如果出现`apimaker`命令不存在时，请切换node版本重新安装
 
 ## 使用步骤
-1、在工程中添加配置文件`.api.config.js`
+1、在package.json中配置命令
+
+```
+"scripts": {
+	......
+    "api": "./node_modules/@u51/apimaker/bin/index.js create --config ./src/api/.api.config.js"
+  },
+
+```
+
+2、在工程中添加配置文件`.api.config.js`
 
 ```
 // 文件内容
@@ -21,7 +33,16 @@ module.exports = {
         },
         {
             swagger: 'http://weiwenyi2.insurance-gateway.51.env/swagger-ui.html', // 在http://ares.51.nb/中复制
+            // 只生成指定controller下的接口
             controllers: ['提供前端相关api']
+        },
+        {
+            swagger: 'http://jaq.usercenter-gateway.51.env/swagger-ui.html',
+            controllers: ['app-weixin-controller', {
+                controller: 'app-user-info-controller',
+                // 更细粒度的接口控制，只生成某个controller下的某些接口
+                apis: ['/usercenter-gateway/api/v2/user/info/modify']
+            }]
         },
     ]
 };
@@ -30,7 +51,7 @@ module.exports = {
 2、在工程根目录中运行命令
 
 ```
-apimaker create
+nbm run api
 ```
 
 3、在 `output: './src/api'`配置的输出目录下生成如下文件
@@ -46,6 +67,7 @@ apimaker create
     ├── config.js
     ├── example.full.js
     └── example.required.js
+..........     
 
 ```
 
@@ -235,6 +257,8 @@ instance.interceptors.request.use(config => {
 2、在ares中配置的参数类型，`query`与`path`都放到了 `params`中，`body`与`formData`放到了 `data`中
 
 3、在多个tag下切换开发时，运行该工具创建出的接口配置为一个并集，并不会删掉接口，如果是在ares上已经删掉的接口，需要手动去api.js与config.js中删掉
+
+4、运行命令时如果报接口错误，可能是对应的服务在重启或者，等待对应服务部署结束之后再运行脚本
 
 ## 结束
 如果有特殊的需求或者使用方式，以及使用过程中遇到的问题，都可以随时找我

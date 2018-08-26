@@ -10,5 +10,24 @@ module.exports = {
             swagger: 'http://weiwenyi2.insurance-gateway.51.env/swagger-ui.html',
             controllers: ['提供前端相关api', '投保相关api', '提供保单相关api']
         },
+        {
+            swagger: 'http://tlpay.installment-mall.51.env/swagger-ui.html',
+        },
+        {
+            swagger: 'http://it.bank-manager.51.env/swagger-ui.html',
+        },
+        {
+            swagger: 'http://bankaTest.bdc-banka.51.env/swagger-ui.html',
+        },
+        {
+            swagger: 'http://stable.bdc-banka-manager.51.env/swagger-ui.html',
+        },
+        {
+            swagger: 'http://jaq.usercenter-gateway.51.env/swagger-ui.html',
+            controllers: ['app-weixin-controller', {
+                controller: 'app-user-info-controller',
+                apis: ['/usercenter-gateway/api/v2/user/info/modify']
+            }]
+        },
     ]
 };

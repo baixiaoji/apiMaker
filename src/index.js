@@ -27,9 +27,11 @@ class ApiMaker {
             const versionsData = [];
 
             for (let i = 0; i < versions.length; i++) {
-                const data = await axios.get(urlInfo.url + versions[i].location);
+                if (versions[i].name === urlInfo.server) {
+                    const data = await axios.get(urlInfo.url + versions[i].location);
 
-                versionsData.push(data.data || {});
+                    versionsData.push(data.data || {});
+                }
             }
 
             const apiData = await this.formatData(versionsData, urlInfo.server, item);
@@ -53,7 +55,7 @@ class ApiMaker {
                 const method = Object.keys(apiItem)[0];
                 const apiData = apiItem[method];
 
-                if (utils.inNeedController(apiData.tags, apiConfig.controllers)) {
+                if (utils.inNeedController(pathKeys[i], apiData.tags, apiConfig.controllers)) {
                     apis.push({
                         apiName: utils.formatApiName(pathKeys[i], basePath, serverName, method),
                         url: utils.formatApiPath(pathKeys[i], basePath, serverName),

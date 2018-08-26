@@ -16,4 +16,9 @@ module.exports = {
         method: 'post',
         baseURL: '/api.u51.com/usercenter-gateway/api',
     },
+    postUserInfoModifyV2: {
+        url: '/v2/user/info/modify',
+        method: 'post',
+        baseURL: '/api.u51.com/usercenter-gateway/api',
+    },
 };

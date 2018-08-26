@@ -84,6 +84,7 @@ InsuranceGateway.postInsuranceInsureV1({
     "insurePeriod": "(string) 保障期限。格式1d，1y，1m 表示1天，1年，1个月",
     "planId": "(string) 方案代码",
     "productName": "(string) 产品名",
+    "promotionId": [],
     "proposalNo": "(string) 投保单号(保险公司核保后返回，用于承保)",
     "startDate": "(string) 起保时间  格式：yyyy-MM-dd HH:mm:ss",
     "totalAmount": "(integer) 总保额 单位分",

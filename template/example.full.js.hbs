@@ -26,8 +26,13 @@ import {{ upperCase serverName }} from './api/{{ serverName }}/api';
 {{#if data}}
     data: {
     {{#list data}}
+        {{#isObject default }}
+        {{> requestObject default }}
+        {{else}}
         {{{ formatStr name }}}: {{{ formatRequest default }}},
+        {{/isObject}}
     {{/list}}
+
     },
 {{/if}}
 {{#if headers}}

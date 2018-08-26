@@ -35,7 +35,7 @@ handlebars.registerHelper('addSpaceUpperCase', function(str='object', count) {
 
 
 handlebars.registerHelper('formatStr', function(str) {
-    return /[-|\s]/.test(str) ? `'${str}'` : str;
+    return /^\w+$/g.test(str) ? str : `'${str}'`;
 });
 
 handlebars.registerHelper('apiTplFormat', function(tpl, apiName) {
@@ -48,12 +48,24 @@ handlebars.registerHelper('genBaseURL', function(url) {
     }
 });
 
+handlebars.registerHelper('isObject', function(obj, options) {
+    if (utils.typeof(obj) === 'object') {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});
+
 handlebars.registerHelper('formatRequest', function(req) {
     if (typeof req === 'object') {
         return JSON.stringify(req, null, 4);
     } else {
         return `'${req}'`;
     }
+});
+
+handlebars.registerPartial('requestObject', function (obj) {
+    return utils.object2String(obj);
 });
 
 module.exports = handlebars;
