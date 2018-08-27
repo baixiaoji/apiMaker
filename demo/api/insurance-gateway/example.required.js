@@ -99,6 +99,20 @@ InsuranceGateway.postInsuranceInsureV1({
 });
 
 /**
+* 标记即将过期保单已读    /v1/order/closeOrder
+*
+*/
+InsuranceGateway.getOrderCloseOrderV1({
+    params: {
+        orderId: 'undefined', //orderId
+    },
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+
+/**
 * 保单列表    /v1/order/listOrder
 *
 */
@@ -200,6 +214,17 @@ InsuranceGateway.getProductRecommendV1({
 *
 */
 InsuranceGateway.getProductRenderV1({
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+
+/**
+* 用户信息    /v1/product/userInfo
+*
+*/
+InsuranceGateway.getProductUserInfoV1({
 }).then(result => {
     console.log(result);
 }).catch(error => {

@@ -101,8 +101,40 @@ InsuranceGateway.postInsuranceInsureV1({
 {
     "ext": {},
     "msg": "(string) 失败信息",
+    "orderId": "(integer) 保单Id",
     "payId": "(string) 支付单号",
     "success": "(boolean) 结果"
+}
+*/
+
+
+
+/**
+ * 标记即将过期保单已读    /v1/order/closeOrder
+ *
+ * @params      { Integer  }      orderId                       orderId
+ * @params      { String   }      userId                        用户id
+ * @params      { String   }      Authorization                 用户token
+ */
+InsuranceGateway.getOrderCloseOrderV1({
+    params: {
+        orderId: 'undefined',
+    },
+    headers: {
+        userId: 'undefined', //用户id
+        Authorization: 'undefined', //用户token
+    },
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+/*
+* 返回结果
+{
+    "data": "(boolean) undefined",
+    "msg": "(string) undefined",
+    "success": "(boolean) undefined"
 }
 */
 
@@ -140,6 +172,7 @@ InsuranceGateway.getOrderListOrderV1({
                 "insureDays": "(integer) 已保障天数",
                 "insureTime": "(string) 投保时间",
                 "orderId": "(integer) 保单id",
+                "payId": "(string) 支付订单id",
                 "picURLs": "(string) 主图",
                 "productName": "(string) 产品名",
                 "startInsure": "(string) 保障开始时间",
@@ -210,6 +243,7 @@ InsuranceGateway.getOrderQueryOrderV1({
         "claimProcess": "(string) 理赔流程",
         "companyName": "(string) 保险公司名称",
         "endInsure": "(string) 保障结束时间",
+        "epolicyUrl": "(string) undefined",
         "faq": "(string) 常见问题",
         "holder": {
             "cardCode": "(string) 证件号",
@@ -224,6 +258,7 @@ InsuranceGateway.getOrderQueryOrderV1({
             ],
             "mobile": "(string) 手机号码"
         },
+        "insType": "(string) 保险类目",
         "insureDays": "(integer) 已保障天数",
         "insureDuties": [
             {
@@ -260,6 +295,7 @@ InsuranceGateway.getOrderQueryOrderV1({
                 "value": "(string) undefined"
             }
         ],
+        "productId": "(integer) 产品id",
         "productName": "(string) 产品名",
         "startInsure": "(string) 保障开始时间",
         "status": "(integer) 保单状态：未支付、待生效、即将到期、有效保单、已过期"
@@ -299,6 +335,7 @@ InsuranceGateway.getOrderQueryOrderByPayIdV1({
         "claimProcess": "(string) 理赔流程",
         "companyName": "(string) 保险公司名称",
         "endInsure": "(string) 保障结束时间",
+        "epolicyUrl": "(string) undefined",
         "faq": "(string) 常见问题",
         "holder": {
             "cardCode": "(string) 证件号",
@@ -313,6 +350,7 @@ InsuranceGateway.getOrderQueryOrderByPayIdV1({
             ],
             "mobile": "(string) 手机号码"
         },
+        "insType": "(string) 保险类目",
         "insureDays": "(integer) 已保障天数",
         "insureDuties": [
             {
@@ -349,6 +387,7 @@ InsuranceGateway.getOrderQueryOrderByPayIdV1({
                 "value": "(string) undefined"
             }
         ],
+        "productId": "(integer) 产品id",
         "productName": "(string) 产品名",
         "startInsure": "(string) 保障开始时间",
         "status": "(integer) 保单状态：未支付、待生效、即将到期、有效保单、已过期"
@@ -717,6 +756,31 @@ InsuranceGateway.getProductRenderV1({
     ],
     "msg": "(string) 提示",
     "success": "(boolean) 是否成功"
+}
+*/
+
+
+
+/**
+ * 用户信息    /v1/product/userInfo
+ *
+ */
+InsuranceGateway.getProductUserInfoV1({
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+/*
+* 返回结果
+{
+    "data": {
+        "avatarUrl": "(string) 头像地址",
+        "nickName": "(string) 用户昵称",
+        "userName": "(string) 用户名"
+    },
+    "msg": "(string) undefined",
+    "success": "(boolean) undefined"
 }
 */
 

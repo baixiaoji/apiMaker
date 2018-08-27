@@ -23,11 +23,10 @@ module.exports = {
             swagger: 'http://stable.bdc-banka-manager.51.env/swagger-ui.html',
         },
         {
-            swagger: 'http://jaq.usercenter-gateway.51.env/swagger-ui.html',
-            controllers: ['app-weixin-controller', {
-                controller: 'app-user-info-controller',
-                apis: ['/usercenter-gateway/api/v2/user/info/modify']
-            }]
+            swagger: 'http://stable.usercenter-gateway.51.env/swagger-ui.html',
+            controllers: [
+                { controller: 'web-user-info-controller', apis: ['/usercenter-gateway/api/v2/web/user/info']}
+            ],
         },
     ]
 };

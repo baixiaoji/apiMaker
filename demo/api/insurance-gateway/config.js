@@ -6,6 +6,11 @@ module.exports = {
         method: 'post',
         baseURL: '/api.u51.com/insurance-gateway/api',
     },
+    getOrderCloseOrderV1: {
+        url: '/v1/order/closeOrder',
+        method: 'get',
+        baseURL: '/api.u51.com/insurance-gateway/api',
+    },
     getOrderListOrderV1: {
         url: '/v1/order/listOrder',
         method: 'get',
@@ -48,6 +53,11 @@ module.exports = {
     },
     getProductRenderV1: {
         url: '/v1/product/render',
+        method: 'get',
+        baseURL: '/api.u51.com/insurance-gateway/api',
+    },
+    getProductUserInfoV1: {
+        url: '/v1/product/userInfo',
         method: 'get',
         baseURL: '/api.u51.com/insurance-gateway/api',
     },

@@ -42,9 +42,13 @@ handlebars.registerHelper('apiTplFormat', function(tpl, apiName) {
     return tpl.replace(/\{apiName}/g, apiName);
 });
 
-handlebars.registerHelper('genBaseURL', function(url) {
+handlebars.registerHelper('genBaseURL', function(url, server) {
     if (url.indexOf('api.u51.com') === -1) {
-        return `/api.u51.com${url}`;
+        if (!url) {
+            return `/api.u51.com/${server}/api${url}`;
+        } else {
+            return `/api.u51.com${url}`;
+        }
     }
 });
 
