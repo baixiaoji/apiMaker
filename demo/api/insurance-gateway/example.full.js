@@ -2,94 +2,18 @@ import InsuranceGateway from './api/insurance-gateway/api';
 
 
 /**
- * 投保    /v1/insurance/insure
+ * 上传文件并拿到文件路径    /v1/files/upload
  *
- * @params      { Object   }      req                           req
- * @params      { String   }      userId                        用户id
- * @params      { String   }      Authorization                 用户token
+ * @params      { File     }      file                          file
+ * @params      { String   }      X-Tracking-ID                 用于追踪请求的唯一id
  */
-InsuranceGateway.postInsuranceInsureV1({
+InsuranceGateway.postFilesUploadV1({
     data: {
-        applicant: {
-        	applicantType: '(integer) 投保人类型 0：个人（默认） 1：公司',
-        	birthday: '(string) 出生日期 格式：yyyy-MM-dd',
-        	cardCode: '(string) 证件号',
-        	cardPeriod: '(string) 证件有效期，格式yyyy-MM-dd',
-        	cardType: '(integer) 证件类型1:身份证， 2：护照',
-        	cname: '(string) 中文名',
-        	contactAddress: '(string) 联系地址',
-        	contactPost: '(string) 联系地址邮编',
-        	country: '(string) 国籍',
-        	email: '(string) 邮箱',
-        	ename: '(string) 拼音或英文名，境外旅游险必填',
-        	hasSocialInsurance: '(boolean) 是否有社保',
-        	height: '(string) 身高',
-        	insuredExtInfo: [{
-        		key: '(string) undefined',
-        		name: '(string) undefined',
-        		value: [],
-        	}],
-        	job: '(string) 职业信息，职业id使用“-”拼接如：101414-101415-101416',
-        	marryState: '(integer) 婚姻状态 1：已婚 2：未婚 3：离婚 4：丧偶 5：其他',
-        	mobile: '(string) 手机号码',
-        	officeAddress: '(string) 办公地址',
-        	officePost: '(string) 办公地址邮编',
-        	provCityId: '(string) 居住省市，地区编码使用“-”拼接如：320000-320100-320104',
-        	sex: '(integer) 性别 0：女 1：男',
-        	tel: '(string) 办公电话',
-        	weight: '(string) 体重',
-        	yearlyIncome: '(string) 年收入',
-        },
-        applyNum: '(integer) 投保份数',
-        bizOrderId: '(string) undefined',
-        companyCode: '(string) 公司代码',
-        endDate: '(string) 终保时间  格式：yyyy-MM-dd HH:mm:ss',
-        ext: '(string) 投保标的',
-        insurants: [{
-        	birthday: '(string) 出生日期 格式：yyyy-MM-dd',
-        	cardCode: '(string) 证件号',
-        	cardPeriod: '(string) 证件有效期，格式yyyy-MM-dd',
-        	cardType: '(integer) 证件类型1:身份证， 2：护照',
-        	cname: '(string) 中文名',
-        	contactAddress: '(string) 联系地址',
-        	contactPost: '(string) 联系地址邮编',
-        	country: '(string) 国籍',
-        	email: '(string) 邮箱',
-        	ename: '(string) 拼音或英文名，境外旅游险必填',
-        	hasSocialInsurance: '(boolean) 是否有社保',
-        	height: '(string) 身高',
-        	insuredExtInfo: [{
-        		key: '(string) undefined',
-        		name: '(string) undefined',
-        		value: [],
-        	}],
-        	job: '(string) 职业信息，职业id使用“-”拼接如：101414-101415-101416',
-        	marryState: '(integer) 婚姻状态 1：已婚 2：未婚 3：离婚 4：丧偶 5：其他',
-        	mobile: '(string) 手机号码',
-        	officeAddress: '(string) 办公地址',
-        	officePost: '(string) 办公地址邮编',
-        	provCityId: '(string) 居住省市，地区编码使用“-”拼接如：320000-320100-320104',
-        	relationId: '(string) 与投保人关系（self：本人 mate：配偶 child：子女 parent：父母） ',
-        	sex: '(integer) 性别 0：女 1：男',
-        	tel: '(string) 办公电话',
-        	weight: '(string) 体重',
-        	yearlyIncome: '(string) 年收入',
-        }],
-        insureCode: '(string) 外部产品代码',
-        insureDate: '(string) 投保时间  格式：yyyy-MM-dd HH:mm:ss',
-        insurePeriod: '(string) 保障期限。格式1d，1y，1m 表示1天，1年，1个月',
-        planId: '(string) 方案代码',
-        productName: '(string) 产品名',
-        promotionId: [],
-        proposalNo: '(string) 投保单号(保险公司核保后返回，用于承保)',
-        startDate: '(string) 起保时间  格式：yyyy-MM-dd HH:mm:ss',
-        totalAmount: '(integer) 总保额 单位分',
-        totalPremium: '(integer) 总保费 单位分',
-        userId: '(string) undefined',
+        file: 'undefined',
+
     },
     headers: {
-        userId: 'undefined', //用户id
-        Authorization: 'undefined', //用户token
+        'X-Tracking-ID': 'undefined', //用于追踪请求的唯一id
     },
 }).then(result => {
     console.log(result);
@@ -99,41 +23,9 @@ InsuranceGateway.postInsuranceInsureV1({
 /*
 * 返回结果
 {
-    "ext": {},
-    "msg": "(string) 失败信息",
-    "orderId": "(integer) 保单Id",
-    "payId": "(string) 支付单号",
-    "success": "(boolean) 结果"
-}
-*/
-
-
-
-/**
- * 标记即将过期保单已读    /v1/order/closeOrder
- *
- * @params      { Integer  }      orderId                       orderId
- * @params      { String   }      userId                        用户id
- * @params      { String   }      Authorization                 用户token
- */
-InsuranceGateway.getOrderCloseOrderV1({
-    params: {
-        orderId: 'undefined',
-    },
-    headers: {
-        userId: 'undefined', //用户id
-        Authorization: 'undefined', //用户token
-    },
-}).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
-/*
-* 返回结果
-{
-    "data": "(boolean) undefined",
-    "msg": "(string) undefined",
+    "data": "(string) undefined",
+    "errorCode": "(string) undefined",
+    "errorMsg": "(string) undefined",
     "success": "(boolean) undefined"
 }
 */
@@ -141,17 +33,13 @@ InsuranceGateway.getOrderCloseOrderV1({
 
 
 /**
- * 保单列表    /v1/order/listOrder
+ * 二手车评论列表    /v1/mobike/item/coment/list
  *
- * @params      { Integer  }      orderType                     保单类型 0:历史保单 1：正常保单
- * @params      { Integer  }      pageSize                      pageSize
- * @params      { Integer  }      currentPage                   从1开始
+ * @params      { Integer  }      itemId                        itemId
  */
-InsuranceGateway.getOrderListOrderV1({
+InsuranceGateway.getMobikeItemComentListV1({
     params: {
-        orderType: 'undefined',
-        pageSize: 'undefined',
-        currentPage: 'undefined',
+        itemId: 'undefined',
     },
 }).then(result => {
     console.log(result);
@@ -161,574 +49,162 @@ InsuranceGateway.getOrderListOrderV1({
 /*
 * 返回结果
 {
-    "data": {
-        "aboutToexpireOrderNum": "(integer) undefined",
-        "hasHisotryOrder": "(boolean) undefined",
-        "orderList": [
-            {
-                "aboutToExpire": "(boolean) 是否即将到期:保障期小于等于30天为即将到期",
-                "companyName": "(string) 保险公司名称",
-                "endInsure": "(string) 保障结束时间",
-                "insureDays": "(integer) 已保障天数",
-                "insureTime": "(string) 投保时间",
-                "orderId": "(integer) 保单id",
-                "payId": "(string) 支付订单id",
-                "picURLs": "(string) 主图",
-                "productName": "(string) 产品名",
-                "startInsure": "(string) 保障开始时间",
-                "status": "(integer) 保单状态：未支付、待生效、即将到期、有效保单、已过期"
-            }
-        ],
-        "totalNum": "(integer) undefined"
-    },
-    "msg": "(string) undefined",
-    "success": "(boolean) undefined"
-}
-*/
-
-
-
-/**
- * 标记即将过期保单已读    /v1/order/markRead
- *
- * @params      { String   }      userId                        用户id
- * @params      { String   }      Authorization                 用户token
- */
-InsuranceGateway.getOrderMarkReadV1({
-    headers: {
-        userId: 'undefined', //用户id
-        Authorization: 'undefined', //用户token
-    },
-}).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
-/*
-* 返回结果
-{
-    "data": "(boolean) undefined",
-    "msg": "(string) undefined",
-    "success": "(boolean) undefined"
-}
-*/
-
-
-
-/**
- * 保单详情    /v1/order/queryOrder
- *
- * @params      { Integer  }      orderId                       orderId
- * @params      { String   }      userId                        用户id
- * @params      { String   }      Authorization                 用户token
- */
-InsuranceGateway.getOrderQueryOrderV1({
-    params: {
-        orderId: 'undefined',
-    },
-    headers: {
-        userId: 'undefined', //用户id
-        Authorization: 'undefined', //用户token
-    },
-}).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
-/*
-* 返回结果
-{
-    "data": {
-        "aboutToExpire": "(boolean) 是否即将到期:保障期小于等于30天为即将到期",
-        "claimProcess": "(string) 理赔流程",
-        "companyName": "(string) 保险公司名称",
-        "endInsure": "(string) 保障结束时间",
-        "epolicyUrl": "(string) undefined",
-        "faq": "(string) 常见问题",
-        "holder": {
-            "cardCode": "(string) 证件号",
-            "cardType": "(integer) 证件类型1:身份证， 2：护照",
-            "cname": "(string) 中文名",
-            "insuredExtInfo": [
-                {
-                    "key": "(string) undefined",
-                    "name": "(string) undefined",
-                    "value": []
-                }
-            ],
-            "mobile": "(string) 手机号码"
-        },
-        "insType": "(string) 保险类目",
-        "insureDays": "(integer) 已保障天数",
-        "insureDuties": [
-            {
-                "dutyDesc": "(string) 描述",
-                "price": "(string) 价格",
-                "title": "(string) 标题"
-            }
-        ],
-        "insureTime": "(string) 投保时间",
-        "insured": {
-            "cardCode": "(string) 证件号",
-            "cardType": "(integer) 证件类型1:身份证， 2：护照",
-            "cname": "(string) 中文名",
-            "insuredExtInfo": [
-                {
-                    "key": "(string) undefined",
-                    "name": "(string) undefined",
-                    "value": []
-                }
-            ],
-            "mobile": "(string) 手机号码"
-        },
-        "orderId": "(integer) 保单id",
-        "payAmount": "(integer) 实际支付费用",
-        "payId": "(string) 支付订单id",
-        "picURLs": "(string) 主图",
-        "planId": "(string) 方案id",
-        "policyNo": "(string) 保单号",
-        "premium": "(integer) 保费",
-        "productExtInfo": [
-            {
-                "key": "(string) undefined",
-                "name": "(string) undefined",
-                "value": "(string) undefined"
-            }
-        ],
-        "productId": "(integer) 产品id",
-        "productName": "(string) 产品名",
-        "startInsure": "(string) 保障开始时间",
-        "status": "(integer) 保单状态：未支付、待生效、即将到期、有效保单、已过期"
-    },
-    "msg": "(string) undefined",
-    "success": "(boolean) undefined"
-}
-*/
-
-
-
-/**
- * 根据payId查询保单    /v1/order/queryOrderByPayId
- *
- * @params      { String   }      payId                         payId
- * @params      { String   }      userId                        用户id
- * @params      { String   }      Authorization                 用户token
- */
-InsuranceGateway.getOrderQueryOrderByPayIdV1({
-    params: {
-        payId: 'undefined',
-    },
-    headers: {
-        userId: 'undefined', //用户id
-        Authorization: 'undefined', //用户token
-    },
-}).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
-/*
-* 返回结果
-{
-    "data": {
-        "aboutToExpire": "(boolean) 是否即将到期:保障期小于等于30天为即将到期",
-        "claimProcess": "(string) 理赔流程",
-        "companyName": "(string) 保险公司名称",
-        "endInsure": "(string) 保障结束时间",
-        "epolicyUrl": "(string) undefined",
-        "faq": "(string) 常见问题",
-        "holder": {
-            "cardCode": "(string) 证件号",
-            "cardType": "(integer) 证件类型1:身份证， 2：护照",
-            "cname": "(string) 中文名",
-            "insuredExtInfo": [
-                {
-                    "key": "(string) undefined",
-                    "name": "(string) undefined",
-                    "value": []
-                }
-            ],
-            "mobile": "(string) 手机号码"
-        },
-        "insType": "(string) 保险类目",
-        "insureDays": "(integer) 已保障天数",
-        "insureDuties": [
-            {
-                "dutyDesc": "(string) 描述",
-                "price": "(string) 价格",
-                "title": "(string) 标题"
-            }
-        ],
-        "insureTime": "(string) 投保时间",
-        "insured": {
-            "cardCode": "(string) 证件号",
-            "cardType": "(integer) 证件类型1:身份证， 2：护照",
-            "cname": "(string) 中文名",
-            "insuredExtInfo": [
-                {
-                    "key": "(string) undefined",
-                    "name": "(string) undefined",
-                    "value": []
-                }
-            ],
-            "mobile": "(string) 手机号码"
-        },
-        "orderId": "(integer) 保单id",
-        "payAmount": "(integer) 实际支付费用",
-        "payId": "(string) 支付订单id",
-        "picURLs": "(string) 主图",
-        "planId": "(string) 方案id",
-        "policyNo": "(string) 保单号",
-        "premium": "(integer) 保费",
-        "productExtInfo": [
-            {
-                "key": "(string) undefined",
-                "name": "(string) undefined",
-                "value": "(string) undefined"
-            }
-        ],
-        "productId": "(integer) 产品id",
-        "productName": "(string) 产品名",
-        "startInsure": "(string) 保障开始时间",
-        "status": "(integer) 保单状态：未支付、待生效、即将到期、有效保单、已过期"
-    },
-    "msg": "(string) undefined",
-    "success": "(boolean) undefined"
-}
-*/
-
-
-
-/**
- * 产品详情    /v1/product/detail
- *
- * @params      { Integer  }      productId                     产品id
- * @params      { Integer  }      fcProductId                   账户产品id
- * @params      { String   }      userId                        用户id
- */
-InsuranceGateway.getProductDetailV1({
-    params: {
-        productId: 'undefined',
-        fcProductId: 'undefined',
-        userId: 'undefined',
-    },
-}).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
-/*
-* 返回结果
-{
-    "defaultInsurePeriod": "(string) 默认保障期限",
-    "defaultPlanId": "(integer) 默认方案id",
-    "defaultPrice": "(integer) 默认价格",
-    "identity": {
-        "idCard": "(string) 身份证",
-        "name": "(string) 姓名",
-        "phone": "(string) 手机号"
-    },
-    "msg": "(string) 提示",
-    "plans": [
+    "data": [
         {
-            "extMap": {},
-            "id": "(integer) 主键",
-            "insureDuties": [
+            "commentId": "(integer) 评论id",
+            "createTime": "(integer) 评论时间",
+            "reply": [
                 {
-                    "dutyDesc": "(string) 描述",
-                    "price": "(string) 价格",
-                    "title": "(string) 标题"
-                }
-            ],
-            "minPrice": "(integer) 最低保费",
-            "outProductNo": "(string) 外部产品编号",
-            "productId": "(integer) 产品id",
-            "title": "(string) 标题"
-        }
-    ],
-    "product": {
-        "claimProcess": "(string) 理赔流程",
-        "countable": "(integer) 投保份数是否可选, 0-否,1-是",
-        "descList": [],
-        "effectiveDate": "(integer) 生效日期次日或可选, 1-指定生效天数,2-可选",
-        "effectiveDayCnt": "(integer) 生效指定天数",
-        "id": "(integer) 主键",
-        "insType": "(string) 险种",
-        "insureFor": [
-            {
-                "key": "(string) undefined",
-                "value": "(string) undefined"
-            }
-        ],
-        "insurePeriodList": [
-            {
-                "name": "(string) 描述, 1年",
-                "value": "(string) 1_y"
-            }
-        ],
-        "insuredExtInfo": [
-            {
-                "key": "(string) undefined",
-                "name": "(string) undefined",
-                "value": []
-            }
-        ],
-        "introURLs": "(string) 产品介绍图地址",
-        "orgCode": "(string) 机构编码",
-        "orgName": "(string) 机构名称",
-        "orgPhoneNum": "(string) 机构客服电话",
-        "picURLs": "(string) 头图地址",
-        "priceFactor": "(string) 定价因子, 逗号隔开",
-        "productExtInfo": [
-            {
-                "key": "(string) undefined",
-                "name": "(string) undefined",
-                "value": "(string) undefined"
-            }
-        ],
-        "question": "(string) 常见问题",
-        "summary": "(string) 副标题",
-        "tag": {
-            "tagTip": [],
-            "tagTitle": "(string) 标签标题"
-        },
-        "title": "(string) 主标题"
-    },
-    "success": "(boolean) 是否成功"
-}
-*/
-
-
-
-/**
- * 产品额外信息    /v1/product/productExtInfo
- *
- * @params      { Integer  }      productId                     
- * @params      { String   }      field                         
- */
-InsuranceGateway.getProductProductExtInfoV1({
-    params: {
-        productId: 'undefined',
-        field: 'undefined',
-    },
-}).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
-/*
-* 返回结果
-{
-    "info": "(string) 返回结果",
-    "msg": "(string) 提示",
-    "success": "(boolean) 是否成功"
-}
-*/
-
-
-
-/**
- * 查询价格    /v1/product/queryPrice
- *
- * @params      { Integer  }      productId                     产品id
- * @params      { Integer  }      planId                        方案id
- * @params      { String   }      priceFactor                   定价因子,逗号,隔开
- * @params      { String   }      insurePeriod                  保障期限
- * @params      { String   }      idCard                        身份证号
- */
-InsuranceGateway.getProductQueryPriceV1({
-    params: {
-        productId: 'undefined',
-        planId: 'undefined',
-        priceFactor: 'undefined',
-        insurePeriod: 'undefined',
-        idCard: 'undefined',
-    },
-}).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
-/*
-* 返回结果
-{
-    "msg": "(string) 提示",
-    "price": "(integer) 价格,单位:分",
-    "success": "(boolean) 是否成功"
-}
-*/
-
-
-
-/**
- * 推荐产品    /v1/product/recommend
- *
- */
-InsuranceGateway.getProductRecommendV1({
-}).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
-/*
-* 返回结果
-{
-    "banners": [
-        {
-            "linkURL": "(string) 链接地址",
-            "name": "(string) 名称",
-            "picURL": "(string) 图片地址"
-        }
-    ],
-    "cats": [
-        {
-            "planeCode": "(string) 版块code",
-            "planeName": "(string) 版块名称",
-            "products": [
-                {
-                    "id": "(integer) 主键",
-                    "keywords": [],
-                    "minPrice": "(string) 最低费用: 100.00 （元起)",
-                    "org": "(string) 保险机构",
-                    "picURL": "(string) 图片地址",
-                    "title": "(string) 主标题"
-                }
-            ]
-        }
-    ],
-    "classList": [
-        {
-            "actionValue": "(string) feed路由Url参数",
-            "coverImgs": [],
-            "feedId": "(string) feedId",
-            "feedType": "(integer) feed类型 1-优惠 2-文章 3-专题 4-卡单元 5-推荐专题入口",
-            "operationCfgPreviewMap": {},
-            "rankIndex": "(integer) 个性化推荐排序游标",
-            "relatedFeedPreviewItems": [
-                {
-                    "actionValue": "(string) feed路由Url参数",
-                    "coverImgs": [],
-                    "feedId": "(string) feedId",
-                    "feedType": "(integer) feed类型 1-优惠 2-文章 3-专题 4-卡单元 5-推荐专题入口",
-                    "operationCfgPreviewMap": {},
-                    "rankIndex": "(integer) 个性化推荐排序游标",
-                    "relatedFeedPreviewItems": [
+                    "commentId": "(integer) 评论id",
+                    "createTime": "(integer) 评论时间",
+                    "reply": [
                         {
-                            "actionValue": "(string) feed路由Url参数",
-                            "coverImgs": [],
-                            "feedId": "(string) feedId",
-                            "feedType": "(integer) feed类型 1-优惠 2-文章 3-专题 4-卡单元 5-推荐专题入口",
-                            "operationCfgPreviewMap": {},
-                            "rankIndex": "(integer) 个性化推荐排序游标",
-                            "relatedFeedPreviewItems": [
+                            "commentId": "(integer) 评论id",
+                            "createTime": "(integer) 评论时间",
+                            "reply": [
                                 {
-                                    "actionValue": "(string) feed路由Url参数",
-                                    "coverImgs": [],
-                                    "feedId": "(string) feedId",
-                                    "feedType": "(integer) feed类型 1-优惠 2-文章 3-专题 4-卡单元 5-推荐专题入口",
-                                    "operationCfgPreviewMap": {},
-                                    "rankIndex": "(integer) 个性化推荐排序游标",
-                                    "relatedFeedPreviewItems": [
+                                    "commentId": "(integer) 评论id",
+                                    "createTime": "(integer) 评论时间",
+                                    "reply": [
                                         {
-                                            "actionValue": "(string) feed路由Url参数",
-                                            "coverImgs": [],
-                                            "feedId": "(string) feedId",
-                                            "feedType": "(integer) feed类型 1-优惠 2-文章 3-专题 4-卡单元 5-推荐专题入口",
-                                            "operationCfgPreviewMap": {},
-                                            "rankIndex": "(integer) 个性化推荐排序游标",
-                                            "relatedFeedPreviewItems": [
+                                            "commentId": "(integer) 评论id",
+                                            "createTime": "(integer) 评论时间",
+                                            "reply": [
                                                 {
-                                                    "actionValue": "(string) feed路由Url参数",
-                                                    "coverImgs": [],
-                                                    "feedId": "(string) feedId",
-                                                    "feedType": "(integer) feed类型 1-优惠 2-文章 3-专题 4-卡单元 5-推荐专题入口",
-                                                    "operationCfgPreviewMap": {},
-                                                    "rankIndex": "(integer) 个性化推荐排序游标",
-                                                    "relatedFeedPreviewItems": [
+                                                    "commentId": "(integer) 评论id",
+                                                    "createTime": "(integer) 评论时间",
+                                                    "reply": [
                                                         {
-                                                            "actionValue": "(string) feed路由Url参数",
-                                                            "coverImgs": [],
-                                                            "feedId": "(string) feedId",
-                                                            "feedType": "(integer) feed类型 1-优惠 2-文章 3-专题 4-卡单元 5-推荐专题入口",
-                                                            "operationCfgPreviewMap": {},
-                                                            "rankIndex": "(integer) 个性化推荐排序游标",
-                                                            "relatedFeedPreviewItems": [
+                                                            "commentId": "(integer) 评论id",
+                                                            "createTime": "(integer) 评论时间",
+                                                            "reply": [
                                                                 {
-                                                                    "actionValue": "(string) feed路由Url参数",
-                                                                    "coverImgs": [],
-                                                                    "feedId": "(string) feedId",
-                                                                    "feedType": "(integer) feed类型 1-优惠 2-文章 3-专题 4-卡单元 5-推荐专题入口",
-                                                                    "operationCfgPreviewMap": {},
-                                                                    "rankIndex": "(integer) 个性化推荐排序游标",
-                                                                    "relatedFeedPreviewItems": [
+                                                                    "commentId": "(integer) 评论id",
+                                                                    "createTime": "(integer) 评论时间",
+                                                                    "reply": [
                                                                         {
-                                                                            "actionValue": "(string) feed路由Url参数",
-                                                                            "coverImgs": [],
-                                                                            "feedId": "(string) feedId",
-                                                                            "feedType": "(integer) feed类型 1-优惠 2-文章 3-专题 4-卡单元 5-推荐专题入口",
-                                                                            "operationCfgPreviewMap": {},
-                                                                            "rankIndex": "(integer) 个性化推荐排序游标",
-                                                                            "relatedFeedPreviewItems": [
+                                                                            "commentId": "(integer) 评论id",
+                                                                            "createTime": "(integer) 评论时间",
+                                                                            "reply": [
                                                                                 {
-                                                                                    "actionValue": "(string) feed路由Url参数",
-                                                                                    "coverImgs": [],
-                                                                                    "feedId": "(string) feedId",
-                                                                                    "feedType": "(integer) feed类型 1-优惠 2-文章 3-专题 4-卡单元 5-推荐专题入口",
-                                                                                    "operationCfgPreviewMap": {},
-                                                                                    "rankIndex": "(integer) 个性化推荐排序游标",
-                                                                                    "relatedFeedPreviewItems": "#/definitions/feed预览单项",
-                                                                                    "routerUrl": "(string) feed路由Url",
-                                                                                    "title": "(string) 标题"
+                                                                                    "commentId": "(integer) 评论id",
+                                                                                    "createTime": "(integer) 评论时间",
+                                                                                    "reply": "#/definitions/二手电瓶车详情回复",
+                                                                                    "replyText": "(string) 评论内容",
+                                                                                    "replyToUserAvatar": "(string) 回复评论用户头像",
+                                                                                    "replyToUserId": "(string) 回复评论用户id",
+                                                                                    "replyToUserName": "(string) 回复评论用户名",
+                                                                                    "replyUserAvatar": "(string) 评论用户头像",
+                                                                                    "replyUserId": "(string) 评论用户id",
+                                                                                    "replyUserName": "(string) 评论用户名称"
                                                                                 }
                                                                             ],
-                                                                            "routerUrl": "(string) feed路由Url",
-                                                                            "title": "(string) 标题"
+                                                                            "replyText": "(string) 评论内容",
+                                                                            "replyToUserAvatar": "(string) 回复评论用户头像",
+                                                                            "replyToUserId": "(string) 回复评论用户id",
+                                                                            "replyToUserName": "(string) 回复评论用户名",
+                                                                            "replyUserAvatar": "(string) 评论用户头像",
+                                                                            "replyUserId": "(string) 评论用户id",
+                                                                            "replyUserName": "(string) 评论用户名称"
                                                                         }
                                                                     ],
-                                                                    "routerUrl": "(string) feed路由Url",
-                                                                    "title": "(string) 标题"
+                                                                    "replyText": "(string) 评论内容",
+                                                                    "replyToUserAvatar": "(string) 回复评论用户头像",
+                                                                    "replyToUserId": "(string) 回复评论用户id",
+                                                                    "replyToUserName": "(string) 回复评论用户名",
+                                                                    "replyUserAvatar": "(string) 评论用户头像",
+                                                                    "replyUserId": "(string) 评论用户id",
+                                                                    "replyUserName": "(string) 评论用户名称"
                                                                 }
                                                             ],
-                                                            "routerUrl": "(string) feed路由Url",
-                                                            "title": "(string) 标题"
+                                                            "replyText": "(string) 评论内容",
+                                                            "replyToUserAvatar": "(string) 回复评论用户头像",
+                                                            "replyToUserId": "(string) 回复评论用户id",
+                                                            "replyToUserName": "(string) 回复评论用户名",
+                                                            "replyUserAvatar": "(string) 评论用户头像",
+                                                            "replyUserId": "(string) 评论用户id",
+                                                            "replyUserName": "(string) 评论用户名称"
                                                         }
                                                     ],
-                                                    "routerUrl": "(string) feed路由Url",
-                                                    "title": "(string) 标题"
+                                                    "replyText": "(string) 评论内容",
+                                                    "replyToUserAvatar": "(string) 回复评论用户头像",
+                                                    "replyToUserId": "(string) 回复评论用户id",
+                                                    "replyToUserName": "(string) 回复评论用户名",
+                                                    "replyUserAvatar": "(string) 评论用户头像",
+                                                    "replyUserId": "(string) 评论用户id",
+                                                    "replyUserName": "(string) 评论用户名称"
                                                 }
                                             ],
-                                            "routerUrl": "(string) feed路由Url",
-                                            "title": "(string) 标题"
+                                            "replyText": "(string) 评论内容",
+                                            "replyToUserAvatar": "(string) 回复评论用户头像",
+                                            "replyToUserId": "(string) 回复评论用户id",
+                                            "replyToUserName": "(string) 回复评论用户名",
+                                            "replyUserAvatar": "(string) 评论用户头像",
+                                            "replyUserId": "(string) 评论用户id",
+                                            "replyUserName": "(string) 评论用户名称"
                                         }
                                     ],
-                                    "routerUrl": "(string) feed路由Url",
-                                    "title": "(string) 标题"
+                                    "replyText": "(string) 评论内容",
+                                    "replyToUserAvatar": "(string) 回复评论用户头像",
+                                    "replyToUserId": "(string) 回复评论用户id",
+                                    "replyToUserName": "(string) 回复评论用户名",
+                                    "replyUserAvatar": "(string) 评论用户头像",
+                                    "replyUserId": "(string) 评论用户id",
+                                    "replyUserName": "(string) 评论用户名称"
                                 }
                             ],
-                            "routerUrl": "(string) feed路由Url",
-                            "title": "(string) 标题"
+                            "replyText": "(string) 评论内容",
+                            "replyToUserAvatar": "(string) 回复评论用户头像",
+                            "replyToUserId": "(string) 回复评论用户id",
+                            "replyToUserName": "(string) 回复评论用户名",
+                            "replyUserAvatar": "(string) 评论用户头像",
+                            "replyUserId": "(string) 评论用户id",
+                            "replyUserName": "(string) 评论用户名称"
                         }
                     ],
-                    "routerUrl": "(string) feed路由Url",
-                    "title": "(string) 标题"
+                    "replyText": "(string) 评论内容",
+                    "replyToUserAvatar": "(string) 回复评论用户头像",
+                    "replyToUserId": "(string) 回复评论用户id",
+                    "replyToUserName": "(string) 回复评论用户名",
+                    "replyUserAvatar": "(string) 评论用户头像",
+                    "replyUserId": "(string) 评论用户id",
+                    "replyUserName": "(string) 评论用户名称"
                 }
             ],
-            "routerUrl": "(string) feed路由Url",
-            "title": "(string) 标题"
+            "replyText": "(string) 评论内容",
+            "replyToUserAvatar": "(string) 回复评论用户头像",
+            "replyToUserId": "(string) 回复评论用户id",
+            "replyToUserName": "(string) 回复评论用户名",
+            "replyUserAvatar": "(string) 评论用户头像",
+            "replyUserId": "(string) 评论用户id",
+            "replyUserName": "(string) 评论用户名称"
         }
     ],
-    "msg": "(string) 提示",
-    "success": "(boolean) 是否成功"
+    "errorCode": "(string) undefined",
+    "errorMsg": "(string) undefined",
+    "success": "(boolean) undefined"
 }
 */
 
 
 
 /**
- * 产品列表渲染    /v1/product/render
+ * 二手车评论回复    /v1/mobike/item/coment/reply
  *
+ * @params      { Object   }      commentReq                    commentReq
  */
-InsuranceGateway.getProductRenderV1({
+InsuranceGateway.postMobikeItemComentReplyV1({
+    data: {
+        comment: '(string) undefined',
+        commentId: '(integer) undefined',
+        itemId: '(integer) undefined',
+        replyToUserAvatar: '(string) undefined',
+        replyToUserId: '(string) undefined',
+        replyToUserName: '(string) undefined',
+        replyUserAvatar: '(string) undefined',
+        replyUserId: '(string) undefined',
+        replyUserName: '(string) undefined',
+    },
 }).then(result => {
     console.log(result);
 }).catch(error => {
@@ -737,35 +213,23 @@ InsuranceGateway.getProductRenderV1({
 /*
 * 返回结果
 {
-    "cats": [
-        {
-            "insTypeCode": "(string) 险种code",
-            "insTypeDesc": "(string) 险种描述",
-            "insTypeName": "(string) 险种名称",
-            "products": [
-                {
-                    "id": "(integer) 主键",
-                    "keywords": [],
-                    "minPrice": "(string) 最低费用: 100.00 （元起)",
-                    "org": "(string) 保险机构",
-                    "picURL": "(string) 图片地址",
-                    "title": "(string) 主标题"
-                }
-            ]
-        }
-    ],
-    "msg": "(string) 提示",
-    "success": "(boolean) 是否成功"
+    "data": "(boolean) undefined",
+    "msg": "(string) undefined",
+    "success": "(boolean) undefined"
 }
 */
 
 
 
 /**
- * 用户信息    /v1/product/userInfo
+ * 商品详情    /v1/mobike/item/detail
  *
+ * @params      { Integer  }      itemId                        itemId
  */
-InsuranceGateway.getProductUserInfoV1({
+InsuranceGateway.getMobikeItemDetailV1({
+    params: {
+        itemId: 'undefined',
+    },
 }).then(result => {
     console.log(result);
 }).catch(error => {
@@ -775,12 +239,478 @@ InsuranceGateway.getProductUserInfoV1({
 * 返回结果
 {
     "data": {
-        "avatarUrl": "(string) 头像地址",
-        "nickName": "(string) 用户昵称",
-        "userName": "(string) 用户名"
+        "address": "(string) 店铺地址",
+        "category": "(integer) 商品类目",
+        "detailPic": "(string) 详情页商品介绍图",
+        "ext": "(string) 拓展字段",
+        "headPic": "(string) 详情页头图",
+        "id": "(integer) 商品id",
+        "introduce": "(string) 商品介绍",
+        "lat": "(number) 纬度",
+        "listPic": "(string) 列表页图片",
+        "lng": "(number) 经度",
+        "price": "(integer) 商品价格，分",
+        "promotion": "(string) 优惠信息",
+        "sale": "(integer) 销量",
+        "shopDetailDesc": "(string) 店铺描述",
+        "shopId": "(integer) 店铺id",
+        "shopListPic": "(string) 店铺列表页图片",
+        "shopTitle": "(string) 店铺名",
+        "title": "(string) 商品主标题"
     },
-    "msg": "(string) undefined",
+    "errorCode": "(string) undefined",
+    "errorMsg": "(string) undefined",
     "success": "(boolean) undefined"
+}
+*/
+
+
+
+/**
+ * 商品列表    /v1/mobike/item/list
+ *
+ * @params      { Object   }      listItemRequest               listItemRequest
+ */
+InsuranceGateway.postMobikeItemListV1({
+    data: {
+        city: '(string) undefined',
+        currentPage: '(integer) undefined',
+        itemType: '(integer) 店铺类型。0:车，1:电瓶, 2:其他配件',
+        lat: '(number) undefined',
+        lng: '(number) undefined',
+        pageSize: '(integer) undefined',
+        searchType: '(string) 检索方式。distance:距离,quality:精选',
+        shopId: '(integer) 店铺id。',
+        shopType: '(string) 店铺类型。sell:车行，service:服务点,all:全部',
+    },
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+/*
+* 返回结果
+{
+    "list": [
+        {
+            "category": "(integer) 商品类目",
+            "id": "(integer) 商品id",
+            "listPic": "(string) 列表页图片",
+            "price": "(integer) 商品价格，分",
+            "sale": "(integer) 销量",
+            "title": "(string) 商品主标题"
+        }
+    ],
+    "page": "(integer) 当前页码",
+    "pageCount": "(integer) 总页数",
+    "pageSize": "(integer) 一页里包含的记录条数",
+    "totalSize": "(integer) 总条数"
+}
+*/
+
+
+
+/**
+ * 二手电动车商品详情    /v1/mobike/item/secHand/detail
+ *
+ * @params      { Integer  }      itemId                        itemId
+ */
+InsuranceGateway.getMobikeItemSecHandDetailV1({
+    params: {
+        itemId: 'undefined',
+    },
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+/*
+* 返回结果
+{
+    "data": {
+        "address": "(string) 店铺地址",
+        "commentList": [
+            {
+                "commentId": "(integer) 评论id",
+                "createTime": "(integer) 评论时间",
+                "reply": [
+                    {
+                        "commentId": "(integer) 评论id",
+                        "createTime": "(integer) 评论时间",
+                        "reply": [
+                            {
+                                "commentId": "(integer) 评论id",
+                                "createTime": "(integer) 评论时间",
+                                "reply": [
+                                    {
+                                        "commentId": "(integer) 评论id",
+                                        "createTime": "(integer) 评论时间",
+                                        "reply": [
+                                            {
+                                                "commentId": "(integer) 评论id",
+                                                "createTime": "(integer) 评论时间",
+                                                "reply": [
+                                                    {
+                                                        "commentId": "(integer) 评论id",
+                                                        "createTime": "(integer) 评论时间",
+                                                        "reply": [
+                                                            {
+                                                                "commentId": "(integer) 评论id",
+                                                                "createTime": "(integer) 评论时间",
+                                                                "reply": [
+                                                                    {
+                                                                        "commentId": "(integer) 评论id",
+                                                                        "createTime": "(integer) 评论时间",
+                                                                        "reply": [
+                                                                            {
+                                                                                "commentId": "(integer) 评论id",
+                                                                                "createTime": "(integer) 评论时间",
+                                                                                "reply": [
+                                                                                    {
+                                                                                        "commentId": "(integer) 评论id",
+                                                                                        "createTime": "(integer) 评论时间",
+                                                                                        "reply": "#/definitions/二手电瓶车详情回复",
+                                                                                        "replyText": "(string) 评论内容",
+                                                                                        "replyToUserAvatar": "(string) 回复评论用户头像",
+                                                                                        "replyToUserId": "(string) 回复评论用户id",
+                                                                                        "replyToUserName": "(string) 回复评论用户名",
+                                                                                        "replyUserAvatar": "(string) 评论用户头像",
+                                                                                        "replyUserId": "(string) 评论用户id",
+                                                                                        "replyUserName": "(string) 评论用户名称"
+                                                                                    }
+                                                                                ],
+                                                                                "replyText": "(string) 评论内容",
+                                                                                "replyToUserAvatar": "(string) 回复评论用户头像",
+                                                                                "replyToUserId": "(string) 回复评论用户id",
+                                                                                "replyToUserName": "(string) 回复评论用户名",
+                                                                                "replyUserAvatar": "(string) 评论用户头像",
+                                                                                "replyUserId": "(string) 评论用户id",
+                                                                                "replyUserName": "(string) 评论用户名称"
+                                                                            }
+                                                                        ],
+                                                                        "replyText": "(string) 评论内容",
+                                                                        "replyToUserAvatar": "(string) 回复评论用户头像",
+                                                                        "replyToUserId": "(string) 回复评论用户id",
+                                                                        "replyToUserName": "(string) 回复评论用户名",
+                                                                        "replyUserAvatar": "(string) 评论用户头像",
+                                                                        "replyUserId": "(string) 评论用户id",
+                                                                        "replyUserName": "(string) 评论用户名称"
+                                                                    }
+                                                                ],
+                                                                "replyText": "(string) 评论内容",
+                                                                "replyToUserAvatar": "(string) 回复评论用户头像",
+                                                                "replyToUserId": "(string) 回复评论用户id",
+                                                                "replyToUserName": "(string) 回复评论用户名",
+                                                                "replyUserAvatar": "(string) 评论用户头像",
+                                                                "replyUserId": "(string) 评论用户id",
+                                                                "replyUserName": "(string) 评论用户名称"
+                                                            }
+                                                        ],
+                                                        "replyText": "(string) 评论内容",
+                                                        "replyToUserAvatar": "(string) 回复评论用户头像",
+                                                        "replyToUserId": "(string) 回复评论用户id",
+                                                        "replyToUserName": "(string) 回复评论用户名",
+                                                        "replyUserAvatar": "(string) 评论用户头像",
+                                                        "replyUserId": "(string) 评论用户id",
+                                                        "replyUserName": "(string) 评论用户名称"
+                                                    }
+                                                ],
+                                                "replyText": "(string) 评论内容",
+                                                "replyToUserAvatar": "(string) 回复评论用户头像",
+                                                "replyToUserId": "(string) 回复评论用户id",
+                                                "replyToUserName": "(string) 回复评论用户名",
+                                                "replyUserAvatar": "(string) 评论用户头像",
+                                                "replyUserId": "(string) 评论用户id",
+                                                "replyUserName": "(string) 评论用户名称"
+                                            }
+                                        ],
+                                        "replyText": "(string) 评论内容",
+                                        "replyToUserAvatar": "(string) 回复评论用户头像",
+                                        "replyToUserId": "(string) 回复评论用户id",
+                                        "replyToUserName": "(string) 回复评论用户名",
+                                        "replyUserAvatar": "(string) 评论用户头像",
+                                        "replyUserId": "(string) 评论用户id",
+                                        "replyUserName": "(string) 评论用户名称"
+                                    }
+                                ],
+                                "replyText": "(string) 评论内容",
+                                "replyToUserAvatar": "(string) 回复评论用户头像",
+                                "replyToUserId": "(string) 回复评论用户id",
+                                "replyToUserName": "(string) 回复评论用户名",
+                                "replyUserAvatar": "(string) 评论用户头像",
+                                "replyUserId": "(string) 评论用户id",
+                                "replyUserName": "(string) 评论用户名称"
+                            }
+                        ],
+                        "replyText": "(string) 评论内容",
+                        "replyToUserAvatar": "(string) 回复评论用户头像",
+                        "replyToUserId": "(string) 回复评论用户id",
+                        "replyToUserName": "(string) 回复评论用户名",
+                        "replyUserAvatar": "(string) 评论用户头像",
+                        "replyUserId": "(string) 评论用户id",
+                        "replyUserName": "(string) 评论用户名称"
+                    }
+                ],
+                "replyText": "(string) 评论内容",
+                "replyToUserAvatar": "(string) 回复评论用户头像",
+                "replyToUserId": "(string) 回复评论用户id",
+                "replyToUserName": "(string) 回复评论用户名",
+                "replyUserAvatar": "(string) 评论用户头像",
+                "replyUserId": "(string) 评论用户id",
+                "replyUserName": "(string) 评论用户名称"
+            }
+        ],
+        "description": "(string) 描述",
+        "detailPics": [],
+        "distance": "(integer) 与当前坐标距离",
+        "group": "(integer) 用户组，0：个人，1：商家",
+        "id": "(integer) 商品id",
+        "lat": "(number) 纬度",
+        "listPic": "(string) 列表页图片",
+        "lng": "(number) 经度",
+        "originPrice": "(integer) 原价",
+        "publishTimeStamp": "(integer) 商品发布时间戳",
+        "sellPrice": "(integer) 售卖价",
+        "sellerAvatar": "(string) 卖家头像",
+        "sellerId": "(string) 卖家id",
+        "sellerMobile": "(string) 联系方式",
+        "sellerName": "(string) 卖家名",
+        "shopId": "(integer) 店铺id",
+        "shopTitle": "(string) 店铺名",
+        "title": "(string) 商品标题",
+        "userId": "(string) 用户id",
+        "viewCount": "(integer) 浏览量"
+    },
+    "errorCode": "(string) undefined",
+    "errorMsg": "(string) undefined",
+    "success": "(boolean) undefined"
+}
+*/
+
+
+
+/**
+ * 二手电动车商品发布    /v1/mobike/item/secHand/publish
+ *
+ * @params      { Object   }      publishSecHandBikeReq                            publishSecHandBikeReq
+ */
+InsuranceGateway.postMobikeItemSecHandPublishV1({
+    data: {
+        address: '(string) 提货地址',
+        buyDate: '(string) 一手购买时间',
+        city: '(string) 城市',
+        description: '(string) 描述',
+        mobile: '(string) 联系手机号',
+        originPrice: '(integer) 一手购买价',
+        pics: [],
+        sellPrice: '(integer) 售卖价',
+        shopId: '(integer) 店铺id',
+        title: '(string) 标题',
+        userGroup: '(integer) 用户组',
+        userId: '(string) 用户id',
+    },
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+/*
+* 返回结果
+{
+    "data": "(integer) undefined",
+    "errorCode": "(string) undefined",
+    "errorMsg": "(string) undefined",
+    "success": "(boolean) undefined"
+}
+*/
+
+
+
+/**
+ * 二手电动车商品列表    /v1/mobike/item/secHand/searchList
+ *
+ * @params      { Object   }      secMobikeSearchRequest                           secMobikeSearchRequest
+ */
+InsuranceGateway.postMobikeItemSecHandSearchListV1({
+    data: {
+        city: '(string) undefined',
+        content: '(string) undefined',
+        currentPage: '(integer) undefined',
+        lat: '(number) undefined',
+        lng: '(number) undefined',
+        pageSize: '(integer) undefined',
+        userGroup: '(integer) undefined',
+    },
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+/*
+* 返回结果
+{
+    "list": [
+        {
+            "address": "(string) 地址",
+            "distance": "(integer) 与当前坐标距离",
+            "group": "(integer) 用户组，0：个人，1：商家",
+            "id": "(integer) 商品id",
+            "lat": "(number) 纬度",
+            "listPic": "(string) 列表页图片",
+            "lng": "(number) 经度",
+            "originPrice": "(integer) 原价",
+            "sellPrice": "(integer) 售卖价",
+            "title": "(string) 商品标题",
+            "userId": "(string) 用户id"
+        }
+    ],
+    "page": "(integer) 当前页码",
+    "pageCount": "(integer) 总页数",
+    "pageSize": "(integer) 一页里包含的记录条数",
+    "totalSize": "(integer) 总条数"
+}
+*/
+
+
+
+/**
+ * 店铺详情    /v1/mobike/shop/detail
+ *
+ * @params      { Integer  }      shopId                        shopId
+ */
+InsuranceGateway.getMobikeShopDetailV1({
+    params: {
+        shopId: 'undefined',
+    },
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+/*
+* 返回结果
+{
+    "data": {
+        "address": "(string) 店铺地址",
+        "detailDesc": "(string) 店铺描述",
+        "detailPic": "(string) 详情页图片",
+        "distance": "(integer) 与当前坐标距离",
+        "id": "(integer) 店铺id",
+        "lat": "(number) 纬度",
+        "listPic": "(string) 列表页图片",
+        "lng": "(number) 经度",
+        "openHours": "(string) 营业时间",
+        "sale": "(integer) 销量",
+        "score": "(integer) 店铺评分",
+        "tel": "(string) 联系方式",
+        "title": "(string) 店铺名",
+        "type": "(string) 店铺类型"
+    },
+    "errorCode": "(string) undefined",
+    "errorMsg": "(string) undefined",
+    "success": "(boolean) undefined"
+}
+*/
+
+
+
+/**
+ * 店铺列表    /v1/mobike/shop/list
+ *
+ * @params      { Object   }      listShopRequest               listShopRequest
+ */
+InsuranceGateway.postMobikeShopListV1({
+    data: {
+        city: '(string) undefined',
+        currentPage: '(integer) undefined',
+        itemType: '(integer) 店铺类型。0:车，1:电瓶, 2:其他配件',
+        lat: '(number) undefined',
+        lng: '(number) undefined',
+        pageSize: '(integer) undefined',
+        searchType: '(string) 检索方式。distance:距离,quality:精选',
+        shopId: '(integer) 店铺id。',
+        shopType: '(string) 店铺类型。sell:车行，service:服务点,all:全部',
+    },
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+/*
+* 返回结果
+{
+    "list": [
+        {
+            "address": "(string) 店铺地址",
+            "detailDesc": "(string) 店铺描述",
+            "detailPic": "(string) 详情页图片",
+            "distance": "(integer) 与当前坐标距离",
+            "id": "(integer) 店铺id",
+            "lat": "(number) 纬度",
+            "listPic": "(string) 列表页图片",
+            "lng": "(number) 经度",
+            "openHours": "(string) 营业时间",
+            "sale": "(integer) 销量",
+            "score": "(integer) 店铺评分",
+            "tel": "(string) 联系方式",
+            "title": "(string) 店铺名",
+            "type": "(string) 店铺类型"
+        }
+    ],
+    "page": "(integer) 当前页码",
+    "pageCount": "(integer) 总页数",
+    "pageSize": "(integer) 一页里包含的记录条数",
+    "totalSize": "(integer) 总条数"
+}
+*/
+
+
+
+/**
+ * 店铺搜索    /v1/mobike/shop/search
+ *
+ * @params      { Object   }      searchRequest                 searchRequest
+ */
+InsuranceGateway.postMobikeShopSearchV1({
+    data: {
+        city: '(string) undefined',
+        content: '(string) undefined',
+        currentPage: '(integer) undefined',
+        lat: '(number) undefined',
+        lng: '(number) undefined',
+        pageSize: '(integer) undefined',
+        userGroup: '(integer) undefined',
+    },
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+/*
+* 返回结果
+{
+    "list": [
+        {
+            "address": "(string) 店铺地址",
+            "detailDesc": "(string) 店铺描述",
+            "detailPic": "(string) 详情页图片",
+            "distance": "(integer) 与当前坐标距离",
+            "id": "(integer) 店铺id",
+            "lat": "(number) 纬度",
+            "listPic": "(string) 列表页图片",
+            "lng": "(number) 经度",
+            "openHours": "(string) 营业时间",
+            "sale": "(integer) 销量",
+            "score": "(integer) 店铺评分",
+            "tel": "(string) 联系方式",
+            "title": "(string) 店铺名",
+            "type": "(string) 店铺类型"
+        }
+    ],
+    "page": "(integer) 当前页码",
+    "pageCount": "(integer) 总页数",
+    "pageSize": "(integer) 一页里包含的记录条数",
+    "totalSize": "(integer) 总条数"
 }
 */
 

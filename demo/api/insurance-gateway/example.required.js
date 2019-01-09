@@ -2,95 +2,12 @@ import InsuranceGateway from './api/insurance-gateway/api';
 
 
 /**
-* 投保    /v1/insurance/insure
+* 上传文件并拿到文件路径    /v1/files/upload
 *
 */
-InsuranceGateway.postInsuranceInsureV1({
+InsuranceGateway.postFilesUploadV1({
     data: {
-        req: {
-    "applicant": {
-        "applicantType": "(integer) 投保人类型 0：个人（默认） 1：公司",
-        "birthday": "(string) 出生日期 格式：yyyy-MM-dd",
-        "cardCode": "(string) 证件号",
-        "cardPeriod": "(string) 证件有效期，格式yyyy-MM-dd",
-        "cardType": "(integer) 证件类型1:身份证， 2：护照",
-        "cname": "(string) 中文名",
-        "contactAddress": "(string) 联系地址",
-        "contactPost": "(string) 联系地址邮编",
-        "country": "(string) 国籍",
-        "email": "(string) 邮箱",
-        "ename": "(string) 拼音或英文名，境外旅游险必填",
-        "hasSocialInsurance": "(boolean) 是否有社保",
-        "height": "(string) 身高",
-        "insuredExtInfo": [
-            {
-                "key": "(string) undefined",
-                "name": "(string) undefined",
-                "value": []
-            }
-        ],
-        "job": "(string) 职业信息，职业id使用“-”拼接\n如：101414-101415-101416",
-        "marryState": "(integer) 婚姻状态 1：已婚 2：未婚 3：离婚 4：丧偶 5：其他",
-        "mobile": "(string) 手机号码",
-        "officeAddress": "(string) 办公地址",
-        "officePost": "(string) 办公地址邮编",
-        "provCityId": "(string) 居住省市，地区编码使用“-”拼接\n如：320000-320100-320104",
-        "sex": "(integer) 性别 0：女 1：男",
-        "tel": "(string) 办公电话",
-        "weight": "(string) 体重",
-        "yearlyIncome": "(string) 年收入"
-    },
-    "applyNum": "(integer) 投保份数",
-    "bizOrderId": "(string) undefined",
-    "companyCode": "(string) 公司代码",
-    "endDate": "(string) 终保时间  格式：yyyy-MM-dd HH:mm:ss",
-    "ext": "(string) 投保标的",
-    "insurants": [
-        {
-            "birthday": "(string) 出生日期 格式：yyyy-MM-dd",
-            "cardCode": "(string) 证件号",
-            "cardPeriod": "(string) 证件有效期，格式yyyy-MM-dd",
-            "cardType": "(integer) 证件类型1:身份证， 2：护照",
-            "cname": "(string) 中文名",
-            "contactAddress": "(string) 联系地址",
-            "contactPost": "(string) 联系地址邮编",
-            "country": "(string) 国籍",
-            "email": "(string) 邮箱",
-            "ename": "(string) 拼音或英文名，境外旅游险必填",
-            "hasSocialInsurance": "(boolean) 是否有社保",
-            "height": "(string) 身高",
-            "insuredExtInfo": [
-                {
-                    "key": "(string) undefined",
-                    "name": "(string) undefined",
-                    "value": []
-                }
-            ],
-            "job": "(string) 职业信息，职业id使用“-”拼接\n如：101414-101415-101416",
-            "marryState": "(integer) 婚姻状态 1：已婚 2：未婚 3：离婚 4：丧偶 5：其他",
-            "mobile": "(string) 手机号码",
-            "officeAddress": "(string) 办公地址",
-            "officePost": "(string) 办公地址邮编",
-            "provCityId": "(string) 居住省市，地区编码使用“-”拼接\n如：320000-320100-320104",
-            "relationId": "(string) 与投保人关系（self：本人 mate：配偶 child：子女 parent：父母） ",
-            "sex": "(integer) 性别 0：女 1：男",
-            "tel": "(string) 办公电话",
-            "weight": "(string) 体重",
-            "yearlyIncome": "(string) 年收入"
-        }
-    ],
-    "insureCode": "(string) 外部产品代码",
-    "insureDate": "(string) 投保时间  格式：yyyy-MM-dd HH:mm:ss",
-    "insurePeriod": "(string) 保障期限。格式1d，1y，1m 表示1天，1年，1个月",
-    "planId": "(string) 方案代码",
-    "productName": "(string) 产品名",
-    "promotionId": [],
-    "proposalNo": "(string) 投保单号(保险公司核保后返回，用于承保)",
-    "startDate": "(string) 起保时间  格式：yyyy-MM-dd HH:mm:ss",
-    "totalAmount": "(integer) 总保额 单位分",
-    "totalPremium": "(integer) 总保费 单位分",
-    "userId": "(string) undefined"
-}, //req
+        file: 'undefined', //file
     },
 }).then(result => {
     console.log(result);
@@ -99,12 +16,12 @@ InsuranceGateway.postInsuranceInsureV1({
 });
 
 /**
-* 标记即将过期保单已读    /v1/order/closeOrder
+* 二手车评论列表    /v1/mobike/item/coment/list
 *
 */
-InsuranceGateway.getOrderCloseOrderV1({
+InsuranceGateway.getMobikeItemComentListV1({
     params: {
-        orderId: 'undefined', //orderId
+        itemId: 'undefined', //itemId
     },
 }).then(result => {
     console.log(result);
@@ -113,12 +30,36 @@ InsuranceGateway.getOrderCloseOrderV1({
 });
 
 /**
-* 保单列表    /v1/order/listOrder
+* 二手车评论回复    /v1/mobike/item/coment/reply
 *
 */
-InsuranceGateway.getOrderListOrderV1({
+InsuranceGateway.postMobikeItemComentReplyV1({
+    data: {
+        commentReq: {
+    "comment": "(string) undefined",
+    "commentId": "(integer) undefined",
+    "itemId": "(integer) undefined",
+    "replyToUserAvatar": "(string) undefined",
+    "replyToUserId": "(string) undefined",
+    "replyToUserName": "(string) undefined",
+    "replyUserAvatar": "(string) undefined",
+    "replyUserId": "(string) undefined",
+    "replyUserName": "(string) undefined"
+}, //commentReq
+    },
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+
+/**
+* 商品详情    /v1/mobike/item/detail
+*
+*/
+InsuranceGateway.getMobikeItemDetailV1({
     params: {
-        pageSize: 'undefined', //pageSize
+        itemId: 'undefined', //itemId
     },
 }).then(result => {
     console.log(result);
@@ -127,10 +68,23 @@ InsuranceGateway.getOrderListOrderV1({
 });
 
 /**
-* 标记即将过期保单已读    /v1/order/markRead
+* 商品列表    /v1/mobike/item/list
 *
 */
-InsuranceGateway.getOrderMarkReadV1({
+InsuranceGateway.postMobikeItemListV1({
+    data: {
+        listItemRequest: {
+    "city": "(string) undefined",
+    "currentPage": "(integer) undefined",
+    "itemType": "(integer) 店铺类型。0:车，1:电瓶, 2:其他配件",
+    "lat": "(number) undefined",
+    "lng": "(number) undefined",
+    "pageSize": "(integer) undefined",
+    "searchType": "(string) 检索方式。distance:距离,quality:精选",
+    "shopId": "(integer) 店铺id。",
+    "shopType": "(string) 店铺类型。sell:车行，service:服务点,all:全部"
+}, //listItemRequest
+    },
 }).then(result => {
     console.log(result);
 }).catch(error => {
@@ -138,12 +92,12 @@ InsuranceGateway.getOrderMarkReadV1({
 });
 
 /**
-* 保单详情    /v1/order/queryOrder
+* 二手电动车商品详情    /v1/mobike/item/secHand/detail
 *
 */
-InsuranceGateway.getOrderQueryOrderV1({
+InsuranceGateway.getMobikeItemSecHandDetailV1({
     params: {
-        orderId: 'undefined', //orderId
+        itemId: 'undefined', //itemId
     },
 }).then(result => {
     console.log(result);
@@ -152,12 +106,61 @@ InsuranceGateway.getOrderQueryOrderV1({
 });
 
 /**
-* 根据payId查询保单    /v1/order/queryOrderByPayId
+* 二手电动车商品发布    /v1/mobike/item/secHand/publish
 *
 */
-InsuranceGateway.getOrderQueryOrderByPayIdV1({
+InsuranceGateway.postMobikeItemSecHandPublishV1({
+    data: {
+        publishSecHandBikeReq: {
+    "address": "(string) 提货地址",
+    "buyDate": "(string) 一手购买时间",
+    "city": "(string) 城市",
+    "description": "(string) 描述",
+    "mobile": "(string) 联系手机号",
+    "originPrice": "(integer) 一手购买价",
+    "pics": [],
+    "sellPrice": "(integer) 售卖价",
+    "shopId": "(integer) 店铺id",
+    "title": "(string) 标题",
+    "userGroup": "(integer) 用户组",
+    "userId": "(string) 用户id"
+}, //publishSecHandBikeReq
+    },
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+
+/**
+* 二手电动车商品列表    /v1/mobike/item/secHand/searchList
+*
+*/
+InsuranceGateway.postMobikeItemSecHandSearchListV1({
+    data: {
+        secMobikeSearchRequest: {
+    "city": "(string) undefined",
+    "content": "(string) undefined",
+    "currentPage": "(integer) undefined",
+    "lat": "(number) undefined",
+    "lng": "(number) undefined",
+    "pageSize": "(integer) undefined",
+    "userGroup": "(integer) undefined"
+}, //secMobikeSearchRequest
+    },
+}).then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+
+/**
+* 店铺详情    /v1/mobike/shop/detail
+*
+*/
+InsuranceGateway.getMobikeShopDetailV1({
     params: {
-        payId: 'undefined', //payId
+        shopId: 'undefined', //shopId
     },
 }).then(result => {
     console.log(result);
@@ -166,10 +169,23 @@ InsuranceGateway.getOrderQueryOrderByPayIdV1({
 });
 
 /**
-* 产品详情    /v1/product/detail
+* 店铺列表    /v1/mobike/shop/list
 *
 */
-InsuranceGateway.getProductDetailV1({
+InsuranceGateway.postMobikeShopListV1({
+    data: {
+        listShopRequest: {
+    "city": "(string) undefined",
+    "currentPage": "(integer) undefined",
+    "itemType": "(integer) 店铺类型。0:车，1:电瓶, 2:其他配件",
+    "lat": "(number) undefined",
+    "lng": "(number) undefined",
+    "pageSize": "(integer) undefined",
+    "searchType": "(string) 检索方式。distance:距离,quality:精选",
+    "shopId": "(integer) 店铺id。",
+    "shopType": "(string) 店铺类型。sell:车行，service:服务点,all:全部"
+}, //listShopRequest
+    },
 }).then(result => {
     console.log(result);
 }).catch(error => {
@@ -177,54 +193,21 @@ InsuranceGateway.getProductDetailV1({
 });
 
 /**
-* 产品额外信息    /v1/product/productExtInfo
+* 店铺搜索    /v1/mobike/shop/search
 *
 */
-InsuranceGateway.getProductProductExtInfoV1({
-}).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
-
-/**
-* 查询价格    /v1/product/queryPrice
-*
-*/
-InsuranceGateway.getProductQueryPriceV1({
-}).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
-
-/**
-* 推荐产品    /v1/product/recommend
-*
-*/
-InsuranceGateway.getProductRecommendV1({
-}).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
-
-/**
-* 产品列表渲染    /v1/product/render
-*
-*/
-InsuranceGateway.getProductRenderV1({
-}).then(result => {
-    console.log(result);
-}).catch(error => {
-    console.log(error);
-});
-
-/**
-* 用户信息    /v1/product/userInfo
-*
-*/
-InsuranceGateway.getProductUserInfoV1({
+InsuranceGateway.postMobikeShopSearchV1({
+    data: {
+        searchRequest: {
+    "city": "(string) undefined",
+    "content": "(string) undefined",
+    "currentPage": "(integer) undefined",
+    "lat": "(number) undefined",
+    "lng": "(number) undefined",
+    "pageSize": "(integer) undefined",
+    "userGroup": "(integer) undefined"
+}, //searchRequest
+    },
 }).then(result => {
     console.log(result);
 }).catch(error => {

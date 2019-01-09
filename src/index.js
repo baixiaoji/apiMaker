@@ -112,6 +112,7 @@ class ApiMaker {
             const content = template({
                 apis: apiData,
                 serverName,
+                apiHost: this.config.apiHost,
                 importTpl: this.config.importTpl,
                 apiTpl: this.config.apiTpl
             });

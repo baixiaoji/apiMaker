@@ -42,12 +42,13 @@ handlebars.registerHelper('apiTplFormat', function(tpl, apiName) {
     return tpl.replace(/\{apiName}/g, apiName);
 });
 
-handlebars.registerHelper('genBaseURL', function(url, server) {
-    if (url.indexOf('api.u51.com') === -1) {
+handlebars.registerHelper('genBaseURL', function(url, server, apiHost) {
+    const host = apiHost || 'api.u51.com';
+    if (url.indexOf(host) === -1) {
         if (!url) {
-            return `/api.u51.com/${server}/api${url}`;
+            return `/${host}/${server}/api${url}`;
         } else {
-            return `/api.u51.com${url}`;
+            return `/${host}${url}`;
         }
     }
 });
