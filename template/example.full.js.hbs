@@ -44,9 +44,7 @@ import {{ upperCase serverName }} from './api/{{ serverName }}/api';
 {{/if}}
 }).then(result => {
     console.log(result);
-}).catch(error => {
-    console.log(error);
-});
+}).catch(() => {});
 /*
 * 返回结果
 {{{ response }}}

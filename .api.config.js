@@ -1,6 +1,5 @@
 module.exports = {
     output: './demo/api',
-    // apiHost: 'api.bolin.site',
     // importTpl: "import axios from '../axios'",
     // apiTpl: '{apiName}: params => axios(config.{apiName}, params),',
     ignore: {
@@ -9,7 +8,11 @@ module.exports = {
     apis: [
         {
             swagger: 'http://weiwenyi2.insurance-gateway.51.env/swagger-ui.html',
-            controllers: ['电瓶车相关api', '文件上传相关api']
+            controllers: ['电瓶车相关api', '文件上传相关api', '电瓶车账户、商品相关api']
+        },
+        {
+            swagger: 'http://stable.usercenter-gateway.51.env/swagger-ui.html',
+            controllers: ['mini-weixin-controller']
         }
     ]
 };

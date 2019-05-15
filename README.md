@@ -232,6 +232,8 @@ InstallmentMallGateway.getActivityRecommendV1({
 
 4、`example.full.js` 只有required接口调用样例文件
 
+5、`.api.config.js`中配置`apiHost: xxx`, 会替换掉baseURL中的host
+
 
 ## 其他
 1、当某些接口需要做特殊处理时，建议通过配置自定义字段，然后在axios的拦截器中做处理，比如对`restful`参数做替换
@@ -272,3 +274,10 @@ instance.interceptors.request.use(config => {
 
 ## 结束
 如果有特殊的需求或者使用方式，以及使用过程中遇到的问题，都可以随时找我
+
+## CHANGE LOG
+
+### 2019-05-15  1.1.6
+
+[ M ] - 修改baseURL生成方式
+[ M ] - 修改模版catch默认为空

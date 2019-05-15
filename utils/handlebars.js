@@ -43,13 +43,16 @@ handlebars.registerHelper('apiTplFormat', function(tpl, apiName) {
 });
 
 handlebars.registerHelper('genBaseURL', function(url, server, apiHost) {
-    const host = apiHost || 'api.u51.com';
-    if (url.indexOf(host) === -1) {
-        if (!url) {
-            return `/${host}/${server}/api${url}`;
-        } else {
-            return `/${host}${url}`;
-        }
+    if (apiHost !== undefined) {
+        return `${apiHost ? `/${apiHost}` : ''}${url}`;
+    }
+
+    const defaultHost = 'api.u51.com';
+
+    if (url.indexOf(defaultHost) === -1 && url.indexOf(server) === -1) {
+        return `/${defaultHost}/${server}${url}`;
+    } else {
+        return `/${defaultHost}${url}`;
     }
 });
 
