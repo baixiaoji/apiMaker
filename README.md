@@ -272,6 +272,15 @@ instance.interceptors.request.use(config => {
 
 4、运行命令时如果报接口错误，可能是对应的服务在重启或者，等待对应服务部署结束之后再运行脚本
 
+## 本地工程调试脚本
+
+* 运行 `node bin/index.js create` 即可;
+* 查看swagger完整返回
+
+1. 从 `http://ioctransfer.collection-service.51.env/swagger-resources`拿到location
+
+2. 把location拼接到`http://ioctransfer.collection-service.51.env${location}`后面即可
+
 ## 结束
 如果有特殊的需求或者使用方式，以及使用过程中遇到的问题，都可以随时找我
 
@@ -281,3 +290,7 @@ instance.interceptors.request.use(config => {
 
 [ M ] - 修改baseURL生成方式
 [ M ] - 修改模版catch默认为空
+
+### 2019-08-12  1.1.7
+
+[ M ] - 兼容definitions中model为定义

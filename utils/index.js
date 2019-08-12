@@ -190,8 +190,14 @@ const utils = {
                 if (curryStepCountMap[ref] > 10) {
                     return ref;
                 }
+                const definition = definitions[ref.replace('#/definitions/', '')];
 
-                const model = definitions[ref.replace('#/definitions/', '')].properties || {};
+                if (!definition) {
+                    console.error(`\n\n${ref.replace('#/definitions/', '')} model未定义，请联系后端排查\n\n`);
+                    return;
+                }
+
+                const model = definition.properties || {};
 
                 result.push(utils.getResponseByRef(model, definitions, curryStepCountMap));
             }
@@ -275,7 +281,7 @@ const utils = {
 
                     value = value.replace('{value}', arrayStr).replace('}]', `}]`);
                 } else {
-                    value = `'${obj[attr].replace(/\r|\n/g, '')}'`;
+                    value = `'${(obj[attr] || "").replace(/\r|\n/g, '')}'`;
                 }
                 str += `${tab}${/^\w+$/g.test(attr) ? attr : `'${attr}'`}: ${value},\n`.replace(',,', ',');
             }

@@ -1,6 +1,6 @@
 {
   "name": "@u51/apimaker",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "api自动生成工具",
   "main": "./src/index.js",
   "scripts": {
