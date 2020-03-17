@@ -286,6 +286,7 @@ instance.interceptors.request.use(config => {
 
 ## CHANGE LOG
 
+
 ### 2019-05-15  1.1.6
 
 [ M ] - 修改baseURL生成方式
